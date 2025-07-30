@@ -1,11 +1,12 @@
-# QFluentUIForQtDesigner
+# QFluentUIForTouch
 
-一个基于Qt的Fluent Design风格控件库，专为Qt Designer设计的插件集合。
+一个基于C++Qt的Fluent Design风格控件库，专为Qt Designer设计的插件集合。
 
 ## 功能特点
 
 - 提供Fluent Design风格的Qt控件
 - 支持在Qt Designer中直接拖放使用
+- C++实现，适合嵌入式部署
 - 轻量级设计，易于集成
 - 支持明暗主题切换
 - 现代化的UI设计风格
