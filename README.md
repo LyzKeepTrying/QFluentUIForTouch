@@ -28,7 +28,7 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
    git clone https://github.com/LeeGouDan1/QFluentUIForTouch.git
    ```
 2. 使用 Qt Creator 打开 `QFluentUIForTouch.pro` 项目文件
-3. 选择合适的 Qt 版本（建议 Qt 5.15.2 及以上）和 MinGW 64-bit 编译器
+3. 选择合适的 Qt 版本（建议 Qt 5.15.2 及以上）
 4. 构建项目，插件文件会生成在 `build/` 目录下
 5. （可选）将插件复制到 Qt Designer 的插件目录，实现可视化集成
 
