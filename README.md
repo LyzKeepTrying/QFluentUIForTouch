@@ -16,18 +16,20 @@
 
 ## 系统要求
 
-- Qt 5.15.2 或更高版本
+- Qt 5 或更高版本
 - MinGW 64-bit 或 MSVC 编译器
 - Windows/Linux/macOS
 
 ## 安装方法
 
 1. 克隆仓库：
+
 ```bash
 git clone https://github.com/LeeGouDan1/QFluentUIForQtDesigner.git
 ```
 
 2. 编译插件：
+
 ```bash
 cd QFluentUIForQtDesigner
 qmake QFluentUIForQtDesigner.pro
@@ -49,11 +51,13 @@ make (或 mingw32-make / nmake)
 ## 在项目中使用
 
 1. 包含头文件：
+
 ```cpp
 #include <fluent_toggle_button.h>
 ```
 
 2. 在.pro文件中添加：
+
 ```qmake
 INCLUDEPATH += path/to/QFluentUIForQtDesigner/include
 LIBS += -L path/to/library -lfluent_ui_plugin
@@ -78,3 +82,4 @@ LIBS += -L path/to/library -lfluent_ui_plugin
 ## 致谢
 
 感谢所有为这个项目做出贡献的开发者。
+
