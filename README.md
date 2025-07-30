@@ -1,86 +1,46 @@
 # QFluentUIForTouch
 
-一个基于C++Qt的Fluent Design风格控件库，专为Qt Designer设计的插件集合。
+QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为触摸屏设备优化设计。该项目为 Qt 应用程序提供现代化、流畅且触控友好的界面组件。
 
-## 功能特点
+## 项目结构
 
-- 提供Fluent Design风格的Qt控件
-- 支持在Qt Designer中直接拖放使用
-- C++实现，适合嵌入式部署
-- 轻量级设计，易于集成
-- 支持明暗主题切换
-- 现代化的UI设计风格
+- `fluent_ui_plugin/`：Fluent UI 插件源码，包含主要控件实现（如 FluentPushButton、FluentToggleButton 等）
+- `example/`：示例程序，演示控件的实际效果和用法
+- `build/`：编译生成的文件和插件
 
-## 当前支持的控件
+## 主要特性
 
-- FluentToggleButton: Fluent风格的开关按钮
+- 基于 C++ 和 Qt 开发，性能优异，易于集成
+- 支持 Fluent Design 风格的按钮、开关等控件
+- 适配触摸屏操作，交互体验更佳
+- 可集成至 Qt Designer，支持可视化拖拽设计
+- 易于扩展和自定义
 
-## 系统要求
+## 当前支持控件
 
-- Qt 5 或更高版本
-- MinGW 64-bit 或 MSVC 编译器
-- Windows/Linux/macOS
+- **FluentPushButton**：Fluent风格按钮，支持自定义颜色和图标效果
+- **FluentToggleButton**：Fluent风格开关按钮，支持自定义状态颜色和动画切换
 
-## 安装方法
+## 快速开始
 
 1. 克隆仓库：
+   ```bash
+   git clone https://github.com/LeeGouDan1/QFluentUIForTouch.git
+   ```
+2. 使用 Qt Creator 打开 `QFluentUIForTouch.pro` 项目文件
+3. 选择合适的 Qt 版本（建议 Qt 5.15.2 及以上）和 MinGW 64-bit 编译器
+4. 构建项目，插件文件会生成在 `build/` 目录下
+5. （可选）将插件复制到 Qt Designer 的插件目录，实现可视化集成
 
-```bash
-git clone https://github.com/LeeGouDan1/QFluentUIForQtDesigner.git
-```
+## 示例程序
 
-2. 编译插件：
+`example/` 目录下包含一个演示程序，展示了各类 Fluent UI 控件的实际效果和用法。可直接在 Qt Creator 中编译运行。
 
-```bash
-cd QFluentUIForQtDesigner
-qmake QFluentUIForQtDesigner.pro
-make (或 mingw32-make / nmake)
-```
+## 贡献方式
 
-3. 安装插件：
-   - 将生成的插件文件(fluent_ui_plugin.dll/libfluent_ui_plugin.so)复制到Qt Designer的插件目录：
-     - Windows: `%QTDIR%\plugins\designer`
-     - Linux: `$QTDIR/plugins/designer`
-     - macOS: `$QTDIR/plugins/designer`
-
-## 使用方法
-
-1. 启动Qt Designer
-2. 在控件面板中找到"Fluent UI Controls"分类
-3. 直接拖放控件到设计界面使用
-
-## 在项目中使用
-
-1. 包含头文件：
-
-```cpp
-#include <fluent_toggle_button.h>
-```
-
-2. 在.pro文件中添加：
-
-```qmake
-INCLUDEPATH += path/to/QFluentUIForQtDesigner/include
-LIBS += -L path/to/library -lfluent_ui_plugin
-```
-
-## 示例
-
-请查看`example`目录下的示例项目，展示了控件的基本用法。
+欢迎提交 Issue 或 Pull Request，完善控件功能或修复问题。
 
 ## 许可证
 
-本项目采用MIT许可证。详情请查看[LICENSE](LICENSE)文件。
-
-## 贡献指南
-
-欢迎提交Issue和Pull Request来帮助改进这个项目。
-
-## 联系方式
-
-- GitHub Issues: [提交问题](https://github.com/LeeGouDan1/QFluentUIForQtDesigner/issues)
-
-## 致谢
-
-感谢所有为这个项目做出贡献的开发者。
+本项目采用 MIT 许可证，详情请见 [LICENSE](LICENSE)。
 
