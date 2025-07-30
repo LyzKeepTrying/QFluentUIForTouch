@@ -14,24 +14,31 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="FluentToggleButton" name="fluentToggleButton">
+   <widget class="FluentToggleButton" name="fluentToggleButton_2" native="true">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>260</y>
-      <width>61</width>
-      <height>31</height>
+      <x>90</x>
+      <y>80</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
    </widget>
-   <widget class="FluentToggleButton" name="fluentToggleButton_2">
+   <widget class="FluentPushButton" name="fluentPushButton">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>370</y>
-      <width>71</width>
-      <height>31</height>
+      <x>90</x>
+      <y>170</y>
+      <width>80</width>
+      <height>32</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>测试</string>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/icon/dog.png</normaloff>:/icon/dog.png</iconset>
     </property>
    </widget>
   </widget>
@@ -41,7 +48,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -53,7 +60,14 @@
    <extends>QWidget</extends>
    <header>fluent_toggle_button.h</header>
   </customwidget>
+  <customwidget>
+   <class>FluentPushButton</class>
+   <extends>QPushButton</extends>
+   <header>fluent_push_button.h</header>
+  </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

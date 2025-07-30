@@ -1,16 +1,8 @@
-QT       += core gui
+QT       += core gui widgets
+CONFIG   += c++17
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-CONFIG += c++17
-
-INCLUDEPATH += $$PWD/include
-
-# 库路径（如果使用独立插件）
-LIBS += -L$$PWD/lib -lfluent_ui_plugin
-
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+TEMPLATE = app
+TARGET   = example
 
 SOURCES += \
     main.cpp \
@@ -22,8 +14,11 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+CONFIG(release, debug|release): LIBS += -L$$PWD/../build/Desktop_Qt_5_15_2_MinGW_64_bit-Release/fluent_ui_plugin/release/ -lfluent_ui_plugin
+CONFIG(debug, debug|release): LIBS += -L$$PWD/../build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/fluent_ui_plugin/debug/ -lfluent_ui_plugin
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+INCLUDEPATH += $$PWD/../fluent_ui_plugin/include
+DEPENDPATH += $$PWD/../fluent_ui_plugin/include
+
+RESOURCES += \
+    res.qrc
