@@ -18,6 +18,7 @@
 #include <QtWidgets/QWidget>
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
+#include "fluent_line_edit.h"
 #include "fluent_push_button.h"
 #include "fluent_toggle_button.h"
 
@@ -31,6 +32,7 @@ public:
     FluentPushButton *fluentPushButton;
     FluentIconPushButton *fluentIconPushButton;
     FluentIconToggleButton *fluentIconToggleButton;
+    FluentLineEdit *fluentLineEdit;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -67,6 +69,9 @@ public:
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/icon/cat.png"), QSize(), QIcon::Normal, QIcon::Off);
         fluentIconToggleButton->setToggledIcon(icon1);
+        fluentLineEdit = new FluentLineEdit(centralwidget);
+        fluentLineEdit->setObjectName(QString::fromUtf8("fluentLineEdit"));
+        fluentLineEdit->setGeometry(QRect(90, 390, 261, 41));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -88,6 +93,7 @@ public:
         fluentIconPushButton->setText(QCoreApplication::translate("MainWindow", "\346\265\213\350\257\225", nullptr));
         fluentIconToggleButton->setText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\213\227", nullptr));
         fluentIconToggleButton->setToggledText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\214\253", nullptr));
+        fluentLineEdit->setText(QString());
     } // retranslateUi
 
 };

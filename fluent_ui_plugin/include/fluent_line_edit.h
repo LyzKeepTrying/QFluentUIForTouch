@@ -17,8 +17,9 @@ class FLUENTUI_PLUGIN_EXPORT FluentLineEdit : public QLineEdit {
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, FocusColor, QFluentUI::ThemeColor::Light::on_color)
+    DECLARE_PROPERTY(QColor, FocusBorderColor, QFluentUI::ThemeColor::Light::on_color)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
+    DECLARE_PROPERTY(bool, ShowCursor, true)
 
 public:
     explicit FluentLineEdit(QWidget* parent = nullptr);
@@ -27,8 +28,6 @@ public:
 protected:
     void paintEvent(QPaintEvent* event) override;
     QSize sizeHint() const override;
-    void focusInEvent(QFocusEvent* event) override;
-    void focusOutEvent(QFocusEvent* event) override;
 
 private:
     constexpr static QSize k_default_size{72, 24};
