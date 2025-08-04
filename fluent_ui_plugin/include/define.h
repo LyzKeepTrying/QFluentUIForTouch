@@ -27,10 +27,8 @@ Q_PROPERTY(type name READ get##name WRITE set##name) \
     inline type get##name() const { return m_##name; } \
     static inline const char* get##name##PropertyName() { return #name; } \
     void set##name(const type& value) { \
-        if (m_##name != value) { \
             m_##name = value; \
             update(); \
-    } \
 } \
     private:
 

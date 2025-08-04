@@ -20,6 +20,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentToggleButton : public QAbstractButton {
     DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY(QColor, BackgroundOffColor, QFluentUI::ThemeColor::Light::off_color)
     DECLARE_PROPERTY(QColor, BackgroundOnColor, QFluentUI::ThemeColor::Light::on_color)
+    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
 
 public:
     explicit FluentToggleButton(QWidget* parent = nullptr);

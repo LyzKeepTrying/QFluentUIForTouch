@@ -65,6 +65,59 @@ private:
     bool is_initialized_ = false;
 };
 
+class FLUENTUI_PLUGIN_EXPORT FluentIconPushButtonPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentIconPushButtonPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentIconToggleButtonPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentIconToggleButtonPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
 
 class FLUENTUI_PLUGIN_EXPORT FluentWidgetsPluginCollection
     : public QObject
@@ -75,16 +128,8 @@ class FLUENTUI_PLUGIN_EXPORT FluentWidgetsPluginCollection
     Q_INTERFACES(QDesignerCustomWidgetCollectionInterface)
 
 public:
-    explicit FluentWidgetsPluginCollection(QObject* parent = nullptr)
-        : QObject(parent)
-    {
-        m_widgets.append(new FluentToggleButtonPlugin(this));
-        m_widgets.append(new FluentPushButtonPlugin(this));
-    }
-
-    QList<QDesignerCustomWidgetInterface*> customWidgets() const override {
-        return m_widgets;
-    }
+    explicit FluentWidgetsPluginCollection(QObject* parent = nullptr);
+    QList<QDesignerCustomWidgetInterface*> customWidgets() const override;
 
 private:
     QList<QDesignerCustomWidgetInterface*> m_widgets;

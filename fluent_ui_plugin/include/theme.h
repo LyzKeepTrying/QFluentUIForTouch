@@ -12,9 +12,9 @@ namespace Light {
 
 const QColor area_color = Qt::white;
 const QColor text_color = Qt::black;
-const QColor border_color = QColor(114, 114, 114, 114);
+const QColor border_color = QColor(128, 128, 128, 100);
 const QColor off_color = QColor(204, 204, 204);
-const QColor on_color = QColor(0, 120, 215);
+const QColor on_color = QColor(0, 144, 0);
 
 }
 
@@ -23,6 +23,7 @@ const QColor on_color = QColor(0, 120, 215);
 namespace Font {
 
 const QFont default_text_font = QFont("SimHei");
+const int default_font_size = 14;
 
 }
 

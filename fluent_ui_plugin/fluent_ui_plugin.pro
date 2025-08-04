@@ -8,9 +8,13 @@ DEFINES += FLUENTUI_PLUGIN_LIBRARY
 # 头文件和源文件布局
 INCLUDEPATH += $$PWD/include
 SOURCES     += src/fluent_toggle_button.cpp \
+               src/fluent_icon_push_button.cpp \
+               src/fluent_icon_toggle_button.cpp \
                src/fluent_push_button.cpp \
                src/fluent_ui_plugin_collection.cpp
 HEADERS     += include/fluent_toggle_button.h \
+               include/fluent_icon_push_button.h \
+               include/fluent_icon_toggle_button.h \
                include/fluent_push_button.h \
                include/fluent_ui_plugin_collection.h \
                include/define.h \

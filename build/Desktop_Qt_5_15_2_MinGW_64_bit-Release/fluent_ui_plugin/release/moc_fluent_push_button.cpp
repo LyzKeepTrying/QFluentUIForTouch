@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentPushButton_t {
     QByteArrayData data[4];
-    char stringdata0[61];
+    char stringdata0[55];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,11 +35,11 @@ static const qt_meta_stringdata_FluentPushButton_t qt_meta_stringdata_FluentPush
 QT_MOC_LITERAL(0, 0, 16), // "FluentPushButton"
 QT_MOC_LITERAL(1, 17, 15), // "BackgroundColor"
 QT_MOC_LITERAL(2, 33, 9), // "TextColor"
-QT_MOC_LITERAL(3, 43, 17) // "BackgroundOpacity"
+QT_MOC_LITERAL(3, 43, 11) // "BorderColor"
 
     },
     "FluentPushButton\0BackgroundColor\0"
-    "TextColor\0BackgroundOpacity"
+    "TextColor\0BorderColor"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +59,7 @@ static const uint qt_meta_data_FluentPushButton[] = {
  // properties: name, type, flags
        1, QMetaType::QColor, 0x00095103,
        2, QMetaType::QColor, 0x00095103,
-       3, QMetaType::QReal, 0x00095103,
+       3, QMetaType::QColor, 0x00095103,
 
        0        // eod
 };
@@ -75,7 +75,7 @@ void FluentPushButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         switch (_id) {
         case 0: *reinterpret_cast< QColor*>(_v) = _t->getBackgroundColor(); break;
         case 1: *reinterpret_cast< QColor*>(_v) = _t->getTextColor(); break;
-        case 2: *reinterpret_cast< qreal*>(_v) = _t->getBackgroundOpacity(); break;
+        case 2: *reinterpret_cast< QColor*>(_v) = _t->getBorderColor(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -85,7 +85,7 @@ void FluentPushButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         switch (_id) {
         case 0: _t->setBackgroundColor(*reinterpret_cast< QColor*>(_v)); break;
         case 1: _t->setTextColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 2: _t->setBackgroundOpacity(*reinterpret_cast< qreal*>(_v)); break;
+        case 2: _t->setBorderColor(*reinterpret_cast< QColor*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {

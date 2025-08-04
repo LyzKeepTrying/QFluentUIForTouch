@@ -46,7 +46,7 @@ void FluentToggleButton::paintEvent(QPaintEvent* event) {
     QColor bg_color = isChecked() ? getBackgroundOnColor() : getBackgroundOffColor();
 
 
-    painter.setPen(Qt::NoPen);
+    painter.setPen(getBorderColor());
     painter.setBrush(bg_color);
     painter.drawRoundedRect(bg_rect, border_radius, border_radius);
 
@@ -55,6 +55,7 @@ void FluentToggleButton::paintEvent(QPaintEvent* event) {
     QColor thumb_color = isChecked() ? getThumbColor() : getThumbColor().darker(200);
     QRectF thumb_rectf = QRectF(getThumbPosition(), (height() - getThumbRadius()*2.0) / 2.0, getThumbRadius()*2.0, getThumbRadius()*2.0);
 
+    painter.setPen(Qt::NoPen);
     painter.setBrush(thumb_color);
     painter.drawEllipse(thumb_rectf);
 }
@@ -63,7 +64,7 @@ void FluentToggleButton::paintEvent(QPaintEvent* event) {
 void FluentToggleButton::mousePressEvent(QMouseEvent* event) {
 
     // Fluent风格的按压效果
-    setThumbColor(QFluentUI::ThemeColor::Light::area_color.darker(150));
+    setThumbColor(getThumbColor().darker(150));
 
     QAbstractButton::mousePressEvent(event);
 
@@ -71,7 +72,7 @@ void FluentToggleButton::mousePressEvent(QMouseEvent* event) {
 
 void FluentToggleButton::mouseReleaseEvent(QMouseEvent* event){
 
-    setThumbColor(QFluentUI::ThemeColor::Light::area_color);
+    setThumbColor(getThumbColor().lighter(150));
 
     QAbstractButton::mouseReleaseEvent(event);
 
