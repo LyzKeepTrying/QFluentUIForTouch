@@ -2,8 +2,6 @@
 #define FLUENT_ICON_PUSH_BUTTON_H
 
 #include <QPushButton>
-#include <QPropertyAnimation>
-#include <QEasingCurve>
 
 #include "define.h"
 #include "theme.h"

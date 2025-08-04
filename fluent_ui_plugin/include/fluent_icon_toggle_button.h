@@ -1,9 +1,7 @@
 #ifndef FLUENT_ICON_TOGGLE_BUTTON_H
 #define FLUENT_ICON_TOGGLE_BUTTON_H
 
-#include <QPushButton>
-#include <QPropertyAnimation>
-#include <QEasingCurve>
+#include <QAbstractButton>
 
 #include "define.h"
 #include "theme.h"

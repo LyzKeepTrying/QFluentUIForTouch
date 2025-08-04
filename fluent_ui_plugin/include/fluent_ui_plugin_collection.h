@@ -119,6 +119,33 @@ private:
     bool is_initialized_ = false;
 };
 
+class FLUENTUI_PLUGIN_EXPORT FluentLineEditPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentLineEditPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
 class FLUENTUI_PLUGIN_EXPORT FluentWidgetsPluginCollection
     : public QObject
     , public QDesignerCustomWidgetCollectionInterface
@@ -132,5 +159,5 @@ public:
     QList<QDesignerCustomWidgetInterface*> customWidgets() const override;
 
 private:
-    QList<QDesignerCustomWidgetInterface*> m_widgets;
+    QList<QDesignerCustomWidgetInterface*> widget_list_;
 };

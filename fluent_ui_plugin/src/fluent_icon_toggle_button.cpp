@@ -7,6 +7,7 @@ constexpr QSize FluentIconToggleButton::k_default_icon_size;
 FluentIconToggleButton::FluentIconToggleButton(QWidget* parent)
     : QAbstractButton(parent)
 {
+    setContentsMargins(0, 0, 0, 0);
     setCheckable(true);
     setCursor(Qt::PointingHandCursor);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);

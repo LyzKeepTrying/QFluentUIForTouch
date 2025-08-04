@@ -5,7 +5,7 @@
 
 FluentToggleButton::FluentToggleButton(QWidget* parent)
     : QAbstractButton(parent) {
-
+    setContentsMargins(0, 0, 0, 0);
     setCheckable(true);
     setCursor(Qt::PointingHandCursor);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);

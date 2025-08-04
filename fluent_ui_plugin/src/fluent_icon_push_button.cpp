@@ -7,18 +7,16 @@ constexpr QSize FluentIconPushButton::k_default_icon_size;
 FluentIconPushButton::FluentIconPushButton(QWidget* parent)
     : QPushButton(parent)
 {
+    setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     setIconSize(k_default_icon_size);
 }
 
 FluentIconPushButton::FluentIconPushButton(const QIcon& icon, const QString& text, QWidget* parent)
-    : QPushButton(text, parent)
+    : FluentIconPushButton(parent)
 {
     setIcon(icon);
-    setCursor(Qt::PointingHandCursor);
-    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    setIconSize(k_default_icon_size);
 }
 
 QSize FluentIconPushButton::sizeHint() const {
