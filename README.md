@@ -24,6 +24,7 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
 - **FluentToggleButton**：Fluent风格开关按钮
 - **FluentIconToggleButton**：Fluent风格方形开关
 - **FluentIconPushButton**：Fluent风格方形按钮
+- **FluentLineEdit**：Fluent输入窗
 
 ## 快速开始
 
