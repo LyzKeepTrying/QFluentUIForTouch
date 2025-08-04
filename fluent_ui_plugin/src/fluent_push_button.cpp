@@ -3,13 +3,13 @@
 #include <QEvent>
 
 FluentPushButton::FluentPushButton(const QString& text, QWidget* parent)
-    : QPushButton(text, parent) {
-    setCursor(Qt::PointingHandCursor);
-    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    : FluentPushButton(parent) {
+    setText(text);
 }
 
 FluentPushButton::FluentPushButton(QWidget* parent)
     : QPushButton(parent) {
+    setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 }

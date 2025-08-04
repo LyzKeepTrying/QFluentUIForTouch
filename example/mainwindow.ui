@@ -99,6 +99,19 @@
      <string>我是猫</string>
     </property>
    </widget>
+   <widget class="FluentLineEdit" name="fluentLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>390</y>
+      <width>261</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -132,6 +145,11 @@
    <class>FluentIconToggleButton</class>
    <extends>QWidget</extends>
    <header>fluent_icon_toggle_button.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>fluent_line_edit.h</header>
   </customwidget>
  </customwidgets>
  <resources>

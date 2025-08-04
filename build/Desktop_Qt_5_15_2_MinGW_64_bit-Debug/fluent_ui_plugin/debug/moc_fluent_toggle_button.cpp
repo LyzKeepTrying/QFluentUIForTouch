@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentToggleButton_t {
-    QByteArrayData data[8];
-    char stringdata0[115];
+    QByteArrayData data[9];
+    char stringdata0[127];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,13 +39,14 @@ QT_MOC_LITERAL(3, 45, 11), // "ThumbXStart"
 QT_MOC_LITERAL(4, 57, 9), // "ThumbXEnd"
 QT_MOC_LITERAL(5, 67, 10), // "ThumbColor"
 QT_MOC_LITERAL(6, 78, 18), // "BackgroundOffColor"
-QT_MOC_LITERAL(7, 97, 17) // "BackgroundOnColor"
+QT_MOC_LITERAL(7, 97, 17), // "BackgroundOnColor"
+QT_MOC_LITERAL(8, 115, 11) // "BorderColor"
 
     },
     "FluentToggleButton\0ThumbPosition\0"
     "ThumbRadius\0ThumbXStart\0ThumbXEnd\0"
     "ThumbColor\0BackgroundOffColor\0"
-    "BackgroundOnColor"
+    "BackgroundOnColor\0BorderColor"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +57,7 @@ static const uint qt_meta_data_FluentToggleButton[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-       7,   14, // properties
+       8,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -70,6 +71,7 @@ static const uint qt_meta_data_FluentToggleButton[] = {
        5, QMetaType::QColor, 0x00095103,
        6, QMetaType::QColor, 0x00095103,
        7, QMetaType::QColor, 0x00095103,
+       8, QMetaType::QColor, 0x00095103,
 
        0        // eod
 };
@@ -90,6 +92,7 @@ void FluentToggleButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 4: *reinterpret_cast< QColor*>(_v) = _t->getThumbColor(); break;
         case 5: *reinterpret_cast< QColor*>(_v) = _t->getBackgroundOffColor(); break;
         case 6: *reinterpret_cast< QColor*>(_v) = _t->getBackgroundOnColor(); break;
+        case 7: *reinterpret_cast< QColor*>(_v) = _t->getBorderColor(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -104,6 +107,7 @@ void FluentToggleButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 4: _t->setThumbColor(*reinterpret_cast< QColor*>(_v)); break;
         case 5: _t->setBackgroundOffColor(*reinterpret_cast< QColor*>(_v)); break;
         case 6: _t->setBackgroundOnColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 7: _t->setBorderColor(*reinterpret_cast< QColor*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -148,17 +152,17 @@ int FluentToggleButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 7;
+        _id -= 8;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

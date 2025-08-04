@@ -3,6 +3,7 @@
 #include "fluent_push_button.h"
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
+#include "fluent_line_edit.h"
 
 #include <QtCore/qplugin.h>
 
@@ -11,14 +12,15 @@
 FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     : QObject(parent)
 {
-    m_widgets.append(new FluentToggleButtonPlugin(this));
-    m_widgets.append(new FluentPushButtonPlugin(this));
-    m_widgets.append(new FluentIconPushButtonPlugin(this));
-    m_widgets.append(new FluentIconToggleButtonPlugin(this));
+    widget_list_.append(new FluentToggleButtonPlugin(this));
+    widget_list_.append(new FluentPushButtonPlugin(this));
+    widget_list_.append(new FluentIconPushButtonPlugin(this));
+    widget_list_.append(new FluentIconToggleButtonPlugin(this));
+    widget_list_.append(new FluentLineEditPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
-    return m_widgets;
+    return widget_list_;
 }
 
 /* FluentToggleButtonPlugin */
@@ -272,5 +274,69 @@ void FluentIconToggleButtonPlugin::initialize(QDesignerFormEditorInterface* core
         return;
     is_initialized_ = true;
 }
+
+/* FluentLineEditPlugin */
+
+FluentLineEditPlugin::FluentLineEditPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentLineEditPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentLineEditPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentLineEditPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentLineEditPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentLineEdit" name="fluentLineEdit">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentLineEditPlugin::includeFile() const {
+    return "fluent_line_edit.h";
+}
+
+QString FluentLineEditPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentLineEditPlugin::name() const {
+    return "FluentLineEdit";
+}
+
+QString FluentLineEditPlugin::toolTip() const {
+    return "Fluent Design Line Edit";
+}
+
+QString FluentLineEditPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentLineEditPlugin::createWidget(QWidget* parent) {
+    return new FluentLineEdit(parent);
+}
+
+void FluentLineEditPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
 
 

@@ -10,6 +10,7 @@ INCLUDEPATH += $$PWD/include
 SOURCES     += src/fluent_toggle_button.cpp \
                src/fluent_icon_push_button.cpp \
                src/fluent_icon_toggle_button.cpp \
+               src/fluent_line_edit.cpp \
                src/fluent_push_button.cpp \
                src/fluent_ui_plugin_collection.cpp
 HEADERS     += include/fluent_toggle_button.h \
@@ -17,6 +18,7 @@ HEADERS     += include/fluent_toggle_button.h \
                include/fluent_icon_toggle_button.h \
                include/fluent_push_button.h \
                include/fluent_ui_plugin_collection.h \
+               include/fluent_line_edit.h \
                include/define.h \
                include/theme.h
 
