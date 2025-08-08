@@ -4,6 +4,7 @@
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
+#include "fluent_spin_box.h"
 
 #include <QtCore/qplugin.h>
 
@@ -17,6 +18,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentIconPushButtonPlugin(this));
     widget_list_.append(new FluentIconToggleButtonPlugin(this));
     widget_list_.append(new FluentLineEditPlugin(this));
+    widget_list_.append(new FluentSpinBoxPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -332,6 +334,69 @@ QWidget* FluentLineEditPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentLineEditPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentSpinBoxPlugin */
+
+FluentSpinBoxPlugin::FluentSpinBoxPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentSpinBoxPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentSpinBoxPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentSpinBoxPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentSpinBoxPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentSpinBox" name="fluentSpinBox">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentSpinBoxPlugin::includeFile() const {
+    return "fluent_spin_box.h";
+}
+
+QString FluentSpinBoxPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentSpinBoxPlugin::name() const {
+    return "FluentSpinBox";
+}
+
+QString FluentSpinBoxPlugin::toolTip() const {
+    return "Fluent Design SpinBox";
+}
+
+QString FluentSpinBoxPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentSpinBoxPlugin::createWidget(QWidget* parent) {
+    return new FluentSpinBox(parent);
+}
+
+void FluentSpinBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

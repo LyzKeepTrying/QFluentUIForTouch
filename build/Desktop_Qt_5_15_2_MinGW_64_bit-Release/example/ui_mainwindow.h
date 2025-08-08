@@ -20,6 +20,7 @@
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
 #include "fluent_push_button.h"
+#include "fluent_spin_box.h"
 #include "fluent_toggle_button.h"
 
 QT_BEGIN_NAMESPACE
@@ -33,6 +34,7 @@ public:
     FluentIconPushButton *fluentIconPushButton;
     FluentIconToggleButton *fluentIconToggleButton;
     FluentLineEdit *fluentLineEdit;
+    FluentSpinBox *fluentSpinBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -72,6 +74,9 @@ public:
         fluentLineEdit = new FluentLineEdit(centralwidget);
         fluentLineEdit->setObjectName(QString::fromUtf8("fluentLineEdit"));
         fluentLineEdit->setGeometry(QRect(90, 390, 261, 41));
+        fluentSpinBox = new FluentSpinBox(centralwidget);
+        fluentSpinBox->setObjectName(QString::fromUtf8("fluentSpinBox"));
+        fluentSpinBox->setGeometry(QRect(90, 470, 141, 41));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

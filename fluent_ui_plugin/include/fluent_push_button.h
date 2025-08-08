@@ -16,8 +16,11 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentPushButton : public QPushButton {
     Q_OBJECT
+
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
+
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
+
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
 
 public:
@@ -32,8 +35,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
-    constexpr static int k_default_width_ = 48;
-    constexpr static int k_default_height_ = 24;
+    constexpr static QSize k_default_size_{48, 24};
 };
 
 #endif // FLUENT_PUSH_BUTTON_H

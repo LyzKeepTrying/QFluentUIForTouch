@@ -1,4 +1,5 @@
 release/fluent_toggle_button.o
+release/fluent_spin_box.o
 release/fluent_icon_push_button.o
 release/fluent_icon_toggle_button.o
 release/fluent_line_edit.o
@@ -8,5 +9,6 @@ release/moc_fluent_toggle_button.o
 release/moc_fluent_icon_push_button.o
 release/moc_fluent_icon_toggle_button.o
 release/moc_fluent_push_button.o
+release/moc_fluent_spin_box.o
 release/moc_fluent_ui_plugin_collection.o
 release/moc_fluent_line_edit.o

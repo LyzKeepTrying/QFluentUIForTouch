@@ -33,8 +33,8 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
-    constexpr static QSize k_default_size{64, 64};
-    constexpr static QSize k_default_icon_size{38, 38};
+    constexpr static QSize k_default_size_{64, 64};
+    constexpr static QSize k_default_icon_size_{38, 38};
 };
 
 

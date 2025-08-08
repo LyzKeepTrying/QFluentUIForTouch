@@ -33,3 +33,5 @@ Q_PROPERTY(type name READ get##name WRITE set##name) \
     private:
 
 #endif // DEFINE_H
+
+

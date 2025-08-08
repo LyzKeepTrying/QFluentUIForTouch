@@ -8,6 +8,8 @@ FluentLineEdit::FluentLineEdit(QWidget* parent)
     : QLineEdit(parent) {
     setContentsMargins(0, 0, 0, 0);
     setTextMargins(6, 0, 6, 0);
+
+    // 光标闪烁计时
     QTimer* cursor_flash_timer = new QTimer(this);
     connect(cursor_flash_timer, &QTimer::timeout, this, [=]{
         if(hasFocus()){
@@ -23,7 +25,7 @@ FluentLineEdit::FluentLineEdit(const QString& text, QWidget* parent)
 }
 
 QSize FluentLineEdit::sizeHint() const{
-    return k_default_size;
+    return k_default_size_;
 }
 
 void FluentLineEdit::paintEvent(QPaintEvent* event) {
@@ -33,15 +35,9 @@ void FluentLineEdit::paintEvent(QPaintEvent* event) {
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     // 绘制背景
-    if (hasFocus()){
-        painter.setPen(getFocusBorderColor());
-        painter.setBrush(getBackgroundColor());
-        painter.drawRoundedRect(rect(), 8, 8);
-    }else{
-        painter.setPen(getBorderColor());
-        painter.setBrush(getBackgroundColor());
-        painter.drawRoundedRect(rect(), 8, 8);
-    }
+    painter.setPen(hasFocus() ? getBorderFocusOnColor() : getBorderFocusOffColor());
+    painter.setBrush(getBackgroundColor());
+    painter.drawRoundedRect(rect(), 8, 8);
 
     // 文本区域 = 整个 rect 减去 textMargins
     const auto text_margin = textMargins();
@@ -64,7 +60,7 @@ void FluentLineEdit::paintEvent(QPaintEvent* event) {
     painter.setPen(getTextColor());
     painter.drawText(text_rect, Qt::AlignVCenter | Qt::AlignLeft, draw_text);
 
-    // 用 QTextLayout 来计算光标 X 坐标
+    // 绘制光标
     if (hasFocus() && getShowCursor()) {
         QTextLayout layout(draw_text, font);
         layout.beginLayout();
@@ -74,7 +70,7 @@ void FluentLineEdit::paintEvent(QPaintEvent* event) {
 
         int cursor_pos = cursorPosition();
         qreal x_inline = line.cursorToX(cursor_pos);
-        int cx = text_rect.x() + int(x_inline) + 2;
+        int cx = text_rect.x() + int(x_inline) + 1;
 
         painter.setPen(getTextColor());
         painter.drawLine(
@@ -84,5 +80,4 @@ void FluentLineEdit::paintEvent(QPaintEvent* event) {
             text_rect.bottom() - (text_rect.height() / 4)
             );
     }
-
 }

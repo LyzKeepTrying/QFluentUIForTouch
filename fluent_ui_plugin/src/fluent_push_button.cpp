@@ -15,7 +15,7 @@ FluentPushButton::FluentPushButton(QWidget* parent)
 }
 
 QSize FluentPushButton::sizeHint() const {
-    QSize base(k_default_width_, k_default_height_);
+    QSize base(k_default_size_);
     if (!icon().isNull()) {
         // 考虑图标尺寸
         QSize icon_size = iconSize();
@@ -64,11 +64,13 @@ void FluentPushButton::paintEvent(QPaintEvent* event) {
 
 void FluentPushButton::mousePressEvent(QMouseEvent* event) {
     setBackgroundColor(getBackgroundColor().darker(150));
+    setBorderColor(getBorderColor().darker(200));
     QPushButton::mousePressEvent(event);
 }
 
 void FluentPushButton::mouseReleaseEvent(QMouseEvent* event) {
     setBackgroundColor(getBackgroundColor().lighter(150));
+    setBorderColor(getBorderColor().lighter(200));
     QPushButton::mouseReleaseEvent(event);
 }
 

@@ -1,8 +1,8 @@
 #include "fluent_icon_push_button.h"
 #include "qpainter.h"
 
-constexpr QSize FluentIconPushButton::k_default_size;
-constexpr QSize FluentIconPushButton::k_default_icon_size;
+constexpr QSize FluentIconPushButton::k_default_size_;
+constexpr QSize FluentIconPushButton::k_default_icon_size_;
 
 FluentIconPushButton::FluentIconPushButton(QWidget* parent)
     : QPushButton(parent)
@@ -10,7 +10,7 @@ FluentIconPushButton::FluentIconPushButton(QWidget* parent)
     setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    setIconSize(k_default_icon_size);
+    setIconSize(k_default_icon_size_);
 }
 
 FluentIconPushButton::FluentIconPushButton(const QIcon& icon, const QString& text, QWidget* parent)
@@ -20,7 +20,7 @@ FluentIconPushButton::FluentIconPushButton(const QIcon& icon, const QString& tex
 }
 
 QSize FluentIconPushButton::sizeHint() const {
-    return k_default_size;
+    return k_default_size_;
 }
 
 void FluentIconPushButton::paintEvent(QPaintEvent* /*event*/) {
@@ -57,10 +57,12 @@ void FluentIconPushButton::paintEvent(QPaintEvent* /*event*/) {
 
 void FluentIconPushButton::mousePressEvent(QMouseEvent* event) {
     setBackgroundColor(getBackgroundColor().darker(150));
+    setBorderColor(getBorderColor().darker(200));
     QPushButton::mousePressEvent(event);
 }
 
 void FluentIconPushButton::mouseReleaseEvent(QMouseEvent* event) {
     setBackgroundColor(getBackgroundColor().lighter(150));
+    setBorderColor(getBorderColor().lighter(200));
     QPushButton::mouseReleaseEvent(event);
 }

@@ -1,8 +1,8 @@
 #include "fluent_icon_toggle_button.h"
 #include "qpainter.h"
 
-constexpr QSize FluentIconToggleButton::k_default_size;
-constexpr QSize FluentIconToggleButton::k_default_icon_size;
+constexpr QSize FluentIconToggleButton::k_default_size_;
+constexpr QSize FluentIconToggleButton::k_default_icon_size_;
 
 FluentIconToggleButton::FluentIconToggleButton(QWidget* parent)
     : QAbstractButton(parent)
@@ -11,11 +11,11 @@ FluentIconToggleButton::FluentIconToggleButton(QWidget* parent)
     setCheckable(true);
     setCursor(Qt::PointingHandCursor);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    setIconSize(k_default_icon_size);
+    setIconSize(k_default_icon_size_);
 }
 
 QSize FluentIconToggleButton::sizeHint() const {
-    return k_default_size;
+    return k_default_size_;
 }
 
 void FluentIconToggleButton::paintEvent(QPaintEvent* /*event*/) {
@@ -56,6 +56,7 @@ void FluentIconToggleButton::mousePressEvent(QMouseEvent* event) {
     }else{
         setBackgroundColor(getBackgroundColor().darker(150));
     }
+    setBorderColor(getBorderColor().darker(200));
     QAbstractButton::mousePressEvent(event);
 }
 
@@ -65,5 +66,6 @@ void FluentIconToggleButton::mouseReleaseEvent(QMouseEvent* event) {
     }else{
         setBackgroundColor(getBackgroundColor().lighter(150));
     }
+    setBorderColor(getBorderColor().lighter(200));
     QAbstractButton::mouseReleaseEvent(event);
 }

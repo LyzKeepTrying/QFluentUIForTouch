@@ -1,9 +1,7 @@
-#ifndef FLUENT_LINE_EDIT_H
-#define FLUENT_LINE_EDIT_H
+#ifndef FLUENT_SPIN_BOX_H
+#define FLUENT_SPIN_BOX_H
 
-#include <QLineEdit>
 #include <QSpinBox>
-
 #include "define.h"
 #include "theme.h"
 
@@ -13,28 +11,32 @@
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_IMPORT
 #endif
 
-class FLUENTUI_PLUGIN_EXPORT FluentLineEdit : public QLineEdit {
+class FLUENTUI_PLUGIN_EXPORT FluentSpinBox : public QSpinBox {
     Q_OBJECT
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-
     DECLARE_PROPERTY(QColor, BorderFocusOnColor, QFluentUI::ThemeColor::Light::on_color)
     DECLARE_PROPERTY(QColor, BorderFocusOffColor, QFluentUI::ThemeColor::Light::border_color)
-
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
-    DECLARE_PROPERTY(bool, ShowCursor, true)
+    DECLARE_PROPERTY(bool, PlusButtonIsPressed, false);
+    DECLARE_PROPERTY(bool, MinusButtonIsPressed, false);
+    DECLARE_PROPERTY(bool, ShowCursor, true);
 
 public:
-    explicit FluentLineEdit(QWidget* parent = nullptr);
-    explicit FluentLineEdit(const QString& text, QWidget* parent = nullptr);
+    explicit FluentSpinBox(QWidget* parent = nullptr);
+
+    QSize sizeHint() const override;
 
 protected:
     void paintEvent(QPaintEvent* event) override;
-    QSize sizeHint() const override;
+    void mousePressEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
-    constexpr static QSize k_default_size_{72, 24};
+    QRect plus_button_rect_;
+    QRect minus_button_rect_;
+
+    constexpr static QSize k_default_size_{100, 24};
 };
 
-#endif // FLUENT_LINE_EDIT_H
+#endif // FLUENT_SPIN_BOX_H

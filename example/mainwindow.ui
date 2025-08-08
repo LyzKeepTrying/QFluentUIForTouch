@@ -112,6 +112,16 @@
      <string/>
     </property>
    </widget>
+   <widget class="FluentSpinBox" name="fluentSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>470</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -150,6 +160,11 @@
    <class>FluentLineEdit</class>
    <extends>QLineEdit</extends>
    <header>fluent_line_edit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>fluent_spin_box.h</header>
   </customwidget>
  </customwidgets>
  <resources>

@@ -1,4 +1,5 @@
 #include "fluent_toggle_button.h"
+
 #include <QPainter>
 #include <QEasingCurve>
 #include <QStyleOption>
@@ -31,7 +32,7 @@ FluentToggleButton::FluentToggleButton(QWidget* parent)
 }
 
 QSize FluentToggleButton::sizeHint() const {
-    return QSize(k_default_width_, k_default_height_);
+    return QSize(k_default_size_);
 }
 
 void FluentToggleButton::paintEvent(QPaintEvent* event) {
@@ -65,6 +66,7 @@ void FluentToggleButton::mousePressEvent(QMouseEvent* event) {
 
     // Fluent风格的按压效果
     setThumbColor(getThumbColor().darker(150));
+    setBorderColor(getBorderColor().darker(200));
 
     QAbstractButton::mousePressEvent(event);
 
@@ -73,6 +75,7 @@ void FluentToggleButton::mousePressEvent(QMouseEvent* event) {
 void FluentToggleButton::mouseReleaseEvent(QMouseEvent* event){
 
     setThumbColor(getThumbColor().lighter(150));
+    setBorderColor(getBorderColor().lighter(200));
 
     QAbstractButton::mouseReleaseEvent(event);
 
