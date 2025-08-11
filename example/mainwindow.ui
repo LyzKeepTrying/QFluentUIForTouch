@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>486</width>
+    <height>871</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>40</y>
+      <y>50</y>
       <width>71</width>
       <height>31</height>
      </rect>
@@ -103,7 +103,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>390</y>
+      <y>380</y>
       <width>261</width>
       <height>41</height>
      </rect>
@@ -116,10 +116,48 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>470</y>
+      <y>450</y>
       <width>141</width>
       <height>41</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="FluentDoubleSpinBox" name="fluentDoubleSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>450</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="FluentCircleSpinBox" name="fluentCircleSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>520</y>
+      <width>141</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="ThumbRadius">
+     <double>14.000000000000000</double>
+    </property>
+    <property name="ArcWidth">
+     <double>12.000000000000000</double>
+    </property>
+    <property name="ShowCursor">
+     <bool>true</bool>
+    </property>
+    <property name="MaxArcLen">
+     <number>300</number>
+    </property>
+    <property name="ArcRectAdjust">
+     <number>15</number>
+    </property>
+    <property name="ThumbIsPressed">
+     <bool>false</bool>
     </property>
    </widget>
   </widget>
@@ -128,7 +166,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>486</width>
      <height>23</height>
     </rect>
    </property>
@@ -165,6 +203,16 @@
    <class>FluentSpinBox</class>
    <extends>QSpinBox</extends>
    <header>fluent_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentDoubleSpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>fluent_double_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentCircleSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>fluent_circle_spin_box.h</header>
   </customwidget>
  </customwidgets>
  <resources>

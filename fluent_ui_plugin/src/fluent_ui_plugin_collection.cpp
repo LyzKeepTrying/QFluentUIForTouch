@@ -5,6 +5,8 @@
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
 #include "fluent_spin_box.h"
+#include "fluent_double_spin_box.h"
+#include "fluent_circle_spin_box.h"
 
 #include <QtCore/qplugin.h>
 
@@ -19,6 +21,8 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentIconToggleButtonPlugin(this));
     widget_list_.append(new FluentLineEditPlugin(this));
     widget_list_.append(new FluentSpinBoxPlugin(this));
+    widget_list_.append(new FluentDoubleSpinBoxPlugin(this));
+    widget_list_.append(new FluentCircleSpinBoxPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -403,5 +407,130 @@ void FluentSpinBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
     is_initialized_ = true;
 }
 
+/* FluentDoubleSpinBoxPlugin */
+
+FluentDoubleSpinBoxPlugin::FluentDoubleSpinBoxPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentDoubleSpinBoxPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentDoubleSpinBoxPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentDoubleSpinBoxPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentDoubleSpinBoxPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentDoubleSpinBox" name="fluentDoubleSpinBox">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentDoubleSpinBoxPlugin::includeFile() const {
+    return "fluent_double_spin_box.h";
+}
+
+QString FluentDoubleSpinBoxPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentDoubleSpinBoxPlugin::name() const {
+    return "FluentDoubleSpinBox";
+}
+
+QString FluentDoubleSpinBoxPlugin::toolTip() const {
+    return "Fluent Design DoubleSpinBox";
+}
+
+QString FluentDoubleSpinBoxPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentDoubleSpinBoxPlugin::createWidget(QWidget* parent) {
+    return new FluentDoubleSpinBox(parent);
+}
+
+void FluentDoubleSpinBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentCircleSpinBoxPlugin */
+
+FluentCircleSpinBoxPlugin::FluentCircleSpinBoxPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentCircleSpinBoxPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentCircleSpinBoxPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentCircleSpinBoxPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentCircleSpinBoxPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentCircleSpinBox" name="fluentCircleSpinBox">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentCircleSpinBoxPlugin::includeFile() const {
+    return "fluent_circle_spin_box.h";
+}
+
+QString FluentCircleSpinBoxPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentCircleSpinBoxPlugin::name() const {
+    return "FluentCircleSpinBox";
+}
+
+QString FluentCircleSpinBoxPlugin::toolTip() const {
+    return "Fluent Design CircleSpinBox";
+}
+
+QString FluentCircleSpinBoxPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentCircleSpinBoxPlugin::createWidget(QWidget* parent) {
+    return new FluentCircleSpinBox(parent);
+}
+
+void FluentCircleSpinBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
 
 

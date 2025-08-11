@@ -22,6 +22,105 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
+struct qt_meta_stringdata_FluentWidgetsPluginCollection_t {
+    QByteArrayData data[1];
+    char stringdata0[30];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentWidgetsPluginCollection_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentWidgetsPluginCollection_t qt_meta_stringdata_FluentWidgetsPluginCollection = {
+    {
+QT_MOC_LITERAL(0, 0, 29) // "FluentWidgetsPluginCollection"
+
+    },
+    "FluentWidgetsPluginCollection"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentWidgetsPluginCollection[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentWidgetsPluginCollection::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentWidgetsPluginCollection::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentWidgetsPluginCollection.data,
+    qt_meta_data_FluentWidgetsPluginCollection,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentWidgetsPluginCollection::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentWidgetsPluginCollection::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentWidgetsPluginCollection.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetCollectionInterface"))
+        return static_cast< QDesignerCustomWidgetCollectionInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.Qt.QDesignerCustomWidgetCollectionInterface"))
+        return static_cast< QDesignerCustomWidgetCollectionInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentWidgetsPluginCollection::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
+
+QT_PLUGIN_METADATA_SECTION
+static constexpr unsigned char qt_pluginMetaData[] = {
+    'Q', 'T', 'M', 'E', 'T', 'A', 'D', 'A', 'T', 'A', ' ', '!',
+    // metadata version, Qt version, architectural requirements
+    0, QT_VERSION_MAJOR, QT_VERSION_MINOR, qPluginArchRequirements(),
+    0xbf, 
+    // "IID"
+    0x02,  0x78,  0x3a,  'o',  'r',  'g',  '.',  'q', 
+    't',  '-',  'p',  'r',  'o',  'j',  'e',  'c', 
+    't',  '.',  'Q',  't',  '.',  'Q',  'D',  'e', 
+    's',  'i',  'g',  'n',  'e',  'r',  'C',  'u', 
+    's',  't',  'o',  'm',  'W',  'i',  'd',  'g', 
+    'e',  't',  'C',  'o',  'l',  'l',  'e',  'c', 
+    't',  'i',  'o',  'n',  'I',  'n',  't',  'e', 
+    'r',  'f',  'a',  'c',  'e', 
+    // "className"
+    0x03,  0x78,  0x1d,  'F',  'l',  'u',  'e',  'n', 
+    't',  'W',  'i',  'd',  'g',  'e',  't',  's', 
+    'P',  'l',  'u',  'g',  'i',  'n',  'C',  'o', 
+    'l',  'l',  'e',  'c',  't',  'i',  'o',  'n', 
+    0xff, 
+};
+QT_MOC_EXPORT_PLUGIN(FluentWidgetsPluginCollection, FluentWidgetsPluginCollection)
+
 struct qt_meta_stringdata_FluentToggleButtonPlugin_t {
     QByteArrayData data[1];
     char stringdata0[25];
@@ -466,25 +565,25 @@ int FluentSpinBoxPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QObject::qt_metacall(_c, _id, _a);
     return _id;
 }
-struct qt_meta_stringdata_FluentWidgetsPluginCollection_t {
+struct qt_meta_stringdata_FluentDoubleSpinBoxPlugin_t {
     QByteArrayData data[1];
-    char stringdata0[30];
+    char stringdata0[26];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_FluentWidgetsPluginCollection_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentDoubleSpinBoxPlugin_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_FluentWidgetsPluginCollection_t qt_meta_stringdata_FluentWidgetsPluginCollection = {
+static const qt_meta_stringdata_FluentDoubleSpinBoxPlugin_t qt_meta_stringdata_FluentDoubleSpinBoxPlugin = {
     {
-QT_MOC_LITERAL(0, 0, 29) // "FluentWidgetsPluginCollection"
+QT_MOC_LITERAL(0, 0, 25) // "FluentDoubleSpinBoxPlugin"
 
     },
-    "FluentWidgetsPluginCollection"
+    "FluentDoubleSpinBoxPlugin"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_FluentWidgetsPluginCollection[] = {
+static const uint qt_meta_data_FluentDoubleSpinBoxPlugin[] = {
 
  // content:
        8,       // revision
@@ -500,7 +599,7 @@ static const uint qt_meta_data_FluentWidgetsPluginCollection[] = {
        0        // eod
 };
 
-void FluentWidgetsPluginCollection::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void FluentDoubleSpinBoxPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -508,62 +607,111 @@ void FluentWidgetsPluginCollection::qt_static_metacall(QObject *_o, QMetaObject:
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject FluentWidgetsPluginCollection::staticMetaObject = { {
+QT_INIT_METAOBJECT const QMetaObject FluentDoubleSpinBoxPlugin::staticMetaObject = { {
     QMetaObject::SuperData::link<QObject::staticMetaObject>(),
-    qt_meta_stringdata_FluentWidgetsPluginCollection.data,
-    qt_meta_data_FluentWidgetsPluginCollection,
+    qt_meta_stringdata_FluentDoubleSpinBoxPlugin.data,
+    qt_meta_data_FluentDoubleSpinBoxPlugin,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *FluentWidgetsPluginCollection::metaObject() const
+const QMetaObject *FluentDoubleSpinBoxPlugin::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *FluentWidgetsPluginCollection::qt_metacast(const char *_clname)
+void *FluentDoubleSpinBoxPlugin::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_FluentWidgetsPluginCollection.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_FluentDoubleSpinBoxPlugin.stringdata0))
         return static_cast<void*>(this);
-    if (!strcmp(_clname, "QDesignerCustomWidgetCollectionInterface"))
-        return static_cast< QDesignerCustomWidgetCollectionInterface*>(this);
-    if (!strcmp(_clname, "org.qt-project.Qt.QDesignerCustomWidgetCollectionInterface"))
-        return static_cast< QDesignerCustomWidgetCollectionInterface*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
     return QObject::qt_metacast(_clname);
 }
 
-int FluentWidgetsPluginCollection::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int FluentDoubleSpinBoxPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     return _id;
 }
-
-QT_PLUGIN_METADATA_SECTION
-static constexpr unsigned char qt_pluginMetaData[] = {
-    'Q', 'T', 'M', 'E', 'T', 'A', 'D', 'A', 'T', 'A', ' ', '!',
-    // metadata version, Qt version, architectural requirements
-    0, QT_VERSION_MAJOR, QT_VERSION_MINOR, qPluginArchRequirements(),
-    0xbf, 
-    // "IID"
-    0x02,  0x78,  0x3a,  'o',  'r',  'g',  '.',  'q', 
-    't',  '-',  'p',  'r',  'o',  'j',  'e',  'c', 
-    't',  '.',  'Q',  't',  '.',  'Q',  'D',  'e', 
-    's',  'i',  'g',  'n',  'e',  'r',  'C',  'u', 
-    's',  't',  'o',  'm',  'W',  'i',  'd',  'g', 
-    'e',  't',  'C',  'o',  'l',  'l',  'e',  'c', 
-    't',  'i',  'o',  'n',  'I',  'n',  't',  'e', 
-    'r',  'f',  'a',  'c',  'e', 
-    // "className"
-    0x03,  0x78,  0x1d,  'F',  'l',  'u',  'e',  'n', 
-    't',  'W',  'i',  'd',  'g',  'e',  't',  's', 
-    'P',  'l',  'u',  'g',  'i',  'n',  'C',  'o', 
-    'l',  'l',  'e',  'c',  't',  'i',  'o',  'n', 
-    0xff, 
+struct qt_meta_stringdata_FluentCircleSpinBoxPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[26];
 };
-QT_MOC_EXPORT_PLUGIN(FluentWidgetsPluginCollection, FluentWidgetsPluginCollection)
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentCircleSpinBoxPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentCircleSpinBoxPlugin_t qt_meta_stringdata_FluentCircleSpinBoxPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 25) // "FluentCircleSpinBoxPlugin"
 
+    },
+    "FluentCircleSpinBoxPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentCircleSpinBoxPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentCircleSpinBoxPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentCircleSpinBoxPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentCircleSpinBoxPlugin.data,
+    qt_meta_data_FluentCircleSpinBoxPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentCircleSpinBoxPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentCircleSpinBoxPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentCircleSpinBoxPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentCircleSpinBoxPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

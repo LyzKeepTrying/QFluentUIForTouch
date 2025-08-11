@@ -11,6 +11,22 @@
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_IMPORT
 #endif
 
+class FLUENTUI_PLUGIN_EXPORT FluentWidgetsPluginCollection
+    : public QObject
+    , public QDesignerCustomWidgetCollectionInterface
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetCollectionInterface")
+    Q_INTERFACES(QDesignerCustomWidgetCollectionInterface)
+
+public:
+    explicit FluentWidgetsPluginCollection(QObject* parent = nullptr);
+    QList<QDesignerCustomWidgetInterface*> customWidgets() const override;
+
+private:
+    QList<QDesignerCustomWidgetInterface*> widget_list_;
+};
+
 class FLUENTUI_PLUGIN_EXPORT FluentToggleButtonPlugin
     : public QObject
     , public QDesignerCustomWidgetInterface
@@ -146,7 +162,6 @@ private:
     bool is_initialized_ = false;
 };
 
-
 class FLUENTUI_PLUGIN_EXPORT FluentSpinBoxPlugin
     : public QObject
     , public QDesignerCustomWidgetInterface
@@ -174,20 +189,58 @@ private:
     bool is_initialized_ = false;
 };
 
-class FLUENTUI_PLUGIN_EXPORT FluentWidgetsPluginCollection
+class FLUENTUI_PLUGIN_EXPORT FluentDoubleSpinBoxPlugin
     : public QObject
-    , public QDesignerCustomWidgetCollectionInterface
+    , public QDesignerCustomWidgetInterface
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetCollectionInterface")
-    Q_INTERFACES(QDesignerCustomWidgetCollectionInterface)
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
 
 public:
-    explicit FluentWidgetsPluginCollection(QObject* parent = nullptr);
-    QList<QDesignerCustomWidgetInterface*> customWidgets() const override;
+    explicit FluentDoubleSpinBoxPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
 
 private:
-    QList<QDesignerCustomWidgetInterface*> widget_list_;
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentCircleSpinBoxPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentCircleSpinBoxPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
 };
 
 

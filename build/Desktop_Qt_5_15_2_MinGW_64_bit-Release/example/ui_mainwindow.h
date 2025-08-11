@@ -16,6 +16,8 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "fluent_circle_spin_box.h"
+#include "fluent_double_spin_box.h"
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
@@ -35,6 +37,8 @@ public:
     FluentIconToggleButton *fluentIconToggleButton;
     FluentLineEdit *fluentLineEdit;
     FluentSpinBox *fluentSpinBox;
+    FluentDoubleSpinBox *fluentDoubleSpinBox;
+    FluentCircleSpinBox *fluentCircleSpinBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -42,12 +46,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(486, 871);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         fluentToggleButton = new FluentToggleButton(centralwidget);
         fluentToggleButton->setObjectName(QString::fromUtf8("fluentToggleButton"));
-        fluentToggleButton->setGeometry(QRect(90, 40, 71, 31));
+        fluentToggleButton->setGeometry(QRect(90, 50, 71, 31));
         fluentPushButton = new FluentPushButton(centralwidget);
         fluentPushButton->setObjectName(QString::fromUtf8("fluentPushButton"));
         fluentPushButton->setGeometry(QRect(90, 110, 91, 41));
@@ -73,14 +77,26 @@ public:
         fluentIconToggleButton->setToggledIcon(icon1);
         fluentLineEdit = new FluentLineEdit(centralwidget);
         fluentLineEdit->setObjectName(QString::fromUtf8("fluentLineEdit"));
-        fluentLineEdit->setGeometry(QRect(90, 390, 261, 41));
+        fluentLineEdit->setGeometry(QRect(90, 380, 261, 41));
         fluentSpinBox = new FluentSpinBox(centralwidget);
         fluentSpinBox->setObjectName(QString::fromUtf8("fluentSpinBox"));
-        fluentSpinBox->setGeometry(QRect(90, 470, 141, 41));
+        fluentSpinBox->setGeometry(QRect(90, 450, 141, 41));
+        fluentDoubleSpinBox = new FluentDoubleSpinBox(centralwidget);
+        fluentDoubleSpinBox->setObjectName(QString::fromUtf8("fluentDoubleSpinBox"));
+        fluentDoubleSpinBox->setGeometry(QRect(260, 450, 141, 41));
+        fluentCircleSpinBox = new FluentCircleSpinBox(centralwidget);
+        fluentCircleSpinBox->setObjectName(QString::fromUtf8("fluentCircleSpinBox"));
+        fluentCircleSpinBox->setGeometry(QRect(90, 520, 141, 121));
+        fluentCircleSpinBox->setThumbRadius(14.000000000000000);
+        fluentCircleSpinBox->setArcWidth(12.000000000000000);
+        fluentCircleSpinBox->setShowCursor(true);
+        fluentCircleSpinBox->setMaxArcLen(300);
+        fluentCircleSpinBox->setArcRectAdjust(15);
+        fluentCircleSpinBox->setThumbIsPressed(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 23));
+        menubar->setGeometry(QRect(0, 0, 486, 23));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

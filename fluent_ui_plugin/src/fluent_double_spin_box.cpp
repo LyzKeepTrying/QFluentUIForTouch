@@ -1,12 +1,12 @@
-#include "fluent_spin_box.h"
+#include "fluent_double_spin_box.h"
 
 #include <QPainter>
 #include <QLineEdit>
 #include <QTimer>
 #include <QTextLayout>
 
-FluentSpinBox::FluentSpinBox(QWidget* parent)
-    : QSpinBox(parent) {
+FluentDoubleSpinBox::FluentDoubleSpinBox(QWidget* parent)
+    : QDoubleSpinBox(parent) {
     setCursor(Qt::PointingHandCursor);
     setFrame(false);
     if (lineEdit()) {
@@ -24,11 +24,11 @@ FluentSpinBox::FluentSpinBox(QWidget* parent)
     cursor_flash_timer->start(800);
 }
 
-QSize FluentSpinBox::sizeHint() const {
+QSize FluentDoubleSpinBox::sizeHint() const {
     return QSize(k_default_size_);
 }
 
-void FluentSpinBox::paintEvent(QPaintEvent* event) {
+void FluentDoubleSpinBox::paintEvent(QPaintEvent* event) {
     Q_UNUSED(event)
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing |
@@ -40,8 +40,6 @@ void FluentSpinBox::paintEvent(QPaintEvent* event) {
                               : getBorderFocusOffColor());
     painter.setBrush(getBackgroundColor());
     painter.drawRoundedRect(rect(), 8, 8);
-
-
 
     // 计算按钮大小和位置（正方形，边长 = 高度）
     int btn_size = height();
@@ -94,7 +92,7 @@ void FluentSpinBox::paintEvent(QPaintEvent* event) {
     }
 }
 
-void FluentSpinBox::mousePressEvent(QMouseEvent* event) {
+void FluentDoubleSpinBox::mousePressEvent(QMouseEvent* event) {
     if (plus_button_rect_.contains(event->pos())) {
         setPlusButtonIsPressed(true);
         stepUp();
@@ -106,11 +104,11 @@ void FluentSpinBox::mousePressEvent(QMouseEvent* event) {
         setMinusButtonIsPressed(false);
     }
     lineEdit()->setCursorPosition(lineEdit()->text().length());
-    QSpinBox::mousePressEvent(event);
+    QDoubleSpinBox::mousePressEvent(event);
 }
 
-void FluentSpinBox::mouseReleaseEvent(QMouseEvent* event) {
+void FluentDoubleSpinBox::mouseReleaseEvent(QMouseEvent* event) {
     setPlusButtonIsPressed(false);
     setMinusButtonIsPressed(false);
-    QSpinBox::mouseReleaseEvent(event);
+    QDoubleSpinBox::mouseReleaseEvent(event);
 }
