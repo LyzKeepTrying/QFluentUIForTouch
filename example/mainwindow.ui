@@ -160,6 +160,22 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="FluentLineSpinBox" name="fluentLineSpinBox">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>660</y>
+      <width>301</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="ThumbRadius">
+     <double>15.000000000000000</double>
+    </property>
+    <property name="LineWidth">
+     <double>13.000000000000000</double>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -213,6 +229,11 @@
    <class>FluentCircleSpinBox</class>
    <extends>QSpinBox</extends>
    <header>fluent_circle_spin_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentLineSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>fluent_line_spin_box.h</header>
   </customwidget>
  </customwidgets>
  <resources>

@@ -21,6 +21,7 @@
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
+#include "fluent_line_spin_box.h"
 #include "fluent_push_button.h"
 #include "fluent_spin_box.h"
 #include "fluent_toggle_button.h"
@@ -39,6 +40,7 @@ public:
     FluentSpinBox *fluentSpinBox;
     FluentDoubleSpinBox *fluentDoubleSpinBox;
     FluentCircleSpinBox *fluentCircleSpinBox;
+    FluentLineSpinBox *fluentLineSpinBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -93,6 +95,11 @@ public:
         fluentCircleSpinBox->setMaxArcLen(300);
         fluentCircleSpinBox->setArcRectAdjust(15);
         fluentCircleSpinBox->setThumbIsPressed(false);
+        fluentLineSpinBox = new FluentLineSpinBox(centralwidget);
+        fluentLineSpinBox->setObjectName(QString::fromUtf8("fluentLineSpinBox"));
+        fluentLineSpinBox->setGeometry(QRect(90, 660, 261, 51));
+        fluentLineSpinBox->setThumbRadius(15.000000000000000);
+        fluentLineSpinBox->setLineWidth(13.000000000000000);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

@@ -1,5 +1,5 @@
-#ifndef FLUENT_CIRCLE_SPIN_BOX_H
-#define FLUENT_CIRCLE_SPIN_BOX_H
+#ifndef FLUENT_LINE_SPIN_BOX_H
+#define FLUENT_LINE_SPIN_BOX_H
 
 #include <QSpinBox>
 #include "define.h"
@@ -11,7 +11,7 @@
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_IMPORT
 #endif
 
-class FLUENTUI_PLUGIN_EXPORT FluentCircleSpinBox : public QSpinBox {
+class FLUENTUI_PLUGIN_EXPORT FluentLineSpinBox : public QSpinBox {
     Q_OBJECT
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
@@ -20,15 +20,13 @@ class FLUENTUI_PLUGIN_EXPORT FluentCircleSpinBox : public QSpinBox {
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY(qreal, ThumbRadius, 11.0);
-    DECLARE_PROPERTY(qreal, ArcWidth, 10.0);
+    DECLARE_PROPERTY(qreal, LineWidth, 10.0);
     DECLARE_PROPERTY(bool, ShowCursor, true);
-    DECLARE_PROPERTY(int, MaxArcLen, 300);
-    DECLARE_PROPERTY(int, CurArcLen, 150);
-    DECLARE_PROPERTY(int, ArcRectAdjust, 15);
     DECLARE_PROPERTY(bool, ThumbIsPressed, false);
+    DECLARE_PROPERTY(Qt::Orientation, DirectionState, Qt::Horizontal);
 
 public:
-    explicit FluentCircleSpinBox(QWidget* parent = nullptr);
+    explicit FluentLineSpinBox(QWidget* parent = nullptr);
 
     QSize sizeHint() const override;
 
@@ -39,10 +37,9 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
-    QPointF arcEndPoint(const QRectF &arcRect, int startAngle16, int spanAngle16);
-    constexpr static QSize k_default_size_{100, 100};
-    QRect arc_rect_;
+    constexpr static QSize k_default_size_{100, 24};
+    QRect line_rect_;
     QPointF cur_thumb_pos_;
 };
 
-#endif // FLUENT_CIRCLE_SPIN_BOX_H
+#endif // FLUENT_LINE_SPIN_BOX_H

@@ -11,6 +11,7 @@ SOURCES     += src/fluent_toggle_button.cpp \
                src/fluent_spin_box.cpp \
                src/fluent_double_spin_box.cpp \
                src/fluent_circle_spin_box.cpp \
+               src/fluent_line_spin_box.cpp \
                src/fluent_icon_push_button.cpp \
                src/fluent_icon_toggle_button.cpp \
                src/fluent_line_edit.cpp \
@@ -23,6 +24,7 @@ HEADERS     += include/fluent_toggle_button.h \
                include/fluent_spin_box.h \
                include/fluent_double_spin_box.h \
                include/fluent_circle_spin_box.h \
+               include/fluent_line_spin_box.h \
                include/fluent_ui_plugin_collection.h \
                include/fluent_line_edit.h \
                include/define.h \
