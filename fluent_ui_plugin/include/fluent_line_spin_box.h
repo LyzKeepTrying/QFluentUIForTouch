@@ -18,7 +18,10 @@ class FLUENTUI_PLUGIN_EXPORT FluentLineSpinBox : public QSpinBox {
     DECLARE_PROPERTY(QColor, BorderFocusOnColor, QFluentUI::ThemeColor::Light::on_color)
     DECLARE_PROPERTY(QColor, BorderFocusOffColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
+    DECLARE_PROPERTY(QColor, SliderOnColor, QFluentUI::ThemeColor::Light::on_color)
+    DECLARE_PROPERTY(QColor, SliderOffColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
+    DECLARE_PROPERTY(QColor, ThumbBorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(qreal, ThumbRadius, 11.0);
     DECLARE_PROPERTY(qreal, LineWidth, 10.0);
     DECLARE_PROPERTY(bool, ShowCursor, true);

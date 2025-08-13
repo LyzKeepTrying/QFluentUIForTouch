@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentLineSpinBox_t {
-    QByteArrayData data[13];
-    char stringdata0[182];
+    QByteArrayData data[16];
+    char stringdata0[228];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,18 +38,22 @@ QT_MOC_LITERAL(2, 34, 9), // "TextColor"
 QT_MOC_LITERAL(3, 44, 18), // "BorderFocusOnColor"
 QT_MOC_LITERAL(4, 63, 19), // "BorderFocusOffColor"
 QT_MOC_LITERAL(5, 83, 8), // "FontSize"
-QT_MOC_LITERAL(6, 92, 10), // "ThumbColor"
-QT_MOC_LITERAL(7, 103, 11), // "ThumbRadius"
-QT_MOC_LITERAL(8, 115, 9), // "LineWidth"
-QT_MOC_LITERAL(9, 125, 10), // "ShowCursor"
-QT_MOC_LITERAL(10, 136, 14), // "ThumbIsPressed"
-QT_MOC_LITERAL(11, 151, 14), // "DirectionState"
-QT_MOC_LITERAL(12, 166, 15) // "Qt::Orientation"
+QT_MOC_LITERAL(6, 92, 13), // "SliderOnColor"
+QT_MOC_LITERAL(7, 106, 14), // "SliderOffColor"
+QT_MOC_LITERAL(8, 121, 10), // "ThumbColor"
+QT_MOC_LITERAL(9, 132, 16), // "ThumbBorderColor"
+QT_MOC_LITERAL(10, 149, 11), // "ThumbRadius"
+QT_MOC_LITERAL(11, 161, 9), // "LineWidth"
+QT_MOC_LITERAL(12, 171, 10), // "ShowCursor"
+QT_MOC_LITERAL(13, 182, 14), // "ThumbIsPressed"
+QT_MOC_LITERAL(14, 197, 14), // "DirectionState"
+QT_MOC_LITERAL(15, 212, 15) // "Qt::Orientation"
 
     },
     "FluentLineSpinBox\0BackgroundColor\0"
     "TextColor\0BorderFocusOnColor\0"
-    "BorderFocusOffColor\0FontSize\0ThumbColor\0"
+    "BorderFocusOffColor\0FontSize\0SliderOnColor\0"
+    "SliderOffColor\0ThumbColor\0ThumbBorderColor\0"
     "ThumbRadius\0LineWidth\0ShowCursor\0"
     "ThumbIsPressed\0DirectionState\0"
     "Qt::Orientation"
@@ -63,7 +67,7 @@ static const uint qt_meta_data_FluentLineSpinBox[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-      11,   14, // properties
+      14,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -76,11 +80,14 @@ static const uint qt_meta_data_FluentLineSpinBox[] = {
        4, QMetaType::QColor, 0x00095103,
        5, QMetaType::Int, 0x00095103,
        6, QMetaType::QColor, 0x00095103,
-       7, QMetaType::QReal, 0x00095103,
-       8, QMetaType::QReal, 0x00095103,
-       9, QMetaType::Bool, 0x00095103,
-      10, QMetaType::Bool, 0x00095103,
-      11, 0x80000000 | 12, 0x0009510b,
+       7, QMetaType::QColor, 0x00095103,
+       8, QMetaType::QColor, 0x00095103,
+       9, QMetaType::QColor, 0x00095103,
+      10, QMetaType::QReal, 0x00095103,
+      11, QMetaType::QReal, 0x00095103,
+      12, QMetaType::Bool, 0x00095103,
+      13, QMetaType::Bool, 0x00095103,
+      14, 0x80000000 | 15, 0x0009510b,
 
        0        // eod
 };
@@ -99,12 +106,15 @@ void FluentLineSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 2: *reinterpret_cast< QColor*>(_v) = _t->getBorderFocusOnColor(); break;
         case 3: *reinterpret_cast< QColor*>(_v) = _t->getBorderFocusOffColor(); break;
         case 4: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
-        case 5: *reinterpret_cast< QColor*>(_v) = _t->getThumbColor(); break;
-        case 6: *reinterpret_cast< qreal*>(_v) = _t->getThumbRadius(); break;
-        case 7: *reinterpret_cast< qreal*>(_v) = _t->getLineWidth(); break;
-        case 8: *reinterpret_cast< bool*>(_v) = _t->getShowCursor(); break;
-        case 9: *reinterpret_cast< bool*>(_v) = _t->getThumbIsPressed(); break;
-        case 10: *reinterpret_cast< Qt::Orientation*>(_v) = _t->getDirectionState(); break;
+        case 5: *reinterpret_cast< QColor*>(_v) = _t->getSliderOnColor(); break;
+        case 6: *reinterpret_cast< QColor*>(_v) = _t->getSliderOffColor(); break;
+        case 7: *reinterpret_cast< QColor*>(_v) = _t->getThumbColor(); break;
+        case 8: *reinterpret_cast< QColor*>(_v) = _t->getThumbBorderColor(); break;
+        case 9: *reinterpret_cast< qreal*>(_v) = _t->getThumbRadius(); break;
+        case 10: *reinterpret_cast< qreal*>(_v) = _t->getLineWidth(); break;
+        case 11: *reinterpret_cast< bool*>(_v) = _t->getShowCursor(); break;
+        case 12: *reinterpret_cast< bool*>(_v) = _t->getThumbIsPressed(); break;
+        case 13: *reinterpret_cast< Qt::Orientation*>(_v) = _t->getDirectionState(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -117,12 +127,15 @@ void FluentLineSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 2: _t->setBorderFocusOnColor(*reinterpret_cast< QColor*>(_v)); break;
         case 3: _t->setBorderFocusOffColor(*reinterpret_cast< QColor*>(_v)); break;
         case 4: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
-        case 5: _t->setThumbColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 6: _t->setThumbRadius(*reinterpret_cast< qreal*>(_v)); break;
-        case 7: _t->setLineWidth(*reinterpret_cast< qreal*>(_v)); break;
-        case 8: _t->setShowCursor(*reinterpret_cast< bool*>(_v)); break;
-        case 9: _t->setThumbIsPressed(*reinterpret_cast< bool*>(_v)); break;
-        case 10: _t->setDirectionState(*reinterpret_cast< Qt::Orientation*>(_v)); break;
+        case 5: _t->setSliderOnColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 6: _t->setSliderOffColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 7: _t->setThumbColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 8: _t->setThumbBorderColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 9: _t->setThumbRadius(*reinterpret_cast< qreal*>(_v)); break;
+        case 10: _t->setLineWidth(*reinterpret_cast< qreal*>(_v)); break;
+        case 11: _t->setShowCursor(*reinterpret_cast< bool*>(_v)); break;
+        case 12: _t->setThumbIsPressed(*reinterpret_cast< bool*>(_v)); break;
+        case 13: _t->setDirectionState(*reinterpret_cast< Qt::Orientation*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -167,17 +180,17 @@ int FluentLineSpinBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 14;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 11;
+        _id -= 14;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 11;
+        _id -= 14;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 11;
+        _id -= 14;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 11;
+        _id -= 14;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 11;
+        _id -= 14;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

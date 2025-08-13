@@ -8,6 +8,7 @@ DEFINES += FLUENTUI_PLUGIN_LIBRARY
 # 头文件和源文件布局
 INCLUDEPATH += $$PWD/include
 SOURCES     += src/fluent_toggle_button.cpp \
+               src/fluent_slider.cpp \
                src/fluent_spin_box.cpp \
                src/fluent_double_spin_box.cpp \
                src/fluent_circle_spin_box.cpp \
@@ -21,6 +22,7 @@ HEADERS     += include/fluent_toggle_button.h \
                include/fluent_icon_push_button.h \
                include/fluent_icon_toggle_button.h \
                include/fluent_push_button.h \
+               include/fluent_slider.h \
                include/fluent_spin_box.h \
                include/fluent_double_spin_box.h \
                include/fluent_circle_spin_box.h \

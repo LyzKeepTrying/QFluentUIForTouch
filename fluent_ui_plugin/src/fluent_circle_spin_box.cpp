@@ -16,7 +16,15 @@ FluentCircleSpinBox::FluentCircleSpinBox(QWidget* parent)
     setButtonSymbols(QAbstractSpinBox::NoButtons);
 
     connect(this, QOverload<int>::of(&QSpinBox::valueChanged), this, [this](int val){
-        double norm = double(val) / maximum();
+        int min_v = minimum();
+        int max_v = maximum();
+
+        double norm = 0.0;
+        if (max_v != min_v) {
+            norm = double(val - min_v) / (max_v - min_v);
+        }
+        norm = qBound(0.0, norm, 1.0);
+
         setCurArcLen(norm * getMaxArcLen());
     });
 
@@ -82,7 +90,7 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
     }
 
     // 绘制灰色环形
-    QPen off_pen(getBorderFocusOffColor(), 8);
+    QPen off_pen(getSliderOffColor(), 8);
     off_pen.setCapStyle(Qt::RoundCap);
     off_pen.setJoinStyle(Qt::RoundJoin);
     off_pen.setWidthF(getArcWidth());
@@ -101,7 +109,7 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
     painter.drawArc(arc_rect_, start_angle, span_angle);
 
     // 绘制彩色环形
-    QPen on_pen(getBorderFocusOnColor(), 8);
+    QPen on_pen(getSliderOnColor(), 8);
     on_pen.setCapStyle(Qt::RoundCap);
     on_pen.setJoinStyle(Qt::RoundJoin);
     on_pen.setWidthF(getArcWidth());
@@ -115,7 +123,7 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
     // 绘制thumb
     cur_thumb_pos_ = arcEndPoint(arc_rect_, start_angle, cur_angle);
 
-    painter.setPen(getBorderFocusOffColor());
+    painter.setPen(getThumbBorderColor());
     painter.setBrush(getThumbIsPressed() ? getThumbColor().darker(150) : getThumbColor());
     painter.drawEllipse(cur_thumb_pos_, getThumbRadius(), getThumbRadius());
 
@@ -148,6 +156,7 @@ void FluentCircleSpinBox::mousePressEvent(QMouseEvent* event) {
     thumb_rect.moveCenter(cur_thumb_pos_);
     if (thumb_rect.contains(pos)) {
         setThumbIsPressed(true);
+        event->accept();
         return;
     }
     QSpinBox::mousePressEvent(event);
@@ -195,8 +204,18 @@ void FluentCircleSpinBox::mouseMoveEvent(QMouseEvent* event) {
 
         // 归一化并更新
         double norm = arc_pos_deg / getMaxArcLen();
-        setValue(norm * maximum());
-        setCurArcLen(norm * getMaxArcLen());
+        norm = qBound(0.0, norm, 1.0);
+
+        int min_v = minimum();
+        int max_v = maximum();
+        int new_val = min_v;
+        if (max_v != min_v) {
+            new_val = min_v + int(norm * (max_v - min_v) + 0.5);
+        }
+        setValue(new_val);
+
+        event->accept();
+        return;
     }
     QSpinBox::mouseMoveEvent(event);
 }

@@ -8,6 +8,7 @@
 #include "fluent_double_spin_box.h"
 #include "fluent_circle_spin_box.h"
 #include "fluent_line_spin_box.h"
+#include "fluent_slider.h"
 
 #include <QtCore/qplugin.h>
 
@@ -25,6 +26,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentDoubleSpinBoxPlugin(this));
     widget_list_.append(new FluentCircleSpinBoxPlugin(this));
     widget_list_.append(new FluentLineSpinBoxPlugin(this));
+    widget_list_.append(new FluentSliderPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -592,6 +594,69 @@ QWidget* FluentLineSpinBoxPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentLineSpinBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentSliderPlugin */
+
+FluentSliderPlugin::FluentSliderPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentSliderPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentSliderPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentSliderPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentSliderPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentSlider" name="fluentSlider">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentSliderPlugin::includeFile() const {
+    return "fluent_slider.h";
+}
+
+QString FluentSliderPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentSliderPlugin::name() const {
+    return "FluentSlider";
+}
+
+QString FluentSliderPlugin::toolTip() const {
+    return "Fluent Design Slider";
+}
+
+QString FluentSliderPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentSliderPlugin::createWidget(QWidget* parent) {
+    return new FluentSlider(parent);
+}
+
+void FluentSliderPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;
