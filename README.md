@@ -16,6 +16,8 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
 - 可集成至 Qt Designer，支持可视化拖拽设计
 - 易于扩展和自定义
 
+![1754277502222](readme/example1.png) 
+
 ## 当前支持控件
 
 ![1754277502220](readme/example.png)
