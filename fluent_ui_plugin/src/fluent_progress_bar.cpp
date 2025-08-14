@@ -24,10 +24,15 @@ FluentProgressBar::FluentProgressBar(QWidget* parent)
         if(getIsLoop())
             return;
 
-        slider_move_animation->setDuration(500.0 / getMoveSpeed());
-        slider_move_animation->setStartValue(getCurSliderPos());
-        slider_move_animation->setEndValue(value);
-        slider_move_animation->start();
+        if(getMoveAnamination()){
+            slider_move_animation->setDuration(500.0 / getMoveSpeed());
+            slider_move_animation->setStartValue(getCurSliderPos());
+            slider_move_animation->setEndValue(value);
+            slider_move_animation->start();
+        }
+        else{
+            setCurSliderPos(value);
+        }
     });
 
 

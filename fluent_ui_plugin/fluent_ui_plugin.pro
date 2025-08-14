@@ -39,6 +39,6 @@ TARGET = fluent_ui_plugin
 
 # 安装到 Qt Designer 插件目录（可选）
 target.path = $$[QT_INSTALL_PLUGINS]/designer
-# DESTDIR = $$[QT_INSTALL_PLUGINS]/designer
+#DESTDIR = $$[QT_INSTALL_PLUGINS]/designer
 INSTALLS += target
 
