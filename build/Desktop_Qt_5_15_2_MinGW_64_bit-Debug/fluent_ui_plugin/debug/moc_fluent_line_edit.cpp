@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentLineEdit_t {
-    QByteArrayData data[6];
-    char stringdata0[73];
+    QByteArrayData data[7];
+    char stringdata0[100];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,13 +35,15 @@ static const qt_meta_stringdata_FluentLineEdit_t qt_meta_stringdata_FluentLineEd
 QT_MOC_LITERAL(0, 0, 14), // "FluentLineEdit"
 QT_MOC_LITERAL(1, 15, 15), // "BackgroundColor"
 QT_MOC_LITERAL(2, 31, 9), // "TextColor"
-QT_MOC_LITERAL(3, 41, 11), // "BorderColor"
-QT_MOC_LITERAL(4, 53, 10), // "FocusColor"
-QT_MOC_LITERAL(5, 64, 8) // "FontSize"
+QT_MOC_LITERAL(3, 41, 18), // "BorderFocusOnColor"
+QT_MOC_LITERAL(4, 60, 19), // "BorderFocusOffColor"
+QT_MOC_LITERAL(5, 80, 8), // "FontSize"
+QT_MOC_LITERAL(6, 89, 10) // "ShowCursor"
 
     },
     "FluentLineEdit\0BackgroundColor\0TextColor\0"
-    "BorderColor\0FocusColor\0FontSize"
+    "BorderFocusOnColor\0BorderFocusOffColor\0"
+    "FontSize\0ShowCursor"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +54,7 @@ static const uint qt_meta_data_FluentLineEdit[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-       5,   14, // properties
+       6,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -64,6 +66,7 @@ static const uint qt_meta_data_FluentLineEdit[] = {
        3, QMetaType::QColor, 0x00095103,
        4, QMetaType::QColor, 0x00095103,
        5, QMetaType::Int, 0x00095103,
+       6, QMetaType::Bool, 0x00095103,
 
        0        // eod
 };
@@ -79,9 +82,10 @@ void FluentLineEdit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: *reinterpret_cast< QColor*>(_v) = _t->getBackgroundColor(); break;
         case 1: *reinterpret_cast< QColor*>(_v) = _t->getTextColor(); break;
-        case 2: *reinterpret_cast< QColor*>(_v) = _t->getBorderColor(); break;
-        case 3: *reinterpret_cast< QColor*>(_v) = _t->getFocusColor(); break;
+        case 2: *reinterpret_cast< QColor*>(_v) = _t->getBorderFocusOnColor(); break;
+        case 3: *reinterpret_cast< QColor*>(_v) = _t->getBorderFocusOffColor(); break;
         case 4: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
+        case 5: *reinterpret_cast< bool*>(_v) = _t->getShowCursor(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -91,9 +95,10 @@ void FluentLineEdit::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->setBackgroundColor(*reinterpret_cast< QColor*>(_v)); break;
         case 1: _t->setTextColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 2: _t->setBorderColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 3: _t->setFocusColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 2: _t->setBorderFocusOnColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 3: _t->setBorderFocusOffColor(*reinterpret_cast< QColor*>(_v)); break;
         case 4: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
+        case 5: _t->setShowCursor(*reinterpret_cast< bool*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -138,17 +143,17 @@ int FluentLineEdit::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 5;
+        _id -= 6;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

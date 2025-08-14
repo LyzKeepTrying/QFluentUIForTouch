@@ -16,10 +16,16 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "fluent_circle_spin_box.h"
+#include "fluent_double_spin_box.h"
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
+#include "fluent_line_spin_box.h"
+#include "fluent_progress_bar.h"
 #include "fluent_push_button.h"
+#include "fluent_slider.h"
+#include "fluent_spin_box.h"
 #include "fluent_toggle_button.h"
 
 QT_BEGIN_NAMESPACE
@@ -33,6 +39,14 @@ public:
     FluentIconPushButton *fluentIconPushButton;
     FluentIconToggleButton *fluentIconToggleButton;
     FluentLineEdit *fluentLineEdit;
+    FluentSpinBox *fluentSpinBox;
+    FluentDoubleSpinBox *fluentDoubleSpinBox;
+    FluentCircleSpinBox *fluentCircleSpinBox;
+    FluentLineSpinBox *fluentLineSpinBox;
+    FluentSlider *fluentSlider;
+    FluentSlider *fluentSlider_2;
+    FluentLineSpinBox *fluentLineSpinBox_2;
+    FluentProgressBar *fluentProgressBar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,12 +54,12 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(486, 899);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         fluentToggleButton = new FluentToggleButton(centralwidget);
         fluentToggleButton->setObjectName(QString::fromUtf8("fluentToggleButton"));
-        fluentToggleButton->setGeometry(QRect(90, 40, 71, 31));
+        fluentToggleButton->setGeometry(QRect(90, 50, 71, 31));
         fluentPushButton = new FluentPushButton(centralwidget);
         fluentPushButton->setObjectName(QString::fromUtf8("fluentPushButton"));
         fluentPushButton->setGeometry(QRect(90, 110, 91, 41));
@@ -71,11 +85,57 @@ public:
         fluentIconToggleButton->setToggledIcon(icon1);
         fluentLineEdit = new FluentLineEdit(centralwidget);
         fluentLineEdit->setObjectName(QString::fromUtf8("fluentLineEdit"));
-        fluentLineEdit->setGeometry(QRect(90, 390, 261, 41));
+        fluentLineEdit->setGeometry(QRect(90, 380, 261, 41));
+        fluentSpinBox = new FluentSpinBox(centralwidget);
+        fluentSpinBox->setObjectName(QString::fromUtf8("fluentSpinBox"));
+        fluentSpinBox->setGeometry(QRect(90, 450, 141, 41));
+        fluentDoubleSpinBox = new FluentDoubleSpinBox(centralwidget);
+        fluentDoubleSpinBox->setObjectName(QString::fromUtf8("fluentDoubleSpinBox"));
+        fluentDoubleSpinBox->setGeometry(QRect(260, 450, 141, 41));
+        fluentCircleSpinBox = new FluentCircleSpinBox(centralwidget);
+        fluentCircleSpinBox->setObjectName(QString::fromUtf8("fluentCircleSpinBox"));
+        fluentCircleSpinBox->setGeometry(QRect(90, 520, 141, 121));
+        fluentCircleSpinBox->setThumbRadius(14.000000000000000);
+        fluentCircleSpinBox->setArcWidth(12.000000000000000);
+        fluentCircleSpinBox->setShowCursor(true);
+        fluentCircleSpinBox->setMaxArcLen(300);
+        fluentCircleSpinBox->setArcRectAdjust(15);
+        fluentCircleSpinBox->setThumbIsPressed(false);
+        fluentLineSpinBox = new FluentLineSpinBox(centralwidget);
+        fluentLineSpinBox->setObjectName(QString::fromUtf8("fluentLineSpinBox"));
+        fluentLineSpinBox->setGeometry(QRect(90, 660, 301, 51));
+        fluentLineSpinBox->setThumbRadius(14.000000000000000);
+        fluentLineSpinBox->setLineWidth(12.000000000000000);
+        fluentSlider = new FluentSlider(centralwidget);
+        fluentSlider->setObjectName(QString::fromUtf8("fluentSlider"));
+        fluentSlider->setGeometry(QRect(90, 740, 301, 31));
+        fluentSlider->setTickPosition(QSlider::NoTicks);
+        fluentSlider->setThumbRadius(14.000000000000000);
+        fluentSlider->setLineWidth(12.000000000000000);
+        fluentSlider->setThumbIsPressed(false);
+        fluentSlider_2 = new FluentSlider(centralwidget);
+        fluentSlider_2->setObjectName(QString::fromUtf8("fluentSlider_2"));
+        fluentSlider_2->setGeometry(QRect(360, 40, 71, 291));
+        fluentSlider_2->setOrientation(Qt::Vertical);
+        fluentSlider_2->setTickPosition(QSlider::NoTicks);
+        fluentSlider_2->setThumbRadius(14.000000000000000);
+        fluentSlider_2->setLineWidth(12.000000000000000);
+        fluentSlider_2->setThumbIsPressed(false);
+        fluentLineSpinBox_2 = new FluentLineSpinBox(centralwidget);
+        fluentLineSpinBox_2->setObjectName(QString::fromUtf8("fluentLineSpinBox_2"));
+        fluentLineSpinBox_2->setGeometry(QRect(280, 40, 51, 291));
+        fluentLineSpinBox_2->setThumbRadius(14.000000000000000);
+        fluentLineSpinBox_2->setLineWidth(12.000000000000000);
+        fluentLineSpinBox_2->setDirectionState(Qt::Vertical);
+        fluentProgressBar = new FluentProgressBar(centralwidget);
+        fluentProgressBar->setObjectName(QString::fromUtf8("fluentProgressBar"));
+        fluentProgressBar->setGeometry(QRect(100, 800, 321, 31));
+        fluentProgressBar->setLineWidth(13.000000000000000);
+        fluentProgressBar->setIsLoop(true);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 23));
+        menubar->setGeometry(QRect(0, 0, 486, 23));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

@@ -6,6 +6,7 @@
 
 FluentSlider::FluentSlider(QWidget* parent)
     : QSlider{parent} {
+    setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setOrientation(Qt::Horizontal);
 }
@@ -104,7 +105,6 @@ void FluentSlider::mousePressEvent(QMouseEvent* event) {
         event->accept();
         return;
     }
-    QSlider::mousePressEvent(event);
 }
 
 void FluentSlider::mouseMoveEvent(QMouseEvent* event) {

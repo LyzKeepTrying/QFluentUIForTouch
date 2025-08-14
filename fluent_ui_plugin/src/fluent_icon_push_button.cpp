@@ -16,6 +16,7 @@ FluentIconPushButton::FluentIconPushButton(QWidget* parent)
 FluentIconPushButton::FluentIconPushButton(const QIcon& icon, const QString& text, QWidget* parent)
     : FluentIconPushButton(parent)
 {
+    setText(text);
     setIcon(icon);
 }
 

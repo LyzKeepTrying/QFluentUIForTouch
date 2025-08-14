@@ -22,6 +22,7 @@
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
 #include "fluent_line_spin_box.h"
+#include "fluent_progress_bar.h"
 #include "fluent_push_button.h"
 #include "fluent_slider.h"
 #include "fluent_spin_box.h"
@@ -45,6 +46,7 @@ public:
     FluentSlider *fluentSlider;
     FluentSlider *fluentSlider_2;
     FluentLineSpinBox *fluentLineSpinBox_2;
+    FluentProgressBar *fluentProgressBar;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -125,6 +127,13 @@ public:
         fluentLineSpinBox_2->setThumbRadius(14.000000000000000);
         fluentLineSpinBox_2->setLineWidth(12.000000000000000);
         fluentLineSpinBox_2->setDirectionState(Qt::Vertical);
+        fluentProgressBar = new FluentProgressBar(centralwidget);
+        fluentProgressBar->setObjectName(QString::fromUtf8("fluentProgressBar"));
+        fluentProgressBar->setGeometry(QRect(100, 800, 321, 31));
+        fluentProgressBar->setLineWidth(13.000000000000000);
+        fluentProgressBar->setIsLoop(true);
+        fluentProgressBar->setMoveSpeed(1.000000000000000);
+        fluentProgressBar->setSliderLen(0.250000000000000);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

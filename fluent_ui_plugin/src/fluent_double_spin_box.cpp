@@ -7,6 +7,7 @@
 
 FluentDoubleSpinBox::FluentDoubleSpinBox(QWidget* parent)
     : QDoubleSpinBox(parent) {
+    setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setFrame(false);
     if (lineEdit()) {

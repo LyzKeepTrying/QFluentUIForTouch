@@ -8,6 +8,7 @@
 
 FluentLineSpinBox::FluentLineSpinBox(QWidget* parent)
     : QSpinBox(parent) {
+    setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setFrame(false);
     if (lineEdit()) {
@@ -84,7 +85,7 @@ void FluentLineSpinBox::paintEvent(QPaintEvent* event) {
     }
 
     // 绘制灰色轨道
-    QPen off_pen(getBorderFocusOffColor(), getLineWidth());
+    QPen off_pen(getSliderOffColor(), getLineWidth());
     off_pen.setCapStyle(Qt::RoundCap);
     painter.setPen(off_pen);
     painter.setBrush(Qt::NoBrush);
@@ -105,7 +106,7 @@ void FluentLineSpinBox::paintEvent(QPaintEvent* event) {
     }
 
     // 绘制彩色已选轨道
-    QPen on_pen(getBorderFocusOnColor(), getLineWidth());
+    QPen on_pen(getSliderOnColor(), getLineWidth());
     on_pen.setCapStyle(Qt::RoundCap);
     painter.setPen(on_pen);
 
@@ -141,7 +142,6 @@ void FluentLineSpinBox::mousePressEvent(QMouseEvent* event) {
         event->accept();
         return;
     }
-    QSpinBox::mousePressEvent(event);
 }
 
 void FluentLineSpinBox::mouseReleaseEvent(QMouseEvent* event) {

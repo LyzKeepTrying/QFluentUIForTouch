@@ -8,6 +8,7 @@
 
 FluentCircleSpinBox::FluentCircleSpinBox(QWidget* parent)
     : QSpinBox(parent) {
+    setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setFrame(false);
     if (lineEdit()) {
@@ -159,7 +160,6 @@ void FluentCircleSpinBox::mousePressEvent(QMouseEvent* event) {
         event->accept();
         return;
     }
-    QSpinBox::mousePressEvent(event);
 }
 
 void FluentCircleSpinBox::mouseReleaseEvent(QMouseEvent* event) {

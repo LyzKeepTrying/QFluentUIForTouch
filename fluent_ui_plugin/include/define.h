@@ -29,7 +29,7 @@ Q_PROPERTY(type name READ get##name WRITE set##name) \
     void set##name(const type& value) { \
             m_##name = value; \
             update(); \
-} \
+    } \
     private:
 
 #endif // DEFINE_H

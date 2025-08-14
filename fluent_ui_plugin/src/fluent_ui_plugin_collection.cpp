@@ -9,6 +9,7 @@
 #include "fluent_circle_spin_box.h"
 #include "fluent_line_spin_box.h"
 #include "fluent_slider.h"
+#include "fluent_progress_bar.h"
 
 #include <QtCore/qplugin.h>
 
@@ -27,6 +28,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentCircleSpinBoxPlugin(this));
     widget_list_.append(new FluentLineSpinBoxPlugin(this));
     widget_list_.append(new FluentSliderPlugin(this));
+    widget_list_.append(new FluentProgressBarPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -657,6 +659,69 @@ QWidget* FluentSliderPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentSliderPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentProgressBarPlugin */
+
+FluentProgressBarPlugin::FluentProgressBarPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentProgressBarPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentProgressBarPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentProgressBarPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentProgressBarPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentProgressBar" name="fluentProgressBar">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentProgressBarPlugin::includeFile() const {
+    return "fluent_progress_bar.h";
+}
+
+QString FluentProgressBarPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentProgressBarPlugin::name() const {
+    return "FluentProgressBar";
+}
+
+QString FluentProgressBarPlugin::toolTip() const {
+    return "Fluent Design Fluent Progress Bar";
+}
+
+QString FluentProgressBarPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentProgressBarPlugin::createWidget(QWidget* parent) {
+    return new FluentProgressBar(parent);
+}
+
+void FluentProgressBarPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

@@ -451,7 +451,7 @@ all: release-all debug-all  FORCE
 clean: release-clean debug-clean  FORCE
 distclean: release-distclean debug-distclean  FORCE
 	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) D:\software\qt5.15.2\5.15.2\mingw81_64\plugins\designer\libfluent_ui_plugin.a
+	-$(DEL_FILE) libfluent_ui_plugin.a
 
 release-mocclean:
 	$(MAKE) -f $(MAKEFILE).Release mocclean

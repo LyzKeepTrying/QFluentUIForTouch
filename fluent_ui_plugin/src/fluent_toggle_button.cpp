@@ -2,7 +2,9 @@
 
 #include <QPainter>
 #include <QEasingCurve>
-#include <QStyleOption>
+#include <QPropertyAnimation>
+
+constexpr QSize FluentToggleButton::k_default_size_;
 
 FluentToggleButton::FluentToggleButton(QWidget* parent)
     : QAbstractButton(parent) {

@@ -1,6 +1,5 @@
 #pragma once
 #include <QAbstractButton>
-#include <QPropertyAnimation>
 
 #include "define.h"
 #include "theme.h"

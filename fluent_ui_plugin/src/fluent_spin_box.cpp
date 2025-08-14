@@ -7,6 +7,7 @@
 
 FluentSpinBox::FluentSpinBox(QWidget* parent)
     : QSpinBox(parent) {
+    setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setFrame(false);
     if (lineEdit()) {
