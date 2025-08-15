@@ -76,7 +76,7 @@ void FluentIconToggleButton::paintEvent(QPaintEvent* /*event*/) {
                 width(),
                 painter.fontMetrics().height()
                 );
-            painter.drawText(textRect, Qt::AlignHCenter | Qt::AlignTop, text());
+            painter.drawText(textRect, Qt::AlignHCenter | Qt::AlignTop, isChecked() ? getToggledText() : text());
         }
     }
 }
