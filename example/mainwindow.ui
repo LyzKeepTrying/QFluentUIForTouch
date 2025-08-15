@@ -196,11 +196,17 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
     <property name="ThumbRadius">
      <double>14.000000000000000</double>
     </property>
     <property name="LineWidth">
      <double>12.000000000000000</double>
+    </property>
+    <property name="PaintStep">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="FluentSlider" name="fluentSlider">
@@ -234,6 +240,9 @@
       <height>291</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>5</number>
+    </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
     </property>
@@ -248,6 +257,9 @@
     </property>
     <property name="ThumbIsPressed">
      <bool>false</bool>
+    </property>
+    <property name="PaintStep">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="FluentLineSpinBox" name="fluentLineSpinBox_2">

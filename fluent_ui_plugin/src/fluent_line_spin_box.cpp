@@ -105,6 +105,42 @@ void FluentLineSpinBox::paintEvent(QPaintEvent* event) {
                          line_rect_.x() + line_rect_.width(), height() / 2);
     }
 
+    // 绘制隔断线
+    if (getPaintStep()) {
+        painter.save();
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(getSliderOffColor().darker(150));
+
+        int range = maximum() - minimum();
+        if (range > 0 && singleStep() > 0) {
+            for (int i = minimum(); i < maximum(); i += singleStep()) {
+                // 跳过起点和终点
+                if (i == minimum())
+                    continue;
+
+                qreal norm = (i - minimum()) / qreal(range);
+
+                if (!isVertical) {
+                    painter.drawEllipse(
+                        QPointF(line_rect_.x() + norm * line_rect_.width(),
+                                line_rect_.y() + line_rect_.height() / 2.0),
+                        getLineWidth() / 4.0,
+                        getLineWidth() / 4.0
+                        );
+                } else {
+                    painter.drawEllipse(
+                        QPointF(line_rect_.x() + line_rect_.width() / 2.0,
+                                line_rect_.y() + norm * line_rect_.height()),
+                        getLineWidth() / 4.0,
+                        getLineWidth() / 4.0
+                        );
+                }
+            }
+        }
+
+        painter.restore();
+    }
+
     // 绘制彩色已选轨道
     QPen on_pen(getSliderOnColor(), getLineWidth());
     on_pen.setCapStyle(Qt::RoundCap);

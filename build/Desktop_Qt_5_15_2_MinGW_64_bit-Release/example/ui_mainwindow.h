@@ -115,8 +115,10 @@ public:
         fluentLineSpinBox = new FluentLineSpinBox(centralwidget);
         fluentLineSpinBox->setObjectName(QString::fromUtf8("fluentLineSpinBox"));
         fluentLineSpinBox->setGeometry(QRect(90, 660, 301, 51));
+        fluentLineSpinBox->setMaximum(10);
         fluentLineSpinBox->setThumbRadius(14.000000000000000);
         fluentLineSpinBox->setLineWidth(12.000000000000000);
+        fluentLineSpinBox->setPaintStep(true);
         fluentSlider = new FluentSlider(centralwidget);
         fluentSlider->setObjectName(QString::fromUtf8("fluentSlider"));
         fluentSlider->setGeometry(QRect(90, 740, 301, 31));
@@ -127,11 +129,13 @@ public:
         fluentSlider_2 = new FluentSlider(centralwidget);
         fluentSlider_2->setObjectName(QString::fromUtf8("fluentSlider_2"));
         fluentSlider_2->setGeometry(QRect(360, 40, 71, 291));
+        fluentSlider_2->setMaximum(5);
         fluentSlider_2->setOrientation(Qt::Vertical);
         fluentSlider_2->setTickPosition(QSlider::NoTicks);
         fluentSlider_2->setThumbRadius(14.000000000000000);
         fluentSlider_2->setLineWidth(12.000000000000000);
         fluentSlider_2->setThumbIsPressed(false);
+        fluentSlider_2->setPaintStep(true);
         fluentLineSpinBox_2 = new FluentLineSpinBox(centralwidget);
         fluentLineSpinBox_2->setObjectName(QString::fromUtf8("fluentLineSpinBox_2"));
         fluentLineSpinBox_2->setGeometry(QRect(280, 40, 51, 291));

@@ -36,15 +36,6 @@ void FluentSlider::paintEvent(QPaintEvent* /*event*/) {
         line_rect_.moveTopLeft(QPoint((rect().width() - w) / 2, margin + thumb_r));
     }
 
-    // 归一化处理（考虑 minimum()/maximum()）
-    int minv = minimum();
-    int maxv = maximum();
-    double norm = 0.0;
-    if (maxv != minv) {
-        norm = double(value() - minv) / double(maxv - minv);
-    }
-    norm = qBound(0.0, norm, 1.0);
-
     // 绘制灰色轨道（off）
     QPen off_pen(getSliderOffColor(), 8);
     off_pen.setCapStyle(Qt::RoundCap);
@@ -60,6 +51,51 @@ void FluentSlider::paintEvent(QPaintEvent* /*event*/) {
         int x = line_rect_.x() + line_rect_.width() / 2;
         painter.drawLine(x, line_rect_.y(), x, line_rect_.y() + line_rect_.height());
     }
+
+    // 绘制隔断线
+    if (getPaintStep()) {
+        painter.save();
+        painter.setPen(Qt::NoPen);
+        painter.setBrush(getSliderOffColor().darker(150));
+
+        int range = maximum() - minimum();
+        if (range > 0 && singleStep() > 0) {
+            for (int i = minimum(); i < maximum(); i += singleStep()) {
+                // 跳过起点和终点
+                if (i == minimum())
+                    continue;
+
+                qreal norm = (i - minimum()) / qreal(range);
+
+                if (orientation() == Qt::Horizontal) {
+                    painter.drawEllipse(
+                        QPointF(line_rect_.x() + norm * line_rect_.width(),
+                                line_rect_.y() + line_rect_.height() / 2.0),
+                        getLineWidth() / 4.0,
+                        getLineWidth() / 4.0
+                        );
+                } else {
+                    painter.drawEllipse(
+                        QPointF(line_rect_.x() + line_rect_.width() / 2.0,
+                                line_rect_.y() + norm * line_rect_.height()),
+                        getLineWidth() / 4.0,
+                        getLineWidth() / 4.0
+                        );
+                }
+            }
+        }
+
+        painter.restore();
+    }
+
+    // 归一化处理（考虑 minimum()/maximum()）
+    int minv = minimum();
+    int maxv = maximum();
+    double norm = 0.0;
+    if (maxv != minv) {
+        norm = double(value() - minv) / double(maxv - minv);
+    }
+    norm = qBound(0.0, norm, 1.0);
 
     // 绘制彩色轨道（on）
     QPen on_pen(getSliderOnColor(), 8);
