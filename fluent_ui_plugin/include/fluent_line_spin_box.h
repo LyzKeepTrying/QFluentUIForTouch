@@ -28,6 +28,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentLineSpinBox : public QSpinBox {
     DECLARE_PROPERTY(bool, ThumbIsPressed, false);
     DECLARE_PROPERTY(Qt::Orientation, DirectionState, Qt::Horizontal);
     DECLARE_PROPERTY(bool, PaintStep, false);
+    DECLARE_PROPERTY(bool, SliderPress, false);
 
 public:
     explicit FluentLineSpinBox(QWidget* parent = nullptr);

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentLineSpinBox_t {
-    QByteArrayData data[17];
-    char stringdata0[238];
+    QByteArrayData data[18];
+    char stringdata0[250];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,7 +48,8 @@ QT_MOC_LITERAL(12, 171, 10), // "ShowCursor"
 QT_MOC_LITERAL(13, 182, 14), // "ThumbIsPressed"
 QT_MOC_LITERAL(14, 197, 14), // "DirectionState"
 QT_MOC_LITERAL(15, 212, 15), // "Qt::Orientation"
-QT_MOC_LITERAL(16, 228, 9) // "PaintStep"
+QT_MOC_LITERAL(16, 228, 9), // "PaintStep"
+QT_MOC_LITERAL(17, 238, 11) // "SliderPress"
 
     },
     "FluentLineSpinBox\0BackgroundColor\0"
@@ -57,7 +58,7 @@ QT_MOC_LITERAL(16, 228, 9) // "PaintStep"
     "SliderOffColor\0ThumbColor\0ThumbBorderColor\0"
     "ThumbRadius\0LineWidth\0ShowCursor\0"
     "ThumbIsPressed\0DirectionState\0"
-    "Qt::Orientation\0PaintStep"
+    "Qt::Orientation\0PaintStep\0SliderPress"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +69,7 @@ static const uint qt_meta_data_FluentLineSpinBox[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-      15,   14, // properties
+      16,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -90,6 +91,7 @@ static const uint qt_meta_data_FluentLineSpinBox[] = {
       13, QMetaType::Bool, 0x00095103,
       14, 0x80000000 | 15, 0x0009510b,
       16, QMetaType::Bool, 0x00095103,
+      17, QMetaType::Bool, 0x00095103,
 
        0        // eod
 };
@@ -118,6 +120,7 @@ void FluentLineSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 12: *reinterpret_cast< bool*>(_v) = _t->getThumbIsPressed(); break;
         case 13: *reinterpret_cast< Qt::Orientation*>(_v) = _t->getDirectionState(); break;
         case 14: *reinterpret_cast< bool*>(_v) = _t->getPaintStep(); break;
+        case 15: *reinterpret_cast< bool*>(_v) = _t->getSliderPress(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -140,6 +143,7 @@ void FluentLineSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 12: _t->setThumbIsPressed(*reinterpret_cast< bool*>(_v)); break;
         case 13: _t->setDirectionState(*reinterpret_cast< Qt::Orientation*>(_v)); break;
         case 14: _t->setPaintStep(*reinterpret_cast< bool*>(_v)); break;
+        case 15: _t->setSliderPress(*reinterpret_cast< bool*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -184,17 +188,17 @@ int FluentLineSpinBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 15;
+        _id -= 16;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentCircleSpinBox_t {
-    QByteArrayData data[17];
-    char stringdata0[232];
+    QByteArrayData data[19];
+    char stringdata0[254];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,7 +48,9 @@ QT_MOC_LITERAL(12, 172, 10), // "ShowCursor"
 QT_MOC_LITERAL(13, 183, 9), // "MaxArcLen"
 QT_MOC_LITERAL(14, 193, 9), // "CurArcLen"
 QT_MOC_LITERAL(15, 203, 13), // "ArcRectAdjust"
-QT_MOC_LITERAL(16, 217, 14) // "ThumbIsPressed"
+QT_MOC_LITERAL(16, 217, 14), // "ThumbIsPressed"
+QT_MOC_LITERAL(17, 232, 11), // "SliderPress"
+QT_MOC_LITERAL(18, 244, 9) // "PaintStep"
 
     },
     "FluentCircleSpinBox\0BackgroundColor\0"
@@ -57,7 +59,7 @@ QT_MOC_LITERAL(16, 217, 14) // "ThumbIsPressed"
     "SliderOffColor\0ThumbColor\0ThumbBorderColor\0"
     "ThumbRadius\0ArcWidth\0ShowCursor\0"
     "MaxArcLen\0CurArcLen\0ArcRectAdjust\0"
-    "ThumbIsPressed"
+    "ThumbIsPressed\0SliderPress\0PaintStep"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,7 +70,7 @@ static const uint qt_meta_data_FluentCircleSpinBox[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-      16,   14, // properties
+      18,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -91,6 +93,8 @@ static const uint qt_meta_data_FluentCircleSpinBox[] = {
       14, QMetaType::Int, 0x00095103,
       15, QMetaType::Int, 0x00095103,
       16, QMetaType::Bool, 0x00095103,
+      17, QMetaType::Bool, 0x00095103,
+      18, QMetaType::Bool, 0x00095103,
 
        0        // eod
 };
@@ -120,6 +124,8 @@ void FluentCircleSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 13: *reinterpret_cast< int*>(_v) = _t->getCurArcLen(); break;
         case 14: *reinterpret_cast< int*>(_v) = _t->getArcRectAdjust(); break;
         case 15: *reinterpret_cast< bool*>(_v) = _t->getThumbIsPressed(); break;
+        case 16: *reinterpret_cast< bool*>(_v) = _t->getSliderPress(); break;
+        case 17: *reinterpret_cast< bool*>(_v) = _t->getPaintStep(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -143,6 +149,8 @@ void FluentCircleSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 13: _t->setCurArcLen(*reinterpret_cast< int*>(_v)); break;
         case 14: _t->setArcRectAdjust(*reinterpret_cast< int*>(_v)); break;
         case 15: _t->setThumbIsPressed(*reinterpret_cast< bool*>(_v)); break;
+        case 16: _t->setSliderPress(*reinterpret_cast< bool*>(_v)); break;
+        case 17: _t->setPaintStep(*reinterpret_cast< bool*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -187,17 +195,17 @@ int FluentCircleSpinBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 16;
+        _id -= 18;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

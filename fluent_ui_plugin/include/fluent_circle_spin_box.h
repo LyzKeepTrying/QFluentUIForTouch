@@ -29,6 +29,8 @@ class FLUENTUI_PLUGIN_EXPORT FluentCircleSpinBox : public QSpinBox {
     DECLARE_PROPERTY(int, CurArcLen, 0);
     DECLARE_PROPERTY(int, ArcRectAdjust, 15);
     DECLARE_PROPERTY(bool, ThumbIsPressed, false);
+    DECLARE_PROPERTY(bool, SliderPress, false);
+    DECLARE_PROPERTY(bool, PaintStep, false);
 
 public:
     explicit FluentCircleSpinBox(QWidget* parent = nullptr);

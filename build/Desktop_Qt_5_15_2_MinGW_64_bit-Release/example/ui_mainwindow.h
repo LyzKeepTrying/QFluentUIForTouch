@@ -49,6 +49,7 @@ public:
     FluentProgressBar *fluentProgressBar;
     FluentIconPushButton *fluentIconPushButton_2;
     FluentIconToggleButton *fluentIconToggleButton_2;
+    FluentCircleSpinBox *fluentCircleSpinBox_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -167,6 +168,18 @@ public:
         fluentIconToggleButton_2->setFontSize(15);
         fluentIconToggleButton_2->setToggledIcon(icon1);
         fluentIconToggleButton_2->setTextIsOustside(true);
+        fluentCircleSpinBox_2 = new FluentCircleSpinBox(centralwidget);
+        fluentCircleSpinBox_2->setObjectName(QString::fromUtf8("fluentCircleSpinBox_2"));
+        fluentCircleSpinBox_2->setGeometry(QRect(250, 520, 141, 121));
+        fluentCircleSpinBox_2->setMaximum(9);
+        fluentCircleSpinBox_2->setValue(0);
+        fluentCircleSpinBox_2->setThumbRadius(14.000000000000000);
+        fluentCircleSpinBox_2->setArcWidth(12.000000000000000);
+        fluentCircleSpinBox_2->setShowCursor(true);
+        fluentCircleSpinBox_2->setMaxArcLen(300);
+        fluentCircleSpinBox_2->setArcRectAdjust(15);
+        fluentCircleSpinBox_2->setThumbIsPressed(false);
+        fluentCircleSpinBox_2->setPaintStep(true);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));

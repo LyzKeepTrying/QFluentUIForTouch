@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentSlider_t {
-    QByteArrayData data[9];
-    char stringdata0[117];
+    QByteArrayData data[10];
+    char stringdata0[129];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,13 +40,14 @@ QT_MOC_LITERAL(4, 46, 14), // "ThumbIsPressed"
 QT_MOC_LITERAL(5, 61, 13), // "SliderOnColor"
 QT_MOC_LITERAL(6, 75, 14), // "SliderOffColor"
 QT_MOC_LITERAL(7, 90, 16), // "ThumbBorderColor"
-QT_MOC_LITERAL(8, 107, 9) // "PaintStep"
+QT_MOC_LITERAL(8, 107, 9), // "PaintStep"
+QT_MOC_LITERAL(9, 117, 11) // "SliderPress"
 
     },
     "FluentSlider\0ThumbColor\0ThumbRadius\0"
     "LineWidth\0ThumbIsPressed\0SliderOnColor\0"
     "SliderOffColor\0ThumbBorderColor\0"
-    "PaintStep"
+    "PaintStep\0SliderPress"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,7 +58,7 @@ static const uint qt_meta_data_FluentSlider[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-       8,   14, // properties
+       9,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -72,6 +73,7 @@ static const uint qt_meta_data_FluentSlider[] = {
        6, QMetaType::QColor, 0x00095103,
        7, QMetaType::QColor, 0x00095103,
        8, QMetaType::Bool, 0x00095103,
+       9, QMetaType::Bool, 0x00095103,
 
        0        // eod
 };
@@ -93,6 +95,7 @@ void FluentSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 5: *reinterpret_cast< QColor*>(_v) = _t->getSliderOffColor(); break;
         case 6: *reinterpret_cast< QColor*>(_v) = _t->getThumbBorderColor(); break;
         case 7: *reinterpret_cast< bool*>(_v) = _t->getPaintStep(); break;
+        case 8: *reinterpret_cast< bool*>(_v) = _t->getSliderPress(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -108,6 +111,7 @@ void FluentSlider::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 5: _t->setSliderOffColor(*reinterpret_cast< QColor*>(_v)); break;
         case 6: _t->setThumbBorderColor(*reinterpret_cast< QColor*>(_v)); break;
         case 7: _t->setPaintStep(*reinterpret_cast< bool*>(_v)); break;
+        case 8: _t->setSliderPress(*reinterpret_cast< bool*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -152,17 +156,17 @@ int FluentSlider::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 8;
+        _id -= 9;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

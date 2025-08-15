@@ -371,6 +371,43 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="FluentCircleSpinBox" name="fluentCircleSpinBox_2">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>520</y>
+      <width>141</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>9</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="ThumbRadius">
+     <double>14.000000000000000</double>
+    </property>
+    <property name="ArcWidth">
+     <double>12.000000000000000</double>
+    </property>
+    <property name="ShowCursor">
+     <bool>true</bool>
+    </property>
+    <property name="MaxArcLen">
+     <number>300</number>
+    </property>
+    <property name="ArcRectAdjust">
+     <number>15</number>
+    </property>
+    <property name="ThumbIsPressed">
+     <bool>false</bool>
+    </property>
+    <property name="PaintStep">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

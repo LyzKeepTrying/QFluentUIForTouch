@@ -52,7 +52,7 @@ void FluentSlider::paintEvent(QPaintEvent* /*event*/) {
         painter.drawLine(x, line_rect_.y(), x, line_rect_.y() + line_rect_.height());
     }
 
-    // 绘制隔断线
+    // 绘制隔断点
     if (getPaintStep()) {
         painter.save();
         painter.setPen(Qt::NoPen);
@@ -140,6 +140,37 @@ void FluentSlider::mousePressEvent(QMouseEvent* event) {
         setThumbIsPressed(true);
         event->accept();
         return;
+    }
+
+    if(getSliderPress()){
+
+        // 轨道点击：在轨道区域（扩大一点以便点中更容易）设置值并进入按下状态以便拖动
+        QRectF track_rect = QRectF(line_rect_);
+        // 扩大检测范围为 thumb 半径，方便点击
+        track_rect = track_rect.adjusted(-getThumbRadius(), -getThumbRadius(), getThumbRadius(), getThumbRadius());
+
+        if (track_rect.contains(pos)) {
+            bool isVertical = (orientation() == Qt::Vertical);
+            qreal norm;
+            if (isVertical) {
+                norm = qreal(line_rect_.bottom() - pos.y()) / line_rect_.height();
+            } else {
+                norm = (pos.x() - line_rect_.x()) / line_rect_.width();
+            }
+            norm = qBound(0.0, norm, 1.0);
+
+            int min_v = minimum();
+            int max_v = maximum();
+            int new_val = min_v + int(norm * (max_v - min_v) + 0.5);
+            setValue(new_val);
+
+            // 进入按下状态，后续 mouseMoveEvent 会处理拖动
+            setThumbIsPressed(true);
+            update();
+            event->accept();
+            return;
+        }
+
     }
 }
 

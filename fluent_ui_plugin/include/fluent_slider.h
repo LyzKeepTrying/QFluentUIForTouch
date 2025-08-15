@@ -21,6 +21,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentSlider : public QSlider {
     DECLARE_PROPERTY(QColor, SliderOffColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(QColor, ThumbBorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(bool, PaintStep, false);
+    DECLARE_PROPERTY(bool, SliderPress, false);
 
 public:
     FluentSlider(QWidget* parent = nullptr);
