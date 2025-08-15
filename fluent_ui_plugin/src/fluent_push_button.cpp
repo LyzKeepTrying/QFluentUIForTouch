@@ -34,7 +34,7 @@ void FluentPushButton::paintEvent(QPaintEvent* event) {
     // 绘制背景
     painter.setBrush(getBackgroundColor());
     painter.setPen(getBorderColor());
-    painter.drawRoundedRect(rect(), 8, 8);
+    painter.drawRoundedRect(rect().adjusted(1, 1, -1, -1), 8, 8);
 
     // 计算绘制区域
     QRect content_rect = rect().adjusted(8, 0, -8, 0);

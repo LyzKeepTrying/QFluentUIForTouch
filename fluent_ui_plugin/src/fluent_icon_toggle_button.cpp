@@ -25,28 +25,59 @@ void FluentIconToggleButton::paintEvent(QPaintEvent* /*event*/) {
     // Draw background
     painter.setBrush(isChecked() ? getToggledBackgroundColor() : getBackgroundColor());
     painter.setPen(isChecked() ? QColor::fromRgb(~getBorderColor().rgb()) : getBorderColor());
-    painter.drawRoundedRect(rect(), 8, 8);
 
-    // Draw icon
-    if (!icon().isNull()) {
-        QPoint icoPos((width() - iconSize().width()) / 2,
-                      (height() - iconSize().height()) / 2 + getIconTopSpace());
-        painter.drawPixmap(icoPos, isChecked() ? getToggledIcon().pixmap(iconSize()) : icon().pixmap(iconSize()));
-    }
 
-    // Draw text under icon or centered if no icon
-    if (!text().isEmpty()) {
-        painter.setPen(isChecked() ? QColor::fromRgb(~getTextColor().rgb()) : getTextColor());
-        QFont font(QFluentUI::Font::default_text_font);
-        font.setPixelSize(getFontSize());
-        painter.setFont(font);
-        QRect textRect(
-            0,
-            (height() + iconSize().height()) / 2 + getIconTopSpace() + getIconTextInnerSpace(),
-            width(),
-            painter.fontMetrics().height()
-            );
-        painter.drawText(textRect, Qt::AlignHCenter | Qt::AlignTop, isChecked() ? getToggledText() : text());
+    if(getTextIsOustside()){
+
+        QRect icon_rect = rect().adjusted(getFontSize(), getFontSize() - getIconTextSpace() / 2, -getFontSize(), -getFontSize() - getIconTextSpace() / 2);
+
+        painter.drawRoundedRect(icon_rect, 8, 8);
+
+        // Draw icon
+        if (!icon().isNull()){
+            QPoint icon_pos((icon_rect.width() - iconSize().width()) / 2,
+                            (icon_rect.height() - iconSize().height()) / 2);
+            painter.drawPixmap(icon_rect.topLeft() + icon_pos, isChecked() ? getToggledIcon().pixmap(iconSize()) : icon().pixmap(iconSize()));
+        }
+
+        // Draw text under icon or centered if no icon
+        if (!text().isEmpty()) {
+            painter.setPen(getTextColor());
+            QFont font(QFluentUI::Font::default_text_font);
+            font.setPixelSize(getFontSize());
+            painter.setFont(font);
+            QRect text_rect(
+                0,
+                icon_rect.y() + icon_rect.height() + getIconTextSpace() / 2,
+                width(),
+                painter.fontMetrics().height()
+                );
+            painter.drawText(text_rect, Qt::AlignHCenter | Qt::AlignTop, isChecked() ? getToggledText() : text());
+        }
+    }else{
+        painter.drawRoundedRect(rect().adjusted(1, 1, -1, -1), 8, 8);
+
+        // Draw icon
+        if (!icon().isNull()) {
+            QPoint icon_pos((width() - iconSize().width()) / 2,
+                            (height() - iconSize().height()) / 2 + getIconTopMargin());
+            painter.drawPixmap(icon_pos, isChecked() ? getToggledIcon().pixmap(iconSize()) : icon().pixmap(iconSize()));
+        }
+
+        // Draw text under icon or centered if no icon
+        if (!text().isEmpty()) {
+            painter.setPen(isChecked() ? QColor::fromRgb(~getTextColor().rgb()) : getTextColor());
+            QFont font(QFluentUI::Font::default_text_font);
+            font.setPixelSize(getFontSize());
+            painter.setFont(font);
+            QRect textRect(
+                0,
+                (height() + iconSize().height()) / 2 + getIconTopMargin() + getIconTextSpace(),
+                width(),
+                painter.fontMetrics().height()
+                );
+            painter.drawText(textRect, Qt::AlignHCenter | Qt::AlignTop, text());
+        }
     }
 }
 

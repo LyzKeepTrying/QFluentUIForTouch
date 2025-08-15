@@ -47,6 +47,8 @@ public:
     FluentSlider *fluentSlider_2;
     FluentLineSpinBox *fluentLineSpinBox_2;
     FluentProgressBar *fluentProgressBar;
+    FluentIconPushButton *fluentIconPushButton_2;
+    FluentIconToggleButton *fluentIconToggleButton_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -55,11 +57,15 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(486, 899);
+        MainWindow->setAnimated(true);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         fluentToggleButton = new FluentToggleButton(centralwidget);
         fluentToggleButton->setObjectName(QString::fromUtf8("fluentToggleButton"));
         fluentToggleButton->setGeometry(QRect(90, 50, 71, 31));
+        fluentToggleButton->setCheckable(true);
+        fluentToggleButton->setChecked(false);
+        fluentToggleButton->setThumbRadius(12.000000000000000);
         fluentPushButton = new FluentPushButton(centralwidget);
         fluentPushButton->setObjectName(QString::fromUtf8("fluentPushButton"));
         fluentPushButton->setGeometry(QRect(90, 110, 91, 41));
@@ -72,13 +78,17 @@ public:
         fluentPushButton->setIconSize(QSize(20, 20));
         fluentIconPushButton = new FluentIconPushButton(centralwidget);
         fluentIconPushButton->setObjectName(QString::fromUtf8("fluentIconPushButton"));
-        fluentIconPushButton->setGeometry(QRect(90, 180, 71, 71));
+        fluentIconPushButton->setGeometry(QRect(80, 160, 91, 91));
         fluentIconPushButton->setIcon(icon);
+        fluentIconPushButton->setIconTopMargin(0);
+        fluentIconPushButton->setIconTextSpace(8);
+        fluentIconPushButton->setFontSize(15);
+        fluentIconPushButton->setTextIsOustside(true);
         fluentIconToggleButton = new FluentIconToggleButton(centralwidget);
         fluentIconToggleButton->setObjectName(QString::fromUtf8("fluentIconToggleButton"));
-        fluentIconToggleButton->setGeometry(QRect(90, 280, 71, 71));
+        fluentIconToggleButton->setGeometry(QRect(180, 280, 61, 61));
         fluentIconToggleButton->setIcon(icon);
-        fluentIconToggleButton->setChecked(false);
+        fluentIconToggleButton->setChecked(true);
         fluentIconToggleButton->setAutoExclusive(false);
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/icon/cat.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -95,6 +105,7 @@ public:
         fluentCircleSpinBox = new FluentCircleSpinBox(centralwidget);
         fluentCircleSpinBox->setObjectName(QString::fromUtf8("fluentCircleSpinBox"));
         fluentCircleSpinBox->setGeometry(QRect(90, 520, 141, 121));
+        fluentCircleSpinBox->setValue(50);
         fluentCircleSpinBox->setThumbRadius(14.000000000000000);
         fluentCircleSpinBox->setArcWidth(12.000000000000000);
         fluentCircleSpinBox->setShowCursor(true);
@@ -134,6 +145,24 @@ public:
         fluentProgressBar->setIsLoop(true);
         fluentProgressBar->setMoveSpeed(1.000000000000000);
         fluentProgressBar->setSliderLen(0.250000000000000);
+        fluentIconPushButton_2 = new FluentIconPushButton(centralwidget);
+        fluentIconPushButton_2->setObjectName(QString::fromUtf8("fluentIconPushButton_2"));
+        fluentIconPushButton_2->setGeometry(QRect(180, 170, 61, 61));
+        fluentIconPushButton_2->setIcon(icon);
+        fluentIconPushButton_2->setIconTopMargin(-6);
+        fluentIconPushButton_2->setIconTextSpace(0);
+        fluentIconPushButton_2->setFontSize(14);
+        fluentIconPushButton_2->setTextIsOustside(false);
+        fluentIconToggleButton_2 = new FluentIconToggleButton(centralwidget);
+        fluentIconToggleButton_2->setObjectName(QString::fromUtf8("fluentIconToggleButton_2"));
+        fluentIconToggleButton_2->setGeometry(QRect(80, 260, 91, 91));
+        fluentIconToggleButton_2->setIcon(icon);
+        fluentIconToggleButton_2->setChecked(false);
+        fluentIconToggleButton_2->setAutoExclusive(false);
+        fluentIconToggleButton_2->setIconTextSpace(8);
+        fluentIconToggleButton_2->setFontSize(15);
+        fluentIconToggleButton_2->setToggledIcon(icon1);
+        fluentIconToggleButton_2->setTextIsOustside(true);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -156,6 +185,9 @@ public:
         fluentIconToggleButton->setText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\213\227", nullptr));
         fluentIconToggleButton->setToggledText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\214\253", nullptr));
         fluentLineEdit->setText(QString());
+        fluentIconPushButton_2->setText(QCoreApplication::translate("MainWindow", "\346\265\213\350\257\225", nullptr));
+        fluentIconToggleButton_2->setText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\213\227", nullptr));
+        fluentIconToggleButton_2->setToggledText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\214\253", nullptr));
     } // retranslateUi
 
 };

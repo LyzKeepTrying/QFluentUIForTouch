@@ -11,7 +11,6 @@ FluentToggleButton::FluentToggleButton(QWidget* parent)
     setContentsMargins(0, 0, 0, 0);
     setCheckable(true);
     setCursor(Qt::PointingHandCursor);
-    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     // 设置动画
     QPropertyAnimation* thumb_animation = new QPropertyAnimation(this, getThumbPositionPropertyName(), this);
@@ -30,6 +29,13 @@ FluentToggleButton::FluentToggleButton(QWidget* parent)
         thumb_animation->setStartValue(getThumbPosition());
         thumb_animation->setEndValue(checked ? getThumbXEnd() : getThumbXStart());
         thumb_animation->start();
+    });
+
+    connect(this, &FluentToggleButton::ThumbRadiusChanged, this, [=](int thumb_radius){
+
+        setThumbXEnd(width() - thumb_radius*2 - 3);
+        setThumbPosition(isChecked() ? getThumbXEnd() : getThumbXStart());
+
     });
 }
 
@@ -51,7 +57,7 @@ void FluentToggleButton::paintEvent(QPaintEvent* event) {
 
     painter.setPen(getBorderColor());
     painter.setBrush(bg_color);
-    painter.drawRoundedRect(bg_rect, border_radius, border_radius);
+    painter.drawRoundedRect(bg_rect.adjusted(1, 1, -1, -1), border_radius, border_radius);
 
 
     // 绘制滑块
@@ -86,8 +92,6 @@ void FluentToggleButton::mouseReleaseEvent(QMouseEvent* event){
 void FluentToggleButton::resizeEvent(QResizeEvent* event) {
 
     Q_UNUSED(event)
-
-    setThumbRadius(height() / 2.5);
 
     setThumbXEnd(width() - getThumbRadius()*2 - 2);
 

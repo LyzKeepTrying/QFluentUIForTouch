@@ -28,32 +28,63 @@ void FluentIconPushButton::paintEvent(QPaintEvent* /*event*/) {
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-    // Draw background
     painter.setBrush(getBackgroundColor());
     painter.setPen(getBorderColor());
-    painter.drawRoundedRect(rect(), 8, 8);
 
-    // Draw icon
-    if (!icon().isNull()) {
-        QPoint icoPos((width() - iconSize().width()) / 2,
-                      (height() - iconSize().height()) / 2 + getIconTopSpace());
-        painter.drawPixmap(icoPos, icon().pixmap(iconSize()));
+    if(getTextIsOustside()){
+
+        QRect icon_rect = rect().adjusted(getFontSize(), getFontSize() - getIconTextSpace() / 2, -getFontSize(), -getFontSize() - getIconTextSpace() / 2);
+
+        painter.drawRoundedRect(icon_rect, 8, 8);
+
+        // Draw icon
+        if (!icon().isNull()){
+            QPoint icon_pos((icon_rect.width() - iconSize().width()) / 2,
+                            (icon_rect.height() - iconSize().height()) / 2);
+            painter.drawPixmap(icon_rect.topLeft() + icon_pos, icon().pixmap(iconSize()));
+        }
+
+        // Draw text under icon or centered if no icon
+        if (!text().isEmpty()) {
+            painter.setPen(getTextColor());
+            QFont font(QFluentUI::Font::default_text_font);
+            font.setPixelSize(getFontSize());
+            painter.setFont(font);
+            QRect text_rect(
+                0,
+                icon_rect.y() + icon_rect.height() + getIconTextSpace() / 2,
+                width(),
+                painter.fontMetrics().height()
+                );
+            painter.drawText(text_rect, Qt::AlignHCenter | Qt::AlignTop, text());
+        }
+    }else{
+        painter.drawRoundedRect(rect().adjusted(1, 1, -1, -1), 8, 8);
+
+        // Draw icon
+        if (!icon().isNull()) {
+            QPoint icon_pos((width() - iconSize().width()) / 2,
+                          (height() - iconSize().height()) / 2 + getIconTopMargin());
+            painter.drawPixmap(icon_pos, icon().pixmap(iconSize()));
+        }
+
+        // Draw text under icon or centered if no icon
+        if (!text().isEmpty()) {
+            painter.setPen(getTextColor());
+            QFont font(QFluentUI::Font::default_text_font);
+            font.setPixelSize(getFontSize());
+            painter.setFont(font);
+            QRect textRect(
+                0,
+                (height() + iconSize().height()) / 2 + getIconTopMargin() + getIconTextSpace(),
+                width(),
+                painter.fontMetrics().height()
+                );
+            painter.drawText(textRect, Qt::AlignHCenter | Qt::AlignTop, text());
+        }
     }
 
-    // Draw text under icon or centered if no icon
-    if (!text().isEmpty()) {
-        painter.setPen(getTextColor());
-        QFont font(QFluentUI::Font::default_text_font);
-        font.setPixelSize(getFontSize());
-        painter.setFont(font);
-        QRect textRect(
-            0,
-            (height() + iconSize().height()) / 2 + getIconTopSpace() + getIconTextInnerSpace(),
-            width(),
-            painter.fontMetrics().height()
-            );
-        painter.drawText(textRect, Qt::AlignHCenter | Qt::AlignTop, text());
-    }
+
 }
 
 void FluentIconPushButton::mousePressEvent(QMouseEvent* event) {

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentToggleButton_t {
-    QByteArrayData data[9];
-    char stringdata0[127];
+    QByteArrayData data[12];
+    char stringdata0[153];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,20 +33,24 @@ struct qt_meta_stringdata_FluentToggleButton_t {
 static const qt_meta_stringdata_FluentToggleButton_t qt_meta_stringdata_FluentToggleButton = {
     {
 QT_MOC_LITERAL(0, 0, 18), // "FluentToggleButton"
-QT_MOC_LITERAL(1, 19, 13), // "ThumbPosition"
-QT_MOC_LITERAL(2, 33, 11), // "ThumbRadius"
-QT_MOC_LITERAL(3, 45, 11), // "ThumbXStart"
-QT_MOC_LITERAL(4, 57, 9), // "ThumbXEnd"
-QT_MOC_LITERAL(5, 67, 10), // "ThumbColor"
-QT_MOC_LITERAL(6, 78, 18), // "BackgroundOffColor"
-QT_MOC_LITERAL(7, 97, 17), // "BackgroundOnColor"
-QT_MOC_LITERAL(8, 115, 11) // "BorderColor"
+QT_MOC_LITERAL(1, 19, 18), // "ThumbRadiusChanged"
+QT_MOC_LITERAL(2, 38, 0), // ""
+QT_MOC_LITERAL(3, 39, 5), // "value"
+QT_MOC_LITERAL(4, 45, 13), // "ThumbPosition"
+QT_MOC_LITERAL(5, 59, 11), // "ThumbRadius"
+QT_MOC_LITERAL(6, 71, 11), // "ThumbXStart"
+QT_MOC_LITERAL(7, 83, 9), // "ThumbXEnd"
+QT_MOC_LITERAL(8, 93, 10), // "ThumbColor"
+QT_MOC_LITERAL(9, 104, 18), // "BackgroundOffColor"
+QT_MOC_LITERAL(10, 123, 17), // "BackgroundOnColor"
+QT_MOC_LITERAL(11, 141, 11) // "BorderColor"
 
     },
-    "FluentToggleButton\0ThumbPosition\0"
-    "ThumbRadius\0ThumbXStart\0ThumbXEnd\0"
-    "ThumbColor\0BackgroundOffColor\0"
-    "BackgroundOnColor\0BorderColor"
+    "FluentToggleButton\0ThumbRadiusChanged\0"
+    "\0value\0ThumbPosition\0ThumbRadius\0"
+    "ThumbXStart\0ThumbXEnd\0ThumbColor\0"
+    "BackgroundOffColor\0BackgroundOnColor\0"
+    "BorderColor"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,31 +60,63 @@ static const uint qt_meta_data_FluentToggleButton[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
-       8,   14, // properties
+       1,   14, // methods
+       8,   22, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    1,   19,    2, 0x06 /* Public */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::QReal,    3,
 
  // properties: name, type, flags
-       1, QMetaType::QReal, 0x00095103,
-       2, QMetaType::QReal, 0x00095103,
-       3, QMetaType::QReal, 0x00095103,
        4, QMetaType::QReal, 0x00095103,
-       5, QMetaType::QColor, 0x00095103,
-       6, QMetaType::QColor, 0x00095103,
-       7, QMetaType::QColor, 0x00095103,
+       5, QMetaType::QReal, 0x00495103,
+       6, QMetaType::QReal, 0x00095103,
+       7, QMetaType::QReal, 0x00095103,
        8, QMetaType::QColor, 0x00095103,
+       9, QMetaType::QColor, 0x00095103,
+      10, QMetaType::QColor, 0x00095103,
+      11, QMetaType::QColor, 0x00095103,
+
+ // properties: notify_signal_id
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
 
        0        // eod
 };
 
 void FluentToggleButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<FluentToggleButton *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->ThumbRadiusChanged((*reinterpret_cast< qreal(*)>(_a[1]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (FluentToggleButton::*)(qreal );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentToggleButton::ThumbRadiusChanged)) {
+                *result = 0;
+                return;
+            }
+        }
+    }
 #ifndef QT_NO_PROPERTIES
-    if (_c == QMetaObject::ReadProperty) {
+    else if (_c == QMetaObject::ReadProperty) {
         auto *_t = static_cast<FluentToggleButton *>(_o);
         Q_UNUSED(_t)
         void *_v = _a[0];
@@ -113,10 +149,6 @@ void FluentToggleButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
     } else if (_c == QMetaObject::ResetProperty) {
     }
 #endif // QT_NO_PROPERTIES
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject FluentToggleButton::staticMetaObject = { {
@@ -147,9 +179,17 @@ int FluentToggleButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QAbstractButton::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
-    
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 1)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 1;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 1)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 1;
+    }
 #ifndef QT_NO_PROPERTIES
-    if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
+    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
         _id -= 8;
@@ -166,6 +206,13 @@ int FluentToggleButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     }
 #endif // QT_NO_PROPERTIES
     return _id;
+}
+
+// SIGNAL 0
+void FluentToggleButton::ThumbRadiusChanged(qreal _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

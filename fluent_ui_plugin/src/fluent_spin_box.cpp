@@ -40,7 +40,7 @@ void FluentSpinBox::paintEvent(QPaintEvent* event) {
     painter.setPen(hasFocus() ? getBorderFocusOnColor()
                               : getBorderFocusOffColor());
     painter.setBrush(getBackgroundColor());
-    painter.drawRoundedRect(rect(), 8, 8);
+    painter.drawRoundedRect(rect().adjusted(1, 1, -1, -1), 8, 8);
 
 
 

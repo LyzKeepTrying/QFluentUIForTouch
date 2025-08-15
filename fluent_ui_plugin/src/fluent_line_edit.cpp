@@ -37,7 +37,7 @@ void FluentLineEdit::paintEvent(QPaintEvent* event) {
     // 绘制背景
     painter.setPen(hasFocus() ? getBorderFocusOnColor() : getBorderFocusOffColor());
     painter.setBrush(getBackgroundColor());
-    painter.drawRoundedRect(rect(), 8, 8);
+    painter.drawRoundedRect(rect().adjusted(1, 1, -1, -1), 8, 8);
 
     // 文本区域 = 整个 rect 减去 textMargins
     const auto text_margin = textMargins();

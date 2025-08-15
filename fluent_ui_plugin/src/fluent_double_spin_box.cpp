@@ -40,7 +40,7 @@ void FluentDoubleSpinBox::paintEvent(QPaintEvent* event) {
     painter.setPen(hasFocus() ? getBorderFocusOnColor()
                               : getBorderFocusOffColor());
     painter.setBrush(getBackgroundColor());
-    painter.drawRoundedRect(rect(), 8, 8);
+    painter.drawRoundedRect(rect().adjusted(1, 1, -1, -1), 8, 8);
 
     // 计算按钮大小和位置（正方形，边长 = 高度）
     int btn_size = height();

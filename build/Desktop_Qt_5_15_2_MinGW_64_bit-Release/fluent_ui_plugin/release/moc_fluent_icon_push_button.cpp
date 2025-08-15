@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentIconPushButton_t {
-    QByteArrayData data[7];
-    char stringdata0[100];
+    QByteArrayData data[8];
+    char stringdata0[111];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,14 +36,15 @@ QT_MOC_LITERAL(0, 0, 20), // "FluentIconPushButton"
 QT_MOC_LITERAL(1, 21, 15), // "BackgroundColor"
 QT_MOC_LITERAL(2, 37, 9), // "TextColor"
 QT_MOC_LITERAL(3, 47, 11), // "BorderColor"
-QT_MOC_LITERAL(4, 59, 12), // "IconTopSpace"
-QT_MOC_LITERAL(5, 72, 18), // "IconTextInnerSpace"
-QT_MOC_LITERAL(6, 91, 8) // "FontSize"
+QT_MOC_LITERAL(4, 59, 13), // "IconTopMargin"
+QT_MOC_LITERAL(5, 73, 13), // "IconTextSpace"
+QT_MOC_LITERAL(6, 87, 8), // "FontSize"
+QT_MOC_LITERAL(7, 96, 14) // "TextIsOustside"
 
     },
     "FluentIconPushButton\0BackgroundColor\0"
-    "TextColor\0BorderColor\0IconTopSpace\0"
-    "IconTextInnerSpace\0FontSize"
+    "TextColor\0BorderColor\0IconTopMargin\0"
+    "IconTextSpace\0FontSize\0TextIsOustside"
 };
 #undef QT_MOC_LITERAL
 
@@ -54,7 +55,7 @@ static const uint qt_meta_data_FluentIconPushButton[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-       6,   14, // properties
+       7,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -67,6 +68,7 @@ static const uint qt_meta_data_FluentIconPushButton[] = {
        4, QMetaType::Int, 0x00095103,
        5, QMetaType::Int, 0x00095103,
        6, QMetaType::Int, 0x00095103,
+       7, QMetaType::Bool, 0x00095103,
 
        0        // eod
 };
@@ -83,9 +85,10 @@ void FluentIconPushButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 0: *reinterpret_cast< QColor*>(_v) = _t->getBackgroundColor(); break;
         case 1: *reinterpret_cast< QColor*>(_v) = _t->getTextColor(); break;
         case 2: *reinterpret_cast< QColor*>(_v) = _t->getBorderColor(); break;
-        case 3: *reinterpret_cast< int*>(_v) = _t->getIconTopSpace(); break;
-        case 4: *reinterpret_cast< int*>(_v) = _t->getIconTextInnerSpace(); break;
+        case 3: *reinterpret_cast< int*>(_v) = _t->getIconTopMargin(); break;
+        case 4: *reinterpret_cast< int*>(_v) = _t->getIconTextSpace(); break;
         case 5: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
+        case 6: *reinterpret_cast< bool*>(_v) = _t->getTextIsOustside(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -96,9 +99,10 @@ void FluentIconPushButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 0: _t->setBackgroundColor(*reinterpret_cast< QColor*>(_v)); break;
         case 1: _t->setTextColor(*reinterpret_cast< QColor*>(_v)); break;
         case 2: _t->setBorderColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 3: _t->setIconTopSpace(*reinterpret_cast< int*>(_v)); break;
-        case 4: _t->setIconTextInnerSpace(*reinterpret_cast< int*>(_v)); break;
+        case 3: _t->setIconTopMargin(*reinterpret_cast< int*>(_v)); break;
+        case 4: _t->setIconTextSpace(*reinterpret_cast< int*>(_v)); break;
         case 5: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
+        case 6: _t->setTextIsOustside(*reinterpret_cast< bool*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -143,17 +147,17 @@ int FluentIconPushButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 6;
+        _id -= 7;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

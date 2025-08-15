@@ -17,9 +17,10 @@ class Q_DECL_EXPORT FluentIconPushButton : public QPushButton {
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(int, IconTopSpace, -6)
-    DECLARE_PROPERTY(int, IconTextInnerSpace, 0)
+    DECLARE_PROPERTY(int, IconTopMargin, -6)
+    DECLARE_PROPERTY(int, IconTextSpace, 0)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
+    DECLARE_PROPERTY(bool, TextIsOustside, false);
 
 public:
     explicit FluentIconPushButton(QWidget* parent = nullptr);
