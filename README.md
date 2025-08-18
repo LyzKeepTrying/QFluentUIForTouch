@@ -1,5 +1,3 @@
-# QFluentUIForTouch
-
 [简体中文说明](README.zh.md) | [English Documentation](README.md)
 
 # QFluentUIForTouch
