@@ -20,9 +20,9 @@ FluentCircleSpinBox::FluentCircleSpinBox(QWidget* parent)
         int min_v = minimum();
         int max_v = maximum();
 
-        double norm = 0.0;
+        qreal norm = 0.0;
         if (max_v != min_v) {
-            norm = double(val - min_v) / (max_v - min_v);
+            norm = qreal(val - min_v) / (max_v - min_v);
         }
         norm = qBound(0.0, norm, 1.0);
 
@@ -117,12 +117,12 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
         int range = maximum() - minimum();
         if (range > 0 && singleStep() > 0) {
             // 计算起始角（度，与上面 start_angle 对应，但以度为单位）
-            double start_deg = 270.0 - (360.0 - getMaxArcLen()) / 2.0;
+            qreal start_deg = 270.0 - (360.0 - getMaxArcLen()) / 2.0;
             // arc_rect_ 已经是环的矩形区域，中心和半轴可复用
-            double cx = arc_rect_.center().x();
-            double cy = arc_rect_.center().y();
-            double rx = arc_rect_.width()  / 2.0;
-            double ry = arc_rect_.height() / 2.0;
+            qreal cx = arc_rect_.center().x();
+            qreal cy = arc_rect_.center().y();
+            qreal rx = arc_rect_.width()  / 2.0;
+            qreal ry = arc_rect_.height() / 2.0;
 
             for (int i = minimum(); i < maximum(); i += singleStep()) {
                 // 跳过起点（与线性实现一致）
@@ -131,15 +131,15 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
 
                 qreal norm = (i - minimum()) / qreal(range);
                 // norm=0 -> 起点，norm=1 -> 终点
-                double deg = start_deg - norm * getMaxArcLen(); // 向顺时针方向(负角度)推进
+                qreal deg = start_deg - norm * getMaxArcLen(); // 向顺时针方向(负角度)推进
                 // 转为弧度并计算点坐标（与 arcEndPoint 的坐标系一致）
-                double theta = qDegreesToRadians(deg);
-                double x = cx + rx * std::cos(theta);
-                double y = cy - ry * std::sin(theta); // 注意 Qt 的 Y 向下
+                qreal theta = qDegreesToRadians(deg);
+                qreal x = cx + rx * std::cos(theta);
+                qreal y = cy - ry * std::sin(theta); // 注意 Qt 的 Y 向下
 
                 // 小点半径，参考线性版本使用 getLineWidth()/4.0
-                double dotRadius = getArcWidth() / 4.0;
-                painter.drawEllipse(QPointF(x, y), dotRadius, dotRadius);
+                qreal dot_radius = getArcWidth() / 4.0;
+                painter.drawEllipse(QPointF(x, y), dot_radius, dot_radius);
             }
         }
 
@@ -170,11 +170,11 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
 QPointF FluentCircleSpinBox::arcEndPoint(const QRectF &arcRect, int startAngle16, int spanAngle16)
 {
     // 将 1/16 度 -> 度
-    qreal startDeg = startAngle16 / 16.0;
-    qreal spanDeg  = spanAngle16  / 16.0;
-    qreal endDeg   = startDeg + spanDeg;   // 结束角（度）
+    qreal start_deg = startAngle16 / 16.0;
+    qreal span_deg  = spanAngle16  / 16.0;
+    qreal end_deg   = start_deg + span_deg;   // 结束角（度）
 
-    qreal theta = qDegreesToRadians(endDeg); // 弧度
+    qreal theta = qDegreesToRadians(end_deg); // 弧度
 
     qreal cx = arcRect.center().x();
     qreal cy = arcRect.center().y();
@@ -262,7 +262,6 @@ void FluentCircleSpinBox::mousePressEvent(QMouseEvent* event) {
 
             // 进入按下状态，以便后续 mouseMoveEvent 处理拖动
             setThumbIsPressed(true);
-            update();
             event->accept();
             return;
         }
@@ -270,7 +269,9 @@ void FluentCircleSpinBox::mousePressEvent(QMouseEvent* event) {
 }
 
 void FluentCircleSpinBox::mouseReleaseEvent(QMouseEvent* event) {
-    setThumbIsPressed(false);
+    if(getThumbIsPressed()){
+        setThumbIsPressed(false);
+    }
     QSpinBox::mouseReleaseEvent(event);
 }
 
@@ -280,22 +281,22 @@ void FluentCircleSpinBox::mouseMoveEvent(QMouseEvent* event) {
         QPointF center = arc_rect_.center();
 
         // 当前鼠标角度（Qt 坐标，y 向下）
-        double angle_rad = std::atan2(center.y() - pos.y(), pos.x() - center.x());
-        double angle_deg = qRadiansToDegrees(angle_rad);
+        qreal angle_rad = std::atan2(center.y() - pos.y(), pos.x() - center.x());
+        qreal angle_deg = qRadiansToDegrees(angle_rad);
         if (angle_deg < 0) angle_deg += 360;
 
         // 圆弧起点和终点（顺时针方向）
-        double start_deg = 270 - (360 - getMaxArcLen()) / 2;
+        qreal start_deg = 270 - (360 - getMaxArcLen()) / 2;
         if (start_deg < 0) start_deg += 360;
 
-        auto cw_diff = [](double from, double to) {
-            double diff = from - to;
+        auto cw_diff = [](qreal from, qreal to) {
+            qreal diff = from - to;
             if (diff < 0) diff += 360;
             return diff;
         };
 
         // 鼠标到起点的顺时针差
-        double arc_pos_deg = cw_diff(start_deg, angle_deg);
+        qreal arc_pos_deg = cw_diff(start_deg, angle_deg);
 
         if (arc_pos_deg > getMaxArcLen()) {
             // 超出圆弧范围，根据当前 value 决定钳制位置
@@ -305,12 +306,12 @@ void FluentCircleSpinBox::mouseMoveEvent(QMouseEvent* event) {
                 arc_pos_deg = getMaxArcLen(); // 终点
             } else {
                 // 不是极值则直接夹到范围内
-                arc_pos_deg = std::max(0.0, std::min(arc_pos_deg, double(getMaxArcLen())));
+                arc_pos_deg = std::max(0.0, std::min(arc_pos_deg, qreal(getMaxArcLen())));
             }
         }
 
         // 归一化并更新
-        double norm = arc_pos_deg / getMaxArcLen();
+        qreal norm = arc_pos_deg / getMaxArcLen();
         norm = qBound(0.0, norm, 1.0);
 
         int min_v = minimum();

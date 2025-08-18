@@ -9,6 +9,7 @@ FluentSlider::FluentSlider(QWidget* parent)
     setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
     setOrientation(Qt::Horizontal);
+
 }
 
 QSize FluentSlider::sizeHint() const {
@@ -166,7 +167,6 @@ void FluentSlider::mousePressEvent(QMouseEvent* event) {
 
             // 进入按下状态，后续 mouseMoveEvent 会处理拖动
             setThumbIsPressed(true);
-            update();
             event->accept();
             return;
         }
@@ -201,7 +201,6 @@ void FluentSlider::mouseMoveEvent(QMouseEvent* event) {
 void FluentSlider::mouseReleaseEvent(QMouseEvent* event) {
     if (getThumbIsPressed()) {
         setThumbIsPressed(false);
-        update();
         event->accept();
         return;
     }

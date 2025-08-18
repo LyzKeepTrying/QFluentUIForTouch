@@ -203,7 +203,6 @@ void FluentLineSpinBox::mousePressEvent(QMouseEvent* event) {
 
             // 进入按下状态，后续 mouseMoveEvent 会处理拖动
             setThumbIsPressed(true);
-            update();
             event->accept();
             return;
         }
@@ -212,7 +211,9 @@ void FluentLineSpinBox::mousePressEvent(QMouseEvent* event) {
 }
 
 void FluentLineSpinBox::mouseReleaseEvent(QMouseEvent* event) {
-    setThumbIsPressed(false);
+    if(getThumbIsPressed()){
+        setThumbIsPressed(false);
+    }
     QSpinBox::mouseReleaseEvent(event);
 }
 
