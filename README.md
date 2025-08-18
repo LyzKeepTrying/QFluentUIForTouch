@@ -4,15 +4,11 @@
 
 QFluentUIForTouch is a collection of Fluent Design UI plugins based on Qt, specifically optimized for touch screen devices.This project provides modern, smooth, and touch-friendly UI components for Qt applications.
 
----
-
 ## Project Structure
 
 - `fluent_ui_plugin/`: Source code of the Fluent UI plugins, including main widget implementations (e.g., FluentPushButton, FluentToggleButton, etc.)
 - `example/`: Example program demonstrating the actual effects and usage of the widgets
 - `build/`: Compiled output files and plugins
-
----
 
 ## Key Features
 
@@ -23,8 +19,6 @@ QFluentUIForTouch is a collection of Fluent Design UI plugins based on Qt, speci
 - Easy to extend and customize
 
 ![example1](readme/example1.png)
-
----
 
 ## Supported Widgets
 
@@ -41,7 +35,6 @@ QFluentUIForTouch is a collection of Fluent Design UI plugins based on Qt, speci
 - **FluentSlider**: Fluent-style slider
 - **FluentProgressBar**: Fluent-style progress bar & scroll bar
 
----
 
 ## Getting Started
 
