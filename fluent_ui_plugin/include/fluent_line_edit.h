@@ -16,14 +16,11 @@
 class FLUENTUI_PLUGIN_EXPORT FluentLineEdit : public QLineEdit {
     Q_OBJECT
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-
     DECLARE_PROPERTY(QColor, BorderFocusOnColor, QFluentUI::ThemeColor::Light::on_color)
     DECLARE_PROPERTY(QColor, BorderFocusOffColor, QFluentUI::ThemeColor::Light::border_color)
-
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
-    DECLARE_PROPERTY(bool, ShowCursor, true)
+    DECLARE_PROPERTY_PRIVATE(bool, ShowCursor, true)
 
 public:
     explicit FluentLineEdit(QWidget* parent = nullptr);

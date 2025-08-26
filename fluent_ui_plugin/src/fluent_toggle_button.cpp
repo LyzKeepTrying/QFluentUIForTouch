@@ -93,7 +93,7 @@ void FluentToggleButton::resizeEvent(QResizeEvent* event) {
 
     Q_UNUSED(event)
 
-    setThumbXEnd(width() - getThumbRadius()*2 - 2);
+    setThumbXEnd(width() - getThumbRadius()*2 - 3);
 
     setThumbPosition(isChecked() ? getThumbXEnd() : getThumbXStart());
 

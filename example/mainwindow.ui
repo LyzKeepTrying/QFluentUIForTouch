@@ -128,7 +128,7 @@
      <rect>
       <x>90</x>
       <y>380</y>
-      <width>261</width>
+      <width>161</width>
       <height>41</height>
      </rect>
     </property>
@@ -408,6 +408,40 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="FluentComboBox" name="fluentComboBox">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>380</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="currentText">
+     <string/>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+    <property name="placeholderText">
+     <string/>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="modelColumn">
+     <number>0</number>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -476,6 +510,11 @@
    <class>FluentProgressBar</class>
    <extends>QProgressBar</extends>
    <header>fluent_progress_bar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentComboBox</class>
+   <extends>QComboBox</extends>
+   <header>fluent_combo_box.h</header>
   </customwidget>
  </customwidgets>
  <resources>

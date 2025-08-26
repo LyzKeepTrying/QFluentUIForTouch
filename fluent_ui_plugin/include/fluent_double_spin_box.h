@@ -18,9 +18,9 @@ class FLUENTUI_PLUGIN_EXPORT FluentDoubleSpinBox : public QDoubleSpinBox {
     DECLARE_PROPERTY(QColor, BorderFocusOnColor, QFluentUI::ThemeColor::Light::on_color)
     DECLARE_PROPERTY(QColor, BorderFocusOffColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
-    DECLARE_PROPERTY(bool, PlusButtonIsPressed, false);
-    DECLARE_PROPERTY(bool, MinusButtonIsPressed, false);
-    DECLARE_PROPERTY(bool, ShowCursor, true);
+    DECLARE_PROPERTY_PRIVATE(bool, PlusButtonIsPressed, false);
+    DECLARE_PROPERTY_PRIVATE(bool, MinusButtonIsPressed, false);
+    DECLARE_PROPERTY_PRIVATE(bool, ShowCursor, true);
 
 public:
     explicit FluentDoubleSpinBox(QWidget* parent = nullptr);

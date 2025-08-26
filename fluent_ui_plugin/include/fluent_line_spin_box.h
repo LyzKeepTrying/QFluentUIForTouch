@@ -24,8 +24,8 @@ class FLUENTUI_PLUGIN_EXPORT FluentLineSpinBox : public QSpinBox {
     DECLARE_PROPERTY(QColor, ThumbBorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(qreal, ThumbRadius, 11.0);
     DECLARE_PROPERTY(qreal, LineWidth, 10.0);
-    DECLARE_PROPERTY(bool, ShowCursor, true);
-    DECLARE_PROPERTY(bool, ThumbIsPressed, false);
+    DECLARE_PROPERTY_PRIVATE(bool, ShowCursor, true);
+    DECLARE_PROPERTY_PRIVATE(bool, ThumbIsPressed, false);
     DECLARE_PROPERTY(Qt::Orientation, DirectionState, Qt::Horizontal);
     DECLARE_PROPERTY(bool, PaintStep, false);
     DECLARE_PROPERTY(bool, SliderPress, true);

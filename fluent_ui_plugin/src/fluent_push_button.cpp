@@ -1,6 +1,6 @@
 #include "fluent_push_button.h"
+
 #include <QPainter>
-#include <QEvent>
 
 FluentPushButton::FluentPushButton(const QString& text, QWidget* parent)
     : FluentPushButton(parent) {

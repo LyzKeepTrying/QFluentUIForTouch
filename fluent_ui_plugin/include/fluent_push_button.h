@@ -2,8 +2,6 @@
 #define FLUENT_PUSH_BUTTON_H
 
 #include <QPushButton>
-#include <QPropertyAnimation>
-#include <QEasingCurve>
 
 #include "define.h"
 #include "theme.h"
@@ -16,11 +14,8 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentPushButton : public QPushButton {
     Q_OBJECT
-
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
 
 public:

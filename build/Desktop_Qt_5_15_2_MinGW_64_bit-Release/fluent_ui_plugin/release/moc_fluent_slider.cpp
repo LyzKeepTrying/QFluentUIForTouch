@@ -68,7 +68,7 @@ static const uint qt_meta_data_FluentSlider[] = {
        1, QMetaType::QColor, 0x00095103,
        2, QMetaType::QReal, 0x00095103,
        3, QMetaType::QReal, 0x00095103,
-       4, QMetaType::Bool, 0x00095103,
+       4, QMetaType::Bool, 0x00094103,
        5, QMetaType::QColor, 0x00095103,
        6, QMetaType::QColor, 0x00095103,
        7, QMetaType::QColor, 0x00095103,

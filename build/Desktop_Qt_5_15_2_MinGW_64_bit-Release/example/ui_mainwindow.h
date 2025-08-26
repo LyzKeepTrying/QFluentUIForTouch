@@ -17,6 +17,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 #include "fluent_circle_spin_box.h"
+#include "fluent_combo_box.h"
 #include "fluent_double_spin_box.h"
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
@@ -50,6 +51,7 @@ public:
     FluentIconPushButton *fluentIconPushButton_2;
     FluentIconToggleButton *fluentIconToggleButton_2;
     FluentCircleSpinBox *fluentCircleSpinBox_2;
+    FluentComboBox *fluentComboBox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -96,7 +98,7 @@ public:
         fluentIconToggleButton->setToggledIcon(icon1);
         fluentLineEdit = new FluentLineEdit(centralwidget);
         fluentLineEdit->setObjectName(QString::fromUtf8("fluentLineEdit"));
-        fluentLineEdit->setGeometry(QRect(90, 380, 261, 41));
+        fluentLineEdit->setGeometry(QRect(90, 380, 161, 41));
         fluentSpinBox = new FluentSpinBox(centralwidget);
         fluentSpinBox->setObjectName(QString::fromUtf8("fluentSpinBox"));
         fluentSpinBox->setGeometry(QRect(90, 450, 141, 41));
@@ -180,6 +182,17 @@ public:
         fluentCircleSpinBox_2->setArcRectAdjust(15);
         fluentCircleSpinBox_2->setThumbIsPressed(false);
         fluentCircleSpinBox_2->setPaintStep(true);
+        fluentComboBox = new FluentComboBox(centralwidget);
+        fluentComboBox->setObjectName(QString::fromUtf8("fluentComboBox"));
+        fluentComboBox->setGeometry(QRect(290, 380, 141, 41));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(fluentComboBox->sizePolicy().hasHeightForWidth());
+        fluentComboBox->setSizePolicy(sizePolicy);
+        fluentComboBox->setEditable(false);
+        fluentComboBox->setFrame(true);
+        fluentComboBox->setModelColumn(0);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -190,6 +203,9 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
+
+        fluentComboBox->setCurrentIndex(-1);
+
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -205,6 +221,8 @@ public:
         fluentIconPushButton_2->setText(QCoreApplication::translate("MainWindow", "\346\265\213\350\257\225", nullptr));
         fluentIconToggleButton_2->setText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\213\227", nullptr));
         fluentIconToggleButton_2->setToggledText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\214\253", nullptr));
+        fluentComboBox->setCurrentText(QString());
+        fluentComboBox->setPlaceholderText(QString());
     } // retranslateUi
 
 };

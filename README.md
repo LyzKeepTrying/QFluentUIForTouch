@@ -34,7 +34,7 @@ QFluentUIForTouch is a collection of Fluent Design UI plugins based on Qt, speci
 - **FluentLineSpinBox**: Fluent-style linear spin box (integer input)
 - **FluentSlider**: Fluent-style slider
 - **FluentProgressBar**: Fluent-style progress bar & scroll bar
-
+- **FluentComboBox**: Fluent-style combo box
 
 ## Getting Started
 

@@ -66,7 +66,7 @@ static const uint qt_meta_data_FluentLineEdit[] = {
        3, QMetaType::QColor, 0x00095103,
        4, QMetaType::QColor, 0x00095103,
        5, QMetaType::Int, 0x00095103,
-       6, QMetaType::Bool, 0x00095103,
+       6, QMetaType::Bool, 0x00094103,
 
        0        // eod
 };

@@ -10,6 +10,7 @@
 #include "fluent_line_spin_box.h"
 #include "fluent_slider.h"
 #include "fluent_progress_bar.h"
+#include "fluent_combo_box.h"
 
 #include <QtCore/qplugin.h>
 
@@ -29,6 +30,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentLineSpinBoxPlugin(this));
     widget_list_.append(new FluentSliderPlugin(this));
     widget_list_.append(new FluentProgressBarPlugin(this));
+    widget_list_.append(new FluentComboBoxPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -722,6 +724,69 @@ QWidget* FluentProgressBarPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentProgressBarPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentComboBoxPlugin */
+
+FluentComboBoxPlugin::FluentComboBoxPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentComboBoxPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentComboBoxPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentComboBoxPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentComboBoxPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentComboBox" name="fluentComboBox">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentComboBoxPlugin::includeFile() const {
+    return "fluent_combo_box.h";
+}
+
+QString FluentComboBoxPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentComboBoxPlugin::name() const {
+    return "FluentComboBox";
+}
+
+QString FluentComboBoxPlugin::toolTip() const {
+    return "Fluent Design Fluent Combo Box";
+}
+
+QString FluentComboBoxPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentComboBoxPlugin::createWidget(QWidget* parent) {
+    return new FluentComboBox(parent);
+}
+
+void FluentComboBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

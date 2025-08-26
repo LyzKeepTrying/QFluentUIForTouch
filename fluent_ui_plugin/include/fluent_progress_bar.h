@@ -16,7 +16,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentProgressBar : public QProgressBar {
     DECLARE_PROPERTY(qreal, LineWidth, 10.0)
     DECLARE_PROPERTY(QColor, SliderOnColor, QFluentUI::ThemeColor::Light::on_color)
     DECLARE_PROPERTY(QColor, SliderOffColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(int, CurSliderPos, 0.0)
+    DECLARE_PROPERTY_PRIVATE(int, CurSliderPos, 0.0)
     DECLARE_PROPERTY(bool, MoveAnamination, true)
     DECLARE_PROPERTY_SIGNAL(bool, IsLoop, false)
     DECLARE_PROPERTY(qreal, MoveSpeed, 1.0)

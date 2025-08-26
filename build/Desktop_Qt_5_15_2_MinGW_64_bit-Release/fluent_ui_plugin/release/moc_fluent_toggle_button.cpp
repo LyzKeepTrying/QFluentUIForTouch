@@ -74,10 +74,10 @@ static const uint qt_meta_data_FluentToggleButton[] = {
     QMetaType::Void, QMetaType::QReal,    3,
 
  // properties: name, type, flags
-       4, QMetaType::QReal, 0x00095103,
+       4, QMetaType::QReal, 0x00094103,
        5, QMetaType::QReal, 0x00495103,
-       6, QMetaType::QReal, 0x00095103,
-       7, QMetaType::QReal, 0x00095103,
+       6, QMetaType::QReal, 0x00094103,
+       7, QMetaType::QReal, 0x00094103,
        8, QMetaType::QColor, 0x00095103,
        9, QMetaType::QColor, 0x00095103,
       10, QMetaType::QColor, 0x00095103,
