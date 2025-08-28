@@ -155,8 +155,8 @@ int FluentComboBoxDelegate::qt_metacall(QMetaObject::Call _c, int _id, void **_a
     return _id;
 }
 struct qt_meta_stringdata_FluentComboBox_t {
-    QByteArrayData data[17];
-    char stringdata0[237];
+    QByteArrayData data[19];
+    char stringdata0[258];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -178,10 +178,12 @@ QT_MOC_LITERAL(9, 136, 15), // "BackgroundColor"
 QT_MOC_LITERAL(10, 152, 9), // "TextColor"
 QT_MOC_LITERAL(11, 162, 11), // "BorderColor"
 QT_MOC_LITERAL(12, 174, 10), // "ArrowColor"
-QT_MOC_LITERAL(13, 185, 14), // "HighlightColor"
-QT_MOC_LITERAL(14, 200, 8), // "FontSize"
-QT_MOC_LITERAL(15, 209, 9), // "RowHeight"
-QT_MOC_LITERAL(16, 219, 17) // "AnimationProgress"
+QT_MOC_LITERAL(13, 185, 10), // "ArrowWidth"
+QT_MOC_LITERAL(14, 196, 9), // "ArrowSize"
+QT_MOC_LITERAL(15, 206, 14), // "HighlightColor"
+QT_MOC_LITERAL(16, 221, 8), // "FontSize"
+QT_MOC_LITERAL(17, 230, 9), // "RowHeight"
+QT_MOC_LITERAL(18, 240, 17) // "AnimationProgress"
 
     },
     "FluentComboBox\0BackgroundColorChanged\0"
@@ -189,8 +191,8 @@ QT_MOC_LITERAL(16, 219, 17) // "AnimationProgress"
     "HighlightColorChanged\0FontSizeChanged\0"
     "RowHeightChanged\0BackgroundColor\0"
     "TextColor\0BorderColor\0ArrowColor\0"
-    "HighlightColor\0FontSize\0RowHeight\0"
-    "AnimationProgress"
+    "ArrowWidth\0ArrowSize\0HighlightColor\0"
+    "FontSize\0RowHeight\0AnimationProgress"
 };
 #undef QT_MOC_LITERAL
 
@@ -201,7 +203,7 @@ static const uint qt_meta_data_FluentComboBox[] = {
        0,       // classname
        0,    0, // classinfo
        6,   14, // methods
-       8,   62, // properties
+      10,   62, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -228,15 +230,19 @@ static const uint qt_meta_data_FluentComboBox[] = {
       10, QMetaType::QColor, 0x00495103,
       11, QMetaType::QColor, 0x00495103,
       12, QMetaType::QColor, 0x00095103,
-      13, QMetaType::QColor, 0x00495103,
-      14, QMetaType::QReal, 0x00495103,
-      15, QMetaType::Int, 0x00495103,
-      16, QMetaType::QReal, 0x00094103,
+      13, QMetaType::Int, 0x00095103,
+      14, QMetaType::Int, 0x00095103,
+      15, QMetaType::QColor, 0x00495103,
+      16, QMetaType::QReal, 0x00495103,
+      17, QMetaType::Int, 0x00495103,
+      18, QMetaType::QReal, 0x00094103,
 
  // properties: notify_signal_id
        0,
        1,
        2,
+       0,
+       0,
        0,
        3,
        4,
@@ -315,10 +321,12 @@ void FluentComboBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 1: *reinterpret_cast< QColor*>(_v) = _t->getTextColor(); break;
         case 2: *reinterpret_cast< QColor*>(_v) = _t->getBorderColor(); break;
         case 3: *reinterpret_cast< QColor*>(_v) = _t->getArrowColor(); break;
-        case 4: *reinterpret_cast< QColor*>(_v) = _t->getHighlightColor(); break;
-        case 5: *reinterpret_cast< qreal*>(_v) = _t->getFontSize(); break;
-        case 6: *reinterpret_cast< int*>(_v) = _t->getRowHeight(); break;
-        case 7: *reinterpret_cast< qreal*>(_v) = _t->getAnimationProgress(); break;
+        case 4: *reinterpret_cast< int*>(_v) = _t->getArrowWidth(); break;
+        case 5: *reinterpret_cast< int*>(_v) = _t->getArrowSize(); break;
+        case 6: *reinterpret_cast< QColor*>(_v) = _t->getHighlightColor(); break;
+        case 7: *reinterpret_cast< qreal*>(_v) = _t->getFontSize(); break;
+        case 8: *reinterpret_cast< int*>(_v) = _t->getRowHeight(); break;
+        case 9: *reinterpret_cast< qreal*>(_v) = _t->getAnimationProgress(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -330,10 +338,12 @@ void FluentComboBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 1: _t->setTextColor(*reinterpret_cast< QColor*>(_v)); break;
         case 2: _t->setBorderColor(*reinterpret_cast< QColor*>(_v)); break;
         case 3: _t->setArrowColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 4: _t->setHighlightColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 5: _t->setFontSize(*reinterpret_cast< qreal*>(_v)); break;
-        case 6: _t->setRowHeight(*reinterpret_cast< int*>(_v)); break;
-        case 7: _t->setAnimationProgress(*reinterpret_cast< qreal*>(_v)); break;
+        case 4: _t->setArrowWidth(*reinterpret_cast< int*>(_v)); break;
+        case 5: _t->setArrowSize(*reinterpret_cast< int*>(_v)); break;
+        case 6: _t->setHighlightColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 7: _t->setFontSize(*reinterpret_cast< qreal*>(_v)); break;
+        case 8: _t->setRowHeight(*reinterpret_cast< int*>(_v)); break;
+        case 9: _t->setAnimationProgress(*reinterpret_cast< qreal*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -382,17 +392,17 @@ int FluentComboBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 10;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 8;
+        _id -= 10;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 8;
+        _id -= 10;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 8;
+        _id -= 10;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 8;
+        _id -= 10;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 8;
+        _id -= 10;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

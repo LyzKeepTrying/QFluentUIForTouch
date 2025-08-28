@@ -85,7 +85,7 @@ FluentComboBox::FluentComboBox(QWidget * parent) : QComboBox(parent)
     });
 
     animation_ = new QPropertyAnimation(this, getAnimationProgressPropertyName(), this);
-    animation_->setDuration(150);
+    animation_->setDuration(200);
     animation_->setEasingCurve(QEasingCurve::OutQuad);
 
 }
