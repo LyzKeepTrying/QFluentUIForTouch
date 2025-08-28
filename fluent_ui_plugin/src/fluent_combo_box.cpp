@@ -101,7 +101,7 @@ void FluentComboBox::updateListViewStyle()
                 "  background-color: %1;"
                 "  border: 1px solid %2;"
                 "  border-radius: 0;"
-                "  padding: 2px 2;"
+                "  padding: 4px 4;"
                 "  outline: none;"
                 "}")
             .arg(getBackgroundColor().name())
@@ -166,18 +166,6 @@ void FluentComboBox::mouseReleaseEvent(QMouseEvent* event)
 {
 
     QComboBox::mouseReleaseEvent(event);
-}
-
-void FluentComboBox::enterEvent(QEvent* event)  // 修复参数类型
-{
-
-    QComboBox::enterEvent(event);
-}
-
-void FluentComboBox::leaveEvent(QEvent* event)
-{
-
-    QComboBox::leaveEvent(event);
 }
 
 void FluentComboBox::showPopup()

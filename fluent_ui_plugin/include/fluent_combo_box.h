@@ -53,8 +53,6 @@ protected:
     void paintEvent(QPaintEvent* event) override;
     void mousePressEvent(QMouseEvent* event) override;
     void mouseReleaseEvent(QMouseEvent* event) override;
-    void enterEvent(QEvent* event) override;  // 修复参数类型
-    void leaveEvent(QEvent* event) override;
     void showPopup() override;
     void hidePopup() override;
 
