@@ -7,7 +7,7 @@
 FluentLineEdit::FluentLineEdit(QWidget* parent)
     : QLineEdit(parent) {
     setContentsMargins(0, 0, 0, 0);
-    setTextMargins(6, 0, 6, 0);
+    setTextMargins(12, 0, 12, 0);
 
     // 光标闪烁计时
     QTimer* cursor_flash_timer = new QTimer(this);

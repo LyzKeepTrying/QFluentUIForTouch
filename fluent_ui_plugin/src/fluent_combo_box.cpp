@@ -51,33 +51,50 @@ FluentComboBox::FluentComboBox(QWidget * parent) : QComboBox(parent)
 
     // 设置下拉列表样式
     QListView* listView = new QListView(this);
-    listView->setItemDelegate(new FluentComboBoxDelegate(this));
+    FluentComboBoxDelegate* delegate = new FluentComboBoxDelegate(this);
+    listView->setItemDelegate(delegate);
     listView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     listView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     listView->setSelectionMode(QAbstractItemView::SingleSelection);
     setView(listView);
+    updateListViewStyle();
 
-    initAnimation();
-    updateDropdownStyle();
+    connect(this, &FluentComboBox::BackgroundColorChanged, this, [=](QColor color){
+        updateListViewStyle();
+        delegate->setBackgroundColor(color);
+    });
+
+    connect(this, &FluentComboBox::BorderColorChanged, this, [=](QColor color){
+        updateListViewStyle();
+    });
+
+    connect(this, &FluentComboBox::TextColorChanged, this, [=](QColor color){
+        delegate->setTextColor(color);
+    });
+
+    connect(this, &FluentComboBox::HighlightColorChanged, this, [=](QColor color){
+        delegate->setHighlightColor(color);
+    });
+
+    connect(this, &FluentComboBox::FontSizeChanged, this, [=](qreal font_size){
+        delegate->setFontSize(font_size);
+    });
+
+    connect(this, &FluentComboBox::RowHeightChanged, this, [=](int row_height){
+        delegate->setRowHeight(row_height);
+    });
+
+    animation_ = new QPropertyAnimation(this, getAnimationProgressPropertyName(), this);
+    animation_->setDuration(150);
+    animation_->setEasingCurve(QEasingCurve::OutQuad);
 
 }
 
 FluentComboBox::~FluentComboBox()
 {
-    if (m_animation) {
-        m_animation->stop();
-        delete m_animation;
-    }
 }
 
-void FluentComboBox::initAnimation()
-{
-    m_animation = new QPropertyAnimation(this, getAnimationProgressPropertyName());
-    m_animation->setDuration(150);
-    m_animation->setEasingCurve(QEasingCurve::OutQuad);
-}
-
-void FluentComboBox::updateDropdownStyle()
+void FluentComboBox::updateListViewStyle()
 {
     setStyleSheet(
         QString("QListView {"
@@ -93,8 +110,8 @@ void FluentComboBox::updateDropdownStyle()
 
 QSize FluentComboBox::sizeHint() const
 {
-    int textWidth = fontMetrics().horizontalAdvance(currentText());
-    return QSize(qMax(k_default_size_.width(), textWidth + k_arrow_width_ + 20), k_default_size_.height());
+    int text_width = fontMetrics().horizontalAdvance(currentText());
+    return QSize(qMax(k_default_size_.width(), text_width + getArrowWidth() + 20), k_default_size_.height());
 }
 
 void FluentComboBox::paintEvent(QPaintEvent* event)
@@ -105,93 +122,73 @@ void FluentComboBox::paintEvent(QPaintEvent* event)
 
     // 绘制背景和边框
     QRect rect = this->rect().adjusted(1, 1, -1, -1);
-    QPainterPath path;
-    path.addRoundedRect(rect, k_corner_radius_, k_corner_radius_);
 
-    // 鼠标悬停/按下效果
-    QColor bgColor = getBackgroundColor();
-    if (m_mousePressed) {
-        bgColor = bgColor.darker(110);
-    } else if (m_mouseHover) {
-        bgColor = bgColor.lighter(105);
-    }
-
-    painter.fillPath(path, bgColor);
+    painter.setBrush(getBackgroundColor());
     painter.setPen(getBorderColor());
-    painter.drawPath(path);
+    painter.drawRoundedRect(rect, 8, 8);
 
     // 绘制文本
     painter.setPen(getTextColor());
     QFont font(QFluentUI::Font::default_text_font);
     font.setPixelSize(getFontSize());
     painter.setFont(font);
-    QRect textRect = rect.adjusted(12, 0, -k_arrow_width_, 0);
-    painter.drawText(textRect, Qt::AlignVCenter | Qt::AlignLeft, currentText());
+    QRect text_rect = rect.adjusted(12, 0, -getArrowWidth(), 0);
+    painter.drawText(text_rect, Qt::AlignVCenter | Qt::AlignLeft, currentText());
 
     // 绘制下拉箭头
     painter.setPen(getArrowColor());
 
     // 箭头动画效果
-    qreal arrowRotation = getAnimationProgress() * 180;
+    qreal arrow_rotation = getAnimationProgress() * 180;
+    QPointF arrow_center(width() - getArrowWidth()/2, height()/2);
+    painter.translate(arrow_center);
+    painter.rotate(arrow_rotation);
 
-    painter.save();
-    QPointF arrowCenter(width() - k_arrow_width_/2, height()/2);
-    painter.translate(arrowCenter);
-    painter.rotate(arrowRotation);
-
-    int arrowSize = 6;
     QPointF arrowPoints[3] = {
-        QPointF(-arrowSize, -arrowSize/2),
-        QPointF(0, arrowSize/2),
-        QPointF(arrowSize, -arrowSize/2)
+        QPointF(-getArrowSize(), -getArrowSize()/2),
+        QPointF(0, getArrowSize()/2),
+        QPointF(getArrowSize(), -getArrowSize()/2)
     };
 
     painter.setBrush(getArrowColor());
     painter.setPen(Qt::NoPen);
     painter.drawConvexPolygon(arrowPoints, 3);
-    painter.restore();
+
 }
 
 void FluentComboBox::mousePressEvent(QMouseEvent* event)
 {
-    m_mousePressed = true;
-    update();
+
     QComboBox::mousePressEvent(event);
 }
 
 void FluentComboBox::mouseReleaseEvent(QMouseEvent* event)
 {
-    m_mousePressed = false;
-    update();
+
     QComboBox::mouseReleaseEvent(event);
 }
 
 void FluentComboBox::enterEvent(QEvent* event)  // 修复参数类型
 {
-    m_mouseHover = true;
-    update();
+
     QComboBox::enterEvent(event);
 }
 
 void FluentComboBox::leaveEvent(QEvent* event)
 {
-    m_mouseHover = false;
-    update();
+
     QComboBox::leaveEvent(event);
 }
 
 void FluentComboBox::showPopup()
 {
     // 开始箭头动画
-    if (m_animation) {
-        m_animation->stop();
-        m_animation->setStartValue(getAnimationProgress());
-        m_animation->setEndValue(1.0);
-        m_animation->start();
+    if (animation_) {
+        animation_->stop();
+        animation_->setStartValue(getAnimationProgress());
+        animation_->setEndValue(1.0);
+        animation_->start();
     }
-
-    // 更新下拉列表样式
-    updateDropdownStyle();
 
     QComboBox::showPopup();
 }
@@ -199,11 +196,11 @@ void FluentComboBox::showPopup()
 void FluentComboBox::hidePopup()
 {
     // 开始箭头动画
-    if (m_animation) {
-        m_animation->stop();
-        m_animation->setStartValue(getAnimationProgress());
-        m_animation->setEndValue(0.0);
-        m_animation->start();
+    if (animation_) {
+        animation_->stop();
+        animation_->setStartValue(getAnimationProgress());
+        animation_->setEndValue(0.0);
+        animation_->start();
     }
 
     QComboBox::hidePopup();

@@ -36,6 +36,8 @@ class FLUENTUI_PLUGIN_EXPORT FluentComboBox : public QComboBox
     DECLARE_PROPERTY_SIGNAL(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
     DECLARE_PROPERTY_SIGNAL(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(QColor, ArrowColor, QFluentUI::ThemeColor::Light::text_color)
+    DECLARE_PROPERTY(int, ArrowWidth, 24)
+    DECLARE_PROPERTY(int, ArrowSize, 6)
     DECLARE_PROPERTY_SIGNAL(QColor, HighlightColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY_SIGNAL(qreal, FontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY_SIGNAL(int, RowHeight, 32)
@@ -57,17 +59,13 @@ protected:
     void hidePopup() override;
 
 private:
-    void initAnimation();
-    void updateDropdownStyle();
+    void updateListViewStyle();
     void drawArrow(QPainter& painter);
 
     constexpr static QSize k_default_size_{120, 32};
-    constexpr static int k_arrow_width_{24};
-    constexpr static int k_corner_radius_{8};
 
-    bool m_mouseHover = false;
-    bool m_mousePressed = false;
-    QPropertyAnimation* m_animation = nullptr;
+    QPropertyAnimation *animation_ = nullptr;
+
 };
 
 #endif // FLUENT_COMBO_BOX_H
