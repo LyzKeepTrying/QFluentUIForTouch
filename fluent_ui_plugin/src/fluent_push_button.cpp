@@ -38,12 +38,14 @@ void FluentPushButton::paintEvent(QPaintEvent* event) {
 
     // 计算绘制区域
     QRect content_rect = rect().adjusted(8, 0, -8, 0);
-    painter.setFont(QFluentUI::Font::default_text_font);
+    QFont font(QFluentUI::Font::default_text_font);
+    font.setPixelSize(getFontSize());
+    painter.setFont(font);
 
     if (!icon().isNull()) {
         // 绘制图标
         QSize icon_size = iconSize();
-        QPoint icon_pos((width() - icon_size.width() - fontMetrics().horizontalAdvance(text()) - 4) / 2,
+        QPoint icon_pos((width() - icon_size.width() - painter.fontMetrics().horizontalAdvance(text()) - 4) / 2,
                       (height() - icon_size.height()) / 2);
         QPixmap pix = icon().pixmap(icon_size);
         painter.drawPixmap(icon_pos, pix);
@@ -52,7 +54,7 @@ void FluentPushButton::paintEvent(QPaintEvent* event) {
         painter.setPen(getTextColor());
         QRect text_rect(icon_pos.x() + icon_size.width() + 4,
                        0,
-                       fontMetrics().horizontalAdvance(text()),
+                       painter.fontMetrics().horizontalAdvance(text()),
                        height());
         painter.drawText(text_rect, Qt::AlignVCenter | Qt::AlignLeft, text());
     } else {

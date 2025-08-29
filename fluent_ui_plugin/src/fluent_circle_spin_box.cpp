@@ -10,6 +10,9 @@ FluentCircleSpinBox::FluentCircleSpinBox(QWidget* parent)
     : QSpinBox(parent) {
     setContentsMargins(0, 0, 0, 0);
     setCursor(Qt::PointingHandCursor);
+    QFont text_font = QFluentUI::Font::default_text_font;
+    text_font.setPixelSize(getFontSize());
+    setFont(text_font);
     setFrame(false);
     if (lineEdit()) {
         lineEdit()->hide();
@@ -61,12 +64,9 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
     // 绘制中间的数字文本
     painter.setPen(getTextColor());
     QFont text_font = QFluentUI::Font::default_text_font;
-    painter.setFont(text_font);
     text_font.setPixelSize(getFontSize());
     painter.setFont(text_font);
     QRect text_rect = mid_rect.adjusted(8, 8, -8, -8);
-    painter.setPen(getTextColor());
-    painter.setFont(text_font);
     painter.drawText(text_rect, Qt::AlignCenter, text());
 
     // 绘制光标

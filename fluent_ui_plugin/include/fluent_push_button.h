@@ -17,6 +17,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentPushButton : public QPushButton {
     DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
+    DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
 
 public:
     explicit FluentPushButton(const QString& text, QWidget* parent = nullptr);

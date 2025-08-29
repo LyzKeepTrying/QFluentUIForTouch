@@ -72,9 +72,6 @@ public:
         fluentPushButton = new FluentPushButton(centralwidget);
         fluentPushButton->setObjectName(QString::fromUtf8("fluentPushButton"));
         fluentPushButton->setGeometry(QRect(90, 110, 91, 41));
-        QFont font;
-        font.setPointSize(11);
-        fluentPushButton->setFont(font);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/icon/dog.png"), QSize(), QIcon::Normal, QIcon::Off);
         fluentPushButton->setIcon(icon);
@@ -85,7 +82,6 @@ public:
         fluentIconPushButton->setIcon(icon);
         fluentIconPushButton->setIconTopMargin(0);
         fluentIconPushButton->setIconTextSpace(8);
-        fluentIconPushButton->setFontSize(15);
         fluentIconPushButton->setTextIsOustside(true);
         fluentIconToggleButton = new FluentIconToggleButton(centralwidget);
         fluentIconToggleButton->setObjectName(QString::fromUtf8("fluentIconToggleButton"));
@@ -158,7 +154,6 @@ public:
         fluentIconPushButton_2->setIcon(icon);
         fluentIconPushButton_2->setIconTopMargin(-6);
         fluentIconPushButton_2->setIconTextSpace(0);
-        fluentIconPushButton_2->setFontSize(14);
         fluentIconPushButton_2->setTextIsOustside(false);
         fluentIconToggleButton_2 = new FluentIconToggleButton(centralwidget);
         fluentIconToggleButton_2->setObjectName(QString::fromUtf8("fluentIconToggleButton_2"));
@@ -167,7 +162,6 @@ public:
         fluentIconToggleButton_2->setChecked(false);
         fluentIconToggleButton_2->setAutoExclusive(false);
         fluentIconToggleButton_2->setIconTextSpace(8);
-        fluentIconToggleButton_2->setFontSize(15);
         fluentIconToggleButton_2->setToggledIcon(icon1);
         fluentIconToggleButton_2->setTextIsOustside(true);
         fluentCircleSpinBox_2 = new FluentCircleSpinBox(centralwidget);

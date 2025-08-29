@@ -70,13 +70,13 @@ void FluentIconToggleButton::paintEvent(QPaintEvent* /*event*/) {
             QFont font(QFluentUI::Font::default_text_font);
             font.setPixelSize(getFontSize());
             painter.setFont(font);
-            QRect textRect(
+            QRect text_rect(
                 0,
                 (height() + iconSize().height()) / 2 + getIconTopMargin() + getIconTextSpace(),
                 width(),
                 painter.fontMetrics().height()
                 );
-            painter.drawText(textRect, Qt::AlignHCenter | Qt::AlignTop, isChecked() ? getToggledText() : text());
+            painter.drawText(text_rect, Qt::AlignHCenter | Qt::AlignTop, isChecked() ? getToggledText() : text());
         }
     }
 }
