@@ -31,9 +31,13 @@ void FluentIconPushButton::paintEvent(QPaintEvent* /*event*/) {
     painter.setBrush(getBackgroundColor());
     painter.setPen(getBorderColor());
 
+    QFont font(QFluentUI::Font::default_text_font);
+    font.setPixelSize(getFontSize());
+
     if(getTextIsOustside()){
 
-        QRect icon_rect = rect().adjusted(getFontSize(), getFontSize() - getIconTextSpace() / 2, -getFontSize(), -getFontSize() - getIconTextSpace() / 2);
+        int text_height = QFontMetrics(font).height();
+        QRect icon_rect = rect().adjusted(text_height, text_height - getIconTextSpace() / 2, -text_height, -text_height - getIconTextSpace() / 2);
 
         painter.drawRoundedRect(icon_rect, 8, 8);
 
@@ -47,8 +51,6 @@ void FluentIconPushButton::paintEvent(QPaintEvent* /*event*/) {
         // Draw text under icon or centered if no icon
         if (!text().isEmpty()) {
             painter.setPen(getTextColor());
-            QFont font(QFluentUI::Font::default_text_font);
-            font.setPixelSize(getFontSize());
             painter.setFont(font);
             QRect text_rect(
                 0,
@@ -71,8 +73,6 @@ void FluentIconPushButton::paintEvent(QPaintEvent* /*event*/) {
         // Draw text under icon or centered if no icon
         if (!text().isEmpty()) {
             painter.setPen(getTextColor());
-            QFont font(QFluentUI::Font::default_text_font);
-            font.setPixelSize(getFontSize());
             painter.setFont(font);
             QRect text_rect(
                 0,

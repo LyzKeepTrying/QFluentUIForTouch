@@ -78,7 +78,7 @@ public:
         fluentPushButton->setIconSize(QSize(20, 20));
         fluentIconPushButton = new FluentIconPushButton(centralwidget);
         fluentIconPushButton->setObjectName(QString::fromUtf8("fluentIconPushButton"));
-        fluentIconPushButton->setGeometry(QRect(80, 160, 91, 91));
+        fluentIconPushButton->setGeometry(QRect(80, 160, 81, 81));
         fluentIconPushButton->setIcon(icon);
         fluentIconPushButton->setIconTopMargin(0);
         fluentIconPushButton->setIconTextSpace(8);
@@ -157,7 +157,7 @@ public:
         fluentIconPushButton_2->setTextIsOustside(false);
         fluentIconToggleButton_2 = new FluentIconToggleButton(centralwidget);
         fluentIconToggleButton_2->setObjectName(QString::fromUtf8("fluentIconToggleButton_2"));
-        fluentIconToggleButton_2->setGeometry(QRect(80, 260, 91, 91));
+        fluentIconToggleButton_2->setGeometry(QRect(80, 270, 81, 81));
         fluentIconToggleButton_2->setIcon(icon);
         fluentIconToggleButton_2->setChecked(false);
         fluentIconToggleButton_2->setAutoExclusive(false);
