@@ -33,6 +33,7 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
 - **FluentSlider**：Fluent风格滑动条
 - **FluentProgressBar**：Fluent风格进度条与滚动条
 - **FluentComboBox**: Fluent风格下拉框选项箱
+- **FluentText**: Fluent风格文本
 
 ## 快速开始
 
