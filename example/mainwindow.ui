@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>486</width>
-    <height>899</height>
+    <width>711</width>
+    <height>1365</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <widget class="FluentToggleButton" name="fluentToggleButton">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>300</x>
       <y>50</y>
       <width>71</width>
       <height>31</height>
@@ -39,7 +39,7 @@
    <widget class="FluentPushButton" name="fluentPushButton">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>300</x>
       <y>110</y>
       <width>91</width>
       <height>41</height>
@@ -62,8 +62,8 @@
    <widget class="FluentIconPushButton" name="fluentIconPushButton">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>160</y>
+      <x>290</x>
+      <y>170</y>
       <width>81</width>
       <height>81</height>
      </rect>
@@ -88,7 +88,7 @@
    <widget class="FluentIconToggleButton" name="fluentIconToggleButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>420</x>
       <y>280</y>
       <width>61</width>
       <height>61</height>
@@ -118,21 +118,21 @@
    <widget class="FluentLineEdit" name="fluentLineEdit">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>380</y>
+      <x>300</x>
+      <y>390</y>
       <width>161</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
+     <string>test测试</string>
     </property>
    </widget>
    <widget class="FluentSpinBox" name="fluentSpinBox">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>450</y>
+      <x>300</x>
+      <y>470</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -141,8 +141,8 @@
    <widget class="FluentDoubleSpinBox" name="fluentDoubleSpinBox">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>450</y>
+      <x>300</x>
+      <y>550</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -151,8 +151,8 @@
    <widget class="FluentCircleSpinBox" name="fluentCircleSpinBox">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>520</y>
+      <x>290</x>
+      <y>630</y>
       <width>141</width>
       <height>121</height>
      </rect>
@@ -182,14 +182,17 @@
    <widget class="FluentLineSpinBox" name="fluentLineSpinBox">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>660</y>
-      <width>301</width>
+      <x>260</x>
+      <y>860</y>
+      <width>331</width>
       <height>51</height>
      </rect>
     </property>
     <property name="maximum">
      <number>10</number>
+    </property>
+    <property name="value">
+     <number>3</number>
     </property>
     <property name="ThumbRadius">
      <double>14.000000000000000</double>
@@ -204,11 +207,17 @@
    <widget class="FluentSlider" name="fluentSlider">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>740</y>
-      <width>301</width>
+      <x>230</x>
+      <y>990</y>
+      <width>341</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="value">
+     <number>15</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
     </property>
     <property name="tickPosition">
      <enum>QSlider::NoTicks</enum>
@@ -226,14 +235,17 @@
    <widget class="FluentSlider" name="fluentSlider_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>40</y>
+      <x>620</x>
+      <y>930</y>
       <width>71</width>
-      <height>291</height>
+      <height>151</height>
      </rect>
     </property>
     <property name="maximum">
      <number>5</number>
+    </property>
+    <property name="value">
+     <number>2</number>
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
@@ -257,11 +269,14 @@
    <widget class="FluentLineSpinBox" name="fluentLineSpinBox_2">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>40</y>
-      <width>51</width>
-      <height>291</height>
+      <x>260</x>
+      <y>790</y>
+      <width>331</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="value">
+     <number>88</number>
     </property>
     <property name="ThumbRadius">
      <double>14.000000000000000</double>
@@ -270,15 +285,15 @@
      <double>12.000000000000000</double>
     </property>
     <property name="DirectionState">
-     <enum>Qt::Vertical</enum>
+     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
    <widget class="FluentProgressBar" name="fluentProgressBar">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>800</y>
-      <width>321</width>
+      <x>240</x>
+      <y>1120</y>
+      <width>331</width>
       <height>31</height>
      </rect>
     </property>
@@ -298,8 +313,8 @@
    <widget class="FluentIconPushButton" name="fluentIconPushButton_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>170</y>
+      <x>420</x>
+      <y>180</y>
       <width>61</width>
       <height>61</height>
      </rect>
@@ -324,7 +339,7 @@
    <widget class="FluentIconToggleButton" name="fluentIconToggleButton_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>290</x>
       <y>270</y>
       <width>81</width>
       <height>81</height>
@@ -360,8 +375,8 @@
    <widget class="FluentCircleSpinBox" name="fluentCircleSpinBox_2">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>520</y>
+      <x>460</x>
+      <y>630</y>
       <width>141</width>
       <height>121</height>
      </rect>
@@ -370,7 +385,7 @@
      <number>9</number>
     </property>
     <property name="value">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="ThumbRadius">
      <double>14.000000000000000</double>
@@ -397,8 +412,8 @@
    <widget class="FluentComboBox" name="fluentComboBox">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>380</y>
+      <x>240</x>
+      <y>1240</y>
       <width>141</width>
       <height>41</height>
      </rect>
@@ -412,20 +427,275 @@
     <property name="editable">
      <bool>false</bool>
     </property>
-    <property name="currentText">
-     <string/>
-    </property>
-    <property name="currentIndex">
-     <number>-1</number>
-    </property>
-    <property name="placeholderText">
-     <string/>
-    </property>
     <property name="frame">
      <bool>true</bool>
     </property>
     <property name="modelColumn">
      <number>0</number>
+    </property>
+   </widget>
+   <widget class="FluentProgressBar" name="fluentProgressBar_2">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>1170</y>
+      <width>331</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>50</number>
+    </property>
+    <property name="LineWidth">
+     <double>13.000000000000000</double>
+    </property>
+    <property name="IsLoop">
+     <bool>false</bool>
+    </property>
+    <property name="MoveSpeed">
+     <double>1.000000000000000</double>
+    </property>
+    <property name="SliderLen">
+     <double>0.250000000000000</double>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>50</y>
+      <width>171</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentToggleButton</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentToggleButton" name="fluentToggleButton_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>50</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+    <property name="ThumbRadius">
+     <double>12.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>120</y>
+      <width>131</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentPushButton</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>200</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentIconPushButton</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_4">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>290</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentIconToggleButton</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_5">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>400</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentLineEdit</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_6">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>480</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentSpinBox</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_7">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>560</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentDoubleSpinBox</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_8">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>660</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentCircleSpinBox</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_9">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>800</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentLineSpinBox</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentLineSpinBox" name="fluentLineSpinBox_3">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>680</y>
+      <width>51</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>5</number>
+    </property>
+    <property name="value">
+     <number>3</number>
+    </property>
+    <property name="ThumbRadius">
+     <double>14.000000000000000</double>
+    </property>
+    <property name="LineWidth">
+     <double>12.000000000000000</double>
+    </property>
+    <property name="DirectionState">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <property name="PaintStep">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_10">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>990</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentSlider</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_11">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>1120</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentProgressBar</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_12">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>1240</y>
+      <width>181</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FluentComboBox</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
     </property>
    </widget>
   </widget>
@@ -434,7 +704,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>486</width>
+     <width>711</width>
      <height>23</height>
     </rect>
    </property>
@@ -501,6 +771,11 @@
    <class>FluentComboBox</class>
    <extends>QComboBox</extends>
    <header>fluent_combo_box.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentText</class>
+   <extends>QLabel</extends>
+   <header>fluent_text.h</header>
   </customwidget>
  </customwidgets>
  <resources>

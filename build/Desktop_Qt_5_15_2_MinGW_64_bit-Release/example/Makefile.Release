@@ -248,6 +248,7 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		../../../fluent_ui_plugin/include/fluent_slider.h \
 		../../../fluent_ui_plugin/include/fluent_progress_bar.h \
 		../../../fluent_ui_plugin/include/fluent_combo_box.h \
+		../../../fluent_ui_plugin/include/fluent_text.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QAbstractButton \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1594,7 +1595,116 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QStyledItemDelegate \
-		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qstyleditemdelegate.h
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qstyleditemdelegate.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLabel \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qglobal.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qconfig.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qprocessordetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcompilerdetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qlogging.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qflags.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_msvc.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmutex.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qnumeric.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtwidgets-config.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobjectdefs.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qnamespace.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobject.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstring.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qchar.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringliteral.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringalgorithms.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringview.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringbuilder.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qlist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qiterator.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpair.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvector.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpoint.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringlist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregexp.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringmatcher.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qscopedpointer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmetatype.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobject_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmargins.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpaintdevice.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qrect.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsize.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpalette.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qcolor.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qrgb.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qbrush.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qmatrix.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpolygon.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qregion.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qdatastream.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qiodevice.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qline.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtransform.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qimage.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpixelformat.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpixmap.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qshareddata.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qhash.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qfont.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qfontmetrics.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qfontinfo.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qsizepolicy.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qcursor.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qkeysequence.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qevent.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvariant.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmap.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qdebug.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtextstream.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qlocale.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qset.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcontiguouscache.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qurl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qurlquery.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qfile.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qfiledevice.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
+		../../../fluent_ui_plugin/include/define.h \
+		../../../fluent_ui_plugin/include/theme.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont
 	D:\software\qt5.15.2\5.15.2\mingw81_64\bin\uic.exe ..\..\..\example\mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:

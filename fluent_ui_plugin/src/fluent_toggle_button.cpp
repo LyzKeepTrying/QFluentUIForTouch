@@ -3,6 +3,7 @@
 #include <QPainter>
 #include <QEasingCurve>
 #include <QPropertyAnimation>
+#include <QTimer>
 
 constexpr QSize FluentToggleButton::k_default_size_;
 
@@ -17,9 +18,6 @@ FluentToggleButton::FluentToggleButton(QWidget* parent)
     thumb_animation->setDuration(150);
     thumb_animation->setEasingCurve(QEasingCurve::OutQuad);
 
-    // 设置初始状态
-    setThumbPosition(isChecked() ? getThumbXEnd() : getThumbXStart());
-
     // 状态切换时更新动画
     connect(this, &QAbstractButton::toggled, this, [=](bool checked) {
         if (thumb_animation->state() == QPropertyAnimation::Running) {
@@ -31,12 +29,17 @@ FluentToggleButton::FluentToggleButton(QWidget* parent)
         thumb_animation->start();
     });
 
-    connect(this, &FluentToggleButton::ThumbRadiusChanged, this, [=](int thumb_radius){
+    // 设置初始状态
+    QTimer::singleShot(300, this, [=]{
+        setThumbPosition(getThumbXStart());
+        setThumbPosition(isChecked() ? getThumbXEnd() : getThumbXStart());
+    });
 
+    connect(this, &FluentToggleButton::ThumbRadiusChanged, this, [=](int thumb_radius){
         setThumbXEnd(width() - thumb_radius*2 - 3);
         setThumbPosition(isChecked() ? getThumbXEnd() : getThumbXStart());
-
     });
+
 }
 
 QSize FluentToggleButton::sizeHint() const {

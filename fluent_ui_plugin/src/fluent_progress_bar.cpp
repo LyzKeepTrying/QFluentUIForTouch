@@ -68,7 +68,7 @@ void FluentProgressBar::paintEvent(QPaintEvent* event) {
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
 
-    QRect slider_rect = rect().adjusted(8, 8, -8, -8);
+    QRect slider_rect = rect().adjusted(getLineWidth(), getLineWidth(), - getLineWidth(), - getLineWidth());
 
     // 绘制灰色轨道
     QPen off_pen(getSliderOffColor(), getLineWidth());

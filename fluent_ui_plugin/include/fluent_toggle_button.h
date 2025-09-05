@@ -15,7 +15,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentToggleButton : public QAbstractButton {
     DECLARE_PROPERTY_PRIVATE(qreal, ThumbPosition, 0.0)
     DECLARE_PROPERTY_SIGNAL(qreal, ThumbRadius, 14)
     DECLARE_PROPERTY_PRIVATE(qreal, ThumbXStart, 4)
-    DECLARE_PROPERTY_PRIVATE(qreal, ThumbXEnd, k_default_size_.width() - 14*2 - 4)
+    DECLARE_PROPERTY_PRIVATE(qreal, ThumbXEnd, k_default_size_.width() - 14*2 - 3)
     DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
     DECLARE_PROPERTY(QColor, BackgroundOffColor, QFluentUI::ThemeColor::Light::off_color)
     DECLARE_PROPERTY(QColor, BackgroundOnColor, QFluentUI::ThemeColor::Light::on_color)

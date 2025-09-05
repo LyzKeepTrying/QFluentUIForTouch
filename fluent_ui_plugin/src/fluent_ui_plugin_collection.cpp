@@ -11,6 +11,7 @@
 #include "fluent_slider.h"
 #include "fluent_progress_bar.h"
 #include "fluent_combo_box.h"
+#include "fluent_text.h"
 
 #include <QtCore/qplugin.h>
 
@@ -31,6 +32,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentSliderPlugin(this));
     widget_list_.append(new FluentProgressBarPlugin(this));
     widget_list_.append(new FluentComboBoxPlugin(this));
+    widget_list_.append(new FluentTextPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -793,4 +795,66 @@ void FluentComboBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
     is_initialized_ = true;
 }
 
+/* FluentTextPlugin */
+
+FluentTextPlugin::FluentTextPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentTextPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentTextPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentTextPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentTextPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentText" name="fluentText">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentTextPlugin::includeFile() const {
+    return "fluent_text.h";
+}
+
+QString FluentTextPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentTextPlugin::name() const {
+    return "FluentText";
+}
+
+QString FluentTextPlugin::toolTip() const {
+    return "Fluent Design Fluent Text";
+}
+
+QString FluentTextPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentTextPlugin::createWidget(QWidget* parent) {
+    return new FluentText(parent);
+}
+
+void FluentTextPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
 

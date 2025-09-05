@@ -10,6 +10,7 @@ debug/fluent_icon_push_button.o
 debug/fluent_icon_toggle_button.o
 debug/fluent_line_edit.o
 debug/fluent_push_button.o
+debug/fluent_text.o
 debug/fluent_ui_plugin_collection.o
 debug/moc_fluent_toggle_button.o
 debug/moc_fluent_combo_box.o
@@ -24,3 +25,4 @@ debug/moc_fluent_line_spin_box.o
 debug/moc_fluent_ui_plugin_collection.o
 debug/moc_fluent_line_edit.o
 debug/moc_fluent_progress_bar.o
+debug/moc_fluent_text.o
