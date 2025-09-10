@@ -79,7 +79,7 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
 
         // 绘制边框
         QPen borderPen;
-        borderPen.setColor(getBorderColor().light(102));
+        borderPen.setColor(getBorderColor().lighter(102));
         borderPen.setWidth(border_width);
         painter.setPen(borderPen);
         painter.setBrush(Qt::NoBrush);
