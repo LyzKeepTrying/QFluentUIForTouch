@@ -12,6 +12,7 @@
 #include "fluent_progress_bar.h"
 #include "fluent_combo_box.h"
 #include "fluent_text.h"
+#include "fluent_group_box.h"
 
 #include <QtCore/qplugin.h>
 
@@ -33,6 +34,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentProgressBarPlugin(this));
     widget_list_.append(new FluentComboBoxPlugin(this));
     widget_list_.append(new FluentTextPlugin(this));
+    widget_list_.append(new FluentGroupBoxPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -852,6 +854,69 @@ QWidget* FluentTextPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentTextPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentGroupBoxPlugin */
+
+FluentGroupBoxPlugin::FluentGroupBoxPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentGroupBoxPlugin::isContainer() const {
+    return true;
+}
+
+bool FluentGroupBoxPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentGroupBoxPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentGroupBoxPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentGroupBox" name="fluentGroupBox">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentGroupBoxPlugin::includeFile() const {
+    return "fluent_group_box.h";
+}
+
+QString FluentGroupBoxPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentGroupBoxPlugin::name() const {
+    return "FluentGroupBox";
+}
+
+QString FluentGroupBoxPlugin::toolTip() const {
+    return "Fluent Design Fluent Group Box";
+}
+
+QString FluentGroupBoxPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentGroupBoxPlugin::createWidget(QWidget* parent) {
+    return new FluentGroupBox(parent);
+}
+
+void FluentGroupBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

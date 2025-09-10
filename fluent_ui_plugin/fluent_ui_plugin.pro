@@ -8,6 +8,7 @@ DEFINES += FLUENTUI_PLUGIN_LIBRARY
 # 头文件和源文件布局
 INCLUDEPATH += $$PWD/include
 SOURCES     += src/fluent_toggle_button.cpp \
+               src/fluent_group_box.cpp \
                src/fluent_combo_box.cpp \
                src/fluent_progress_bar.cpp \
                src/fluent_slider.cpp \
@@ -24,6 +25,7 @@ SOURCES     += src/fluent_toggle_button.cpp \
 
 HEADERS     += include/fluent_toggle_button.h \
                include/fluent_combo_box.h \
+               include/fluent_group_box.h \
                include/fluent_icon_push_button.h \
                include/fluent_icon_toggle_button.h \
                include/fluent_push_button.h \

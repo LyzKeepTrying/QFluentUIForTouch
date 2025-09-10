@@ -1,4 +1,5 @@
 release/fluent_toggle_button.o
+release/fluent_group_box.o
 release/fluent_combo_box.o
 release/fluent_progress_bar.o
 release/fluent_slider.o
@@ -14,6 +15,7 @@ release/fluent_text.o
 release/fluent_ui_plugin_collection.o
 release/moc_fluent_toggle_button.o
 release/moc_fluent_combo_box.o
+release/moc_fluent_group_box.o
 release/moc_fluent_icon_push_button.o
 release/moc_fluent_icon_toggle_button.o
 release/moc_fluent_push_button.o
