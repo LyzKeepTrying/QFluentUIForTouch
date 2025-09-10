@@ -46,7 +46,7 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
             int text_width = fm.horizontalAdvance(title());
             int text_height = fm.height();
 
-            QRect title_rect = QRect(QPoint(rect.x() + getTitleMargin(), (rect.y() + rect.height() - text_height) / 2),
+            QRect title_rect = QRect(QPoint(rect.x() + getTitleLeftMargin(), (rect.y() + rect.height() - text_height) / 2),
                                      QSize(text_width, text_height));
             painter.drawText(title_rect, Qt::AlignCenter, title());
         }
@@ -65,12 +65,12 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
         int text_width = fm.horizontalAdvance(title());
         int text_height = fm.height();
 
-        QRect title_rect = QRect(QPoint(rect().x() + getTitleMargin(), rect().y() + getTitleMargin()),
+        QRect title_rect = QRect(QPoint(rect().x() + getTitleLeftMargin(), rect().y()),
                                  QSize(text_width, text_height));
         painter.drawText(title_rect, Qt::AlignCenter, title());
 
         const int border_width = getBorderWidth();
-        const QRect rect = this->rect().adjusted(border_width, border_width + title_rect.y() + title_rect.height() + 1, -border_width, -border_width);
+        const QRect rect = this->rect().adjusted(border_width, border_width + title_rect.y() + title_rect.height() + getTitleBottomMargin(), -border_width, -border_width);
 
         // 绘制背景
         painter.setPen(Qt::NoPen);

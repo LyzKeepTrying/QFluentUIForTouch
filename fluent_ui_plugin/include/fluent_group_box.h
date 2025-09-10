@@ -21,7 +21,8 @@ class FLUENTUI_PLUGIN_EXPORT FluentGroupBox : public QGroupBox {
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY(int, BorderWidth, 1)
-    DECLARE_PROPERTY(int, TitleMargin, 4)
+    DECLARE_PROPERTY(int, TitleLeftMargin, 4)
+    DECLARE_PROPERTY(int, TitleBottomMargin, 4)
     DECLARE_PROPERTY(bool, ShowTitle, true)
     DECLARE_PROPERTY(bool, TitleIsOutside, true)
 
