@@ -22,7 +22,7 @@ QFluentUIForTouch is a collection of Fluent Design UI plugins based on Qt, speci
 
 ## Supported Widgets
 
-![example](readme/example.png)
+![example](readme/example.gif)
 
 - **FluentPushButton**: Fluent-style button
 - **FluentToggleButton**: Fluent-style toggle button
