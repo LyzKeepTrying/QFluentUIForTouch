@@ -20,7 +20,7 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
 
 ## 当前支持控件
 
-![1754277502220](readme/example.png)
+![1754277502220](readme/example.gif)
 
 - **FluentPushButton**：Fluent风格按钮
 - **FluentToggleButton**：Fluent风格开关按钮
@@ -35,6 +35,8 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
 - **FluentComboBox**: Fluent风格下拉框选项箱
 - **FluentText**: Fluent风格文本
 - **FluentGroupBox**: Fluent风格方框
+- **FluentTabBar**: Fluent-style tab bar
+- **FluentTabWidget**: Fluent-style tab widget
 
 ## 快速开始
 

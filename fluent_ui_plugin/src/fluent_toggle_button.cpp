@@ -57,11 +57,9 @@ void FluentToggleButton::paintEvent(QPaintEvent* event) {
     QRect bg_rect(0, 0, width(), height());
     QColor bg_color = isChecked() ? getBackgroundOnColor() : getBackgroundOffColor();
 
-
     painter.setPen(getBorderColor());
     painter.setBrush(bg_color);
     painter.drawRoundedRect(bg_rect.adjusted(1, 1, -1, -1), border_radius, border_radius);
-
 
     // 绘制滑块
     QColor thumb_color = isChecked() ? getThumbColor() : getThumbColor().darker(200);

@@ -70,7 +70,7 @@ void FluentCircleSpinBox::paintEvent(QPaintEvent* event) {
     painter.drawText(text_rect, Qt::AlignCenter, text());
 
     // 绘制光标
-    if (hasFocus() && getShowCursor()) {
+    if (hasFocus() && getShowCursor() && !isReadOnly()) {
         QTextLayout layout(text(), text_font);
         layout.beginLayout();
         QTextLine line = layout.createLine();
@@ -206,7 +206,7 @@ void FluentCircleSpinBox::mousePressEvent(QMouseEvent* event) {
         return;
     }
 
-    if(getSliderPress()){
+    if(getSliderPress() && !isReadOnly()){
         // 2) 判断是否点中环形轨道带（考虑画笔宽度和 thumb 作为容差）
         QPointF center = arc_rect_.center();
         qreal dx = pos.x() - center.x();

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>485</width>
+    <width>1133</width>
     <height>872</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="FluentGroupBox" name="fluentGroupBox">
+   <widget class="FluentGroupBox" name="button">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -163,7 +163,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="FluentGroupBox" name="fluentGroupBox_8">
+   <widget class="FluentGroupBox" name="spinx_box">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -198,9 +198,6 @@
      </property>
      <property name="LineWidth">
       <double>12.000000000000000</double>
-     </property>
-     <property name="DirectionState">
-      <enum>Qt::Horizontal</enum>
      </property>
     </widget>
     <widget class="FluentLineSpinBox" name="fluentLineSpinBox">
@@ -325,7 +322,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="FluentGroupBox" name="fluentGroupBox_9">
+   <widget class="FluentGroupBox" name="line_edit">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -402,13 +399,13 @@
      </property>
     </widget>
    </widget>
-   <widget class="FluentGroupBox" name="fluentGroupBox_10">
+   <widget class="FluentGroupBox" name="progress_bar">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>730</y>
       <width>441</width>
-      <height>121</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="title">
@@ -423,8 +420,8 @@
     <widget class="FluentProgressBar" name="fluentProgressBar">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
+       <x>30</x>
+       <y>40</y>
        <width>381</width>
        <height>31</height>
       </rect>
@@ -445,8 +442,8 @@
     <widget class="FluentProgressBar" name="fluentProgressBar_2">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>80</y>
+       <x>30</x>
+       <y>90</y>
        <width>381</width>
        <height>31</height>
       </rect>
@@ -467,6 +464,22 @@
       <double>0.250000000000000</double>
      </property>
     </widget>
+   </widget>
+   <widget class="FluentTabWidget" name="fluentTabWidget">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>30</y>
+      <width>561</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
    </widget>
   </widget>
  </widget>
@@ -525,6 +538,12 @@
    <class>FluentGroupBox</class>
    <extends>QGroupBox</extends>
    <header>fluent_group_box.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FluentTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>fluent_tab_widget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

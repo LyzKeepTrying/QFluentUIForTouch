@@ -65,7 +65,7 @@ void FluentLineSpinBox::paintEvent(QPaintEvent* event) {
     painter.drawText(text_rect, Qt::AlignCenter, text());
 
     // 绘制光标
-    if (hasFocus() && getShowCursor()) {
+    if (hasFocus() && getShowCursor() && !isReadOnly()) {
         QTextLayout layout(text(), text_font);
         layout.beginLayout();
         QTextLine line = layout.createLine();
@@ -179,7 +179,7 @@ void FluentLineSpinBox::mousePressEvent(QMouseEvent* event) {
         return;
     }
 
-    if(getSliderPress()){
+    if(getSliderPress() && !isReadOnly()){
 
         // 轨道点击：在轨道区域（扩大一点以便点中更容易）设置值并进入按下状态以便拖动
         QRectF track_rect = QRectF(line_rect_);

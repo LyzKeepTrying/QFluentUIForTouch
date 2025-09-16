@@ -17,9 +17,9 @@ FluentProgressBar::FluentProgressBar(QWidget* parent)
     slider_move_animation->setEasingCurve(QEasingCurve::Linear);
     // 状态切换时更新动画
     connect(this, &QProgressBar::valueChanged, this, [=](int value) {
-        if (slider_move_animation->state() == QPropertyAnimation::Running) {
+
+        if (slider_move_animation->state() == QPropertyAnimation::Running)
             slider_move_animation->stop();
-        }
 
         if(getIsLoop())
             return;
@@ -33,8 +33,8 @@ FluentProgressBar::FluentProgressBar(QWidget* parent)
         else{
             setCurSliderPos(value);
         }
-    });
 
+    });
 
     QTimer* timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, [=]{
@@ -53,8 +53,7 @@ FluentProgressBar::FluentProgressBar(QWidget* parent)
         }
 
         if(is_loop)
-            timer->start(15);
-
+            timer->start(16); //fps60
     });
 }
 
@@ -66,7 +65,7 @@ void FluentProgressBar::paintEvent(QPaintEvent* event) {
 
     Q_UNUSED(event)
     QPainter painter(this);
-    painter.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
+    painter.setRenderHints(QPainter::Antialiasing);
 
     QRect slider_rect = rect().adjusted(getLineWidth(), getLineWidth(), - getLineWidth(), - getLineWidth());
 

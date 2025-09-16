@@ -13,6 +13,7 @@
 #include "fluent_combo_box.h"
 #include "fluent_text.h"
 #include "fluent_group_box.h"
+#include "fluent_tab_widget.h"
 
 #include <QtCore/qplugin.h>
 
@@ -35,6 +36,8 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentComboBoxPlugin(this));
     widget_list_.append(new FluentTextPlugin(this));
     widget_list_.append(new FluentGroupBoxPlugin(this));
+    widget_list_.append(new FluentTabWidgetPlugin(this));
+    widget_list_.append(new FluentTabBarPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -917,6 +920,132 @@ QWidget* FluentGroupBoxPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentGroupBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentTabWidgetPlugin */
+
+FluentTabWidgetPlugin::FluentTabWidgetPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentTabWidgetPlugin::isContainer() const {
+    return true;
+}
+
+bool FluentTabWidgetPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentTabWidgetPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentTabWidgetPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentTabWidget" name="fluentTabWidget">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentTabWidgetPlugin::includeFile() const {
+    return "fluent_tab_widget.h";
+}
+
+QString FluentTabWidgetPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentTabWidgetPlugin::name() const {
+    return "FluentTabWidget";
+}
+
+QString FluentTabWidgetPlugin::toolTip() const {
+    return "Fluent Design Fluent Tab Widget";
+}
+
+QString FluentTabWidgetPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentTabWidgetPlugin::createWidget(QWidget* parent) {
+    return new FluentTabWidget(parent);
+}
+
+void FluentTabWidgetPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentTabBarPlugin */
+
+FluentTabBarPlugin::FluentTabBarPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentTabBarPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentTabBarPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentTabBarPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentTabBarPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentTabBar" name="fluentTabBar">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentTabBarPlugin::includeFile() const {
+    return "fluent_tab_bar.h";
+}
+
+QString FluentTabBarPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentTabBarPlugin::name() const {
+    return "FluentTabBar";
+}
+
+QString FluentTabBarPlugin::toolTip() const {
+    return "Fluent Design Fluent Tab Bar";
+}
+
+QString FluentTabBarPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentTabBarPlugin::createWidget(QWidget* parent) {
+    return new FluentTabBar(parent);
+}
+
+void FluentTabBarPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

@@ -74,7 +74,7 @@ void FluentSpinBox::paintEvent(QPaintEvent* event) {
     painter.drawText(text_rect, Qt::AlignCenter, text());
 
     // 绘制光标
-    if (hasFocus() && getShowCursor()) {
+    if (hasFocus() && getShowCursor() && !isReadOnly()) {
         QTextLayout layout(text(), text_font);
         layout.beginLayout();
         QTextLine line = layout.createLine();
@@ -96,10 +96,10 @@ void FluentSpinBox::paintEvent(QPaintEvent* event) {
 }
 
 void FluentSpinBox::mousePressEvent(QMouseEvent* event) {
-    if (plus_button_rect_.contains(event->pos())) {
+    if (plus_button_rect_.contains(event->pos()) && !isReadOnly()) {
         setPlusButtonIsPressed(true);
         stepUp();
-    } else if (minus_button_rect_.contains(event->pos())) {
+    } else if (minus_button_rect_.contains(event->pos()) && !isReadOnly()) {
         setMinusButtonIsPressed(true);
         stepDown();
     }else{
