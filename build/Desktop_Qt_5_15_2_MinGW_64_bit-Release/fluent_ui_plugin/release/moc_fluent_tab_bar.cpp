@@ -37,20 +37,21 @@ QT_MOC_LITERAL(1, 13, 15), // "BackgroundColor"
 QT_MOC_LITERAL(2, 29, 9), // "TextColor"
 QT_MOC_LITERAL(3, 39, 13), // "SelectedColor"
 QT_MOC_LITERAL(4, 53, 11), // "BorderColor"
-QT_MOC_LITERAL(5, 65, 8), // "IconSize"
-QT_MOC_LITERAL(6, 74, 8), // "TabWidth"
-QT_MOC_LITERAL(7, 83, 9), // "TabHeight"
-QT_MOC_LITERAL(8, 93, 8), // "FontSize"
-QT_MOC_LITERAL(9, 102, 10), // "TabSpacing"
-QT_MOC_LITERAL(10, 113, 9), // "TabMargin"
-QT_MOC_LITERAL(11, 123, 15), // "MoveAnamination"
-QT_MOC_LITERAL(12, 139, 16) // "CurSelectRectPos"
+QT_MOC_LITERAL(5, 65, 8), // "TabWidth"
+QT_MOC_LITERAL(6, 74, 9), // "TabHeight"
+QT_MOC_LITERAL(7, 84, 8), // "FontSize"
+QT_MOC_LITERAL(8, 93, 10), // "TabSpacing"
+QT_MOC_LITERAL(9, 104, 9), // "TabMargin"
+QT_MOC_LITERAL(10, 114, 15), // "MoveAnamination"
+QT_MOC_LITERAL(11, 130, 16), // "CurSelectRectPos"
+QT_MOC_LITERAL(12, 147, 8) // "ShowIcon"
 
     },
     "FluentTabBar\0BackgroundColor\0TextColor\0"
-    "SelectedColor\0BorderColor\0IconSize\0"
-    "TabWidth\0TabHeight\0FontSize\0TabSpacing\0"
-    "TabMargin\0MoveAnamination\0CurSelectRectPos"
+    "SelectedColor\0BorderColor\0TabWidth\0"
+    "TabHeight\0FontSize\0TabSpacing\0TabMargin\0"
+    "MoveAnamination\0CurSelectRectPos\0"
+    "ShowIcon"
 };
 #undef QT_MOC_LITERAL
 
@@ -77,9 +78,9 @@ static const uint qt_meta_data_FluentTabBar[] = {
        7, QMetaType::Int, 0x00095103,
        8, QMetaType::Int, 0x00095103,
        9, QMetaType::Int, 0x00095103,
-      10, QMetaType::Int, 0x00095103,
-      11, QMetaType::Bool, 0x00095103,
-      12, QMetaType::Int, 0x00094103,
+      10, QMetaType::Bool, 0x00095103,
+      11, QMetaType::Int, 0x00094103,
+      12, QMetaType::Bool, 0x00095103,
 
        0        // eod
 };
@@ -97,14 +98,14 @@ void FluentTabBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: *reinterpret_cast< QColor*>(_v) = _t->getTextColor(); break;
         case 2: *reinterpret_cast< QColor*>(_v) = _t->getSelectedColor(); break;
         case 3: *reinterpret_cast< QColor*>(_v) = _t->getBorderColor(); break;
-        case 4: *reinterpret_cast< int*>(_v) = _t->getIconSize(); break;
-        case 5: *reinterpret_cast< int*>(_v) = _t->getTabWidth(); break;
-        case 6: *reinterpret_cast< int*>(_v) = _t->getTabHeight(); break;
-        case 7: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
-        case 8: *reinterpret_cast< int*>(_v) = _t->getTabSpacing(); break;
-        case 9: *reinterpret_cast< int*>(_v) = _t->getTabMargin(); break;
-        case 10: *reinterpret_cast< bool*>(_v) = _t->getMoveAnamination(); break;
-        case 11: *reinterpret_cast< int*>(_v) = _t->getCurSelectRectPos(); break;
+        case 4: *reinterpret_cast< int*>(_v) = _t->getTabWidth(); break;
+        case 5: *reinterpret_cast< int*>(_v) = _t->getTabHeight(); break;
+        case 6: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
+        case 7: *reinterpret_cast< int*>(_v) = _t->getTabSpacing(); break;
+        case 8: *reinterpret_cast< int*>(_v) = _t->getTabMargin(); break;
+        case 9: *reinterpret_cast< bool*>(_v) = _t->getMoveAnamination(); break;
+        case 10: *reinterpret_cast< int*>(_v) = _t->getCurSelectRectPos(); break;
+        case 11: *reinterpret_cast< bool*>(_v) = _t->getShowIcon(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -116,14 +117,14 @@ void FluentTabBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->setTextColor(*reinterpret_cast< QColor*>(_v)); break;
         case 2: _t->setSelectedColor(*reinterpret_cast< QColor*>(_v)); break;
         case 3: _t->setBorderColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 4: _t->setIconSize(*reinterpret_cast< int*>(_v)); break;
-        case 5: _t->setTabWidth(*reinterpret_cast< int*>(_v)); break;
-        case 6: _t->setTabHeight(*reinterpret_cast< int*>(_v)); break;
-        case 7: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
-        case 8: _t->setTabSpacing(*reinterpret_cast< int*>(_v)); break;
-        case 9: _t->setTabMargin(*reinterpret_cast< int*>(_v)); break;
-        case 10: _t->setMoveAnamination(*reinterpret_cast< bool*>(_v)); break;
-        case 11: _t->setCurSelectRectPos(*reinterpret_cast< int*>(_v)); break;
+        case 4: _t->setTabWidth(*reinterpret_cast< int*>(_v)); break;
+        case 5: _t->setTabHeight(*reinterpret_cast< int*>(_v)); break;
+        case 6: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
+        case 7: _t->setTabSpacing(*reinterpret_cast< int*>(_v)); break;
+        case 8: _t->setTabMargin(*reinterpret_cast< int*>(_v)); break;
+        case 9: _t->setMoveAnamination(*reinterpret_cast< bool*>(_v)); break;
+        case 10: _t->setCurSelectRectPos(*reinterpret_cast< int*>(_v)); break;
+        case 11: _t->setShowIcon(*reinterpret_cast< bool*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {

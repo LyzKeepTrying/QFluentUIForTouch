@@ -14,18 +14,18 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentTabBar : public QTabBar {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
+    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color.darker(104))
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
     DECLARE_PROPERTY(QColor, SelectedColor, QFluentUI::ThemeColor::Light::on_color)
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(int, IconSize, 30)
     DECLARE_PROPERTY(int, TabWidth, 100)
     DECLARE_PROPERTY(int, TabHeight, 60)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY(int, TabSpacing, 8)
     DECLARE_PROPERTY(int, TabMargin, 5)
-    DECLARE_PROPERTY(bool, MoveAnamination, true);
+    DECLARE_PROPERTY(bool, MoveAnamination, true)
     DECLARE_PROPERTY_PRIVATE(int, CurSelectRectPos, 0)
+    DECLARE_PROPERTY(bool, ShowIcon, true)
 
 public:
     explicit FluentTabBar(QWidget* parent = nullptr);

@@ -1,5 +1,5 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'fluent_tab_widget.h'
+** Meta object code from reading C++ file 'fluent_scroll_area.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.15.2)
 **
@@ -7,11 +7,11 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../../../fluent_ui_plugin/include/fluent_tab_widget.h"
+#include "../../../../fluent_ui_plugin/include/fluent_scroll_area.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'fluent_tab_widget.h' doesn't include <QObject>."
+#error "The header file 'fluent_scroll_area.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.15.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -21,25 +21,25 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_FluentTabWidget_t {
+struct qt_meta_stringdata_FluentScrollArea_t {
     QByteArrayData data[1];
-    char stringdata0[16];
+    char stringdata0[17];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_FluentTabWidget_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentScrollArea_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_FluentTabWidget_t qt_meta_stringdata_FluentTabWidget = {
+static const qt_meta_stringdata_FluentScrollArea_t qt_meta_stringdata_FluentScrollArea = {
     {
-QT_MOC_LITERAL(0, 0, 15) // "FluentTabWidget"
+QT_MOC_LITERAL(0, 0, 16) // "FluentScrollArea"
 
     },
-    "FluentTabWidget"
+    "FluentScrollArea"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_FluentTabWidget[] = {
+static const uint qt_meta_data_FluentScrollArea[] = {
 
  // content:
        8,       // revision
@@ -55,7 +55,7 @@ static const uint qt_meta_data_FluentTabWidget[] = {
        0        // eod
 };
 
-void FluentTabWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void FluentScrollArea::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -63,32 +63,32 @@ void FluentTabWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
     Q_UNUSED(_a);
 }
 
-QT_INIT_METAOBJECT const QMetaObject FluentTabWidget::staticMetaObject = { {
-    QMetaObject::SuperData::link<QTabWidget::staticMetaObject>(),
-    qt_meta_stringdata_FluentTabWidget.data,
-    qt_meta_data_FluentTabWidget,
+QT_INIT_METAOBJECT const QMetaObject FluentScrollArea::staticMetaObject = { {
+    QMetaObject::SuperData::link<QScrollArea::staticMetaObject>(),
+    qt_meta_stringdata_FluentScrollArea.data,
+    qt_meta_data_FluentScrollArea,
     qt_static_metacall,
     nullptr,
     nullptr
 } };
 
 
-const QMetaObject *FluentTabWidget::metaObject() const
+const QMetaObject *FluentScrollArea::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *FluentTabWidget::qt_metacast(const char *_clname)
+void *FluentScrollArea::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_FluentTabWidget.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_FluentScrollArea.stringdata0))
         return static_cast<void*>(this);
-    return QTabWidget::qt_metacast(_clname);
+    return QScrollArea::qt_metacast(_clname);
 }
 
-int FluentTabWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int FluentScrollArea::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QTabWidget::qt_metacall(_c, _id, _a);
+    _id = QScrollArea::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP

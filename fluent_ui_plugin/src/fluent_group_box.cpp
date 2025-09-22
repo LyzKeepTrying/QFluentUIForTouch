@@ -23,12 +23,12 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
 
         // 绘制背景
         painter.setPen(Qt::NoPen);
-        painter.setBrush(getBackgroundColor().darker(104));
+        painter.setBrush(getBackgroundColor());
         painter.drawRoundedRect(rect, 8, 8);
 
         // 绘制边框
         QPen borderPen;
-        borderPen.setColor(getBorderColor().lighter(104));
+        borderPen.setColor(getBorderColor());
         borderPen.setWidth(border_width);
         painter.setPen(borderPen);
         painter.setBrush(Qt::NoBrush);
@@ -74,12 +74,12 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
 
         // 绘制背景
         painter.setPen(Qt::NoPen);
-        painter.setBrush(getBackgroundColor().darker(104));
+        painter.setBrush(getBackgroundColor());
         painter.drawRoundedRect(rect, 8, 8);
 
         // 绘制边框
         QPen borderPen;
-        borderPen.setColor(getBorderColor().lighter(104));
+        borderPen.setColor(getBorderColor());
         borderPen.setWidth(border_width);
         painter.setPen(borderPen);
         painter.setBrush(Qt::NoBrush);

@@ -16,9 +16,9 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentGroupBox : public QGroupBox {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
+    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color.darker(104))
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
+    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color.lighter(104))
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY(int, BorderWidth, 1)
     DECLARE_PROPERTY(int, TitleLeftMargin, 4)

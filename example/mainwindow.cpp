@@ -7,10 +7,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->fluentComboBox->addItems(QStringList() << "item1" << "item2");
-    ui->fluentTabWidget->addTab(ui->spinx_box, QIcon(":/icon/cat.png"), "Box1");
-    ui->fluentTabWidget->addTab(ui->progress_bar, QIcon(":/icon/dog.png"), "Box2");
-    ui->fluentTabWidget->addTab(ui->line_edit, QIcon(":/icon/cat.png"), "Box3");
-    ui->fluentTabWidget->addTab(ui->button, QIcon(":/icon/dog.png"), "Box4");
+    ui->line_edit->setFixedHeight(1000);
+    ui->fluentTabWidget->addTabWithScroll(ui->spinx_box, QIcon(":/icon/cat.png"), "Box1");
+    ui->fluentTabWidget->addTabWithScroll(ui->progress_bar, QIcon(":/icon/dog.png"), "Box2");
+    ui->fluentTabWidget->addTabWithScroll(ui->line_edit, QIcon(":/icon/cat.png"), "Box3");
+    ui->fluentTabWidget->addTabWithScroll(ui->button, QIcon(":/icon/dog.png"), "Box4");
+    //qobject_cast<FluentTabBar*>(ui->fluentTabWidget->tabBar())->setShowIcon(false);
 }
 
 MainWindow::~MainWindow()

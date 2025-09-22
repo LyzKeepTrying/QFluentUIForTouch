@@ -1,4 +1,6 @@
 debug/fluent_toggle_button.o
+debug/fluent_scroll_area.o
+debug/fluent_scroll_bar.o
 debug/fluent_tab_bar.o
 debug/fluent_tab_widget.o
 debug/fluent_group_box.o
@@ -21,6 +23,7 @@ debug/moc_fluent_group_box.o
 debug/moc_fluent_icon_push_button.o
 debug/moc_fluent_icon_toggle_button.o
 debug/moc_fluent_push_button.o
+debug/moc_fluent_scroll_bar.o
 debug/moc_fluent_slider.o
 debug/moc_fluent_spin_box.o
 debug/moc_fluent_double_spin_box.o
@@ -32,3 +35,4 @@ debug/moc_fluent_ui_plugin_collection.o
 debug/moc_fluent_line_edit.o
 debug/moc_fluent_progress_bar.o
 debug/moc_fluent_text.o
+debug/moc_fluent_scroll_area.o

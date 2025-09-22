@@ -9,6 +9,7 @@ FluentTabBar::FluentTabBar(QWidget* parent)
     : QTabBar(parent)
 {
     setShape(QTabBar::RoundedWest);
+    setIconSize(QSize(30, 30));
 
     // 设置动画
     QPropertyAnimation* slider_move_animation = new QPropertyAnimation(this, getCurSelectRectPosPropertyName(), this);
@@ -79,11 +80,13 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
 
     // 绘制选中指示器（单个全局指示器）
     if (count() > 0) {
+
+        QRect slider_rect;
+
         int tab_width = tabSizeHint(0).width();
         int tab_height = tabSizeHint(0).height();
         int margin = getTabMargin();
 
-        QRect slider_rect;
         if (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast) {
             // 垂直方向：指示器高度为标签高度-2*margin，宽度为整个背景宽度-2*margin
             int slider_height = tab_height - 2 * margin;
@@ -104,17 +107,35 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
     // 画每个 tab 的内容
     const int tab_count = count();
     for (int i = 0; i < tab_count; ++i) {
-        QRect content_rect = tabRect(i).marginsRemoved(QMargins(getTabMargin(), getTabMargin(), getTabMargin(), getTabMargin()));
+
+        int tab_width = tabSizeHint(i).width();
+        int tab_height = tabSizeHint(i).height();
+        int margin = getTabMargin();
+
+        QRect content_rect;
+
+        if (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast) {
+            // 垂直方向：指示器高度为标签高度-2*margin，宽度为整个背景宽度-2*margin
+            int content_height = tab_height - 2 * margin;
+            int content_width = full_rect.width() - 2 * margin;
+            content_rect = QRect(margin + 1, tabRect(i).y() + getTabMargin() + 1, content_width, content_height);
+        } else {
+            // 水平方向：指示器宽度为标签宽度-2*margin，高度为整个背景高度-2*margin
+            int content_width = tab_width - 2 * margin;
+            int content_height = full_rect.height() - 2 * margin;
+            content_rect = QRect(tabRect(i).x() + getTabMargin() + 1, margin + 1, content_width, content_height);
+        }
+
         bool selected = (currentIndex() == i);
 
         // 图标 + 文本布局
-        int icon_size = getIconSize();
+        int icon_size = shape() == QTabBar::RoundedSouth || shape() == QTabBar::RoundedNorth ? iconSize().height() : iconSize().width();
         int tab_spacing = getTabSpacing();
 
         if (shape() == QTabBar::RoundedSouth || shape() == QTabBar::RoundedNorth) {
             // 垂直方向：图标在上，文本在下（垂直排列）
             QIcon icon = tabIcon(i);
-            if (!icon.isNull()) {
+            if (!icon.isNull() && getShowIcon()) {
                 // 图标在水平方向居中
                 int icon_x = content_rect.center().x() - icon_size/2;
                 QRect icon_rect(icon_x, content_rect.top() + tab_spacing, icon_size, icon_size);
@@ -132,10 +153,19 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
             QString text = tabText(i);
             int text_height = fm.height();
             int text_y = content_rect.top() + icon_size + 2 * tab_spacing;
-            QRect text_rect(content_rect.left(), text_y, content_rect.width(), text_height);
 
-            painter.drawText(text_rect, Qt::AlignHCenter | Qt::AlignTop,
-                             fm.elidedText(text, Qt::ElideRight, text_rect.width()));
+            if(getShowIcon()){
+                QRect text_rect(content_rect.left(), text_y, content_rect.width(), text_height);
+
+                painter.drawText(text_rect, Qt::AlignHCenter | Qt::AlignTop,
+                                 fm.elidedText(text, Qt::ElideRight, text_rect.width()));
+            }
+            else{
+                QRect text_rect(content_rect.left(), content_rect.top(), content_rect.width(), content_rect.height());
+
+                painter.drawText(text_rect, Qt::AlignCenter,
+                                 fm.elidedText(text, Qt::ElideRight, text_rect.width()));
+            }
         } else {
             // 水平方向：图标在左，文本在右（水平排列）
             QIcon icon = tabIcon(i);
@@ -144,7 +174,7 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
                             content_rect.center().y() - icon_size/2,
                             icon_size, icon_size);
 
-            if (!icon.isNull()) {
+            if (!icon.isNull() && getShowIcon()) {
                 QPixmap pm = icon.pixmap(icon_size, icon_size);
                 painter.drawPixmap(icon_rect, pm);
             }
@@ -156,13 +186,24 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
             painter.setPen(selected ? QColor::fromRgb(~getTextColor().rgb()) : getTextColor());
             QFontMetrics fm(font);
 
-            QRect text_rect(icon_rect.right() + tab_spacing,
-                            icon_rect.y(),
-                            content_rect.width() - icon_rect.width() - tab_spacing * 2,
-                            icon_rect.height());
+            if(getShowIcon()){
+                QRect text_rect(icon_rect.right() + tab_spacing,
+                                content_rect.y(),
+                                content_rect.width() - icon_rect.width() - tab_spacing * 2,
+                                content_rect.height());
 
-            painter.drawText(text_rect, Qt::AlignVCenter | Qt::AlignLeft,
-                             fm.elidedText(tabText(i), Qt::ElideRight, text_rect.width()));
+                painter.drawText(text_rect, Qt::AlignVCenter | Qt::AlignLeft,
+                                 fm.elidedText(tabText(i), Qt::ElideRight, text_rect.width()));
+
+            }else{
+                QRect text_rect(content_rect.x(),
+                                content_rect.y(),
+                                content_rect.width(),
+                                content_rect.height());
+
+                painter.drawText(text_rect, Qt::AlignCenter,
+                                 fm.elidedText(tabText(i), Qt::ElideRight, text_rect.width()));
+            }
         }
     }
 }
