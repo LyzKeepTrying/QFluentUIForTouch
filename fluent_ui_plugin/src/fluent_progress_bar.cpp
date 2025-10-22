@@ -53,7 +53,7 @@ FluentProgressBar::FluentProgressBar(QWidget* parent)
         }
 
         if(is_loop)
-            timer->start(16); //fps60
+            timer->start(33); //fps30
     });
 }
 

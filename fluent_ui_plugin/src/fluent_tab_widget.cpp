@@ -18,6 +18,7 @@ FluentTabWidget::~FluentTabWidget()
     for (auto scrollArea : scroll_areas_) {
         delete scrollArea;
     }
+    //
 }
 
 FluentTabBar* FluentTabWidget::fluentTabBar() const

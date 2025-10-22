@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QWidget>
+#include "fluent_check_box.h"
 #include "fluent_circle_spin_box.h"
 #include "fluent_combo_box.h"
 #include "fluent_double_spin_box.h"
@@ -39,6 +40,7 @@ public:
     FluentIconToggleButton *fluentIconToggleButton_2;
     FluentIconToggleButton *fluentIconToggleButton;
     FluentPushButton *fluentPushButton;
+    FluentCheckBox *fluentCheckBox;
     FluentGroupBox *spinx_box;
     FluentLineSpinBox *fluentLineSpinBox_2;
     FluentLineSpinBox *fluentLineSpinBox;
@@ -105,6 +107,10 @@ public:
         fluentPushButton->setGeometry(QRect(320, 50, 91, 41));
         fluentPushButton->setIcon(icon);
         fluentPushButton->setIconSize(QSize(20, 20));
+        fluentCheckBox = new FluentCheckBox(button);
+        fluentCheckBox->setObjectName(QString::fromUtf8("fluentCheckBox"));
+        fluentCheckBox->setGeometry(QRect(20, 110, 81, 31));
+        fluentCheckBox->setTextSpacing(10);
         spinx_box = new FluentGroupBox(centralwidget);
         spinx_box->setObjectName(QString::fromUtf8("spinx_box"));
         spinx_box->setGeometry(QRect(20, 390, 441, 311));
@@ -221,6 +227,7 @@ public:
         fluentIconToggleButton->setText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\213\227", nullptr));
         fluentIconToggleButton->setToggledText(QCoreApplication::translate("MainWindow", "\346\210\221\346\230\257\347\214\253", nullptr));
         fluentPushButton->setText(QCoreApplication::translate("MainWindow", "\346\265\213\350\257\225", nullptr));
+        fluentCheckBox->setText(QCoreApplication::translate("MainWindow", "\346\265\213\350\257\225", nullptr));
         spinx_box->setTitle(QCoreApplication::translate("MainWindow", "SpinBox", nullptr));
         line_edit->setTitle(QCoreApplication::translate("MainWindow", "LineEdit&ComBox", nullptr));
         fluentLineEdit->setText(QCoreApplication::translate("MainWindow", "test\346\265\213\350\257\225", nullptr));

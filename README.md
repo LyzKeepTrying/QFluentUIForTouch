@@ -41,6 +41,7 @@ QFluentUIForTouch is a collection of Fluent Design UI plugins based on Qt, speci
 - **FluentTabWidget**: Fluent-style tab widget
 - **FluentScrollBar**: Fluent-style scroll bar
 - **FluentScrollArea**: Fluent-style scroll area
+- **FluentCheckBox**: Fluent-style check box
 
 ## Getting Started
 

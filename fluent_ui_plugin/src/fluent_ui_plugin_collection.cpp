@@ -14,6 +14,7 @@
 #include "fluent_text.h"
 #include "fluent_group_box.h"
 #include "fluent_tab_widget.h"
+#include "fluent_check_box.h"
 
 #include <QtCore/qplugin.h>
 
@@ -38,6 +39,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentGroupBoxPlugin(this));
     widget_list_.append(new FluentTabWidgetPlugin(this));
     widget_list_.append(new FluentTabBarPlugin(this));
+    widget_list_.append(new FluentCheckBoxPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -1051,4 +1053,68 @@ void FluentTabBarPlugin::initialize(QDesignerFormEditorInterface* core) {
         return;
     is_initialized_ = true;
 }
+
+/* FluentCheckBoxPlugin */
+
+FluentCheckBoxPlugin::FluentCheckBoxPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentCheckBoxPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentCheckBoxPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentCheckBoxPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentCheckBoxPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentCheckBox" name="fluentCheckBox">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentCheckBoxPlugin::includeFile() const {
+    return "fluent_check_box.h";
+}
+
+QString FluentCheckBoxPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentCheckBoxPlugin::name() const {
+    return "FluentCheckBox";
+}
+
+QString FluentCheckBoxPlugin::toolTip() const {
+    return "Fluent Design Fluent Check Box";
+}
+
+QString FluentCheckBoxPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentCheckBoxPlugin::createWidget(QWidget* parent) {
+    return new FluentCheckBox(parent);
+}
+
+void FluentCheckBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
 

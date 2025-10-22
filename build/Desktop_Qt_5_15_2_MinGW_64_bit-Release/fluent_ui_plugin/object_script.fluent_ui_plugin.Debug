@@ -1,4 +1,5 @@
 debug/fluent_toggle_button.o
+debug/fluent_check_box.o
 debug/fluent_scroll_area.o
 debug/fluent_scroll_bar.o
 debug/fluent_tab_bar.o
@@ -18,6 +19,7 @@ debug/fluent_push_button.o
 debug/fluent_text.o
 debug/fluent_ui_plugin_collection.o
 debug/moc_fluent_toggle_button.o
+debug/moc_fluent_check_box.o
 debug/moc_fluent_combo_box.o
 debug/moc_fluent_group_box.o
 debug/moc_fluent_icon_push_button.o
