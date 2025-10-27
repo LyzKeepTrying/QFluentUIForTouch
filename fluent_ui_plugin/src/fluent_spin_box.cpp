@@ -23,6 +23,18 @@ FluentSpinBox::FluentSpinBox(QWidget* parent)
         }
     });
     cursor_flash_timer->start(800);
+
+    //长按
+    long_press_timer_ = new QTimer(this);
+    long_press_timer_->setInterval(1500);
+    connect(long_press_timer_, &QTimer::timeout, this, [=]{
+        if(long_press_direction_){
+            stepUp();
+        }else{
+            stepDown();
+        }
+        long_press_timer_->setInterval(100);
+    });
 }
 
 QSize FluentSpinBox::sizeHint() const {
@@ -99,9 +111,13 @@ void FluentSpinBox::mousePressEvent(QMouseEvent* event) {
     if (plus_button_rect_.contains(event->pos()) && !isReadOnly()) {
         setPlusButtonIsPressed(true);
         stepUp();
+        long_press_direction_ = true;
+        long_press_timer_->start();
     } else if (minus_button_rect_.contains(event->pos()) && !isReadOnly()) {
         setMinusButtonIsPressed(true);
         stepDown();
+        long_press_direction_ = false;
+        long_press_timer_->start();
     }else{
         setPlusButtonIsPressed(false);
         setMinusButtonIsPressed(false);
@@ -113,5 +129,7 @@ void FluentSpinBox::mousePressEvent(QMouseEvent* event) {
 void FluentSpinBox::mouseReleaseEvent(QMouseEvent* event) {
     setPlusButtonIsPressed(false);
     setMinusButtonIsPressed(false);
+    long_press_timer_->setInterval(1500);
+    long_press_timer_->stop();
     QSpinBox::mouseReleaseEvent(event);
 }

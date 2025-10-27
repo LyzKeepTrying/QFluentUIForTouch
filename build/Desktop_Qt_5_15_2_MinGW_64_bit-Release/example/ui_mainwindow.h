@@ -109,7 +109,7 @@ public:
         fluentPushButton->setIconSize(QSize(20, 20));
         fluentCheckBox = new FluentCheckBox(button);
         fluentCheckBox->setObjectName(QString::fromUtf8("fluentCheckBox"));
-        fluentCheckBox->setGeometry(QRect(20, 110, 81, 31));
+        fluentCheckBox->setGeometry(QRect(20, 120, 81, 31));
         fluentCheckBox->setTextSpacing(10);
         spinx_box = new FluentGroupBox(centralwidget);
         spinx_box->setObjectName(QString::fromUtf8("spinx_box"));

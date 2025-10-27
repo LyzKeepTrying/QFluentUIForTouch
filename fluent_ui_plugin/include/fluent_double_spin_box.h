@@ -35,6 +35,8 @@ protected:
 private:
     QRect plus_button_rect_;
     QRect minus_button_rect_;
+    QTimer* long_press_timer_ = nullptr;
+    bool long_press_direction_ = false;
 
     constexpr static QSize k_default_size_{100, 24};
 };
