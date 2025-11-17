@@ -26,7 +26,7 @@ protected:
     QSize sizeHint() const override;
 
 private:
-    constexpr static QSize k_default_size_{48, 24};
+    const QSize k_default_size_{48, 24};
 
 signals:
 };

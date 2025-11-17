@@ -45,7 +45,7 @@ protected:
 
 private:
     QPointF arcEndPoint(const QRectF &arcRect, int startAngle16, int spanAngle16);
-    constexpr static QSize k_default_size_{100, 100};
+    const QSize k_default_size_{100, 100};
     QRect arc_rect_;
     QPointF cur_thumb_pos_;
 

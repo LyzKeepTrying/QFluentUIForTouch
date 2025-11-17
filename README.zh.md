@@ -38,6 +38,7 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
 - **FluentTabBar**: Fluent-style tab bar
 - **FluentTabWidget**: Fluent-style tab widget
 - **FluentCheckBox**: Fluent-style check box
+- **FluentTitleBar**: Fluent-style title bar
 
 ## 快速开始
 

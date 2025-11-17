@@ -44,8 +44,8 @@ private:
     int calculateThumbAxisLength() const; // helper: length used to compute position along groove
     bool isThumbArea(const QPoint& pos) const;
 
-    constexpr static QSize k_default_size_{12, 12};
-    constexpr static int k_min_thumb_length_{20};
+    const QSize k_default_size_{12, 12};
+    const int k_min_thumb_length_{20};
 };
 
 #endif // FLUENT_SCROLLBAR_H

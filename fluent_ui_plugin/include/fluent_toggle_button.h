@@ -31,5 +31,5 @@ protected:
     void resizeEvent(QResizeEvent* event) override;
 
 private:
-    constexpr static QSize k_default_size_{48, 24};
+    const QSize k_default_size_{48, 24};
 };

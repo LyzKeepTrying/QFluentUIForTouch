@@ -64,7 +64,7 @@ FluentComboBox::FluentComboBox(QWidget * parent) : QComboBox(parent)
         delegate->setBackgroundColor(color);
     });
 
-    connect(this, &FluentComboBox::BorderColorChanged, this, [=](QColor color){
+    connect(this, &FluentComboBox::BorderColorChanged, this, [=](){
         updateListViewStyle();
     });
 

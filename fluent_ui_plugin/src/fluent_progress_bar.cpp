@@ -5,8 +5,6 @@
 #include <QEasingCurve>
 #include <QPropertyAnimation>
 
-constexpr QSize FluentProgressBar::k_default_size_;
-
 FluentProgressBar::FluentProgressBar(QWidget* parent)
     : QProgressBar(parent){
     setContentsMargins(0, 0, 0, 0);

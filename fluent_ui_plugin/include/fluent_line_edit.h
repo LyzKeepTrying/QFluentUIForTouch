@@ -31,7 +31,7 @@ protected:
     QSize sizeHint() const override;
 
 private:
-    constexpr static QSize k_default_size_{72, 24};
+    const QSize k_default_size_{72, 24};
 };
 
 #endif // FLUENT_LINE_EDIT_H

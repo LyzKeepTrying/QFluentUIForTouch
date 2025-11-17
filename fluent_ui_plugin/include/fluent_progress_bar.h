@@ -30,7 +30,7 @@ protected:
     void paintEvent(QPaintEvent* event) override;
 
 private:
-    constexpr static QSize k_default_size_{48, 12};
+    const QSize k_default_size_{48, 12};
 };
 
 #endif // FLUENT_PROGRESS_BAR_H

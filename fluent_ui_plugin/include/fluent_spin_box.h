@@ -38,7 +38,7 @@ private:
     QTimer* long_press_timer_ = nullptr;
     bool long_press_direction_ = false;
 
-    constexpr static QSize k_default_size_{100, 24};
+    const QSize k_default_size_{100, 24};
 };
 
 #endif // FLUENT_SPIN_BOX_H

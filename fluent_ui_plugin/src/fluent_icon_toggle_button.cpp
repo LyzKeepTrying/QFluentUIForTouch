@@ -1,9 +1,6 @@
 #include "fluent_icon_toggle_button.h"
 #include "qpainter.h"
 
-constexpr QSize FluentIconToggleButton::k_default_size_;
-constexpr QSize FluentIconToggleButton::k_default_icon_size_;
-
 FluentIconToggleButton::FluentIconToggleButton(QWidget* parent)
     : QAbstractButton(parent)
 {

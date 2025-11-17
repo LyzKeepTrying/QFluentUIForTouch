@@ -15,6 +15,7 @@
 #include "fluent_group_box.h"
 #include "fluent_tab_widget.h"
 #include "fluent_check_box.h"
+#include "fluent_title_bar.h"
 
 #include <QtCore/qplugin.h>
 
@@ -40,6 +41,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentTabWidgetPlugin(this));
     widget_list_.append(new FluentTabBarPlugin(this));
     widget_list_.append(new FluentCheckBoxPlugin(this));
+    widget_list_.append(new FluentTitleBarPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -1111,6 +1113,69 @@ QWidget* FluentCheckBoxPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentCheckBoxPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentTitleBarPlugin */
+
+FluentTitleBarPlugin::FluentTitleBarPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentTitleBarPlugin::isContainer() const {
+    return true;
+}
+
+bool FluentTitleBarPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentTitleBarPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentTitleBarPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentTitleBar" name="fluentTitleBar">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentTitleBarPlugin::includeFile() const {
+    return "fluent_title_bar.h";
+}
+
+QString FluentTitleBarPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentTitleBarPlugin::name() const {
+    return "FluentTitleBar";
+}
+
+QString FluentTitleBarPlugin::toolTip() const {
+    return "Fluent Design Fluent Title Bar";
+}
+
+QString FluentTitleBarPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentTitleBarPlugin::createWidget(QWidget* parent) {
+    return new FluentTitleBar(parent);
+}
+
+void FluentTitleBarPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

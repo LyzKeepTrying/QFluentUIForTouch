@@ -60,7 +60,7 @@ private:
     void updateListViewStyle();
     void drawArrow(QPainter& painter);
 
-    constexpr static QSize k_default_size_{120, 32};
+    const QSize k_default_size_{120, 32};
 
     QPropertyAnimation *animation_ = nullptr;
 

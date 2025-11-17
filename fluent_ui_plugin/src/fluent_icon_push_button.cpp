@@ -1,9 +1,6 @@
 #include "fluent_icon_push_button.h"
 #include "qpainter.h"
 
-constexpr QSize FluentIconPushButton::k_default_size_;
-constexpr QSize FluentIconPushButton::k_default_icon_size_;
-
 FluentIconPushButton::FluentIconPushButton(QWidget* parent)
     : QPushButton(parent)
 {

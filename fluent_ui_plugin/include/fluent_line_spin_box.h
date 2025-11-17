@@ -42,7 +42,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
-    constexpr static QSize k_default_size_{100, 24};
+    const QSize k_default_size_{100, 24};
     QRect line_rect_;
     QPointF cur_thumb_pos_;
 

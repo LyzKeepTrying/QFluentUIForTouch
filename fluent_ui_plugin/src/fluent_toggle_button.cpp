@@ -5,8 +5,6 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 
-constexpr QSize FluentToggleButton::k_default_size_;
-
 FluentToggleButton::FluentToggleButton(QWidget* parent)
     : QAbstractButton(parent) {
     setContentsMargins(0, 0, 0, 0);

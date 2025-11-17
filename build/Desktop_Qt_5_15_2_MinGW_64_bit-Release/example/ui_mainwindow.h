@@ -26,6 +26,7 @@
 #include "fluent_push_button.h"
 #include "fluent_spin_box.h"
 #include "fluent_tab_widget.h"
+#include "fluent_title_bar.h"
 #include "fluent_toggle_button.h"
 
 QT_BEGIN_NAMESPACE
@@ -56,6 +57,8 @@ public:
     FluentProgressBar *fluentProgressBar;
     FluentProgressBar *fluentProgressBar_2;
     FluentTabWidget *fluentTabWidget;
+    FluentTitleBar *fluentTitleBar;
+    FluentPushButton *fluentPushButton_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -69,7 +72,7 @@ public:
         button->setObjectName(QString::fromUtf8("button"));
         button->setGeometry(QRect(20, 10, 441, 141));
         button->setFontSize(14);
-        button->setShowTitle(true);
+        button->setShowTitle(false);
         fluentToggleButton = new FluentToggleButton(button);
         fluentToggleButton->setObjectName(QString::fromUtf8("fluentToggleButton"));
         fluentToggleButton->setGeometry(QRect(20, 60, 71, 31));
@@ -115,7 +118,7 @@ public:
         spinx_box->setObjectName(QString::fromUtf8("spinx_box"));
         spinx_box->setGeometry(QRect(20, 390, 441, 311));
         spinx_box->setFontSize(14);
-        spinx_box->setShowTitle(true);
+        spinx_box->setShowTitle(false);
         fluentLineSpinBox_2 = new FluentLineSpinBox(spinx_box);
         fluentLineSpinBox_2->setObjectName(QString::fromUtf8("fluentLineSpinBox_2"));
         fluentLineSpinBox_2->setGeometry(QRect(20, 40, 321, 51));
@@ -165,7 +168,7 @@ public:
         line_edit->setObjectName(QString::fromUtf8("line_edit"));
         line_edit->setGeometry(QRect(20, 180, 441, 181));
         line_edit->setFontSize(14);
-        line_edit->setShowTitle(true);
+        line_edit->setShowTitle(false);
         fluentComboBox = new FluentComboBox(line_edit);
         fluentComboBox->setObjectName(QString::fromUtf8("fluentComboBox"));
         fluentComboBox->setGeometry(QRect(40, 40, 141, 41));
@@ -190,7 +193,7 @@ public:
         progress_bar->setObjectName(QString::fromUtf8("progress_bar"));
         progress_bar->setGeometry(QRect(20, 730, 441, 141));
         progress_bar->setFontSize(14);
-        progress_bar->setShowTitle(true);
+        progress_bar->setShowTitle(false);
         fluentProgressBar = new FluentProgressBar(progress_bar);
         fluentProgressBar->setObjectName(QString::fromUtf8("fluentProgressBar"));
         fluentProgressBar->setGeometry(QRect(30, 40, 381, 31));
@@ -208,9 +211,20 @@ public:
         fluentProgressBar_2->setSliderLen(0.250000000000000);
         fluentTabWidget = new FluentTabWidget(centralwidget);
         fluentTabWidget->setObjectName(QString::fromUtf8("fluentTabWidget"));
-        fluentTabWidget->setGeometry(QRect(530, 30, 561, 301));
+        fluentTabWidget->setGeometry(QRect(500, 200, 561, 301));
+        fluentTabWidget->setTabPosition(QTabWidget::West);
+        fluentTabWidget->setIconSize(QSize(30, 20));
         fluentTabWidget->setTabsClosable(false);
         fluentTabWidget->setTabBarAutoHide(false);
+        fluentTitleBar = new FluentTitleBar(centralwidget);
+        fluentTitleBar->setObjectName(QString::fromUtf8("fluentTitleBar"));
+        fluentTitleBar->setGeometry(QRect(500, 150, 561, 48));
+        fluentTitleBar->setTitleFontSize(17);
+        fluentTitleBar->setShowTitle(true);
+        fluentTitleBar->setShowDateTime(true);
+        fluentPushButton_2 = new FluentPushButton(fluentTitleBar);
+        fluentPushButton_2->setObjectName(QString::fromUtf8("fluentPushButton_2"));
+        fluentPushButton_2->setGeometry(QRect(480, 10, 61, 31));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -232,6 +246,8 @@ public:
         line_edit->setTitle(QCoreApplication::translate("MainWindow", "LineEdit&ComBox", nullptr));
         fluentLineEdit->setText(QCoreApplication::translate("MainWindow", "test\346\265\213\350\257\225", nullptr));
         progress_bar->setTitle(QCoreApplication::translate("MainWindow", "ProgressBar", nullptr));
+        fluentTitleBar->setTitle(QCoreApplication::translate("MainWindow", "\344\270\255\345\233\275\346\237\220\346\237\220\345\205\254\345\217\270", nullptr));
+        fluentPushButton_2->setText(QCoreApplication::translate("MainWindow", "\346\237\245\347\234\213", nullptr));
     } // retranslateUi
 
 };

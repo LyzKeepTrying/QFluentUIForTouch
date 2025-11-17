@@ -34,7 +34,7 @@ protected:
     bool hitButton(const QPoint &pos) const override;
 
 private:
-    constexpr static QSize k_default_size_{120, 24};
+    const QSize k_default_size_{120, 24};
 };
 
 #endif // FLUENT_CHECK_BOX_H

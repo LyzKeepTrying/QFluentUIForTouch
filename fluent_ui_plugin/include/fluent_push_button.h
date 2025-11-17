@@ -31,7 +31,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent* event) override;
 
 private:
-    constexpr static QSize k_default_size_{48, 24};
+    const QSize k_default_size_{48, 24};
 };
 
 #endif // FLUENT_PUSH_BUTTON_H
