@@ -23,6 +23,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentTabBar : public QTabBar {
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY(int, TabSpacing, 8)
     DECLARE_PROPERTY(int, TabMargin, 5)
+    DECLARE_PROPERTY(int, TabWidgetSpacing, 3)
     DECLARE_PROPERTY(bool, MoveAnamination, true)
     DECLARE_PROPERTY_PRIVATE(int, CurSelectRectPos, 0)
     DECLARE_PROPERTY(bool, ShowIcon, true)

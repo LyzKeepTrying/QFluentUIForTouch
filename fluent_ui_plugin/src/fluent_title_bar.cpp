@@ -30,7 +30,7 @@ void FluentTitleBar::paintEvent(QPaintEvent* event)
 
     // 绘制区域与圆角
     const qreal radius = 8.0;
-    const QRectF r = rect().adjusted(-5, -5, +5, -1);
+    const QRectF r = rect().adjusted(-10, -10, +10, -1);
 
     // 基础颜色（来自你现有主题）
     QColor base = getBackgroundColor();

@@ -74,6 +74,18 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
 
     // 整体背景（tabBar 背景）
     QRect full_rect = rect().adjusted(1, 1, -1, -1);
+    if (shape() == QTabBar::RoundedWest){
+        full_rect = full_rect.adjusted(0, 0, -getTabWidgetSpacing(), 0);
+    }
+    else if (shape() == QTabBar::RoundedEast){
+        full_rect = full_rect.adjusted(getTabWidgetSpacing(), 0, 0, 0);
+    }
+    else if (shape() == QTabBar::RoundedSouth){
+        full_rect = full_rect.adjusted(0, getTabWidgetSpacing(), 0, 0);
+    }
+    else if (shape() == QTabBar::RoundedEast){
+        full_rect = full_rect.adjusted(0, 0, 0, -getTabWidgetSpacing());
+    }
     painter.setPen(getBorderColor());
     painter.setBrush(getBackgroundColor());
     painter.drawRoundedRect(full_rect, 8, 8);

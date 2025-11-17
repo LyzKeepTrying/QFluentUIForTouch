@@ -9,6 +9,7 @@ FluentTabWidget::FluentTabWidget(QWidget* parent)
     , current_page_widget_(nullptr)
 {
     setTabPosition(QTabWidget::West);
+    setTabShape(QTabWidget::Rounded);
 
     // 使用自定义 FluentTabBar
     tab_bar_ = new FluentTabBar(this);
