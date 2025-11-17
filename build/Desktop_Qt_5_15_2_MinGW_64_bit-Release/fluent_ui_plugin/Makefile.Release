@@ -18,7 +18,7 @@ CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++11 -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I..\..\..\fluent_ui_plugin -I. -I..\..\..\fluent_ui_plugin\include -ID:\software\qt5.15.2\5.15.2\mingw81_64\include -ID:\software\qt5.15.2\5.15.2\mingw81_64\include\QtDesigner -ID:\software\qt5.15.2\5.15.2\mingw81_64\include\QtUiPlugin -ID:\software\qt5.15.2\5.15.2\mingw81_64\include\QtWidgets -ID:\software\qt5.15.2\5.15.2\mingw81_64\include\QtGui -ID:\software\qt5.15.2\5.15.2\mingw81_64\include\QtANGLE -ID:\software\qt5.15.2\5.15.2\mingw81_64\include\QtXml -ID:\software\qt5.15.2\5.15.2\mingw81_64\include\QtCore -Irelease -I/include -ID:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\win32-g++ 
 LINKER      =        g++
-LFLAGS        =        -Wl,-s -shared -Wl,-subsystem,windows -mthreads -Wl,--out-implib,D:\software\qt5.15.2\5.15.2\mingw81_64\plugins\designer\libfluent_ui_plugin.a
+LFLAGS        =        -Wl,-s -shared -Wl,-subsystem,windows -mthreads -Wl,--out-implib,release\libfluent_ui_plugin.a
 LIBS        =        D:\software\qt5.15.2\5.15.2\mingw81_64\lib\libQt5Designer.a D:\software\qt5.15.2\5.15.2\mingw81_64\lib\libQt5Widgets.a D:\software\qt5.15.2\5.15.2\mingw81_64\lib\libQt5Gui.a D:\software\qt5.15.2\5.15.2\mingw81_64\lib\libQt5Xml.a D:\software\qt5.15.2\5.15.2\mingw81_64\lib\libQt5Core.a   
 QMAKE         = D:\software\qt5.15.2\5.15.2\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
@@ -178,16 +178,16 @@ DIST          =  ..\..\..\fluent_ui_plugin\include\fluent_toggle_button.h \
 		..\..\..\fluent_ui_plugin\src\fluent_text.cpp \
 		..\..\..\fluent_ui_plugin\src\fluent_ui_plugin_collection.cpp
 QMAKE_TARGET  = fluent_ui_plugin
-DESTDIR        = D:\software\qt5.15.2\5.15.2\mingw81_64\plugins\designer\ #avoid trailing-slash linebreak
+DESTDIR        = release\ #avoid trailing-slash linebreak
 TARGET         = fluent_ui_plugin.dll
-DESTDIR_TARGET = D:\software\qt5.15.2\5.15.2\mingw81_64\plugins\designer\fluent_ui_plugin.dll
+DESTDIR_TARGET = release\fluent_ui_plugin.dll
 
 ####### Build rules
 
 first: all
-all: Makefile.Release  D:/software/qt5.15.2/5.15.2/mingw81_64/plugins/designer/fluent_ui_plugin.dll
+all: Makefile.Release  release/fluent_ui_plugin.dll
 
-D:/software/qt5.15.2/5.15.2/mingw81_64/plugins/designer/fluent_ui_plugin.dll: D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Designer.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Widgets.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Gui.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Xml.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Core.a $(OBJECTS) 
+release/fluent_ui_plugin.dll: D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Designer.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Widgets.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Gui.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Xml.a D:/software/qt5.15.2/5.15.2/mingw81_64/lib/libQt5Core.a $(OBJECTS) 
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.fluent_ui_plugin.Release  $(LIBS)
 
 qmake: FORCE
@@ -202,7 +202,7 @@ clean: compiler_clean
 	-$(DEL_FILE) release\fluent_toggle_button.o release\fluent_title_bar.o release\fluent_check_box.o release\fluent_scroll_area.o release\fluent_scroll_bar.o release\fluent_tab_bar.o release\fluent_tab_widget.o release\fluent_group_box.o release\fluent_combo_box.o release\fluent_progress_bar.o release\fluent_slider.o release\fluent_spin_box.o release\fluent_double_spin_box.o release\fluent_circle_spin_box.o release\fluent_line_spin_box.o release\fluent_icon_push_button.o release\fluent_icon_toggle_button.o release\fluent_line_edit.o release\fluent_push_button.o release\fluent_text.o release\fluent_ui_plugin_collection.o release\moc_fluent_toggle_button.o release\moc_fluent_check_box.o release\moc_fluent_combo_box.o release\moc_fluent_group_box.o release\moc_fluent_icon_push_button.o release\moc_fluent_icon_toggle_button.o release\moc_fluent_push_button.o release\moc_fluent_scroll_bar.o release\moc_fluent_slider.o release\moc_fluent_spin_box.o release\moc_fluent_double_spin_box.o release\moc_fluent_circle_spin_box.o release\moc_fluent_line_spin_box.o release\moc_fluent_tab_bar.o release\moc_fluent_tab_widget.o release\moc_fluent_title_bar.o release\moc_fluent_ui_plugin_collection.o release\moc_fluent_line_edit.o release\moc_fluent_progress_bar.o release\moc_fluent_text.o release\moc_fluent_scroll_area.o
 
 distclean: clean 
-	-$(DEL_FILE) D:\software\qt5.15.2\5.15.2\mingw81_64\plugins\designer\libfluent_ui_plugin.a
+	-$(DEL_FILE) release\libfluent_ui_plugin.a
 	-$(DEL_FILE) $(DESTDIR_TARGET)
 	-$(DEL_FILE) Makefile.Release
 

@@ -83,7 +83,7 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
     else if (shape() == QTabBar::RoundedSouth){
         full_rect = full_rect.adjusted(0, getTabWidgetSpacing(), 0, 0);
     }
-    else if (shape() == QTabBar::RoundedEast){
+    else if (shape() == QTabBar::RoundedNorth){
         full_rect = full_rect.adjusted(0, 0, 0, -getTabWidgetSpacing());
     }
     painter.setPen(getBorderColor());

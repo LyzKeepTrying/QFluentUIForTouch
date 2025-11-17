@@ -19,6 +19,7 @@
 #include "fluent_combo_box.h"
 #include "fluent_double_spin_box.h"
 #include "fluent_group_box.h"
+#include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
 #include "fluent_line_edit.h"
 #include "fluent_line_spin_box.h"
@@ -58,7 +59,7 @@ public:
     FluentProgressBar *fluentProgressBar_2;
     FluentTabWidget *fluentTabWidget;
     FluentTitleBar *fluentTitleBar;
-    FluentPushButton *fluentPushButton_2;
+    FluentIconPushButton *fluentIconPushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -222,9 +223,16 @@ public:
         fluentTitleBar->setTitleFontSize(17);
         fluentTitleBar->setShowTitle(true);
         fluentTitleBar->setShowDateTime(true);
-        fluentPushButton_2 = new FluentPushButton(fluentTitleBar);
-        fluentPushButton_2->setObjectName(QString::fromUtf8("fluentPushButton_2"));
-        fluentPushButton_2->setGeometry(QRect(480, 10, 61, 31));
+        fluentIconPushButton = new FluentIconPushButton(fluentTitleBar);
+        fluentIconPushButton->setObjectName(QString::fromUtf8("fluentIconPushButton"));
+        fluentIconPushButton->setGeometry(QRect(510, 3, 36, 36));
+        fluentIconPushButton->setIcon(icon);
+        fluentIconPushButton->setIconSize(QSize(25, 25));
+        fluentIconPushButton->setFlat(false);
+        fluentIconPushButton->setIconTopMargin(0);
+        fluentIconPushButton->setIconTextSpace(0);
+        fluentIconPushButton->setFontSize(14);
+        fluentIconPushButton->setTextIsOustside(false);
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -247,7 +255,6 @@ public:
         fluentLineEdit->setText(QCoreApplication::translate("MainWindow", "test\346\265\213\350\257\225", nullptr));
         progress_bar->setTitle(QCoreApplication::translate("MainWindow", "ProgressBar", nullptr));
         fluentTitleBar->setTitle(QCoreApplication::translate("MainWindow", "\344\270\255\345\233\275\346\237\220\346\237\220\345\205\254\345\217\270", nullptr));
-        fluentPushButton_2->setText(QCoreApplication::translate("MainWindow", "\346\237\245\347\234\213", nullptr));
     } // retranslateUi
 
 };
