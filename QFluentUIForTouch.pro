@@ -7,3 +7,4 @@ SUBDIRS    = fluent_ui_plugin \
 
 # 保证 example 在插件编译完成后再编译
 example.depends = fluent_ui_plugin
+nc
