@@ -24,7 +24,7 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
         // 绘制背景
         painter.setPen(Qt::NoPen);
         painter.setBrush(getBackgroundColor());
-        painter.drawRect(rect);
+        painter.drawRoundedRect(rect, 8, 8);
 
         // 绘制边框
         QPen border_pen;
@@ -32,7 +32,7 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
         border_pen.setWidth(border_width);
         painter.setPen(border_pen);
         painter.setBrush(Qt::NoBrush);
-        painter.drawRect(rect);
+        painter.drawRoundedRect(rect, 8, 8);
 
         // 标题文本
         if (!title().isEmpty() && getShowTitle()) {
@@ -75,7 +75,7 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
         // 绘制背景
         painter.setPen(Qt::NoPen);
         painter.setBrush(getBackgroundColor());
-        painter.drawRect(rect);
+        painter.drawRoundedRect(rect, 8, 8);
 
         // 绘制边框
         QPen border_pen;
@@ -83,7 +83,7 @@ void FluentGroupBox::paintEvent(QPaintEvent* event)
         border_pen.setWidth(border_width);
         painter.setPen(border_pen);
         painter.setBrush(Qt::NoBrush);
-        painter.drawRect(rect);
+        painter.drawRoundedRect(rect, 8, 8);
 
     }
 }

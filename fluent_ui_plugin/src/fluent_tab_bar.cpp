@@ -88,7 +88,7 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
     }
     painter.setPen(getBorderColor());
     painter.setBrush(getBackgroundColor());
-    painter.drawRect(full_rect);
+    painter.drawRoundedRect(full_rect, 8, 8);
 
     // 绘制选中指示器（单个全局指示器）
     if (count() > 0) {
