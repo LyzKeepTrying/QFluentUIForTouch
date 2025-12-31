@@ -65,6 +65,34 @@ QSize FluentTabBar::minimumTabSizeHint(int index) const
     return tabSizeHint(index);
 }
 
+static QIcon brightenIcon(const QIcon &icon, int brightnessDelta = 40)
+{
+    QPixmap pixmap = icon.pixmap(icon.actualSize(QSize(256, 256)));
+    QImage image = pixmap.toImage();
+
+    for (int y = 0; y < image.height(); ++y) {
+        for (int x = 0; x < image.width(); ++x) {
+            QRgb pixel = image.pixel(x, y);
+            int alpha = qAlpha(pixel);
+
+            if (alpha > 0) {  // 只处理非透明像素
+                int red = qRed(pixel);
+                int green = qGreen(pixel);
+                int blue = qBlue(pixel);
+
+                // 增加亮度，但不超出255
+                red = qMin(red + brightnessDelta, 255);
+                green = qMin(green + brightnessDelta, 255);
+                blue = qMin(blue + brightnessDelta, 255);
+
+                image.setPixel(x, y, qRgba(red, green, blue, alpha));
+            }
+        }
+    }
+
+    return QIcon(QPixmap::fromImage(image));
+}
+
 void FluentTabBar::paintEvent(QPaintEvent* ev)
 {
     Q_UNUSED(ev);
@@ -147,6 +175,7 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
         if (shape() == QTabBar::RoundedSouth || shape() == QTabBar::RoundedNorth) {
             // 垂直方向：图标在上，文本在下（垂直排列）
             QIcon icon = tabIcon(i);
+            icon = selected ? brightenIcon(icon) : icon;
             if (!icon.isNull() && getShowIcon()) {
                 // 图标在水平方向居中
                 int icon_x = content_rect.center().x() - icon_size/2;
@@ -181,6 +210,7 @@ void FluentTabBar::paintEvent(QPaintEvent* ev)
         } else {
             // 水平方向：图标在左，文本在右（水平排列）
             QIcon icon = tabIcon(i);
+            icon = selected ?  brightenIcon(icon) : icon;
             // 图标绘制
             QRect icon_rect(content_rect.left() + tab_spacing,
                             content_rect.center().y() - icon_size/2,

@@ -61,7 +61,7 @@ void FluentLineEdit::paintEvent(QPaintEvent* event) {
     painter.drawText(text_rect, Qt::AlignVCenter | Qt::AlignLeft, draw_text);
 
     // 绘制光标
-    if (hasFocus() && getShowCursor()) {
+    if (hasFocus() && !isReadOnly() && getShowCursor()) {
         QTextLayout layout(draw_text, font);
         layout.beginLayout();
         QTextLine line = layout.createLine();
