@@ -1,4 +1,5 @@
 debug/fluent_toggle_button.o
+debug/fluent_table_widget.o
 debug/fluent_title_bar.o
 debug/fluent_check_box.o
 debug/fluent_scroll_area.o
@@ -34,6 +35,7 @@ debug/moc_fluent_circle_spin_box.o
 debug/moc_fluent_line_spin_box.o
 debug/moc_fluent_tab_bar.o
 debug/moc_fluent_tab_widget.o
+debug/moc_fluent_table_widget.o
 debug/moc_fluent_title_bar.o
 debug/moc_fluent_ui_plugin_collection.o
 debug/moc_fluent_line_edit.o

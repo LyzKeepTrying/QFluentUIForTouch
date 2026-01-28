@@ -148,6 +148,8 @@ void FluentScrollBar::paintEvent(QPaintEvent* /*event*/) {
     QPainter painter(this);
     painter.setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
 
+
+    painter.fillRect(rect(), palette().window());
     // 绘制轨道
     QRect groove_rect = calculateGrooveRect();
     painter.setPen(Qt::NoPen);

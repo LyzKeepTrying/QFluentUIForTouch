@@ -12,9 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->fluentTabWidget->addTabWithScroll(ui->progress_bar, QIcon(":/icon/dog.png"), "Box2");
     ui->fluentTabWidget->addTabWithScroll(ui->line_edit, QIcon(":/icon/cat.png"), "Box3");
     ui->fluentTabWidget->addTabWithScroll(ui->button, QIcon(":/icon/dog.png"), "Box4");
+    ui->fluentTabWidget->addTabWithScroll(ui->table, QIcon(":/icon/cat.png"), "Box5");
     //qobject_cast<FluentTabBar*>(ui->fluentTabWidget->tabBar())->setShowIcon(false);
-}
 
+}
 MainWindow::~MainWindow()
 {
     delete ui;

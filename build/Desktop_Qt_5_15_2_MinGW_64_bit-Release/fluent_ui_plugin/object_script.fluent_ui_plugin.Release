@@ -1,4 +1,5 @@
 release/fluent_toggle_button.o
+release/fluent_table_widget.o
 release/fluent_title_bar.o
 release/fluent_check_box.o
 release/fluent_scroll_area.o
@@ -34,6 +35,7 @@ release/moc_fluent_circle_spin_box.o
 release/moc_fluent_line_spin_box.o
 release/moc_fluent_tab_bar.o
 release/moc_fluent_tab_widget.o
+release/moc_fluent_table_widget.o
 release/moc_fluent_title_bar.o
 release/moc_fluent_ui_plugin_collection.o
 release/moc_fluent_line_edit.o

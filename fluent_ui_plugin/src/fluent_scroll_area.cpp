@@ -20,7 +20,6 @@ void FluentScrollArea::initCommon() {
     setWidgetResizable(true);
 
     setAttribute(Qt::WA_TranslucentBackground);
-    setStyleSheet("background: transparent;");
 
     QWidget* vp = viewport();
     vp->setAttribute(Qt::WA_TranslucentBackground);
