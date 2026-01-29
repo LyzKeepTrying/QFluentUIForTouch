@@ -1,4 +1,7 @@
 release/fluent_toggle_button.o
+release/fluent_pie_chart.o
+release/fluent_bar_chart.o
+release/fluent_line_chart.o
 release/fluent_clock_picker.o
 release/fluent_date_picker.o
 release/fluent_datetime_picker.o
@@ -31,6 +34,9 @@ release/moc_fluent_check_box.o
 release/moc_fluent_combo_box.o
 release/moc_fluent_date_picker.o
 release/moc_fluent_datetime_picker.o
+release/moc_fluent_pie_chart.o
+release/moc_fluent_bar_chart.o
+release/moc_fluent_line_chart.o
 release/moc_fluent_time_picker.o
 release/moc_fluent_group_box.o
 release/moc_fluent_icon_push_button.o

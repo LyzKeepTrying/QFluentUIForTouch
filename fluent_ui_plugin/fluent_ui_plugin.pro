@@ -8,6 +8,9 @@ DEFINES += FLUENTUI_PLUGIN_LIBRARY
 # 头文件和源文件布局
 INCLUDEPATH += $$PWD/include
 SOURCES     += src/fluent_toggle_button.cpp \
+               src/fluent_pie_chart.cpp \
+               src/fluent_bar_chart.cpp \
+               src/fluent_line_chart.cpp \
                src/fluent_clock_picker.cpp \
                src/fluent_date_picker.cpp \
                src/fluent_datetime_picker.cpp \
@@ -41,6 +44,9 @@ HEADERS     += include/fluent_toggle_button.h \
                include/fluent_combo_box.h \
                include/fluent_date_picker.h \
                include/fluent_datetime_picker.h \
+               include/fluent_pie_chart.h \
+               include/fluent_bar_chart.h \
+               include/fluent_line_chart.h \
                include/fluent_time_picker.h \
                include/fluent_group_box.h \
                include/fluent_icon_push_button.h \
@@ -69,6 +75,6 @@ TARGET = fluent_ui_plugin
 
 # 安装到 Qt Designer 插件目录（可选）
 target.path = $$[QT_INSTALL_PLUGINS]/designer
-# DESTDIR = $$[QT_INSTALL_PLUGINS]/designer
+#DESTDIR = $$[QT_INSTALL_PLUGINS]/designer
 INSTALLS += target
 

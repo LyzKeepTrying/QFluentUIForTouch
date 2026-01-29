@@ -45,6 +45,9 @@ QFluentUIForTouch 是一个基于 Qt 的 Fluent Design UI 插件集合，专为�
 - **FluentClockPicker**: Fluent-style clock picker
 - **FluentTimePicker**: Fluent-style time picker
 - **FluentDateTimePicker**: Fluent-style datetime picker
+- **FluentBarChart**: Fluent-style bar chart
+- **FluentLineChart**: Fluent-style line chart
+- **FluentPieChart**: Fluent-style pie chart
 
 ## 快速开始
 

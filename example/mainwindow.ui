@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1133</width>
-    <height>902</height>
+    <width>1404</width>
+    <height>1480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -341,8 +341,8 @@
    <widget class="FluentGroupBox" name="line_edit">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>390</y>
+      <x>20</x>
+      <y>180</y>
       <width>441</width>
       <height>281</height>
      </rect>
@@ -451,10 +451,10 @@
    <widget class="FluentGroupBox" name="progress_bar">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>730</y>
+      <x>750</x>
+      <y>380</y>
       <width>441</width>
-      <height>141</height>
+      <height>991</height>
      </rect>
     </property>
     <property name="title">
@@ -511,6 +511,45 @@
      </property>
      <property name="SliderLen">
       <double>0.250000000000000</double>
+     </property>
+    </widget>
+    <widget class="FluentPieChart" name="fluentPieChart">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>140</y>
+       <width>381</width>
+       <height>261</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="FluentBarChart" name="fluentBarChart">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>420</y>
+       <width>381</width>
+       <height>241</height>
+      </rect>
+     </property>
+     <property name="BarSpacing">
+      <number>5</number>
+     </property>
+    </widget>
+    <widget class="FluentLineChart" name="fluentLineChart">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>680</y>
+       <width>381</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="PointRadius">
+      <double>5.000000000000000</double>
+     </property>
+     <property name="LineWidth">
+      <double>3.000000000000000</double>
      </property>
     </widget>
    </widget>
@@ -599,8 +638,8 @@
    <widget class="FluentGroupBox" name="table">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>680</y>
+      <x>30</x>
+      <y>710</y>
       <width>511</width>
       <height>291</height>
      </rect>
@@ -811,6 +850,21 @@
    <class>FluentDateTimePicker</class>
    <extends>QWidget</extends>
    <header>fluent_datetime_picker.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentPieChart</class>
+   <extends>QWidget</extends>
+   <header>fluent_pie_chart.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentBarChart</class>
+   <extends>QWidget</extends>
+   <header>fluent_bar_chart.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentLineChart</class>
+   <extends>QWidget</extends>
+   <header>fluent_line_chart.h</header>
   </customwidget>
  </customwidgets>
  <resources>

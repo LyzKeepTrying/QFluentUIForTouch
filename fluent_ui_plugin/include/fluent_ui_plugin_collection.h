@@ -675,3 +675,84 @@ private:
     bool is_initialized_ = false;
 };
 
+class FLUENTUI_PLUGIN_EXPORT FluentPieChartPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentPieChartPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentBarChartPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentBarChartPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentLineChartPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentLineChartPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+

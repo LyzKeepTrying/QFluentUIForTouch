@@ -22,6 +22,9 @@
 #include "fluent_clock_picker.h"
 #include "fluent_time_picker.h"
 #include "fluent_datetime_picker.h"
+#include "fluent_pie_chart.h"
+#include "fluent_bar_chart.h"
+#include "fluent_line_chart.h"
 
 #include <QtCore/qplugin.h>
 
@@ -54,6 +57,9 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentClockPickerPlugin(this));
     widget_list_.append(new FluentTimePickerPlugin(this));
     widget_list_.append(new FluentDateTimePickerPlugin(this));
+    widget_list_.append(new FluentPieChartPlugin(this));
+    widget_list_.append(new FluentBarChartPlugin(this));
+    widget_list_.append(new FluentLineChartPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -1566,6 +1572,195 @@ QWidget* FluentDateTimePickerPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentDateTimePickerPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentPieChartPlugin */
+
+FluentPieChartPlugin::FluentPieChartPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentPieChartPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentPieChartPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentPieChartPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentPieChartPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentPieChart" name="fluentPieChart">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentPieChartPlugin::includeFile() const {
+    return "fluent_pie_chart.h";
+}
+
+QString FluentPieChartPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentPieChartPlugin::name() const {
+    return "FluentPieChart";
+}
+
+QString FluentPieChartPlugin::toolTip() const {
+    return "Fluent Design Fluent Pie Chart";
+}
+
+QString FluentPieChartPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentPieChartPlugin::createWidget(QWidget* parent) {
+    return new FluentPieChart(parent);
+}
+
+void FluentPieChartPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentBarChartPlugin */
+
+FluentBarChartPlugin::FluentBarChartPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentBarChartPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentBarChartPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentBarChartPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentBarChartPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentBarChart" name="fluentBarChart">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentBarChartPlugin::includeFile() const {
+    return "fluent_bar_chart.h";
+}
+
+QString FluentBarChartPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentBarChartPlugin::name() const {
+    return "FluentBarChart";
+}
+
+QString FluentBarChartPlugin::toolTip() const {
+    return "Fluent Design Fluent Bar Chart";
+}
+
+QString FluentBarChartPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentBarChartPlugin::createWidget(QWidget* parent) {
+    return new FluentBarChart(parent);
+}
+
+void FluentBarChartPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentLineChartPlugin */
+
+FluentLineChartPlugin::FluentLineChartPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentLineChartPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentLineChartPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentLineChartPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentLineChartPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentLineChart" name="fluentLineChart">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentLineChartPlugin::includeFile() const {
+    return "fluent_line_chart.h";
+}
+
+QString FluentLineChartPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentLineChartPlugin::name() const {
+    return "FluentLineChart";
+}
+
+QString FluentLineChartPlugin::toolTip() const {
+    return "Fluent Design Fluent Line Chart";
+}
+
+QString FluentLineChartPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentLineChartPlugin::createWidget(QWidget* parent) {
+    return new FluentLineChart(parent);
+}
+
+void FluentLineChartPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->fluentComboBox->addItems(QStringList() << "item1" << "item2");
     ui->line_edit->setFixedHeight(1000);
+    ui->progress_bar->setFixedHeight(2000);
     ui->fluentTabWidget->addTabWithScroll(ui->spinx_box, QIcon(":/icon/cat.png"), "Box1");
     ui->fluentTabWidget->addTabWithScroll(ui->progress_bar, QIcon(":/icon/dog.png"), "Box2");
     ui->fluentTabWidget->addTabWithScroll(ui->line_edit, QIcon(":/icon/cat.png"), "Box3");
@@ -15,6 +16,44 @@ MainWindow::MainWindow(QWidget *parent)
     ui->fluentTabWidget->addTabWithScroll(ui->table, QIcon(":/icon/cat.png"), "Box5");
     //qobject_cast<FluentTabBar*>(ui->fluentTabWidget->tabBar())->setShowIcon(false);
 
+    QVector<FluentPieSlice> data;
+    data.push_back({"样本1", 0.1, QColor()});
+    data.push_back({"样本2", 0.6, QColor()});
+    data.push_back({"样本3", 0.3, QColor()});
+    ui->fluentPieChart->setData(data);
+    QVector<FluentBarItem> data1;
+    data1.push_back({"样本1", 0.1, QColor()});
+    data1.push_back({"样本2", 0.7, QColor()});
+    data1.push_back({"样本3", 0.4, QColor()});
+    data1.push_back({"样本1", 0.1, QColor()});
+    data1.push_back({"样本2", 0.3, QColor()});
+    data1.push_back({"样本3", 0.4, QColor()});
+    data1.push_back({"样本1", 0.8, QColor()});
+    ui->fluentBarChart->setData(data1);
+    QVector<FluentLinePoint> data2;
+    data2.push_back({"样本1", 0.1, QColor()});
+    data2.push_back({"样本2", 0.7, QColor()});
+    data2.push_back({"样本3", 0.4, QColor()});
+    data2.push_back({"样本1", 0.1, QColor()});
+    data2.push_back({"样本2", 0.5, QColor()});
+    data2.push_back({"样本3", 0.4, QColor()});
+    data2.push_back({"样本1", 0.1, QColor()});
+    data2.push_back({"样本2", 0.2, QColor()});
+    ui->fluentLineChart->setData(data2);
+
+    QTimer* timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, [=]{
+        QVector<FluentPieSlice> data = ui->fluentPieChart->data();
+        std::reverse(data.begin(), data.end());
+        ui->fluentPieChart->setData(data);
+        QVector<FluentBarItem> data1 = ui->fluentBarChart->data();
+        std::reverse(data1.begin(), data1.end());
+        ui->fluentBarChart->setData(data1);
+        QVector<FluentLinePoint> data2 = ui->fluentLineChart->data();
+        std::reverse(data2.begin(), data2.end());
+        ui->fluentLineChart->setData(data2);
+    });
+    timer->start(2000);
 }
 MainWindow::~MainWindow()
 {

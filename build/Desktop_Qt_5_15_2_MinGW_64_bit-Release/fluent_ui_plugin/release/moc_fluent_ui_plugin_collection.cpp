@@ -1897,5 +1897,227 @@ int FluentDateTimePickerPlugin::qt_metacall(QMetaObject::Call _c, int _id, void 
     _id = QObject::qt_metacall(_c, _id, _a);
     return _id;
 }
+struct qt_meta_stringdata_FluentPieChartPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[21];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentPieChartPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentPieChartPlugin_t qt_meta_stringdata_FluentPieChartPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 20) // "FluentPieChartPlugin"
+
+    },
+    "FluentPieChartPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentPieChartPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentPieChartPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentPieChartPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentPieChartPlugin.data,
+    qt_meta_data_FluentPieChartPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentPieChartPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentPieChartPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentPieChartPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentPieChartPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
+struct qt_meta_stringdata_FluentBarChartPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[21];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentBarChartPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentBarChartPlugin_t qt_meta_stringdata_FluentBarChartPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 20) // "FluentBarChartPlugin"
+
+    },
+    "FluentBarChartPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentBarChartPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentBarChartPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentBarChartPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentBarChartPlugin.data,
+    qt_meta_data_FluentBarChartPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentBarChartPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentBarChartPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentBarChartPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentBarChartPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
+struct qt_meta_stringdata_FluentLineChartPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[22];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentLineChartPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentLineChartPlugin_t qt_meta_stringdata_FluentLineChartPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 21) // "FluentLineChartPlugin"
+
+    },
+    "FluentLineChartPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentLineChartPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentLineChartPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentLineChartPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentLineChartPlugin.data,
+    qt_meta_data_FluentLineChartPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentLineChartPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentLineChartPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentLineChartPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentLineChartPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

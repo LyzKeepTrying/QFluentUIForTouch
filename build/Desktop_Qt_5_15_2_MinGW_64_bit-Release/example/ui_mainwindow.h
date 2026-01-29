@@ -15,6 +15,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QWidget>
+#include "fluent_bar_chart.h"
 #include "fluent_check_box.h"
 #include "fluent_circle_spin_box.h"
 #include "fluent_combo_box.h"
@@ -24,8 +25,10 @@
 #include "fluent_group_box.h"
 #include "fluent_icon_push_button.h"
 #include "fluent_icon_toggle_button.h"
+#include "fluent_line_chart.h"
 #include "fluent_line_edit.h"
 #include "fluent_line_spin_box.h"
+#include "fluent_pie_chart.h"
 #include "fluent_progress_bar.h"
 #include "fluent_push_button.h"
 #include "fluent_spin_box.h"
@@ -65,6 +68,9 @@ public:
     FluentGroupBox *progress_bar;
     FluentProgressBar *fluentProgressBar;
     FluentProgressBar *fluentProgressBar_2;
+    FluentPieChart *fluentPieChart;
+    FluentBarChart *fluentBarChart;
+    FluentLineChart *fluentLineChart;
     FluentTabWidget *fluentTabWidget;
     FluentTitleBar *fluentTitleBar;
     FluentIconPushButton *fluentIconPushButton;
@@ -75,7 +81,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1133, 902);
+        MainWindow->resize(1404, 1480);
         MainWindow->setAnimated(true);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -177,7 +183,7 @@ public:
         fluentCircleSpinBox_2->setPaintStep(true);
         line_edit = new FluentGroupBox(centralwidget);
         line_edit->setObjectName(QString::fromUtf8("line_edit"));
-        line_edit->setGeometry(QRect(560, 390, 441, 281));
+        line_edit->setGeometry(QRect(20, 180, 441, 281));
         line_edit->setFontSize(14);
         line_edit->setShowTitle(false);
         fluentComboBox = new FluentComboBox(line_edit);
@@ -212,7 +218,7 @@ public:
         fluentDateTimePicker->setGeometry(QRect(40, 230, 201, 41));
         progress_bar = new FluentGroupBox(centralwidget);
         progress_bar->setObjectName(QString::fromUtf8("progress_bar"));
-        progress_bar->setGeometry(QRect(20, 730, 441, 141));
+        progress_bar->setGeometry(QRect(750, 380, 441, 991));
         progress_bar->setFontSize(14);
         progress_bar->setShowTitle(false);
         fluentProgressBar = new FluentProgressBar(progress_bar);
@@ -230,6 +236,18 @@ public:
         fluentProgressBar_2->setIsLoop(false);
         fluentProgressBar_2->setMoveSpeed(1.000000000000000);
         fluentProgressBar_2->setSliderLen(0.250000000000000);
+        fluentPieChart = new FluentPieChart(progress_bar);
+        fluentPieChart->setObjectName(QString::fromUtf8("fluentPieChart"));
+        fluentPieChart->setGeometry(QRect(30, 140, 381, 261));
+        fluentBarChart = new FluentBarChart(progress_bar);
+        fluentBarChart->setObjectName(QString::fromUtf8("fluentBarChart"));
+        fluentBarChart->setGeometry(QRect(30, 420, 381, 241));
+        fluentBarChart->setBarSpacing(5);
+        fluentLineChart = new FluentLineChart(progress_bar);
+        fluentLineChart->setObjectName(QString::fromUtf8("fluentLineChart"));
+        fluentLineChart->setGeometry(QRect(30, 680, 381, 251));
+        fluentLineChart->setPointRadius(5.000000000000000);
+        fluentLineChart->setLineWidth(3.000000000000000);
         fluentTabWidget = new FluentTabWidget(centralwidget);
         fluentTabWidget->setObjectName(QString::fromUtf8("fluentTabWidget"));
         fluentTabWidget->setGeometry(QRect(510, 70, 561, 301));
@@ -255,7 +273,7 @@ public:
         fluentIconPushButton->setTextIsOustside(false);
         table = new FluentGroupBox(centralwidget);
         table->setObjectName(QString::fromUtf8("table"));
-        table->setGeometry(QRect(540, 680, 511, 291));
+        table->setGeometry(QRect(30, 710, 511, 291));
         table->setFontSize(14);
         table->setShowTitle(false);
         fluentTableWidget = new FluentTableWidget(table);
