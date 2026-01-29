@@ -44,6 +44,11 @@ QFluentUIForTouch is a collection of Fluent Design UI plugins based on Qt, speci
 - **FluentCheckBox**: Fluent-style check box
 - **FluentTitleBar**: Fluent-style title bar
 - **FluentTableWidget**: Fluent-style table widget
+- **FluentCalendarPicker**: Fluent-style calendar picker
+- **FluentDatePicker**: Fluent-style date picker
+- **FluentClockPicker**: Fluent-style clock picker
+- **FluentTimePicker**: Fluent-style time picker
+- **FluentDateTimePicker**: Fluent-style datetime picker
 
 ## Getting Started
 

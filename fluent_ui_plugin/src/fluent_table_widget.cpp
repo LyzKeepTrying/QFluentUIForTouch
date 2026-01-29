@@ -1,6 +1,9 @@
 #include "fluent_table_widget.h"
 #include "fluent_scroll_bar.h"
 
+#include <QPainter>
+#include <QPainterPath>
+
 FluentTableWidget::FluentTableWidget(QWidget* parent)
     : QTableWidget(parent)
 {
@@ -10,11 +13,6 @@ FluentTableWidget::FluentTableWidget(QWidget* parent)
         font.setPixelSize(getFontSize());
         QWidget::setFont(font);
     };
-    connect(this, &FluentTableWidget::FontSizeChanged, this, [=]{
-        apply_font();
-    });
-    apply_font();
-
     auto apply_color = [this](){
         QPalette palette;
         palette.setColor(QPalette::Highlight, getHighLightColor());
@@ -39,6 +37,14 @@ FluentTableWidget::FluentTableWidget(QWidget* parent)
             }
         )").arg(header_bg).arg(font_family).arg(font_size));
     };
+
+    connect(this, &FluentTableWidget::FontSizeChanged, this, [=]{
+        apply_font();
+        apply_color();
+    });
+    apply_font();
+
+
     connect(this, &FluentTableWidget::HighLightColorChanged, this, [=]{
         apply_color();
     });
@@ -72,6 +78,29 @@ FluentTableWidget::FluentTableWidget(QWidget* parent)
     v_bar->setOrientation(Qt::Vertical);
     setVerticalScrollBar(v_bar);
 
+    connect(h_bar, &QAbstractSlider::valueChanged, this, [=]{
+        viewport()->update();
+    });
+
+    connect(v_bar, &QAbstractSlider::valueChanged, this, [=]{
+        viewport()->update();
+    });
 }
 
 FluentTableWidget::~FluentTableWidget() = default;
+
+void FluentTableWidget::paintEvent(QPaintEvent* event)
+{
+    // 先让表格自己画（viewport、header、网格等）
+    QTableWidget::paintEvent(event);
+
+    QRect r = rect().adjusted(1, 1, -1, -1);
+
+    QPainterPath path;
+    path.addRoundedRect(r, 8, 8);
+
+    // 裁剪（必须在最后一次 setMask，否则会被 QTableWidget 重置）
+    setMask(QRegion(path.toFillPolygon().toPolygon()));
+}
+
+

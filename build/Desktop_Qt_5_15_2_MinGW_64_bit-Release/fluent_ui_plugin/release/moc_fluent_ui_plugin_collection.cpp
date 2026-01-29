@@ -1527,5 +1527,375 @@ int FluentTableWidgetPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_
     _id = QObject::qt_metacall(_c, _id, _a);
     return _id;
 }
+struct qt_meta_stringdata_FluentCalendarPickerPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[27];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentCalendarPickerPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentCalendarPickerPlugin_t qt_meta_stringdata_FluentCalendarPickerPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 26) // "FluentCalendarPickerPlugin"
+
+    },
+    "FluentCalendarPickerPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentCalendarPickerPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentCalendarPickerPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentCalendarPickerPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentCalendarPickerPlugin.data,
+    qt_meta_data_FluentCalendarPickerPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentCalendarPickerPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentCalendarPickerPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentCalendarPickerPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentCalendarPickerPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
+struct qt_meta_stringdata_FluentDatePickerPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[23];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentDatePickerPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentDatePickerPlugin_t qt_meta_stringdata_FluentDatePickerPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 22) // "FluentDatePickerPlugin"
+
+    },
+    "FluentDatePickerPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentDatePickerPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentDatePickerPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentDatePickerPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentDatePickerPlugin.data,
+    qt_meta_data_FluentDatePickerPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentDatePickerPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentDatePickerPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentDatePickerPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentDatePickerPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
+struct qt_meta_stringdata_FluentClockPickerPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[24];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentClockPickerPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentClockPickerPlugin_t qt_meta_stringdata_FluentClockPickerPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 23) // "FluentClockPickerPlugin"
+
+    },
+    "FluentClockPickerPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentClockPickerPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentClockPickerPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentClockPickerPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentClockPickerPlugin.data,
+    qt_meta_data_FluentClockPickerPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentClockPickerPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentClockPickerPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentClockPickerPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentClockPickerPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
+struct qt_meta_stringdata_FluentTimePickerPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[23];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentTimePickerPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentTimePickerPlugin_t qt_meta_stringdata_FluentTimePickerPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 22) // "FluentTimePickerPlugin"
+
+    },
+    "FluentTimePickerPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentTimePickerPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentTimePickerPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentTimePickerPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentTimePickerPlugin.data,
+    qt_meta_data_FluentTimePickerPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentTimePickerPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentTimePickerPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentTimePickerPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentTimePickerPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
+struct qt_meta_stringdata_FluentDateTimePickerPlugin_t {
+    QByteArrayData data[1];
+    char stringdata0[27];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_FluentDateTimePickerPlugin_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_FluentDateTimePickerPlugin_t qt_meta_stringdata_FluentDateTimePickerPlugin = {
+    {
+QT_MOC_LITERAL(0, 0, 26) // "FluentDateTimePickerPlugin"
+
+    },
+    "FluentDateTimePickerPlugin"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_FluentDateTimePickerPlugin[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       0,    0, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+       0        // eod
+};
+
+void FluentDateTimePickerPlugin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    Q_UNUSED(_o);
+    Q_UNUSED(_id);
+    Q_UNUSED(_c);
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject FluentDateTimePickerPlugin::staticMetaObject = { {
+    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    qt_meta_stringdata_FluentDateTimePickerPlugin.data,
+    qt_meta_data_FluentDateTimePickerPlugin,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *FluentDateTimePickerPlugin::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *FluentDateTimePickerPlugin::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_FluentDateTimePickerPlugin.stringdata0))
+        return static_cast<void*>(this);
+    if (!strcmp(_clname, "QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    if (!strcmp(_clname, "org.qt-project.QDesignerCustomWidgetInterface"))
+        return static_cast< QDesignerCustomWidgetInterface*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int FluentDateTimePickerPlugin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    return _id;
+}
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentTableWidget_t {
-    QByteArrayData data[13];
-    char stringdata0[194];
+    QByteArrayData data[14];
+    char stringdata0[206];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,14 +44,16 @@ QT_MOC_LITERAL(8, 127, 8), // "FontSize"
 QT_MOC_LITERAL(9, 136, 9), // "TextColor"
 QT_MOC_LITERAL(10, 146, 14), // "HighLightColor"
 QT_MOC_LITERAL(11, 161, 15), // "BackGroundColor"
-QT_MOC_LITERAL(12, 177, 16) // "AlternativeColor"
+QT_MOC_LITERAL(12, 177, 16), // "AlternativeColor"
+QT_MOC_LITERAL(13, 194, 11) // "BorderColor"
 
     },
     "FluentTableWidget\0FontSizeChanged\0\0"
     "value\0TextColorChanged\0HighLightColorChanged\0"
     "BackGroundColorChanged\0AlternativeColorChanged\0"
     "FontSize\0TextColor\0HighLightColor\0"
-    "BackGroundColor\0AlternativeColor"
+    "BackGroundColor\0AlternativeColor\0"
+    "BorderColor"
 };
 #undef QT_MOC_LITERAL
 
@@ -62,7 +64,7 @@ static const uint qt_meta_data_FluentTableWidget[] = {
        0,       // classname
        0,    0, // classinfo
        5,   14, // methods
-       5,   54, // properties
+       6,   54, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -88,6 +90,7 @@ static const uint qt_meta_data_FluentTableWidget[] = {
       10, QMetaType::QColor, 0x00495103,
       11, QMetaType::QColor, 0x00495103,
       12, QMetaType::QColor, 0x00495103,
+      13, QMetaType::QColor, 0x00095103,
 
  // properties: notify_signal_id
        0,
@@ -95,6 +98,7 @@ static const uint qt_meta_data_FluentTableWidget[] = {
        2,
        3,
        4,
+       0,
 
        0        // eod
 };
@@ -161,6 +165,7 @@ void FluentTableWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 2: *reinterpret_cast< QColor*>(_v) = _t->getHighLightColor(); break;
         case 3: *reinterpret_cast< QColor*>(_v) = _t->getBackGroundColor(); break;
         case 4: *reinterpret_cast< QColor*>(_v) = _t->getAlternativeColor(); break;
+        case 5: *reinterpret_cast< QColor*>(_v) = _t->getBorderColor(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -173,6 +178,7 @@ void FluentTableWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 2: _t->setHighLightColor(*reinterpret_cast< QColor*>(_v)); break;
         case 3: _t->setBackGroundColor(*reinterpret_cast< QColor*>(_v)); break;
         case 4: _t->setAlternativeColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 5: _t->setBorderColor(*reinterpret_cast< QColor*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -221,17 +227,17 @@ int FluentTableWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 5;
+        _id -= 6;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

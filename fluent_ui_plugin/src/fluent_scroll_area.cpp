@@ -14,6 +14,7 @@ FluentScrollArea::FluentScrollArea(QWidget* widget, QWidget* parent)
 }
 
 void FluentScrollArea::initCommon() {
+    setContentsMargins(0, 0, 0, 0);
     setFrameShape(QFrame::NoFrame);
 
     // 默认不开启自动拉伸，避免横向滚动条被抑制

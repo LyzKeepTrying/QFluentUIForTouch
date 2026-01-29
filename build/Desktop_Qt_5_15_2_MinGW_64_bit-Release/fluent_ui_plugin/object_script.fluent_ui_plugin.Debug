@@ -1,4 +1,9 @@
 debug/fluent_toggle_button.o
+debug/fluent_clock_picker.o
+debug/fluent_date_picker.o
+debug/fluent_datetime_picker.o
+debug/fluent_time_picker.o
+debug/fluent_calendar_picker.o
 debug/fluent_table_widget.o
 debug/fluent_title_bar.o
 debug/fluent_check_box.o
@@ -21,8 +26,12 @@ debug/fluent_push_button.o
 debug/fluent_text.o
 debug/fluent_ui_plugin_collection.o
 debug/moc_fluent_toggle_button.o
+debug/moc_fluent_calendar_picker.o
 debug/moc_fluent_check_box.o
 debug/moc_fluent_combo_box.o
+debug/moc_fluent_date_picker.o
+debug/moc_fluent_datetime_picker.o
+debug/moc_fluent_time_picker.o
 debug/moc_fluent_group_box.o
 debug/moc_fluent_icon_push_button.o
 debug/moc_fluent_icon_toggle_button.o
@@ -42,3 +51,4 @@ debug/moc_fluent_line_edit.o
 debug/moc_fluent_progress_bar.o
 debug/moc_fluent_text.o
 debug/moc_fluent_scroll_area.o
+debug/moc_fluent_clock_picker.o

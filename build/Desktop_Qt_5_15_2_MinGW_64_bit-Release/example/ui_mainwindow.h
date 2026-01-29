@@ -18,6 +18,8 @@
 #include "fluent_check_box.h"
 #include "fluent_circle_spin_box.h"
 #include "fluent_combo_box.h"
+#include "fluent_date_picker.h"
+#include "fluent_datetime_picker.h"
 #include "fluent_double_spin_box.h"
 #include "fluent_group_box.h"
 #include "fluent_icon_push_button.h"
@@ -29,6 +31,7 @@
 #include "fluent_spin_box.h"
 #include "fluent_tab_widget.h"
 #include "fluent_table_widget.h"
+#include "fluent_time_picker.h"
 #include "fluent_title_bar.h"
 #include "fluent_toggle_button.h"
 
@@ -56,6 +59,9 @@ public:
     FluentLineEdit *fluentLineEdit;
     FluentSpinBox *fluentSpinBox;
     FluentDoubleSpinBox *fluentDoubleSpinBox;
+    FluentDatePicker *fluentDatePicker;
+    FluentTimePicker *fluentTimePickerPlugin;
+    FluentDateTimePicker *fluentDateTimePicker;
     FluentGroupBox *progress_bar;
     FluentProgressBar *fluentProgressBar;
     FluentProgressBar *fluentProgressBar_2;
@@ -69,13 +75,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1133, 872);
+        MainWindow->resize(1133, 902);
         MainWindow->setAnimated(true);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         button = new FluentGroupBox(centralwidget);
         button->setObjectName(QString::fromUtf8("button"));
-        button->setGeometry(QRect(20, 10, 441, 141));
+        button->setGeometry(QRect(20, 10, 441, 171));
         button->setFontSize(14);
         button->setShowTitle(false);
         fluentToggleButton = new FluentToggleButton(button);
@@ -171,7 +177,7 @@ public:
         fluentCircleSpinBox_2->setPaintStep(true);
         line_edit = new FluentGroupBox(centralwidget);
         line_edit->setObjectName(QString::fromUtf8("line_edit"));
-        line_edit->setGeometry(QRect(20, 180, 441, 181));
+        line_edit->setGeometry(QRect(560, 390, 441, 281));
         line_edit->setFontSize(14);
         line_edit->setShowTitle(false);
         fluentComboBox = new FluentComboBox(line_edit);
@@ -194,6 +200,16 @@ public:
         fluentDoubleSpinBox = new FluentDoubleSpinBox(line_edit);
         fluentDoubleSpinBox->setObjectName(QString::fromUtf8("fluentDoubleSpinBox"));
         fluentDoubleSpinBox->setGeometry(QRect(230, 110, 151, 41));
+        fluentDatePicker = new FluentDatePicker(line_edit);
+        fluentDatePicker->setObjectName(QString::fromUtf8("fluentDatePicker"));
+        fluentDatePicker->setGeometry(QRect(40, 170, 151, 41));
+        fluentDatePicker->setFontSize(14);
+        fluentTimePickerPlugin = new FluentTimePicker(line_edit);
+        fluentTimePickerPlugin->setObjectName(QString::fromUtf8("fluentTimePickerPlugin"));
+        fluentTimePickerPlugin->setGeometry(QRect(230, 170, 151, 41));
+        fluentDateTimePicker = new FluentDateTimePicker(line_edit);
+        fluentDateTimePicker->setObjectName(QString::fromUtf8("fluentDateTimePicker"));
+        fluentDateTimePicker->setGeometry(QRect(40, 230, 201, 41));
         progress_bar = new FluentGroupBox(centralwidget);
         progress_bar->setObjectName(QString::fromUtf8("progress_bar"));
         progress_bar->setGeometry(QRect(20, 730, 441, 141));
@@ -216,14 +232,14 @@ public:
         fluentProgressBar_2->setSliderLen(0.250000000000000);
         fluentTabWidget = new FluentTabWidget(centralwidget);
         fluentTabWidget->setObjectName(QString::fromUtf8("fluentTabWidget"));
-        fluentTabWidget->setGeometry(QRect(500, 200, 561, 301));
+        fluentTabWidget->setGeometry(QRect(510, 70, 561, 301));
         fluentTabWidget->setTabPosition(QTabWidget::West);
         fluentTabWidget->setIconSize(QSize(30, 20));
         fluentTabWidget->setTabsClosable(false);
         fluentTabWidget->setTabBarAutoHide(false);
         fluentTitleBar = new FluentTitleBar(centralwidget);
         fluentTitleBar->setObjectName(QString::fromUtf8("fluentTitleBar"));
-        fluentTitleBar->setGeometry(QRect(500, 150, 561, 48));
+        fluentTitleBar->setGeometry(QRect(510, 20, 561, 48));
         fluentTitleBar->setTitleFontSize(17);
         fluentTitleBar->setShowTitle(true);
         fluentTitleBar->setShowDateTime(true);
@@ -239,7 +255,7 @@ public:
         fluentIconPushButton->setTextIsOustside(false);
         table = new FluentGroupBox(centralwidget);
         table->setObjectName(QString::fromUtf8("table"));
-        table->setGeometry(QRect(520, 580, 511, 291));
+        table->setGeometry(QRect(540, 680, 511, 291));
         table->setFontSize(14);
         table->setShowTitle(false);
         fluentTableWidget = new FluentTableWidget(table);
@@ -282,7 +298,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem16 = new QTableWidgetItem();
         fluentTableWidget->setItem(1, 2, __qtablewidgetitem16);
         fluentTableWidget->setObjectName(QString::fromUtf8("fluentTableWidget"));
-        fluentTableWidget->setGeometry(QRect(10, 10, 431, 281));
+        fluentTableWidget->setGeometry(QRect(10, 10, 451, 281));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);

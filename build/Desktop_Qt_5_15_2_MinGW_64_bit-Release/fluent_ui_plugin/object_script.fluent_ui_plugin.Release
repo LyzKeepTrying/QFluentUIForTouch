@@ -1,4 +1,9 @@
 release/fluent_toggle_button.o
+release/fluent_clock_picker.o
+release/fluent_date_picker.o
+release/fluent_datetime_picker.o
+release/fluent_time_picker.o
+release/fluent_calendar_picker.o
 release/fluent_table_widget.o
 release/fluent_title_bar.o
 release/fluent_check_box.o
@@ -21,8 +26,12 @@ release/fluent_push_button.o
 release/fluent_text.o
 release/fluent_ui_plugin_collection.o
 release/moc_fluent_toggle_button.o
+release/moc_fluent_calendar_picker.o
 release/moc_fluent_check_box.o
 release/moc_fluent_combo_box.o
+release/moc_fluent_date_picker.o
+release/moc_fluent_datetime_picker.o
+release/moc_fluent_time_picker.o
 release/moc_fluent_group_box.o
 release/moc_fluent_icon_push_button.o
 release/moc_fluent_icon_toggle_button.o
@@ -42,3 +51,4 @@ release/moc_fluent_line_edit.o
 release/moc_fluent_progress_bar.o
 release/moc_fluent_text.o
 release/moc_fluent_scroll_area.o
+release/moc_fluent_clock_picker.o

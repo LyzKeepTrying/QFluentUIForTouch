@@ -17,6 +17,11 @@
 #include "fluent_check_box.h"
 #include "fluent_title_bar.h"
 #include "fluent_table_widget.h"
+#include "fluent_calendar_picker.h"
+#include "fluent_date_picker.h"
+#include "fluent_clock_picker.h"
+#include "fluent_time_picker.h"
+#include "fluent_datetime_picker.h"
 
 #include <QtCore/qplugin.h>
 
@@ -44,6 +49,11 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentCheckBoxPlugin(this));
     widget_list_.append(new FluentTitleBarPlugin(this));
     widget_list_.append(new FluentTableWidgetPlugin(this));
+    widget_list_.append(new FluentCalendarPickerPlugin(this));
+    widget_list_.append(new FluentDatePickerPlugin(this));
+    widget_list_.append(new FluentClockPickerPlugin(this));
+    widget_list_.append(new FluentTimePickerPlugin(this));
+    widget_list_.append(new FluentDateTimePickerPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -1191,7 +1201,7 @@ FluentTableWidgetPlugin::FluentTableWidgetPlugin(QObject* parent)
 {}
 
 bool FluentTableWidgetPlugin::isContainer() const {
-    return true;
+    return false;
 }
 
 bool FluentTableWidgetPlugin::isInitialized() const {
@@ -1241,6 +1251,321 @@ QWidget* FluentTableWidgetPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentTableWidgetPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentCalendarPickerPlugin */
+
+FluentCalendarPickerPlugin::FluentCalendarPickerPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentCalendarPickerPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentCalendarPickerPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentCalendarPickerPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentCalendarPickerPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentCalendarPicker" name="fluentCalendarPicker">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentCalendarPickerPlugin::includeFile() const {
+    return "fluent_calendar_picker.h";
+}
+
+QString FluentCalendarPickerPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentCalendarPickerPlugin::name() const {
+    return "FluentCalendarPicker";
+}
+
+QString FluentCalendarPickerPlugin::toolTip() const {
+    return "Fluent Design Fluent Calendar Picker";
+}
+
+QString FluentCalendarPickerPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentCalendarPickerPlugin::createWidget(QWidget* parent) {
+    return new FluentCalendarPicker(parent);
+}
+
+void FluentCalendarPickerPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentDatePickerPlugin */
+
+FluentDatePickerPlugin::FluentDatePickerPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentDatePickerPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentDatePickerPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentDatePickerPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentDatePickerPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentDatePicker" name="fluentDatePicker">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentDatePickerPlugin::includeFile() const {
+    return "fluent_date_picker.h";
+}
+
+QString FluentDatePickerPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentDatePickerPlugin::name() const {
+    return "FluentDatePicker";
+}
+
+QString FluentDatePickerPlugin::toolTip() const {
+    return "Fluent Design Fluent Date Picker";
+}
+
+QString FluentDatePickerPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentDatePickerPlugin::createWidget(QWidget* parent) {
+    return new FluentDatePicker(parent);
+}
+
+void FluentDatePickerPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentClockPickerPlugin */
+
+FluentClockPickerPlugin::FluentClockPickerPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentClockPickerPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentClockPickerPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentClockPickerPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentClockPickerPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentClockPicker" name="fluentClockPicker">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentClockPickerPlugin::includeFile() const {
+    return "fluent_clock_picker.h";
+}
+
+QString FluentClockPickerPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentClockPickerPlugin::name() const {
+    return "FluentClockPicker";
+}
+
+QString FluentClockPickerPlugin::toolTip() const {
+    return "Fluent Design Fluent Clock Picker";
+}
+
+QString FluentClockPickerPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentClockPickerPlugin::createWidget(QWidget* parent) {
+    return new FluentClockPicker(parent);
+}
+
+void FluentClockPickerPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentTimePickerPlugin */
+
+FluentTimePickerPlugin::FluentTimePickerPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentTimePickerPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentTimePickerPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentTimePickerPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentTimePickerPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentTimePicker" name="fluentTimePickerPlugin">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentTimePickerPlugin::includeFile() const {
+    return "fluent_time_picker.h";
+}
+
+QString FluentTimePickerPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentTimePickerPlugin::name() const {
+    return "FluentTimePicker";
+}
+
+QString FluentTimePickerPlugin::toolTip() const {
+    return "Fluent Design Fluent Time Picker";
+}
+
+QString FluentTimePickerPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentTimePickerPlugin::createWidget(QWidget* parent) {
+    return new FluentTimePicker(parent);
+}
+
+void FluentTimePickerPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentDateTimePickerPlugin */
+
+FluentDateTimePickerPlugin::FluentDateTimePickerPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentDateTimePickerPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentDateTimePickerPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentDateTimePickerPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentDateTimePickerPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentDateTimePicker" name="fluentDateTimePicker">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentDateTimePickerPlugin::includeFile() const {
+    return "fluent_datetime_picker.h";
+}
+
+QString FluentDateTimePickerPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentDateTimePickerPlugin::name() const {
+    return "FluentDateTimePicker";
+}
+
+QString FluentDateTimePickerPlugin::toolTip() const {
+    return "Fluent Design Fluent DateTime Picker";
+}
+
+QString FluentDateTimePickerPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentDateTimePickerPlugin::createWidget(QWidget* parent) {
+    return new FluentDateTimePicker(parent);
+}
+
+void FluentDateTimePickerPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

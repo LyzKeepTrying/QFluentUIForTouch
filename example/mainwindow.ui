@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1133</width>
-    <height>872</height>
+    <height>902</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
       <x>20</x>
       <y>10</y>
       <width>441</width>
-      <height>141</height>
+      <height>171</height>
      </rect>
     </property>
     <property name="title">
@@ -341,10 +341,10 @@
    <widget class="FluentGroupBox" name="line_edit">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>180</y>
+      <x>560</x>
+      <y>390</y>
       <width>441</width>
-      <height>181</height>
+      <height>281</height>
      </rect>
     </property>
     <property name="title">
@@ -410,6 +410,39 @@
        <x>230</x>
        <y>110</y>
        <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="FluentDatePicker" name="fluentDatePicker">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>170</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="FontSize">
+      <number>14</number>
+     </property>
+    </widget>
+    <widget class="FluentTimePicker" name="fluentTimePickerPlugin">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>170</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="FluentDateTimePicker" name="fluentDateTimePicker">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>230</y>
+       <width>201</width>
        <height>41</height>
       </rect>
      </property>
@@ -484,8 +517,8 @@
    <widget class="FluentTabWidget" name="fluentTabWidget">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>200</y>
+      <x>510</x>
+      <y>70</y>
       <width>561</width>
       <height>301</height>
      </rect>
@@ -509,8 +542,8 @@
    <widget class="FluentTitleBar" name="fluentTitleBar">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>150</y>
+      <x>510</x>
+      <y>20</y>
       <width>561</width>
       <height>48</height>
      </rect>
@@ -566,8 +599,8 @@
    <widget class="FluentGroupBox" name="table">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>580</y>
+      <x>540</x>
+      <y>680</y>
       <width>511</width>
       <height>291</height>
      </rect>
@@ -586,7 +619,7 @@
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>431</width>
+       <width>451</width>
        <height>281</height>
       </rect>
      </property>
@@ -763,6 +796,21 @@
    <extends>QTableWidget</extends>
    <header>fluent_table_widget.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FluentDatePicker</class>
+   <extends>QWidget</extends>
+   <header>fluent_date_picker.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentTimePicker</class>
+   <extends>QWidget</extends>
+   <header>fluent_time_picker.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentDateTimePicker</class>
+   <extends>QWidget</extends>
+   <header>fluent_datetime_picker.h</header>
   </customwidget>
  </customwidgets>
  <resources>

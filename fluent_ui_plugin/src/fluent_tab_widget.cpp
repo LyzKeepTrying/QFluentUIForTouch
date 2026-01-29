@@ -8,6 +8,7 @@ FluentTabWidget::FluentTabWidget(QWidget* parent)
     , tab_bar_(nullptr)
     , current_page_widget_(nullptr)
 {
+    setContentsMargins(0, 0, 0, 0);
     setTabPosition(QTabWidget::West);
     setTabShape(QTabWidget::Rounded);
 

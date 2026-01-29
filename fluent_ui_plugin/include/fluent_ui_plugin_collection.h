@@ -540,3 +540,138 @@ private:
     bool is_initialized_ = false;
 };
 
+class FLUENTUI_PLUGIN_EXPORT FluentCalendarPickerPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentCalendarPickerPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentDatePickerPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentDatePickerPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentClockPickerPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentClockPickerPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentTimePickerPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentTimePickerPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
+class FLUENTUI_PLUGIN_EXPORT FluentDateTimePickerPlugin
+    : public QObject
+    , public QDesignerCustomWidgetInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(QDesignerCustomWidgetInterface)
+
+public:
+    explicit FluentDateTimePickerPlugin(QObject* parent = nullptr);
+
+    // 只声明，不写函数体
+    bool isContainer() const override;
+    bool isInitialized() const override;
+    QIcon icon() const override;
+    QString domXml() const override;
+    QString includeFile() const override;
+    QString group() const override;
+    QString name() const override;
+    QString toolTip() const override;
+    QString whatsThis() const override;
+    QWidget* createWidget(QWidget* parent) override;
+    void initialize(QDesignerFormEditorInterface* core) override;
+
+private:
+    bool is_initialized_ = false;
+};
+
