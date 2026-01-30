@@ -25,6 +25,7 @@
 #include "fluent_pie_chart.h"
 #include "fluent_bar_chart.h"
 #include "fluent_line_chart.h"
+#include "fluent_scroll_area.h"
 
 #include <QtCore/qplugin.h>
 
@@ -60,6 +61,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentPieChartPlugin(this));
     widget_list_.append(new FluentBarChartPlugin(this));
     widget_list_.append(new FluentLineChartPlugin(this));
+    widget_list_.append(new FluentScrollAreaPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -1761,6 +1763,69 @@ QWidget* FluentLineChartPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentLineChartPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentScrollAreaPlugin */
+
+FluentScrollAreaPlugin::FluentScrollAreaPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentScrollAreaPlugin::isContainer() const {
+    return true;
+}
+
+bool FluentScrollAreaPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentScrollAreaPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentScrollAreaPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentScrollArea" name="fluentScrollArea">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentScrollAreaPlugin::includeFile() const {
+    return "fluent_scroll_area.h";
+}
+
+QString FluentScrollAreaPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentScrollAreaPlugin::name() const {
+    return "FluentScrollArea";
+}
+
+QString FluentScrollAreaPlugin::toolTip() const {
+    return "Fluent Design Fluent Scroll Area";
+}
+
+QString FluentScrollAreaPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentScrollAreaPlugin::createWidget(QWidget* parent) {
+    return new FluentScrollArea(parent);
+}
+
+void FluentScrollAreaPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

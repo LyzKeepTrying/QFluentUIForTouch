@@ -16,7 +16,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentScrollArea : public QScrollArea {
     Q_OBJECT
 public:
     explicit FluentScrollArea(QWidget* parent = nullptr);
-    explicit FluentScrollArea(QWidget* widget, QWidget* parent = nullptr);
+    explicit FluentScrollArea(QWidget* widget, QWidget* parent);
     ~FluentScrollArea() override = default;
 
 
@@ -25,10 +25,6 @@ public:
 
     FluentScrollBar* verticalFluentScrollBar() const { return vbar_; }
     FluentScrollBar* horizontalFluentScrollBar() const { return hbar_; }
-
-
-    void setMousePanningEnabled(bool enabled);
-    bool isMousePanningEnabled() const { return mousePanningEnabled_; }
 
 
 protected:
@@ -44,7 +40,6 @@ private:
 
 
     // simple mouse panning state
-    bool mousePanningEnabled_ = true;
     bool dragging_ = false;
     QPoint panStartPos_;
     QPoint scrollStartPos_;

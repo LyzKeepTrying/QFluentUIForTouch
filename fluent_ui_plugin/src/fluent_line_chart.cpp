@@ -14,6 +14,18 @@ FluentLineChart::FluentLineChart(QWidget* parent)
     m_anim = new QPropertyAnimation(this, getAnimationProgressPropertyName(), this);
     m_anim->setDuration(500);
     m_anim->setEasingCurve(QEasingCurve::OutCubic);
+
+
+    QVector<FluentLinePoint> data2;
+    data2.push_back({"样本1", 0.1, QColor()});
+    data2.push_back({"样本2", 0.7, QColor()});
+    data2.push_back({"样本3", 0.4, QColor()});
+    data2.push_back({"样本1", 0.1, QColor()});
+    data2.push_back({"样本2", 0.5, QColor()});
+    data2.push_back({"样本3", 0.4, QColor()});
+    data2.push_back({"样本1", 0.1, QColor()});
+    data2.push_back({"样本2", 0.2, QColor()});
+    setData(data2);
 }
 
 void FluentLineChart::showEvent(QShowEvent* event)

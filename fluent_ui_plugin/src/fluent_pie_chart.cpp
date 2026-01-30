@@ -13,6 +13,12 @@ FluentPieChart::FluentPieChart(QWidget* parent)
     m_anim = new QPropertyAnimation(this, getAnimationProgressPropertyName(), this);
     m_anim->setDuration(500);
     m_anim->setEasingCurve(QEasingCurve::OutCubic);
+
+    QVector<FluentPieSlice> data;
+    data.push_back({"样本1", 0.1, QColor()});
+    data.push_back({"样本2", 0.6, QColor()});
+    data.push_back({"样本3", 0.3, QColor()});
+    setData(data);
 }
 
 void FluentPieChart::showEvent(QShowEvent* event)

@@ -46,16 +46,7 @@ QSize FluentScrollArea::sizeHint() const {
     return QSize(200, 150);
 }
 
-void FluentScrollArea::setMousePanningEnabled(bool enabled) {
-    if (mousePanningEnabled_ == enabled) return;
-    mousePanningEnabled_ = enabled;
-    if (enabled) viewport()->installEventFilter(this);
-    else viewport()->removeEventFilter(this);
-}
-
 bool FluentScrollArea::eventFilter(QObject* watched, QEvent* event) {
-    if (!mousePanningEnabled_)
-        return QScrollArea::eventFilter(watched, event);
 
     if (watched != viewport())
         return QScrollArea::eventFilter(watched, event);

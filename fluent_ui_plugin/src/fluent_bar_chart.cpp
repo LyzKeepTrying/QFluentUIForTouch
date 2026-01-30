@@ -13,6 +13,16 @@ FluentBarChart::FluentBarChart(QWidget* parent)
     m_anim = new QPropertyAnimation(this, getAnimationProgressPropertyName(), this);
     m_anim->setDuration(500);
     m_anim->setEasingCurve(QEasingCurve::OutCubic);
+
+    QVector<FluentBarItem> data1;
+    data1.push_back({"样本1", 0.1, QColor()});
+    data1.push_back({"样本2", 0.7, QColor()});
+    data1.push_back({"样本3", 0.4, QColor()});
+    data1.push_back({"样本1", 0.1, QColor()});
+    data1.push_back({"样本2", 0.3, QColor()});
+    data1.push_back({"样本3", 0.4, QColor()});
+    data1.push_back({"样本1", 0.8, QColor()});
+    setData(data1);
 }
 
 void FluentBarChart::showEvent(QShowEvent* event)
@@ -107,7 +117,7 @@ void FluentBarChart::paintEvent(QPaintEvent*)
     font.setPixelSize(getFontSize());
     painter.setFont(font);
 
-    const int legendWidth = getShowLegend() ? 130 : 0;
+    const int legendWidth = getShowLegend() ? 120 : 0;
     const int spacing = getBarSpacing();
 
     QRectF legendRect = drawRect.adjusted(20, 20, legendWidth - 20, -20);
