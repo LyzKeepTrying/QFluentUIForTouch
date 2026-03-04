@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>564</width>
-    <height>475</height>
+    <width>1071</width>
+    <height>864</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -46,6 +46,9 @@
     </property>
     <property name="tabBarAutoHide">
      <bool>false</bool>
+    </property>
+    <property name="AnimationEnabled">
+     <bool>true</bool>
     </property>
     <property name="PageScrollable" stdset="0">
      <bool>true</bool>
@@ -702,6 +705,12 @@
          </property>
          <property name="BarSpacing">
           <number>5</number>
+         </property>
+         <property name="ShowXAxisValues">
+          <bool>false</bool>
+         </property>
+         <property name="ShowYAxisValues">
+          <bool>false</bool>
          </property>
         </widget>
        </widget>

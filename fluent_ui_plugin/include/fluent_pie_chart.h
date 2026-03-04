@@ -36,6 +36,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentPieChart : public QWidget
     // 新增两个显示控制属性
     DECLARE_PROPERTY(bool, ShowInnerLabel, true)   // 扇形内标签
     DECLARE_PROPERTY(bool, ShowLegend, true)       // 左侧图例
+    DECLARE_PROPERTY(int, Margin, 10);
 
 public:
     explicit FluentPieChart(QWidget* parent = nullptr);

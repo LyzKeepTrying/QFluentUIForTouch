@@ -3050,7 +3050,23 @@ debug/mainwindow.o: ../../../example/mainwindow.cpp ../../../example/mainwindow.
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../../fluent_ui_plugin/include/fluent_message_bar.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QTimer \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtimer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbasictimer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPropertyAnimation \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpropertyanimation.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvariantanimation.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMap \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
+		../../../fluent_ui_plugin/include/define.h \
+		../../../fluent_ui_plugin/include/theme.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\..\..\example\mainwindow.cpp
 
 debug/qrc_res.o: debug/qrc_res.cpp 

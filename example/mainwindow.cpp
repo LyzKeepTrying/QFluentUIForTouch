@@ -1,13 +1,40 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "fluent_message_bar.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->table->setFixedHeight(1000);
     ui->fluentTabWidget->addTabWithScroll(ui->table, QIcon(":/icon/dog.png"), "表格");
+    setGeometry(1000, 500, 1920, 1080);
+    auto* bar1 = new FluentMessageBar(this);
+    bar1->showMessage(
+        "配置加载成功配置加载成功配置加载成功",
+        FluentMessageBar::MessageType::Info,
+        3000,
+        FluentMessageBar::Position::RightTop,
+        this
+        );
+
+    auto* bar2 = new FluentMessageBar(this);
+    bar2->showMessage(
+        "配置加载成功配置加载成功配置加载成功配置加载成功1",
+        FluentMessageBar::MessageType::Warning,
+        6000,
+        FluentMessageBar::Position::RightTop,
+        this
+        );
+
+    auto* bar3 = new FluentMessageBar(this);
+    bar3->showMessage(
+        "配置加载成功2",
+        FluentMessageBar::MessageType::Error,
+        0,
+        FluentMessageBar::Position::TopCenter,
+        ui->fluentTabWidget
+        );
 
 
     QVector<FluentPieSlice> data;

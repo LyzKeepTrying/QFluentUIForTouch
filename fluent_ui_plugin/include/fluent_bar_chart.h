@@ -1,3 +1,4 @@
+// fluent_bar_chart.h
 #ifndef FLUENT_BAR_CHART_H
 #define FLUENT_BAR_CHART_H
 
@@ -32,9 +33,18 @@ class FLUENTUI_PLUGIN_EXPORT FluentBarChart : public QWidget
     DECLARE_PROPERTY(int, BorderWidth, 1)
     DECLARE_PROPERTY(int, BarSpacing, 10)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
-
     DECLARE_PROPERTY(bool, ShowValueLabel, true)
     DECLARE_PROPERTY(bool, ShowLegend, true)
+
+    // 新增属性：是否显示 X/Y 轴数值与是否显示参考线
+    DECLARE_PROPERTY(bool, ShowXAxisValues, false)   // 是否显示 X 轴数值（点下方）
+    DECLARE_PROPERTY(bool, ShowYAxisValues, false)   // 是否显示 Y 轴数值（左侧刻度）
+    DECLARE_PROPERTY(bool, ShowReferenceLines, true) // 是否显示背景参考线（网格横线）
+
+    // 新增最小/最大刻度属性（当 MaxScale > MinScale 时生效）
+    DECLARE_PROPERTY(double, MinScale, 0.0) // 默认 0.0（表示自动）
+    DECLARE_PROPERTY(double, MaxScale, 1.0) // 默认 0.0（表示自动）
+    DECLARE_PROPERTY(int, Margin, 10);
 
 public:
     explicit FluentBarChart(QWidget* parent = nullptr);

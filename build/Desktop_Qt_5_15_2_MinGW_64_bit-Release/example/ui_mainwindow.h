@@ -90,7 +90,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(564, 475);
+        MainWindow->resize(1071, 864);
         MainWindow->setAnimated(true);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -102,6 +102,7 @@ public:
         fluentTabWidget->setIconSize(QSize(30, 20));
         fluentTabWidget->setTabsClosable(false);
         fluentTabWidget->setTabBarAutoHide(false);
+        fluentTabWidget->setAnimationEnabled(true);
         fluentTabWidget->setProperty("PageScrollable", QVariant(true));
         widget = new QWidget();
         widget->setObjectName(QString::fromUtf8("widget"));
@@ -303,6 +304,8 @@ public:
         fluentBarChart->setObjectName(QString::fromUtf8("fluentBarChart"));
         fluentBarChart->setGeometry(QRect(0, 10, 441, 321));
         fluentBarChart->setBarSpacing(5);
+        fluentBarChart->setShowXAxisValues(false);
+        fluentBarChart->setShowYAxisValues(false);
         fluentTabWidget_2->addTab(tab_7, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QString::fromUtf8("tab_8"));

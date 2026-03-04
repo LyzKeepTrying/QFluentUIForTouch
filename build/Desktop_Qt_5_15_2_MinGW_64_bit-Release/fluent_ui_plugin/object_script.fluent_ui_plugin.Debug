@@ -1,4 +1,5 @@
 debug/fluent_toggle_button.o
+debug/fluent_message_bar.o
 debug/fluent_pie_chart.o
 debug/fluent_bar_chart.o
 debug/fluent_line_chart.o
@@ -34,6 +35,7 @@ debug/moc_fluent_check_box.o
 debug/moc_fluent_combo_box.o
 debug/moc_fluent_date_picker.o
 debug/moc_fluent_datetime_picker.o
+debug/moc_fluent_message_bar.o
 debug/moc_fluent_pie_chart.o
 debug/moc_fluent_bar_chart.o
 debug/moc_fluent_line_chart.o

@@ -1,20 +1,20 @@
+// fluent_line_chart.cpp
 #include "fluent_line_chart.h"
 
 #include <QPainter>
 #include <QFontMetrics>
 #include <QtMath>
 #include <QPainterPath>
+#include <limits>
 
 FluentLineChart::FluentLineChart(QWidget* parent)
     : QWidget(parent)
 {
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    //setMinimumSize(k_default_size_);
 
     m_anim = new QPropertyAnimation(this, getAnimationProgressPropertyName(), this);
     m_anim->setDuration(500);
     m_anim->setEasingCurve(QEasingCurve::OutCubic);
-
 
     QVector<FluentLinePoint> data2;
     data2.push_back({"样本1", 0.1, QColor()});
@@ -111,7 +111,8 @@ void FluentLineChart::paintEvent(QPaintEvent*)
 
     painter.setBrush(getBackgroundColor());
     painter.setPen(QPen(getBorderColor(), getBorderWidth()));
-    painter.drawRoundedRect(drawRect, 10, 10);
+    painter.drawRoundedRect(drawRect, 8, 8);
+    drawRect.adjust(getMargin(), getMargin(), -getMargin(), -getMargin());
 
     if (m_points.isEmpty())
         return;
@@ -121,12 +122,33 @@ void FluentLineChart::paintEvent(QPaintEvent*)
     painter.setFont(font);
 
     const int legendWidth = getShowLegend() ? 120 : 0;
-    const int spacing = getChartSpacing();
 
-    QRectF legendRect = drawRect.adjusted(20, 20, legendWidth - 20, -20);
-    QRectF chartRect  = drawRect.adjusted(legendWidth + spacing, spacing, -spacing, -spacing);
+    // ===== 与 FluentBarChart 完全一致的边距策略 =====
+    const int leftMargin = 20;
+    const int topMargin = 20;
+    const int rightMargin = 20;
+    int bottomMargin = 40;
 
-    // 左侧图例
+    QRectF legendRect = drawRect.adjusted(leftMargin, topMargin,
+                                          legendWidth - rightMargin, -topMargin);
+
+    QRectF chartRect = drawRect.adjusted(legendWidth + leftMargin,
+                                         topMargin,
+                                         -rightMargin,
+                                         -bottomMargin);
+
+    // X轴标签预留
+    int xLabelHeight = getShowXAxisValues() ? (font.pixelSize() + 8) : 0;
+    if (xLabelHeight > 0)
+        chartRect.setBottom(chartRect.bottom() - xLabelHeight);
+
+    // Y轴标签预留
+    const int yLabelWidth = 46;
+    const int yLabelSpacing = 8;
+    if (getShowYAxisValues())
+        chartRect.setLeft(chartRect.left() + yLabelWidth + yLabelSpacing);
+
+    // ===== 图例 =====
     if (getShowLegend()) {
         int y = legendRect.top();
         int lineHeight = font.pixelSize() + 6;
@@ -145,34 +167,115 @@ void FluentLineChart::paintEvent(QPaintEvent*)
         }
     }
 
-    double maxNew = 0.0, maxOld = 0.0;
-    for (auto& s : m_points)    maxNew = qMax(maxNew, s.value);
-    for (auto& s : m_oldPoints) maxOld = qMax(maxOld, s.value);
-    double maxValue = qMax(maxNew, maxOld);
+    // ===== 计算 min/max （自动模式用） =====
+    double dataMaxNew = -std::numeric_limits<double>::infinity();
+    double dataMinNew =  std::numeric_limits<double>::infinity();
+    for (const auto& s : m_points) {
+        dataMaxNew = qMax(dataMaxNew, s.value);
+        dataMinNew = qMin(dataMinNew, s.value);
+    }
+    // 考虑旧数据（动画过渡）以防动画突变
+    double dataMaxOld = -std::numeric_limits<double>::infinity();
+    double dataMinOld =  std::numeric_limits<double>::infinity();
+    for (const auto& s : m_oldPoints) {
+        dataMaxOld = qMax(dataMaxOld, s.value);
+        dataMinOld = qMin(dataMinOld, s.value);
+    }
+    if (dataMaxNew == -std::numeric_limits<double>::infinity()) dataMaxNew = 0.0;
+    if (dataMinNew ==  std::numeric_limits<double>::infinity()) dataMinNew = 0.0;
+    if (dataMaxOld == -std::numeric_limits<double>::infinity()) dataMaxOld = dataMaxNew;
+    if (dataMinOld ==  std::numeric_limits<double>::infinity()) dataMinOld = dataMinNew;
+
+    double autoMin = qMin(dataMinNew, dataMinOld);
+    double autoMax = qMax(dataMaxNew, dataMaxOld);
+
+    // ===== 使用用户指定刻度（当 MaxScale > MinScale 时生效），否则自动计算 =====
+    double minValue = autoMin;
+    double maxValue = autoMax;
+
+    if (getMaxScale() > getMinScale()) {
+        minValue = getMinScale();
+        maxValue = getMaxScale();
+    } else {
+        // 自动模式保护：当范围极小或相等时，保证合理范围
+        if (qFuzzyCompare(maxValue, minValue) || (maxValue - minValue) < 1e-6) {
+            if (autoMin > 0.0)
+                minValue = 0.0;
+            else
+                minValue = autoMin;
+            maxValue = qMax(maxValue, minValue + 1.0);
+        }
+    }
+
+    // 保护范围
+    double range = maxValue - minValue;
+    if (range <= 0.0) range = 1.0;
 
     int count = m_points.size();
     double stepX = chartRect.width() / qMax(1, count - 1);
     double t = getEnableAnimation() ? getAnimationProgress() : 1.0;
 
+    // ============================================================
+    // ReferenceLines：按 chartRect 等分，始终占满（不随 max/min 压缩）
+    // Y 轴文字按 minValue..maxValue 映射
+    // ============================================================
+    if (getShowReferenceLines() || getShowYAxisValues()) {
+        const int yTicks = 4;
+
+        QColor gridColor = getBorderColor();
+        gridColor.setAlpha(100);
+        QPen gridPen(gridColor, 1, Qt::DashLine);
+        gridPen.setCapStyle(Qt::FlatCap);
+
+        for (int i = 0; i <= yTicks; ++i) {
+            double ratio = i / static_cast<double>(yTicks);
+            double y = chartRect.bottom() - chartRect.height() * ratio;
+
+            if (getShowReferenceLines()) {
+                painter.setPen(gridPen);
+                painter.drawLine(QPointF(chartRect.left(), y), QPointF(chartRect.right(), y));
+            }
+
+            if (getShowYAxisValues()) {
+                double v = minValue + range * ratio;
+                painter.setPen(getTextColor());
+                QRectF labelRect(chartRect.left() - yLabelWidth - yLabelSpacing,
+                                 y - font.pixelSize() / 2.0,
+                                 yLabelWidth,
+                                 font.pixelSize() + 4);
+                painter.drawText(labelRect, Qt::AlignRight | Qt::AlignVCenter, QString::number(v, 'f', 1));
+            }
+        }
+    }
+
+    // ===== 构建折线路径（数据按 min..max 映射） =====
     QPainterPath path;
     QVector<QPointF> points;
+    points.reserve(count);
 
     for (int i = 0; i < count; ++i) {
         double newV = m_points[i].value;
-        double oldV = (i < m_oldPoints.size()) ? m_oldPoints[i].value : 0.0;
+        double oldV = (i < m_oldPoints.size()) ? m_oldPoints[i].value : minValue;
         double v = oldV + (newV - oldV) * t;
 
+        // 将 v 映射到 [minValue, maxValue] 再计算 y
+        double ratio = (v - minValue) / range;
+        // clamp ratio
+        if (ratio < 0.0) ratio = 0.0;
+        if (ratio > 1.0) ratio = 1.0;
+
         double x = chartRect.left() + i * stepX;
-        double y = chartRect.bottom() - chartRect.height() * v / qMax(1.0, maxValue);
+        double y = chartRect.bottom() - chartRect.height() * ratio;
 
         points << QPointF(x, y);
+
         if (i == 0)
             path.moveTo(x, y);
         else
             path.lineTo(x, y);
     }
 
-    // 折线
+    // 绘制折线
     QPen linePen(getLineColor(), getLineWidth());
     linePen.setCapStyle(Qt::RoundCap);
     linePen.setJoinStyle(Qt::RoundJoin);
@@ -180,9 +283,8 @@ void FluentLineChart::paintEvent(QPaintEvent*)
     painter.setBrush(Qt::NoBrush);
     painter.drawPath(path);
 
-    // 点与文字
+    // 点与标签
     const double r = getPointRadius();
-
     for (int i = 0; i < points.size(); ++i) {
         painter.setBrush(m_points[i].color);
         painter.setPen(Qt::NoPen);
@@ -190,13 +292,22 @@ void FluentLineChart::paintEvent(QPaintEvent*)
 
         if (getShowPointLabel()) {
             painter.setPen(getTextColor());
-            QString text = QString::number(
-                m_oldPoints.value(i).value +
-                    (m_points[i].value - m_oldPoints.value(i).value) * t,
-                'f', 1);
-
+            double displayV = m_oldPoints.value(i).value +
+                              (m_points[i].value - m_oldPoints.value(i).value) * t;
             painter.drawText(QRectF(points[i].x() - 20, points[i].y() - 22, 40, 16),
-                             Qt::AlignCenter, text);
+                             Qt::AlignCenter, QString::number(displayV, 'f', 1));
+        }
+    }
+
+    // X轴标签
+    if (getShowXAxisValues()) {
+        painter.setPen(getTextColor());
+        for (int i = 0; i < points.size(); ++i) {
+            QRectF labelRect(points[i].x() - stepX * 0.5 + 2,
+                             chartRect.bottom() + 4,
+                             stepX,
+                             font.pixelSize() + 4);
+            painter.drawText(labelRect, Qt::AlignHCenter | Qt::AlignTop, m_points[i].label);
         }
     }
 }

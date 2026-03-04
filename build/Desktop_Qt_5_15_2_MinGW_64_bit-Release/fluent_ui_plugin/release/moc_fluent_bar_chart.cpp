@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentBarChart_t {
-    QByteArrayData data[11];
-    char stringdata0[145];
+    QByteArrayData data[17];
+    char stringdata0[221];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,14 +42,22 @@ QT_MOC_LITERAL(6, 87, 11), // "BorderWidth"
 QT_MOC_LITERAL(7, 99, 10), // "BarSpacing"
 QT_MOC_LITERAL(8, 110, 8), // "FontSize"
 QT_MOC_LITERAL(9, 119, 14), // "ShowValueLabel"
-QT_MOC_LITERAL(10, 134, 10) // "ShowLegend"
+QT_MOC_LITERAL(10, 134, 10), // "ShowLegend"
+QT_MOC_LITERAL(11, 145, 15), // "ShowXAxisValues"
+QT_MOC_LITERAL(12, 161, 15), // "ShowYAxisValues"
+QT_MOC_LITERAL(13, 177, 18), // "ShowReferenceLines"
+QT_MOC_LITERAL(14, 196, 8), // "MinScale"
+QT_MOC_LITERAL(15, 205, 8), // "MaxScale"
+QT_MOC_LITERAL(16, 214, 6) // "Margin"
 
     },
     "FluentBarChart\0AnimationProgress\0"
     "EnableAnimation\0BackgroundColor\0"
     "BorderColor\0TextColor\0BorderWidth\0"
     "BarSpacing\0FontSize\0ShowValueLabel\0"
-    "ShowLegend"
+    "ShowLegend\0ShowXAxisValues\0ShowYAxisValues\0"
+    "ShowReferenceLines\0MinScale\0MaxScale\0"
+    "Margin"
 };
 #undef QT_MOC_LITERAL
 
@@ -60,7 +68,7 @@ static const uint qt_meta_data_FluentBarChart[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-      10,   14, // properties
+      16,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -77,6 +85,12 @@ static const uint qt_meta_data_FluentBarChart[] = {
        8, QMetaType::Int, 0x00095103,
        9, QMetaType::Bool, 0x00095103,
       10, QMetaType::Bool, 0x00095103,
+      11, QMetaType::Bool, 0x00095103,
+      12, QMetaType::Bool, 0x00095103,
+      13, QMetaType::Bool, 0x00095103,
+      14, QMetaType::Double, 0x00095103,
+      15, QMetaType::Double, 0x00095103,
+      16, QMetaType::Int, 0x00095103,
 
        0        // eod
 };
@@ -100,6 +114,12 @@ void FluentBarChart::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 7: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
         case 8: *reinterpret_cast< bool*>(_v) = _t->getShowValueLabel(); break;
         case 9: *reinterpret_cast< bool*>(_v) = _t->getShowLegend(); break;
+        case 10: *reinterpret_cast< bool*>(_v) = _t->getShowXAxisValues(); break;
+        case 11: *reinterpret_cast< bool*>(_v) = _t->getShowYAxisValues(); break;
+        case 12: *reinterpret_cast< bool*>(_v) = _t->getShowReferenceLines(); break;
+        case 13: *reinterpret_cast< double*>(_v) = _t->getMinScale(); break;
+        case 14: *reinterpret_cast< double*>(_v) = _t->getMaxScale(); break;
+        case 15: *reinterpret_cast< int*>(_v) = _t->getMargin(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -117,6 +137,12 @@ void FluentBarChart::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 7: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
         case 8: _t->setShowValueLabel(*reinterpret_cast< bool*>(_v)); break;
         case 9: _t->setShowLegend(*reinterpret_cast< bool*>(_v)); break;
+        case 10: _t->setShowXAxisValues(*reinterpret_cast< bool*>(_v)); break;
+        case 11: _t->setShowYAxisValues(*reinterpret_cast< bool*>(_v)); break;
+        case 12: _t->setShowReferenceLines(*reinterpret_cast< bool*>(_v)); break;
+        case 13: _t->setMinScale(*reinterpret_cast< double*>(_v)); break;
+        case 14: _t->setMaxScale(*reinterpret_cast< double*>(_v)); break;
+        case 15: _t->setMargin(*reinterpret_cast< int*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -161,17 +187,17 @@ int FluentBarChart::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 10;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 10;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 10;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 10;
+        _id -= 16;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 10;
+        _id -= 16;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

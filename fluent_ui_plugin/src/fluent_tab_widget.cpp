@@ -92,6 +92,8 @@ void FluentTabWidget::addTabWithScroll(QWidget* widget, const QString& label)
 
 void FluentTabWidget::addTabWithScroll(QWidget* widget, const QIcon& icon, const QString& label)
 {
+    widget->setFixedHeight(widget->height());
+
     // 使用 FluentScrollArea 替代 QScrollArea
     FluentScrollArea* scroll_area = new FluentScrollArea(widget, this);
 

@@ -4,6 +4,7 @@
 #include <QPropertyAnimation>
 #include <QIcon>
 #include <QTimer>
+#include <QFontMetrics>
 
 FluentTabBar::FluentTabBar(QWidget* parent)
     : QTabBar(parent)
@@ -11,27 +12,21 @@ FluentTabBar::FluentTabBar(QWidget* parent)
     setShape(QTabBar::RoundedWest);
     setIconSize(QSize(30, 30));
 
-    // 设置动画
-    QPropertyAnimation* slider_move_animation = new QPropertyAnimation(this, getCurSelectRectPosPropertyName(), this);
+    QPropertyAnimation* slider_move_animation =
+        new QPropertyAnimation(this, getCurSelectRectPosPropertyName(), this);
     slider_move_animation->setEasingCurve(QEasingCurve::InOutCubic);
 
-    // 状态切换时更新动画
     connect(this, &QTabBar::currentChanged, this, [=](int index) {
         if (index < 0 || index >= count()) return;
 
         if (slider_move_animation->state() == QPropertyAnimation::Running)
             slider_move_animation->stop();
 
-        int pos;
-        if (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast) {
-            // 垂直方向：使用Y坐标
-            pos = tabRect(index).y() + getTabMargin();
-        } else {
-            // 水平方向：使用X坐标
-            pos = tabRect(index).x() + getTabMargin();
-        }
+        int pos = (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast)
+                      ? tabRect(index).y() + getTabMargin()
+                      : tabRect(index).x() + getTabMargin();
 
-        if(getMoveAnamination()){
+        if (getMoveAnamination()) {
             slider_move_animation->setDuration(200);
             slider_move_animation->setStartValue(getCurSelectRectPos());
             slider_move_animation->setEndValue(pos);
@@ -41,7 +36,6 @@ FluentTabBar::FluentTabBar(QWidget* parent)
         }
     });
 
-    // 设置初始状态
     QTimer::singleShot(300, this, [=]{
         setCurrentIndex(1);
         setCurrentIndex(0);
@@ -50,20 +44,17 @@ FluentTabBar::FluentTabBar(QWidget* parent)
 
 QSize FluentTabBar::tabSizeHint(int index) const
 {
-    Q_UNUSED(index);
-    if (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast) {
-        // 垂直方向：固定宽度，高度根据内容调整
-        return QSize(getTabWidth(), getTabHeight());
-    } else {
-        // 水平方向：固定高度，宽度根据内容调整
-        return QSize(getTabWidth(), getTabHeight());
-    }
+    return QSize(
+        getTabWidth(),
+        getTabHeight()
+        );
 }
 
 QSize FluentTabBar::minimumTabSizeHint(int index) const
 {
     return tabSizeHint(index);
 }
+
 
 static QIcon brightenIcon(const QIcon &icon, int brightnessDelta = 40)
 {

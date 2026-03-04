@@ -104,7 +104,8 @@ void FluentPieChart::paintEvent(QPaintEvent*)
 
     painter.setBrush(getBackgroundColor());
     painter.setPen(QPen(getBorderColor(), getBorderWidth()));
-    painter.drawRoundedRect(drawRect, 10, 10);
+    painter.drawRoundedRect(drawRect, 8, 8);
+    drawRect.adjust(getMargin(), getMargin(), -getMargin(), -getMargin());
 
     if (m_slices.isEmpty())
         return;

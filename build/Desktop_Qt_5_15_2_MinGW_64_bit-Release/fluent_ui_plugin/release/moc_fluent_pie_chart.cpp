@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentPieChart_t {
-    QByteArrayData data[11];
-    char stringdata0[145];
+    QByteArrayData data[12];
+    char stringdata0[152];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,14 +42,15 @@ QT_MOC_LITERAL(6, 87, 11), // "BorderWidth"
 QT_MOC_LITERAL(7, 99, 10), // "PieSpacing"
 QT_MOC_LITERAL(8, 110, 8), // "FontSize"
 QT_MOC_LITERAL(9, 119, 14), // "ShowInnerLabel"
-QT_MOC_LITERAL(10, 134, 10) // "ShowLegend"
+QT_MOC_LITERAL(10, 134, 10), // "ShowLegend"
+QT_MOC_LITERAL(11, 145, 6) // "Margin"
 
     },
     "FluentPieChart\0AnimationProgress\0"
     "EnableAnimation\0BackgroundColor\0"
     "BorderColor\0TextColor\0BorderWidth\0"
     "PieSpacing\0FontSize\0ShowInnerLabel\0"
-    "ShowLegend"
+    "ShowLegend\0Margin"
 };
 #undef QT_MOC_LITERAL
 
@@ -60,7 +61,7 @@ static const uint qt_meta_data_FluentPieChart[] = {
        0,       // classname
        0,    0, // classinfo
        0,    0, // methods
-      10,   14, // properties
+      11,   14, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
@@ -77,6 +78,7 @@ static const uint qt_meta_data_FluentPieChart[] = {
        8, QMetaType::Int, 0x00095103,
        9, QMetaType::Bool, 0x00095103,
       10, QMetaType::Bool, 0x00095103,
+      11, QMetaType::Int, 0x00095103,
 
        0        // eod
 };
@@ -100,6 +102,7 @@ void FluentPieChart::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 7: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
         case 8: *reinterpret_cast< bool*>(_v) = _t->getShowInnerLabel(); break;
         case 9: *reinterpret_cast< bool*>(_v) = _t->getShowLegend(); break;
+        case 10: *reinterpret_cast< int*>(_v) = _t->getMargin(); break;
         default: break;
         }
     } else if (_c == QMetaObject::WriteProperty) {
@@ -117,6 +120,7 @@ void FluentPieChart::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 7: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
         case 8: _t->setShowInnerLabel(*reinterpret_cast< bool*>(_v)); break;
         case 9: _t->setShowLegend(*reinterpret_cast< bool*>(_v)); break;
+        case 10: _t->setMargin(*reinterpret_cast< int*>(_v)); break;
         default: break;
         }
     } else if (_c == QMetaObject::ResetProperty) {
@@ -161,17 +165,17 @@ int FluentPieChart::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::QueryPropertyDesignable) {
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::QueryPropertyScriptable) {
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::QueryPropertyStored) {
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::QueryPropertyEditable) {
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::QueryPropertyUser) {
-        _id -= 10;
+        _id -= 11;
     }
 #endif // QT_NO_PROPERTIES
     return _id;

@@ -1,3 +1,4 @@
+// fluent_bar_chart.cpp
 #include "fluent_bar_chart.h"
 
 #include <QPainter>
@@ -108,7 +109,8 @@ void FluentBarChart::paintEvent(QPaintEvent*)
 
     painter.setBrush(getBackgroundColor());
     painter.setPen(QPen(getBorderColor(), getBorderWidth()));
-    painter.drawRoundedRect(drawRect, 10, 10);
+    painter.drawRoundedRect(drawRect, 8, 8);
+    drawRect.adjust(getMargin(), getMargin(), -getMargin(), -getMargin());
 
     if (m_items.isEmpty())
         return;
@@ -120,10 +122,31 @@ void FluentBarChart::paintEvent(QPaintEvent*)
     const int legendWidth = getShowLegend() ? 120 : 0;
     const int spacing = getBarSpacing();
 
-    QRectF legendRect = drawRect.adjusted(20, 20, legendWidth - 20, -20);
-    QRectF barRect = drawRect.adjusted(legendWidth + 20, 20, -20, -40);
+    // 固定边距（与之前保持一致）
+    const int leftMargin = 20;
+    const int topMargin = 20;
+    const int rightMargin = 20;
+    // 底部默认预留 40（原来使用 -40），这里会根据是否显示 X 轴值再调整
+    int bottomMargin = 40;
 
-    // 图例
+    QRectF legendRect = drawRect.adjusted(leftMargin, topMargin, legendWidth - rightMargin, -topMargin);
+    QRectF barRect   = drawRect.adjusted(legendWidth + leftMargin, topMargin, -rightMargin, -bottomMargin);
+
+    // 如果需要显示 X 轴数值，给底部预留额外空间（与原逻辑兼容）
+    int xLabelHeight = getShowXAxisValues() ? (font.pixelSize() + 8) : 0;
+    if (xLabelHeight > 0) {
+        // 将 barRect 的底部上移以留出 X 轴标签区域
+        barRect.setBottom(barRect.bottom() - xLabelHeight);
+    }
+
+    // 如果需要显示 Y 轴数值，给左侧预留空间
+    const int yLabelWidth = 46;
+    const int yLabelSpacing = 8; // Y 轴标签与图表的微小间隔（固定）
+    if (getShowYAxisValues()) {
+        barRect.setLeft(barRect.left() + yLabelWidth + yLabelSpacing);
+    }
+
+    // ===== 图例绘制 =====
     if (getShowLegend()) {
         int y = legendRect.top();
         int lineHeight = font.pixelSize() + 6;
@@ -135,28 +158,93 @@ void FluentBarChart::paintEvent(QPaintEvent*)
 
             painter.setPen(getTextColor());
             QString text = QString("%1 (%2)").arg(s.label).arg(s.value, 0, 'f', 1);
-            painter.drawText(QRectF(legendRect.left() + 16, y, legendRect.width() - 16, lineHeight),
+            painter.drawText(QRectF(legendRect.left() + 16, y,
+                                    legendRect.width() - 16, lineHeight),
                              Qt::AlignVCenter | Qt::AlignLeft, text);
-
             y += lineHeight;
         }
     }
 
-    double maxValue = 0.0;
-    for (auto& s : m_items)
-        maxValue = qMax(maxValue, s.value);
+    // ===== 数据范围计算（用于自动模式） =====
+    double dataMax = -std::numeric_limits<double>::infinity();
+    double dataMin =  std::numeric_limits<double>::infinity();
+    for (const auto& s : m_items) {
+        dataMax = qMax(dataMax, s.value);
+        dataMin = qMin(dataMin, s.value);
+    }
+    if (dataMax == -std::numeric_limits<double>::infinity()) dataMax = 0.0;
+    if (dataMin ==  std::numeric_limits<double>::infinity()) dataMin = 0.0;
+
+    // ===== 使用用户指定刻度（当 MaxScale > MinScale 时生效），否则自动 =====
+    double minValue = dataMin;
+    double maxValue = dataMax;
+
+    if (getMaxScale() > getMinScale()) {
+        minValue = getMinScale();
+        maxValue = getMaxScale();
+    } else {
+        // 如果自动情况下范围太小或相等，做保护
+        if (qFuzzyCompare(maxValue, minValue) || (maxValue - minValue) < 1e-6) {
+            // 优先把底部设为 0（更符合柱状图习惯），但如果 dataMin<0 则以 dataMin 为底
+            if (dataMin > 0.0)
+                minValue = 0.0;
+            else
+                minValue = dataMin;
+            // 保证 maxValue > minValue
+            if (maxValue <= minValue)
+                maxValue = minValue + 1.0;
+        }
+    }
+
+    // 保护范围
+    double range = maxValue - minValue;
+    if (range <= 0.0) range = 1.0;
 
     int count = m_items.size();
-    double barWidth = (barRect.width() - spacing * (count - 1)) / count;
+    double barWidth = qMax(1.0, (barRect.width() - spacing * (count - 1)) / (double)count);
     double t = getEnableAnimation() ? getAnimationProgress() : 1.0;
 
+    // ===== 参考线 & Y 刻度 =====
+    if (getShowReferenceLines() || getShowYAxisValues()) {
+        const int yTicks = 4;
+        QColor gridColor = getBorderColor();
+        gridColor.setAlpha(100);
+        QPen gridPen(gridColor, 1, Qt::DashLine);
+        gridPen.setCapStyle(Qt::FlatCap);
+
+        for (int i = 0; i <= yTicks; ++i) {
+            double ratio = i / (double)yTicks;
+            double v = minValue + range * ratio;
+            double y = barRect.bottom() - barRect.height() * ( (v - minValue) / range );
+
+            if (getShowReferenceLines()) {
+                painter.setPen(gridPen);
+                painter.drawLine(QPointF(barRect.left(), y), QPointF(barRect.right(), y));
+            }
+
+            if (getShowYAxisValues()) {
+                painter.setPen(getTextColor());
+                QRectF labelRect(barRect.left() - yLabelWidth - yLabelSpacing,
+                                 y - font.pixelSize() / 2.0,
+                                 yLabelWidth,
+                                 font.pixelSize() + 4);
+                painter.drawText(labelRect, Qt::AlignRight | Qt::AlignVCenter, QString::number(v, 'f', 1));
+            }
+        }
+    }
+
+    // ===== 绘制柱子 =====
     for (int i = 0; i < count; ++i) {
         double newValue = m_items[i].value;
-        double oldValue = (i < m_oldItems.size()) ? m_oldItems[i].value : 0.0;
+        double oldValue = (i < m_oldItems.size()) ? m_oldItems[i].value : minValue; // old 相对 min
         double interpValue = oldValue + (newValue - oldValue) * t;
 
-        double h = barRect.height() * interpValue / qMax(1.0, maxValue);
-        QRectF bar(barRect.left() + i * (barWidth + spacing),
+        // clamp interpValue to [minValue, maxValue]
+        double clamped = qBound(minValue, interpValue, maxValue);
+
+        double h = barRect.height() * ( (clamped - minValue) / range );
+        double left = barRect.left() + i * (barWidth + spacing);
+        QRectF bar(left,
                    barRect.bottom() - h,
                    barWidth,
                    h);
@@ -170,6 +258,19 @@ void FluentBarChart::paintEvent(QPaintEvent*)
             QString valueText = QString::number(interpValue, 'f', 1);
             painter.drawText(QRectF(bar.left(), bar.top() - 18, bar.width(), 16),
                              Qt::AlignCenter, valueText);
+        }
+    }
+
+    // ===== X 轴标签 =====
+    if (getShowXAxisValues()) {
+        painter.setPen(getTextColor());
+        for (int i = 0; i < count; ++i) {
+            double left = barRect.left() + i * (barWidth + spacing);
+            QRectF labelRect(left,
+                             barRect.bottom() + 4,
+                             barWidth,
+                             font.pixelSize() + 4);
+            painter.drawText(labelRect, Qt::AlignHCenter | Qt::AlignTop, m_items[i].label);
         }
     }
 }

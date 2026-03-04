@@ -1,6 +1,6 @@
 QT       += core gui widgets designer
 
-CONFIG   += plugin c++11 debug_and_release
+CONFIG   += plugin c++17 debug_and_release
 TEMPLATE = lib
 
 DEFINES += FLUENTUI_PLUGIN_LIBRARY
@@ -8,6 +8,7 @@ DEFINES += FLUENTUI_PLUGIN_LIBRARY
 # 头文件和源文件布局
 INCLUDEPATH += $$PWD/include
 SOURCES     += src/fluent_toggle_button.cpp \
+               src/fluent_message_bar.cpp \
                src/fluent_pie_chart.cpp \
                src/fluent_bar_chart.cpp \
                src/fluent_line_chart.cpp \
@@ -44,6 +45,8 @@ HEADERS     += include/fluent_toggle_button.h \
                include/fluent_combo_box.h \
                include/fluent_date_picker.h \
                include/fluent_datetime_picker.h \
+               include/fluent_message_bar.h \
+               include/fluent_page_plugin.h \
                include/fluent_pie_chart.h \
                include/fluent_bar_chart.h \
                include/fluent_line_chart.h \
@@ -62,6 +65,7 @@ HEADERS     += include/fluent_toggle_button.h \
                include/fluent_tab_widget.h \
                include/fluent_table_widget.h \
                include/fluent_title_bar.h \
+               include/fluent_ui_interface.h \
                include/fluent_ui_plugin_collection.h \
                include/fluent_line_edit.h \
                include/fluent_progress_bar.h \
