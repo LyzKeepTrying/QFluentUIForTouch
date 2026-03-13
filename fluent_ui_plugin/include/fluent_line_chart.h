@@ -1,4 +1,3 @@
-// fluent_line_chart.h
 #ifndef FLUENT_LINE_CHART_H
 #define FLUENT_LINE_CHART_H
 
@@ -6,6 +5,7 @@
 #include <QVector>
 #include <QColor>
 #include <QPropertyAnimation>
+#include <QMouseEvent>
 
 #include "define.h"
 #include "theme.h"
@@ -27,7 +27,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentLineChart : public QWidget
     Q_OBJECT
     DECLARE_PROPERTY_PRIVATE(double, AnimationProgress, 0.0)
     DECLARE_PROPERTY(bool,   EnableAnimation, true)
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
+    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color.darker(103))
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
     DECLARE_PROPERTY(QColor, LineColor, QFluentUI::ThemeColor::Light::on_color)
@@ -58,10 +58,18 @@ protected:
     void paintEvent(QPaintEvent* event) override;
     void showEvent(QShowEvent* event) override;
 
+    // 鼠标交互
+    void mousePressEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
+
 private:
     void startAppearAnimation();
     void startDataAnimation();
     QColor autoColor(int index) const;
+
+    // 帮助函数：根据鼠标位置选取最近点索引（若没有点则返回 -1）
+    int indexForPos(const QPoint& pos) const;
 
 private:
     QVector<FluentLinePoint> m_points;
@@ -71,6 +79,12 @@ private:
     bool m_firstShow = true;
 
     const QSize k_default_size_{420, 260};
+
+    // --- 新增成员，用于交互显示 ---
+    QVector<QPointF> m_screenPoints; // 当前绘制时每个数据点的屏幕坐标（与 m_points 对应）
+    bool m_showCursor = false;      // 是否显示当前的垂直参考线与数值
+    bool m_pressed = false;         // 鼠标是否处于按下状态（用于拖动）
+    int m_activeIndex = -1;         // 当前选中的点索引（-1 表示无）
 };
 
 #endif // FLUENT_LINE_CHART_H

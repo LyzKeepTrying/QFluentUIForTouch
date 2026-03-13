@@ -18,6 +18,7 @@
 #include "fluent_bar_chart.h"
 #include "fluent_check_box.h"
 #include "fluent_circle_spin_box.h"
+#include "fluent_color_picker.h"
 #include "fluent_combo_box.h"
 #include "fluent_date_picker.h"
 #include "fluent_datetime_picker.h"
@@ -61,6 +62,7 @@ public:
     FluentDatePicker *fluentDatePicker;
     FluentTimePicker *fluentTimePickerPlugin;
     FluentDateTimePicker *fluentDateTimePicker;
+    FluentColorPicker *fluentColorPicker;
     QWidget *tab;
     FluentGroupBox *spinx_box;
     FluentLineSpinBox *fluentLineSpinBox_2;
@@ -187,6 +189,9 @@ public:
         fluentDateTimePicker = new FluentDateTimePicker(line_edit);
         fluentDateTimePicker->setObjectName(QString::fromUtf8("fluentDateTimePicker"));
         fluentDateTimePicker->setGeometry(QRect(40, 230, 201, 41));
+        fluentColorPicker = new FluentColorPicker(line_edit);
+        fluentColorPicker->setObjectName(QString::fromUtf8("fluentColorPicker"));
+        fluentColorPicker->setGeometry(QRect(40, 300, 141, 41));
         fluentTabWidget->addTab(tab_4, icon, QString());
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
@@ -411,8 +416,8 @@ public:
 
         retranslateUi(MainWindow);
 
-        fluentTabWidget->setCurrentIndex(4);
-        fluentTabWidget_2->setCurrentIndex(2);
+        fluentTabWidget->setCurrentIndex(1);
+        fluentTabWidget_2->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

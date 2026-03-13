@@ -1,4 +1,5 @@
 release/fluent_toggle_button.o
+release/fluent_color_picker.o
 release/fluent_message_bar.o
 release/fluent_pie_chart.o
 release/fluent_bar_chart.o
@@ -32,6 +33,7 @@ release/fluent_ui_plugin_collection.o
 release/moc_fluent_toggle_button.o
 release/moc_fluent_calendar_picker.o
 release/moc_fluent_check_box.o
+release/moc_fluent_color_picker.o
 release/moc_fluent_combo_box.o
 release/moc_fluent_date_picker.o
 release/moc_fluent_datetime_picker.o

@@ -1,4 +1,3 @@
-// fluent_line_chart.cpp
 #include "fluent_line_chart.h"
 
 #include <QPainter>
@@ -56,6 +55,9 @@ void FluentLineChart::setData(const QVector<FluentLinePoint>& points)
     else
         setAnimationProgress(1.0);
 
+    // 重置交互状态（保留显示或不保留按需，这里保留当前显示）
+    // m_showCursor = false; // 如果希望每次数据更新都隐藏，可解除注释
+
     update();
 }
 
@@ -100,6 +102,63 @@ QColor FluentLineChart::autoColor(int index) const
         QColor(255, 140, 0)
     };
     return palette[index % palette.size()];
+}
+
+int FluentLineChart::indexForPos(const QPoint& pos) const
+{
+    if (m_screenPoints.isEmpty())
+        return -1;
+
+    // 找到水平方向上距离鼠标最近的点
+    int best = -1;
+    qreal bestDist = std::numeric_limits<qreal>::infinity();
+    for (int i = 0; i < m_screenPoints.size(); ++i) {
+        qreal dx = qAbs(pos.x() - m_screenPoints[i].x());
+        if (dx < bestDist) {
+            bestDist = dx;
+            best = i;
+        }
+    }
+    return best;
+}
+
+void FluentLineChart::mousePressEvent(QMouseEvent* event)
+{
+    if (m_points.isEmpty()) {
+        QWidget::mousePressEvent(event);
+        return;
+    }
+
+    m_pressed = true;
+    int idx = indexForPos(event->pos());
+    if (idx >= 0 && idx < m_points.size()) {
+        m_activeIndex = idx;
+        m_showCursor = true;
+        update();
+    }
+
+    QWidget::mousePressEvent(event);
+}
+
+void FluentLineChart::mouseMoveEvent(QMouseEvent* event)
+{
+    if (!m_points.isEmpty() && m_pressed) {
+        int idx = indexForPos(event->pos());
+        if (idx >= 0 && idx < m_points.size() && idx != m_activeIndex) {
+            m_activeIndex = idx;
+            m_showCursor = true;
+            update();
+        }
+    }
+
+    QWidget::mouseMoveEvent(event);
+}
+
+void FluentLineChart::mouseReleaseEvent(QMouseEvent* event)
+{
+    m_pressed = false;
+    // 保持显示（如果需要点击释放后隐藏，可在此处设置 m_showCursor = false）
+    QWidget::mouseReleaseEvent(event);
 }
 
 void FluentLineChart::paintEvent(QPaintEvent*)
@@ -275,6 +334,9 @@ void FluentLineChart::paintEvent(QPaintEvent*)
             path.lineTo(x, y);
     }
 
+    // 保存屏幕点位置，供鼠标事件使用
+    m_screenPoints = points;
+
     // 绘制折线
     QPen linePen(getLineColor(), getLineWidth());
     linePen.setCapStyle(Qt::RoundCap);
@@ -309,5 +371,54 @@ void FluentLineChart::paintEvent(QPaintEvent*)
                              font.pixelSize() + 4);
             painter.drawText(labelRect, Qt::AlignHCenter | Qt::AlignTop, m_points[i].label);
         }
+    }
+
+    // =========================
+    // 绘制交互时的垂直参考线与数值（吸附到最近点）
+    // =========================
+    if (m_showCursor && m_activeIndex >= 0 && m_activeIndex < m_screenPoints.size()) {
+        QPointF pt = m_screenPoints[m_activeIndex];
+
+        // 垂直虚线
+        QPen vPen(getBorderColor(), 1, Qt::DashLine);
+        vPen.setCapStyle(Qt::FlatCap);
+        painter.setPen(vPen);
+        painter.drawLine(QPointF(pt.x(), chartRect.top()), QPointF(pt.x(), chartRect.bottom()));
+
+        // 高亮点（外圈）
+        painter.setPen(QPen(Qt::NoPen));
+        painter.setBrush(Qt::white);
+        painter.drawEllipse(pt, r + 2.0, r + 2.0);
+        painter.setBrush(m_points[m_activeIndex].color);
+        painter.drawEllipse(pt, r, r);
+
+        // 显示 Y 值的标签（只显示纵坐标对应数值）
+        double displayV = m_oldPoints.value(m_activeIndex).value +
+                          (m_points[m_activeIndex].value - m_oldPoints.value(m_activeIndex).value) * t;
+        QString txt = QString::number(displayV, 'f', 2);
+
+        QFontMetrics fm(font);
+        int txtW = fm.horizontalAdvance(txt) + 12;
+        int txtH = fm.height() + 8;
+
+        // 放在点上方（若空间不足则放在点下方）
+        QRectF textRect(pt.x() - txtW / 2.0, pt.y() - txtH - 8, txtW, txtH);
+        if (textRect.top() < chartRect.top()) {
+            textRect.moveTop(pt.y() + 8);
+        }
+        // 保证不超出 chartRect 左右边界
+        if (textRect.left() < chartRect.left())
+            textRect.moveLeft(chartRect.left() + 4);
+        if (textRect.right() > chartRect.right())
+            textRect.moveRight(chartRect.right() - 4);
+
+        // 背景和边框
+        painter.setPen(QPen(getBorderColor(), 1));
+        painter.setBrush(getBackgroundColor());
+        painter.drawRoundedRect(textRect, 4, 4);
+
+        // 文本
+        painter.setPen(getTextColor());
+        painter.drawText(textRect, Qt::AlignCenter, txt);
     }
 }

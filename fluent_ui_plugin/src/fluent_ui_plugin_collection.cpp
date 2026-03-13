@@ -25,6 +25,7 @@
 #include "fluent_pie_chart.h"
 #include "fluent_bar_chart.h"
 #include "fluent_line_chart.h"
+#include "fluent_color_picker.h"
 
 #include <QtCore/qplugin.h>
 
@@ -60,6 +61,7 @@ FluentWidgetsPluginCollection::FluentWidgetsPluginCollection(QObject* parent)
     widget_list_.append(new FluentPieChartPlugin(this));
     widget_list_.append(new FluentBarChartPlugin(this));
     widget_list_.append(new FluentLineChartPlugin(this));
+    widget_list_.append(new FluentColorPickerPlugin(this));
 }
 
 QList<QDesignerCustomWidgetInterface*> FluentWidgetsPluginCollection::customWidgets() const {
@@ -1761,6 +1763,69 @@ QWidget* FluentLineChartPlugin::createWidget(QWidget* parent) {
 }
 
 void FluentLineChartPlugin::initialize(QDesignerFormEditorInterface* core) {
+    Q_UNUSED(core);
+    if (is_initialized_)
+        return;
+    is_initialized_ = true;
+}
+
+/* FluentColorPickerPlugin */
+
+FluentColorPickerPlugin::FluentColorPickerPlugin(QObject* parent)
+    : QObject(parent), is_initialized_(false)
+{}
+
+bool FluentColorPickerPlugin::isContainer() const {
+    return false;
+}
+
+bool FluentColorPickerPlugin::isInitialized() const {
+    return is_initialized_;
+}
+
+QIcon FluentColorPickerPlugin::icon() const {
+    return QIcon();
+}
+
+QString FluentColorPickerPlugin::domXml() const {
+    return R"(
+        <ui language="c++" version="4.0">
+          <widget class="FluentColorPicker" name="fluentColorPicker">
+            <property name="geometry">
+              <rect>
+                <x>0</x><y>0</y><width>48</width><height>24</height>
+              </rect>
+            </property>
+          </widget>
+        </ui>
+    )";
+}
+
+QString FluentColorPickerPlugin::includeFile() const {
+    return "fluent_color_picker.h";
+}
+
+QString FluentColorPickerPlugin::group() const {
+    return "Fluent UI Controls";
+}
+
+QString FluentColorPickerPlugin::name() const {
+    return "FluentColorPicker";
+}
+
+QString FluentColorPickerPlugin::toolTip() const {
+    return "Fluent Design Fluent Color Picker";
+}
+
+QString FluentColorPickerPlugin::whatsThis() const {
+    return {};
+}
+
+QWidget* FluentColorPickerPlugin::createWidget(QWidget* parent) {
+    return new FluentColorPicker(parent);
+}
+
+void FluentColorPickerPlugin::initialize(QDesignerFormEditorInterface* core) {
     Q_UNUSED(core);
     if (is_initialized_)
         return;

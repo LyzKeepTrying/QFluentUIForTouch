@@ -26,7 +26,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentPieChart : public QWidget
     Q_OBJECT
     DECLARE_PROPERTY_PRIVATE(double, AnimationProgress, 0.0)
     DECLARE_PROPERTY(bool,   EnableAnimation, true)
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
+    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color.darker(103))
     DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
     DECLARE_PROPERTY(int, BorderWidth, 1)
