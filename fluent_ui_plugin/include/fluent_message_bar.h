@@ -46,6 +46,23 @@ public:
 
     explicit FluentMessageBar(QWidget* parent = nullptr);
 
+    static void showMessage(
+        const QString& text,
+        int font_size,
+        MessageType type = MessageType::Info,
+        int durationMs = 3000,
+        Position pos = Position::TopCenter
+        );
+
+    static void showMessage(
+        const QString& text,
+        int font_size,
+        MessageType type,
+        int durationMs,
+        Position pos,
+        QWidget* anchor
+        );
+
     void showMessage(
         const QString& text,
         MessageType type = MessageType::Info,
@@ -72,6 +89,7 @@ private:
 
     QRect calcTargetRect(int index) const;
     void removeFromStack();
+
 
 private:
     QString     m_text_;

@@ -19,12 +19,38 @@ static QString makeKey(const QRect& rect, FluentMessageBar::Position pos) {
         .arg(int(pos));
 }
 
+void FluentMessageBar::showMessage(
+    const QString& text,
+    int font_size,
+    MessageType type,
+    int durationMs,
+    Position pos
+    ){
+    FluentMessageBar* showingBar = new FluentMessageBar();
+    showingBar->setFontSize(font_size);
+    showingBar->showMessage(text, type, durationMs, pos);
+}
+
+void FluentMessageBar::showMessage(
+    const QString& text,
+    int font_size,
+    MessageType type,
+    int durationMs,
+    Position pos,
+    QWidget* anchor
+    ){
+    FluentMessageBar* showingBar = new FluentMessageBar(anchor);
+    showingBar->setFontSize(font_size);
+    showingBar->showMessage(text, type, durationMs, pos, anchor);
+}
+
 FluentMessageBar::FluentMessageBar(QWidget* parent)
     : QWidget(parent)
 {
     setWindowFlags(Qt::Tool | Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_ShowWithoutActivating);
+    setAttribute(Qt::WA_DeleteOnClose);
     setFixedHeight(getHeight());
 
     connect(&m_close_timer_, &QTimer::timeout,
