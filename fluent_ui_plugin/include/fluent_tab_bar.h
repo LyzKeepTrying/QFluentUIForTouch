@@ -33,6 +33,7 @@ public:
 
     QSize tabSizeHint(int index) const override;
     QSize minimumTabSizeHint(int index) const override;
+    void resizeEvent(QResizeEvent *) override;
 
 protected:
     void paintEvent(QPaintEvent* ev) override;

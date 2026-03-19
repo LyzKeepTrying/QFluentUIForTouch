@@ -11,35 +11,73 @@ FluentTabBar::FluentTabBar(QWidget* parent)
 {
     setShape(QTabBar::RoundedWest);
     setIconSize(QSize(30, 30));
+    setExpanding(false);
 
     QPropertyAnimation* slider_move_animation =
         new QPropertyAnimation(this, getCurSelectRectPosPropertyName(), this);
     slider_move_animation->setEasingCurve(QEasingCurve::InOutCubic);
 
     connect(this, &QTabBar::currentChanged, this, [=](int index) {
-        if (index < 0 || index >= count()) return;
+        // 延迟到布局稳定
+        QTimer::singleShot(0, this, [=]() {
 
-        if (slider_move_animation->state() == QPropertyAnimation::Running)
-            slider_move_animation->stop();
+            if (count() <= 0) return;
 
-        int pos = (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast)
-                      ? tabRect(index).y() + getTabMargin()
-                      : tabRect(index).x() + getTabMargin();
+            int cur = currentIndex();
 
-        if (getMoveAnamination()) {
-            slider_move_animation->setDuration(200);
-            slider_move_animation->setStartValue(getCurSelectRectPos());
-            slider_move_animation->setEndValue(pos);
-            slider_move_animation->start();
-        } else {
-            setCurSelectRectPos(pos);
-        }
+            if (cur < 0 || cur >= count()) return;
+
+            // // ⚠️ 关键修复点：当只剩1个tab时，强制归位
+            // if (count() == 1) {
+            //     int pos = getTabMargin();
+
+            //     if (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast) {
+            //         pos = tabRect(0).y() + getTabMargin();
+            //     } else {
+            //         pos = tabRect(0).x() + getTabMargin();
+            //     }
+
+            //     if (slider_move_animation->state() == QPropertyAnimation::Running)
+            //         slider_move_animation->stop();
+
+            //     setCurSelectRectPos(pos);
+            //     return;
+            // }
+
+            if (slider_move_animation->state() == QPropertyAnimation::Running)
+                slider_move_animation->stop();
+
+            int pos = (shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast)
+                          ? tabRect(cur).y() + getTabMargin()
+                          : tabRect(cur).x() + getTabMargin();
+
+            if (getMoveAnamination()) {
+                slider_move_animation->setDuration(200);
+                slider_move_animation->setStartValue(getCurSelectRectPos());
+                slider_move_animation->setEndValue(pos);
+                slider_move_animation->start();
+            } else {
+                setCurSelectRectPos(pos);
+            }
+        });
     });
 
     QTimer::singleShot(300, this, [=]{
         setCurrentIndex(1);
         setCurrentIndex(0);
     });
+}
+
+void FluentTabBar::resizeEvent(QResizeEvent * event){
+
+    if(shape() == QTabBar::RoundedWest || shape() == QTabBar::RoundedEast){
+        setTabWidth(width());
+    }
+    else{
+        setTabHeight(height());
+    }
+
+    QTabBar::resizeEvent(event);
 }
 
 QSize FluentTabBar::tabSizeHint(int index) const
