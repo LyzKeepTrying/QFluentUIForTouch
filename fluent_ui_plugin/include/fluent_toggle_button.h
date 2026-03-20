@@ -2,7 +2,7 @@
 #include <QAbstractButton>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -16,10 +16,11 @@ class FLUENTUI_PLUGIN_EXPORT FluentToggleButton : public QAbstractButton {
     DECLARE_PROPERTY_SIGNAL(qreal, ThumbRadius, 14)
     DECLARE_PROPERTY_PRIVATE(qreal, ThumbXStart, 4)
     DECLARE_PROPERTY_PRIVATE(qreal, ThumbXEnd, k_default_size_.width() - 14*2 - 3)
-    DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, BackgroundOffColor, QFluentUI::ThemeColor::Light::off_color)
-    DECLARE_PROPERTY(QColor, BackgroundOnColor, QFluentUI::ThemeColor::Light::on_color)
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
+
+    DECLARE_PROPERTY_COLOR(FluentToggleButton, ThumbColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentToggleButton, BackgroundOffColor, g_fluent_theme_center->getOffColor())
+    DECLARE_PROPERTY_COLOR(FluentToggleButton, BackgroundOnColor, g_fluent_theme_center->getOnColor())
+    DECLARE_PROPERTY_COLOR(FluentToggleButton, BorderColor, g_fluent_theme_center->getBorderColor())
 
 public:
     explicit FluentToggleButton(QWidget* parent = nullptr);

@@ -11,7 +11,7 @@
 #include <QVector>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -21,8 +21,9 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentColorPickerPopup : public QDialog {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
+    DECLARE_PROPERTY_COLOR(FluentColorPickerPopup, BackgroundColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentColorPickerPopup, BorderColor, g_fluent_theme_center->getBorderColor())
+
 public:
     explicit FluentColorPickerPopup(const QColor &initial = QColor(Qt::white), QWidget *parent = nullptr);
     ~FluentColorPickerPopup() override = default;
@@ -74,9 +75,9 @@ private:
 class FLUENTUI_PLUGIN_EXPORT FluentColorPicker : public QWidget {
     Q_OBJECT
 
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
+    DECLARE_PROPERTY_COLOR(FluentColorPicker, BackgroundColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentColorPicker, BorderColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentColorPicker, TextColor, g_fluent_theme_center->getTextColor())
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
 
 public:

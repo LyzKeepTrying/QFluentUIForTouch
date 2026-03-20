@@ -63,6 +63,9 @@ public:
     FluentTimePicker *fluentTimePickerPlugin;
     FluentDateTimePicker *fluentDateTimePicker;
     FluentColorPicker *fluentColorPicker;
+    FluentColorPicker *fluentColorPicker_2;
+    FluentColorPicker *fluentColorPicker_3;
+    FluentColorPicker *fluentColorPicker_4;
     QWidget *tab;
     FluentGroupBox *spinx_box;
     FluentLineSpinBox *fluentLineSpinBox_2;
@@ -191,7 +194,16 @@ public:
         fluentDateTimePicker->setGeometry(QRect(40, 230, 201, 41));
         fluentColorPicker = new FluentColorPicker(line_edit);
         fluentColorPicker->setObjectName(QString::fromUtf8("fluentColorPicker"));
-        fluentColorPicker->setGeometry(QRect(40, 300, 141, 41));
+        fluentColorPicker->setGeometry(QRect(40, 290, 141, 41));
+        fluentColorPicker_2 = new FluentColorPicker(line_edit);
+        fluentColorPicker_2->setObjectName(QString::fromUtf8("fluentColorPicker_2"));
+        fluentColorPicker_2->setGeometry(QRect(210, 290, 141, 41));
+        fluentColorPicker_3 = new FluentColorPicker(line_edit);
+        fluentColorPicker_3->setObjectName(QString::fromUtf8("fluentColorPicker_3"));
+        fluentColorPicker_3->setGeometry(QRect(40, 350, 141, 41));
+        fluentColorPicker_4 = new FluentColorPicker(line_edit);
+        fluentColorPicker_4->setObjectName(QString::fromUtf8("fluentColorPicker_4"));
+        fluentColorPicker_4->setGeometry(QRect(210, 350, 141, 41));
         fluentTabWidget->addTab(tab_4, icon, QString());
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
@@ -216,7 +228,7 @@ public:
         fluentLineSpinBox->setPaintStep(true);
         fluentLineSpinBox_3 = new FluentLineSpinBox(spinx_box);
         fluentLineSpinBox_3->setObjectName(QString::fromUtf8("fluentLineSpinBox_3"));
-        fluentLineSpinBox_3->setGeometry(QRect(370, 90, 51, 271));
+        fluentLineSpinBox_3->setGeometry(QRect(370, 40, 51, 321));
         fluentLineSpinBox_3->setMaximum(5);
         fluentLineSpinBox_3->setValue(3);
         fluentLineSpinBox_3->setThumbRadius(14.000000000000000);

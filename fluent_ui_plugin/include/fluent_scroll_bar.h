@@ -6,7 +6,7 @@
 #include <QScrollBar>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -16,9 +16,11 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentScrollBar : public QScrollBar {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, ThumbBorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, TrackColor, QFluentUI::ThemeColor::Light::off_color)
+
+    DECLARE_PROPERTY_COLOR(FluentScrollBar, ThumbColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentScrollBar, ThumbBorderColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentScrollBar, TrackColor, g_fluent_theme_center->getOffColor())
+
     DECLARE_PROPERTY(qreal, ThumbRadius, 12.0)
     DECLARE_PROPERTY(qreal, TrackWidth, 10.0)
     DECLARE_PROPERTY_PRIVATE(bool, ThumbPressed, false)

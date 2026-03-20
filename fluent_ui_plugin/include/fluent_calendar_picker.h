@@ -6,7 +6,7 @@
 #include <QPointer>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -18,11 +18,12 @@ class Q_DECL_EXPORT FluentCalendarPicker : public QWidget {
     Q_OBJECT
 
     // 视觉/布局属性（与您项目的 DECLARE_PROPERTY 习惯保持一致）
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, HeaderColor, QFluentUI::ThemeColor::Light::on_color)
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-    DECLARE_PROPERTY(QColor, SelectedColor, QFluentUI::ThemeColor::Light::on_color)
+    DECLARE_PROPERTY_COLOR(FluentCalendarPicker, BackgroundColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentCalendarPicker, BorderColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentCalendarPicker, TextColor, g_fluent_theme_center->getTextColor())
+    DECLARE_PROPERTY_COLOR(FluentCalendarPicker, HeaderColor, g_fluent_theme_center->getOnColor())
+    DECLARE_PROPERTY_COLOR(FluentCalendarPicker, SelectedColor, g_fluent_theme_center->getOnColor())
+
     DECLARE_PROPERTY(int, HeaderHeight, 35)
     DECLARE_PROPERTY(int, WeekdayHeight, 35)
     DECLARE_PROPERTY(int, CellSpacing, 6)

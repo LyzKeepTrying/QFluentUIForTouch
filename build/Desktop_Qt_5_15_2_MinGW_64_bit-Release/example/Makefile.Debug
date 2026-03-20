@@ -365,8 +365,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
@@ -475,8 +477,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
@@ -585,8 +589,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QAbstractButton \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
@@ -694,8 +700,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLineEdit \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlineedit.h \
@@ -812,8 +820,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QSpinBox \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qspinbox.h \
@@ -923,8 +933,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QDoubleSpinBox \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qspinbox.h \
@@ -1034,8 +1046,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QSpinBox \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qspinbox.h \
@@ -1145,8 +1159,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QSpinBox \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qspinbox.h \
@@ -1256,8 +1272,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QProgressBar \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qprogressbar.h \
@@ -1365,8 +1383,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QComboBox \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qcombobox.h \
@@ -1492,8 +1512,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QStyledItemDelegate \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qstyleditemdelegate.h \
@@ -1608,8 +1630,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QMouseEvent \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QTabWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtabwidget.h \
@@ -1729,8 +1753,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QTabBar \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_scroll_area.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QScrollArea \
@@ -1848,8 +1874,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -1972,8 +2000,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QTableWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtablewidget.h \
@@ -2100,8 +2130,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QHeaderView \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qheaderview.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -2225,8 +2257,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -2349,8 +2383,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QScopedPointer \
 		../../../fluent_ui_plugin/include/fluent_clock_picker.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -2470,8 +2506,10 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_clock_picker.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QTime \
@@ -2586,7 +2624,9 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -2699,7 +2739,9 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -2813,7 +2855,9 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QMouseEvent \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qwidget.h \
@@ -2929,7 +2973,9 @@ ui_mainwindow.h: ../../../example/mainwindow.ui \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qicon.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_line_edit.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLineEdit \
@@ -3196,8 +3242,10 @@ debug/mainwindow.o: ../../../example/mainwindow.cpp ../../../example/mainwindow.
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMap \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\..\..\example\mainwindow.cpp
 

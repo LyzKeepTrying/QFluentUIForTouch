@@ -4,7 +4,7 @@
 #include <QLabel>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -15,7 +15,7 @@
 class FLUENTUI_PLUGIN_EXPORT FluentText : public QLabel
 {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
+    DECLARE_PROPERTY_COLOR(FluentText, TextColor, g_fluent_theme_center->getTextColor())
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
 
 public:

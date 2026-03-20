@@ -3,7 +3,7 @@
 
 #include <QSpinBox>
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -13,15 +13,16 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentCircleSpinBox : public QSpinBox {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-    DECLARE_PROPERTY(QColor, BorderFocusOnColor, QFluentUI::ThemeColor::Light::on_color)
-    DECLARE_PROPERTY(QColor, BorderFocusOffColor, QFluentUI::ThemeColor::Light::border_color)
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, BackgroundColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, TextColor, g_fluent_theme_center->getTextColor())
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, BorderFocusOnColor, g_fluent_theme_center->getOnColor())
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, BorderFocusOffColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, SliderOnColor, g_fluent_theme_center->getOnColor())
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, SliderOffColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, ThumbColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentCircleSpinBox, ThumbBorderColor, g_fluent_theme_center->getBorderColor())
+
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
-    DECLARE_PROPERTY(QColor, SliderOnColor, QFluentUI::ThemeColor::Light::on_color)
-    DECLARE_PROPERTY(QColor, SliderOffColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, ThumbBorderColor, QFluentUI::ThemeColor::Light::border_color)
     DECLARE_PROPERTY(qreal, ThumbRadius, 11.0);
     DECLARE_PROPERTY(qreal, ArcWidth, 10.0);
     DECLARE_PROPERTY_PRIVATE(bool, ShowCursor, true);

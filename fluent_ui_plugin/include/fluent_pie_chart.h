@@ -7,7 +7,7 @@
 #include <QPropertyAnimation>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -26,9 +26,12 @@ class FLUENTUI_PLUGIN_EXPORT FluentPieChart : public QWidget
     Q_OBJECT
     DECLARE_PROPERTY_PRIVATE(double, AnimationProgress, 0.0)
     DECLARE_PROPERTY(bool,   EnableAnimation, true)
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color.darker(103))
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
+
+    DECLARE_PROPERTY_COLOR(FluentPieChart, BackgroundColor, g_fluent_theme_center->getBackgroundColor().darker(103))
+    DECLARE_PROPERTY_COLOR(FluentPieChart, BorderColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentPieChart, TextColor, g_fluent_theme_center->getTextColor())
+
+
     DECLARE_PROPERTY(int, BorderWidth, 1)
     DECLARE_PROPERTY(int, PieSpacing, 24)
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)

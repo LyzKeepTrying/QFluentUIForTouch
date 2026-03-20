@@ -9,7 +9,7 @@
 #include <QPropertyAnimation>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -19,8 +19,9 @@
 
 class Q_DECL_EXPORT FluentTitleBar : public QWidget {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color.darker(104))
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
+    DECLARE_PROPERTY_COLOR(FluentTitleBar, BackgroundColor, g_fluent_theme_center->getBackgroundColor().darker(104))
+    DECLARE_PROPERTY_COLOR(FluentTitleBar, TextColor, g_fluent_theme_center->getTextColor())
+
     DECLARE_PROPERTY(int, TimeFontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY(int, TitleFontSize, QFluentUI::Font::default_font_size)
     DECLARE_PROPERTY(bool, ShowTitle, true)

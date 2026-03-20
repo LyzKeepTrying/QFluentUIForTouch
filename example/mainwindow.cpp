@@ -75,6 +75,22 @@ MainWindow::MainWindow(QWidget *parent)
         ui->fluentLineChart->setData(data2);
     });
     timer->start(2000);
+
+    connect(ui->fluentColorPicker, &FluentColorPicker::colorChanged, this, [=](QColor value){
+        g_fluent_theme_center->setOnColor(value);
+    });
+
+    connect(ui->fluentColorPicker_2, &FluentColorPicker::colorChanged, this, [=](QColor value){
+        g_fluent_theme_center->setBackgroundColor(value);
+    });
+
+    connect(ui->fluentColorPicker_3, &FluentColorPicker::colorChanged, this, [=](QColor value){
+        g_fluent_theme_center->setTextColor(value);
+    });
+
+    connect(ui->fluentColorPicker_4, &FluentColorPicker::colorChanged, this, [=](QColor value){
+        g_fluent_theme_center->setBorderColor(value);
+    });
 }
 MainWindow::~MainWindow()
 {

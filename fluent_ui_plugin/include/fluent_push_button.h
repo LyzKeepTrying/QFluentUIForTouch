@@ -4,7 +4,7 @@
 #include <QPushButton>
 
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -14,9 +14,11 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentPushButton : public QPushButton {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
+
+    DECLARE_PROPERTY_COLOR(FluentPushButton, BackgroundColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentPushButton, BorderColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentPushButton, TextColor, g_fluent_theme_center->getTextColor())
+
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
 
 public:

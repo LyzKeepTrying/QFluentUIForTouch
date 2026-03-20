@@ -3,7 +3,7 @@
 
 #include <QSlider>
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -13,13 +13,16 @@
 
 class FLUENTUI_PLUGIN_EXPORT FluentSlider : public QSlider {
     Q_OBJECT
-    DECLARE_PROPERTY(QColor, ThumbColor, QFluentUI::ThemeColor::Light::area_color)
+
     DECLARE_PROPERTY(qreal, ThumbRadius, 11.0);
     DECLARE_PROPERTY(qreal, LineWidth, 10.0);
     DECLARE_PROPERTY_PRIVATE(bool, ThumbIsPressed, false);
-    DECLARE_PROPERTY(QColor, SliderOnColor, QFluentUI::ThemeColor::Light::on_color)
-    DECLARE_PROPERTY(QColor, SliderOffColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, ThumbBorderColor, QFluentUI::ThemeColor::Light::border_color)
+
+    DECLARE_PROPERTY_COLOR(FluentSlider, ThumbColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentSlider, SliderOnColor, g_fluent_theme_center->getOnColor())
+    DECLARE_PROPERTY_COLOR(FluentSlider, SliderOffColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentSlider, ThumbBorderColor, g_fluent_theme_center->getBorderColor())
+
     DECLARE_PROPERTY(bool, PaintStep, false);
     DECLARE_PROPERTY(bool, SliderPress, true);
 

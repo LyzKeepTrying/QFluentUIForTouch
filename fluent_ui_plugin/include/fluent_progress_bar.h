@@ -3,7 +3,7 @@
 
 #include <QProgressBar>
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -14,8 +14,10 @@
 class FLUENTUI_PLUGIN_EXPORT FluentProgressBar : public QProgressBar {
     Q_OBJECT
     DECLARE_PROPERTY(qreal, LineWidth, 10.0)
-    DECLARE_PROPERTY(QColor, SliderOnColor, QFluentUI::ThemeColor::Light::on_color)
-    DECLARE_PROPERTY(QColor, SliderOffColor, QFluentUI::ThemeColor::Light::border_color)
+
+    DECLARE_PROPERTY_COLOR(FluentProgressBar, SliderOffColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentProgressBar, SliderOnColor, g_fluent_theme_center->getOnColor())
+
     DECLARE_PROPERTY_PRIVATE(int, CurSliderPos, 0.0)
     DECLARE_PROPERTY(bool, MoveAnamination, true)
     DECLARE_PROPERTY_SIGNAL(bool, IsLoop, false)

@@ -51,6 +51,7 @@ OBJECTS_DIR   = release
 ####### Files
 
 SOURCES       = ..\..\..\fluent_ui_plugin\src\fluent_toggle_button.cpp \
+		..\..\..\fluent_ui_plugin\src\fluent_theme_center.cpp \
 		..\..\..\fluent_ui_plugin\src\fluent_color_picker.cpp \
 		..\..\..\fluent_ui_plugin\src\fluent_message_bar.cpp \
 		..\..\..\fluent_ui_plugin\src\fluent_pie_chart.cpp \
@@ -92,6 +93,7 @@ SOURCES       = ..\..\..\fluent_ui_plugin\src\fluent_toggle_button.cpp \
 		release\moc_fluent_pie_chart.cpp \
 		release\moc_fluent_bar_chart.cpp \
 		release\moc_fluent_line_chart.cpp \
+		release\moc_fluent_theme_center.cpp \
 		release\moc_fluent_time_picker.cpp \
 		release\moc_fluent_group_box.cpp \
 		release\moc_fluent_icon_push_button.cpp \
@@ -114,6 +116,7 @@ SOURCES       = ..\..\..\fluent_ui_plugin\src\fluent_toggle_button.cpp \
 		release\moc_fluent_scroll_area.cpp \
 		release\moc_fluent_clock_picker.cpp
 OBJECTS       = release/fluent_toggle_button.o \
+		release/fluent_theme_center.o \
 		release/fluent_color_picker.o \
 		release/fluent_message_bar.o \
 		release/fluent_pie_chart.o \
@@ -156,6 +159,7 @@ OBJECTS       = release/fluent_toggle_button.o \
 		release/moc_fluent_pie_chart.o \
 		release/moc_fluent_bar_chart.o \
 		release/moc_fluent_line_chart.o \
+		release/moc_fluent_theme_center.o \
 		release/moc_fluent_time_picker.o \
 		release/moc_fluent_group_box.o \
 		release/moc_fluent_icon_push_button.o \
@@ -190,6 +194,7 @@ DIST          =  ..\..\..\fluent_ui_plugin\include\fluent_toggle_button.h \
 		..\..\..\fluent_ui_plugin\include\fluent_pie_chart.h \
 		..\..\..\fluent_ui_plugin\include\fluent_bar_chart.h \
 		..\..\..\fluent_ui_plugin\include\fluent_line_chart.h \
+		..\..\..\fluent_ui_plugin\include\fluent_theme_center.h \
 		..\..\..\fluent_ui_plugin\include\fluent_time_picker.h \
 		..\..\..\fluent_ui_plugin\include\fluent_group_box.h \
 		..\..\..\fluent_ui_plugin\include\fluent_icon_push_button.h \
@@ -212,8 +217,8 @@ DIST          =  ..\..\..\fluent_ui_plugin\include\fluent_toggle_button.h \
 		..\..\..\fluent_ui_plugin\include\fluent_text.h \
 		..\..\..\fluent_ui_plugin\include\fluent_scroll_area.h \
 		..\..\..\fluent_ui_plugin\include\define.h \
-		..\..\..\fluent_ui_plugin\include\theme.h \
 		..\..\..\fluent_ui_plugin\include\fluent_clock_picker.h ..\..\..\fluent_ui_plugin\src\fluent_toggle_button.cpp \
+		..\..\..\fluent_ui_plugin\src\fluent_theme_center.cpp \
 		..\..\..\fluent_ui_plugin\src\fluent_color_picker.cpp \
 		..\..\..\fluent_ui_plugin\src\fluent_message_bar.cpp \
 		..\..\..\fluent_ui_plugin\src\fluent_pie_chart.cpp \
@@ -264,10 +269,11 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) fluent_ui_plugin.zip $(SOURCES) $(DIST) ..\..\..\fluent_ui_plugin\fluent_ui_plugin.pro D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\spec_pre.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\qdevice.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\device_config.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\sanitize.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\gcc-base.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\g++-base.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\angle.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\windows-vulkan.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\g++-win32.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\windows-desktop.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\qconfig.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bootstrap_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_edid_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_egl_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_theme_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qt_functions.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qt_config.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\win32-g++\qmake.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\spec_post.prf ..\.qmake.stash D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\exclusive_builds.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\toolchain.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\default_pre.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\default_pre.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\resolve_config.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\exclusive_builds_post.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\default_post.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\build_pass.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qtquickcompiler.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\precompile_header.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\warn_on.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qt.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\resources_functions.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\resources.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\moc.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\opengl.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\uic.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\designer_defines.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qmake_use.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\file_copies.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\windows.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\testcase_targets.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\exceptions.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\yacc.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\lex.prf ..\..\..\fluent_ui_plugin\fluent_ui_plugin.pro D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Designer.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Widgets.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Gui.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Xml.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Core.prl    D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\data\dummy.cpp ..\..\..\fluent_ui_plugin\include\fluent_toggle_button.h ..\..\..\fluent_ui_plugin\include\fluent_calendar_picker.h ..\..\..\fluent_ui_plugin\include\fluent_check_box.h ..\..\..\fluent_ui_plugin\include\fluent_color_picker.h ..\..\..\fluent_ui_plugin\include\fluent_combo_box.h ..\..\..\fluent_ui_plugin\include\fluent_date_picker.h ..\..\..\fluent_ui_plugin\include\fluent_datetime_picker.h ..\..\..\fluent_ui_plugin\include\fluent_message_bar.h ..\..\..\fluent_ui_plugin\include\fluent_page_plugin.h ..\..\..\fluent_ui_plugin\include\fluent_pie_chart.h ..\..\..\fluent_ui_plugin\include\fluent_bar_chart.h ..\..\..\fluent_ui_plugin\include\fluent_line_chart.h ..\..\..\fluent_ui_plugin\include\fluent_time_picker.h ..\..\..\fluent_ui_plugin\include\fluent_group_box.h ..\..\..\fluent_ui_plugin\include\fluent_icon_push_button.h ..\..\..\fluent_ui_plugin\include\fluent_icon_toggle_button.h ..\..\..\fluent_ui_plugin\include\fluent_push_button.h ..\..\..\fluent_ui_plugin\include\fluent_scroll_bar.h ..\..\..\fluent_ui_plugin\include\fluent_slider.h ..\..\..\fluent_ui_plugin\include\fluent_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_double_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_circle_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_line_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_tab_bar.h ..\..\..\fluent_ui_plugin\include\fluent_tab_widget.h ..\..\..\fluent_ui_plugin\include\fluent_table_widget.h ..\..\..\fluent_ui_plugin\include\fluent_title_bar.h ..\..\..\fluent_ui_plugin\include\fluent_ui_interface.h ..\..\..\fluent_ui_plugin\include\fluent_ui_plugin_collection.h ..\..\..\fluent_ui_plugin\include\fluent_line_edit.h ..\..\..\fluent_ui_plugin\include\fluent_progress_bar.h ..\..\..\fluent_ui_plugin\include\fluent_text.h ..\..\..\fluent_ui_plugin\include\fluent_scroll_area.h ..\..\..\fluent_ui_plugin\include\define.h ..\..\..\fluent_ui_plugin\include\theme.h ..\..\..\fluent_ui_plugin\include\fluent_clock_picker.h  ..\..\..\fluent_ui_plugin\src\fluent_toggle_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_color_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_message_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_pie_chart.cpp ..\..\..\fluent_ui_plugin\src\fluent_bar_chart.cpp ..\..\..\fluent_ui_plugin\src\fluent_line_chart.cpp ..\..\..\fluent_ui_plugin\src\fluent_clock_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_date_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_datetime_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_time_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_calendar_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_table_widget.cpp ..\..\..\fluent_ui_plugin\src\fluent_title_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_check_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_scroll_area.cpp ..\..\..\fluent_ui_plugin\src\fluent_scroll_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_tab_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_tab_widget.cpp ..\..\..\fluent_ui_plugin\src\fluent_group_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_combo_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_progress_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_slider.cpp ..\..\..\fluent_ui_plugin\src\fluent_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_double_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_circle_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_line_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_icon_push_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_icon_toggle_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_line_edit.cpp ..\..\..\fluent_ui_plugin\src\fluent_push_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_text.cpp ..\..\..\fluent_ui_plugin\src\fluent_ui_plugin_collection.cpp     
+	$(ZIP) fluent_ui_plugin.zip $(SOURCES) $(DIST) ..\..\..\fluent_ui_plugin\fluent_ui_plugin.pro D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\spec_pre.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\qdevice.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\device_config.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\sanitize.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\gcc-base.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\g++-base.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\angle.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\windows-vulkan.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\g++-win32.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\common\windows-desktop.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\qconfig.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3danimation_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dcore_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dextras_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dinput_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dlogic_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquick_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickextras_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickinput_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickrender_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_3drender_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_accessibility_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axbase_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axcontainer_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_axserver_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bluetooth_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_bootstrap_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_core_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_edid_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_egl_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gamepad_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_help_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_location_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimedia_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_network_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_nfc_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_openglextensions_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioning_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_positioningquick_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_remoteobjects_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_repparser_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_scxml_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sensors_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialbus_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_serialport_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_texttospeech_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_theme_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_vulkan_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_webchannel_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_websockets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_winextras_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qt_functions.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qt_config.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\win32-g++\qmake.conf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\spec_post.prf ..\.qmake.stash D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\exclusive_builds.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\toolchain.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\default_pre.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\default_pre.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\resolve_config.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\exclusive_builds_post.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\default_post.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\build_pass.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qtquickcompiler.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\precompile_header.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\warn_on.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qt.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\resources_functions.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\resources.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\moc.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\opengl.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\uic.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\designer_defines.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\qmake_use.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\file_copies.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\win32\windows.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\testcase_targets.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\exceptions.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\yacc.prf D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\lex.prf ..\..\..\fluent_ui_plugin\fluent_ui_plugin.pro D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Designer.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Widgets.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Gui.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Xml.prl D:\software\qt5.15.2\5.15.2\mingw81_64\lib\Qt5Core.prl    D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\data\dummy.cpp ..\..\..\fluent_ui_plugin\include\fluent_toggle_button.h ..\..\..\fluent_ui_plugin\include\fluent_calendar_picker.h ..\..\..\fluent_ui_plugin\include\fluent_check_box.h ..\..\..\fluent_ui_plugin\include\fluent_color_picker.h ..\..\..\fluent_ui_plugin\include\fluent_combo_box.h ..\..\..\fluent_ui_plugin\include\fluent_date_picker.h ..\..\..\fluent_ui_plugin\include\fluent_datetime_picker.h ..\..\..\fluent_ui_plugin\include\fluent_message_bar.h ..\..\..\fluent_ui_plugin\include\fluent_page_plugin.h ..\..\..\fluent_ui_plugin\include\fluent_pie_chart.h ..\..\..\fluent_ui_plugin\include\fluent_bar_chart.h ..\..\..\fluent_ui_plugin\include\fluent_line_chart.h ..\..\..\fluent_ui_plugin\include\fluent_theme_center.h ..\..\..\fluent_ui_plugin\include\fluent_time_picker.h ..\..\..\fluent_ui_plugin\include\fluent_group_box.h ..\..\..\fluent_ui_plugin\include\fluent_icon_push_button.h ..\..\..\fluent_ui_plugin\include\fluent_icon_toggle_button.h ..\..\..\fluent_ui_plugin\include\fluent_push_button.h ..\..\..\fluent_ui_plugin\include\fluent_scroll_bar.h ..\..\..\fluent_ui_plugin\include\fluent_slider.h ..\..\..\fluent_ui_plugin\include\fluent_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_double_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_circle_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_line_spin_box.h ..\..\..\fluent_ui_plugin\include\fluent_tab_bar.h ..\..\..\fluent_ui_plugin\include\fluent_tab_widget.h ..\..\..\fluent_ui_plugin\include\fluent_table_widget.h ..\..\..\fluent_ui_plugin\include\fluent_title_bar.h ..\..\..\fluent_ui_plugin\include\fluent_ui_interface.h ..\..\..\fluent_ui_plugin\include\fluent_ui_plugin_collection.h ..\..\..\fluent_ui_plugin\include\fluent_line_edit.h ..\..\..\fluent_ui_plugin\include\fluent_progress_bar.h ..\..\..\fluent_ui_plugin\include\fluent_text.h ..\..\..\fluent_ui_plugin\include\fluent_scroll_area.h ..\..\..\fluent_ui_plugin\include\define.h ..\..\..\fluent_ui_plugin\include\fluent_clock_picker.h  ..\..\..\fluent_ui_plugin\src\fluent_toggle_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_theme_center.cpp ..\..\..\fluent_ui_plugin\src\fluent_color_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_message_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_pie_chart.cpp ..\..\..\fluent_ui_plugin\src\fluent_bar_chart.cpp ..\..\..\fluent_ui_plugin\src\fluent_line_chart.cpp ..\..\..\fluent_ui_plugin\src\fluent_clock_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_date_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_datetime_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_time_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_calendar_picker.cpp ..\..\..\fluent_ui_plugin\src\fluent_table_widget.cpp ..\..\..\fluent_ui_plugin\src\fluent_title_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_check_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_scroll_area.cpp ..\..\..\fluent_ui_plugin\src\fluent_scroll_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_tab_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_tab_widget.cpp ..\..\..\fluent_ui_plugin\src\fluent_group_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_combo_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_progress_bar.cpp ..\..\..\fluent_ui_plugin\src\fluent_slider.cpp ..\..\..\fluent_ui_plugin\src\fluent_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_double_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_circle_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_line_spin_box.cpp ..\..\..\fluent_ui_plugin\src\fluent_icon_push_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_icon_toggle_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_line_edit.cpp ..\..\..\fluent_ui_plugin\src\fluent_push_button.cpp ..\..\..\fluent_ui_plugin\src\fluent_text.cpp ..\..\..\fluent_ui_plugin\src\fluent_ui_plugin_collection.cpp     
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\fluent_toggle_button.o release\fluent_color_picker.o release\fluent_message_bar.o release\fluent_pie_chart.o release\fluent_bar_chart.o release\fluent_line_chart.o release\fluent_clock_picker.o release\fluent_date_picker.o release\fluent_datetime_picker.o release\fluent_time_picker.o release\fluent_calendar_picker.o release\fluent_table_widget.o release\fluent_title_bar.o release\fluent_check_box.o release\fluent_scroll_area.o release\fluent_scroll_bar.o release\fluent_tab_bar.o release\fluent_tab_widget.o release\fluent_group_box.o release\fluent_combo_box.o release\fluent_progress_bar.o release\fluent_slider.o release\fluent_spin_box.o release\fluent_double_spin_box.o release\fluent_circle_spin_box.o release\fluent_line_spin_box.o release\fluent_icon_push_button.o release\fluent_icon_toggle_button.o release\fluent_line_edit.o release\fluent_push_button.o release\fluent_text.o release\fluent_ui_plugin_collection.o release\moc_fluent_toggle_button.o release\moc_fluent_calendar_picker.o release\moc_fluent_check_box.o release\moc_fluent_color_picker.o release\moc_fluent_combo_box.o release\moc_fluent_date_picker.o release\moc_fluent_datetime_picker.o release\moc_fluent_message_bar.o release\moc_fluent_pie_chart.o release\moc_fluent_bar_chart.o release\moc_fluent_line_chart.o release\moc_fluent_time_picker.o release\moc_fluent_group_box.o release\moc_fluent_icon_push_button.o release\moc_fluent_icon_toggle_button.o release\moc_fluent_push_button.o release\moc_fluent_scroll_bar.o release\moc_fluent_slider.o release\moc_fluent_spin_box.o release\moc_fluent_double_spin_box.o release\moc_fluent_circle_spin_box.o release\moc_fluent_line_spin_box.o release\moc_fluent_tab_bar.o release\moc_fluent_tab_widget.o release\moc_fluent_table_widget.o release\moc_fluent_title_bar.o release\moc_fluent_ui_plugin_collection.o release\moc_fluent_line_edit.o release\moc_fluent_progress_bar.o release\moc_fluent_text.o release\moc_fluent_scroll_area.o release\moc_fluent_clock_picker.o
+	-$(DEL_FILE) release\fluent_toggle_button.o release\fluent_theme_center.o release\fluent_color_picker.o release\fluent_message_bar.o release\fluent_pie_chart.o release\fluent_bar_chart.o release\fluent_line_chart.o release\fluent_clock_picker.o release\fluent_date_picker.o release\fluent_datetime_picker.o release\fluent_time_picker.o release\fluent_calendar_picker.o release\fluent_table_widget.o release\fluent_title_bar.o release\fluent_check_box.o release\fluent_scroll_area.o release\fluent_scroll_bar.o release\fluent_tab_bar.o release\fluent_tab_widget.o release\fluent_group_box.o release\fluent_combo_box.o release\fluent_progress_bar.o release\fluent_slider.o release\fluent_spin_box.o release\fluent_double_spin_box.o release\fluent_circle_spin_box.o release\fluent_line_spin_box.o release\fluent_icon_push_button.o release\fluent_icon_toggle_button.o release\fluent_line_edit.o release\fluent_push_button.o release\fluent_text.o release\fluent_ui_plugin_collection.o release\moc_fluent_toggle_button.o release\moc_fluent_calendar_picker.o release\moc_fluent_check_box.o release\moc_fluent_color_picker.o release\moc_fluent_combo_box.o release\moc_fluent_date_picker.o release\moc_fluent_datetime_picker.o release\moc_fluent_message_bar.o release\moc_fluent_pie_chart.o release\moc_fluent_bar_chart.o release\moc_fluent_line_chart.o release\moc_fluent_theme_center.o release\moc_fluent_time_picker.o release\moc_fluent_group_box.o release\moc_fluent_icon_push_button.o release\moc_fluent_icon_toggle_button.o release\moc_fluent_push_button.o release\moc_fluent_scroll_bar.o release\moc_fluent_slider.o release\moc_fluent_spin_box.o release\moc_fluent_double_spin_box.o release\moc_fluent_circle_spin_box.o release\moc_fluent_line_spin_box.o release\moc_fluent_tab_bar.o release\moc_fluent_tab_widget.o release\moc_fluent_table_widget.o release\moc_fluent_title_bar.o release\moc_fluent_ui_plugin_collection.o release\moc_fluent_line_edit.o release\moc_fluent_progress_bar.o release\moc_fluent_text.o release\moc_fluent_scroll_area.o
+	-$(DEL_FILE) release\moc_fluent_clock_picker.o
 
 distclean: clean 
 	-$(DEL_FILE) release\libfluent_ui_plugin.a
@@ -292,9 +298,9 @@ compiler_moc_predefs_clean:
 release/moc_predefs.h: D:/software/qt5.15.2/5.15.2/mingw81_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -dM -E -o release\moc_predefs.h D:\software\qt5.15.2\5.15.2\mingw81_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: release/moc_fluent_toggle_button.cpp release/moc_fluent_calendar_picker.cpp release/moc_fluent_check_box.cpp release/moc_fluent_color_picker.cpp release/moc_fluent_combo_box.cpp release/moc_fluent_date_picker.cpp release/moc_fluent_datetime_picker.cpp release/moc_fluent_message_bar.cpp release/moc_fluent_pie_chart.cpp release/moc_fluent_bar_chart.cpp release/moc_fluent_line_chart.cpp release/moc_fluent_time_picker.cpp release/moc_fluent_group_box.cpp release/moc_fluent_icon_push_button.cpp release/moc_fluent_icon_toggle_button.cpp release/moc_fluent_push_button.cpp release/moc_fluent_scroll_bar.cpp release/moc_fluent_slider.cpp release/moc_fluent_spin_box.cpp release/moc_fluent_double_spin_box.cpp release/moc_fluent_circle_spin_box.cpp release/moc_fluent_line_spin_box.cpp release/moc_fluent_tab_bar.cpp release/moc_fluent_tab_widget.cpp release/moc_fluent_table_widget.cpp release/moc_fluent_title_bar.cpp release/moc_fluent_ui_plugin_collection.cpp release/moc_fluent_line_edit.cpp release/moc_fluent_progress_bar.cpp release/moc_fluent_text.cpp release/moc_fluent_scroll_area.cpp release/moc_fluent_clock_picker.cpp
+compiler_moc_header_make_all: release/moc_fluent_toggle_button.cpp release/moc_fluent_calendar_picker.cpp release/moc_fluent_check_box.cpp release/moc_fluent_color_picker.cpp release/moc_fluent_combo_box.cpp release/moc_fluent_date_picker.cpp release/moc_fluent_datetime_picker.cpp release/moc_fluent_message_bar.cpp release/moc_fluent_pie_chart.cpp release/moc_fluent_bar_chart.cpp release/moc_fluent_line_chart.cpp release/moc_fluent_theme_center.cpp release/moc_fluent_time_picker.cpp release/moc_fluent_group_box.cpp release/moc_fluent_icon_push_button.cpp release/moc_fluent_icon_toggle_button.cpp release/moc_fluent_push_button.cpp release/moc_fluent_scroll_bar.cpp release/moc_fluent_slider.cpp release/moc_fluent_spin_box.cpp release/moc_fluent_double_spin_box.cpp release/moc_fluent_circle_spin_box.cpp release/moc_fluent_line_spin_box.cpp release/moc_fluent_tab_bar.cpp release/moc_fluent_tab_widget.cpp release/moc_fluent_table_widget.cpp release/moc_fluent_title_bar.cpp release/moc_fluent_ui_plugin_collection.cpp release/moc_fluent_line_edit.cpp release/moc_fluent_progress_bar.cpp release/moc_fluent_text.cpp release/moc_fluent_scroll_area.cpp release/moc_fluent_clock_picker.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) release\moc_fluent_toggle_button.cpp release\moc_fluent_calendar_picker.cpp release\moc_fluent_check_box.cpp release\moc_fluent_color_picker.cpp release\moc_fluent_combo_box.cpp release\moc_fluent_date_picker.cpp release\moc_fluent_datetime_picker.cpp release\moc_fluent_message_bar.cpp release\moc_fluent_pie_chart.cpp release\moc_fluent_bar_chart.cpp release\moc_fluent_line_chart.cpp release\moc_fluent_time_picker.cpp release\moc_fluent_group_box.cpp release\moc_fluent_icon_push_button.cpp release\moc_fluent_icon_toggle_button.cpp release\moc_fluent_push_button.cpp release\moc_fluent_scroll_bar.cpp release\moc_fluent_slider.cpp release\moc_fluent_spin_box.cpp release\moc_fluent_double_spin_box.cpp release\moc_fluent_circle_spin_box.cpp release\moc_fluent_line_spin_box.cpp release\moc_fluent_tab_bar.cpp release\moc_fluent_tab_widget.cpp release\moc_fluent_table_widget.cpp release\moc_fluent_title_bar.cpp release\moc_fluent_ui_plugin_collection.cpp release\moc_fluent_line_edit.cpp release\moc_fluent_progress_bar.cpp release\moc_fluent_text.cpp release\moc_fluent_scroll_area.cpp release\moc_fluent_clock_picker.cpp
+	-$(DEL_FILE) release\moc_fluent_toggle_button.cpp release\moc_fluent_calendar_picker.cpp release\moc_fluent_check_box.cpp release\moc_fluent_color_picker.cpp release\moc_fluent_combo_box.cpp release\moc_fluent_date_picker.cpp release\moc_fluent_datetime_picker.cpp release\moc_fluent_message_bar.cpp release\moc_fluent_pie_chart.cpp release\moc_fluent_bar_chart.cpp release\moc_fluent_line_chart.cpp release\moc_fluent_theme_center.cpp release\moc_fluent_time_picker.cpp release\moc_fluent_group_box.cpp release\moc_fluent_icon_push_button.cpp release\moc_fluent_icon_toggle_button.cpp release\moc_fluent_push_button.cpp release\moc_fluent_scroll_bar.cpp release\moc_fluent_slider.cpp release\moc_fluent_spin_box.cpp release\moc_fluent_double_spin_box.cpp release\moc_fluent_circle_spin_box.cpp release\moc_fluent_line_spin_box.cpp release\moc_fluent_tab_bar.cpp release\moc_fluent_tab_widget.cpp release\moc_fluent_table_widget.cpp release\moc_fluent_title_bar.cpp release\moc_fluent_ui_plugin_collection.cpp release\moc_fluent_line_edit.cpp release\moc_fluent_progress_bar.cpp release\moc_fluent_text.cpp release\moc_fluent_scroll_area.cpp release\moc_fluent_clock_picker.cpp
 release/moc_fluent_toggle_button.cpp: ../../../fluent_ui_plugin/include/fluent_toggle_button.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QAbstractButton \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
@@ -402,8 +408,10 @@ release/moc_fluent_toggle_button.cpp: ../../../fluent_ui_plugin/include/fluent_t
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -518,8 +526,10 @@ release/moc_fluent_calendar_picker.cpp: ../../../fluent_ui_plugin/include/fluent
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -633,8 +643,10 @@ release/moc_fluent_check_box.cpp: ../../../fluent_ui_plugin/include/fluent_check
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -755,7 +767,9 @@ release/moc_fluent_color_picker.cpp: ../../../fluent_ui_plugin/include/fluent_co
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qicon.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_line_edit.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLineEdit \
@@ -900,8 +914,10 @@ release/moc_fluent_combo_box.cpp: ../../../fluent_ui_plugin/include/fluent_combo
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QStyledItemDelegate \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qstyleditemdelegate.h \
@@ -1032,8 +1048,10 @@ release/moc_fluent_date_picker.cpp: ../../../fluent_ui_plugin/include/fluent_dat
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -1158,8 +1176,10 @@ release/moc_fluent_datetime_picker.cpp: ../../../fluent_ui_plugin/include/fluent
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_clock_picker.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QTime \
@@ -1282,8 +1302,10 @@ release/moc_fluent_message_bar.cpp: ../../../fluent_ui_plugin/include/fluent_mes
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMap \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -1401,7 +1423,9 @@ release/moc_fluent_pie_chart.cpp: ../../../fluent_ui_plugin/include/fluent_pie_c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -1519,7 +1543,9 @@ release/moc_fluent_bar_chart.cpp: ../../../fluent_ui_plugin/include/fluent_bar_c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -1638,11 +1664,87 @@ release/moc_fluent_line_chart.cpp: ../../../fluent_ui_plugin/include/fluent_line
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QMouseEvent \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
 	D:\software\qt5.15.2\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include D:/projects/QFluentUIForTouch/build/Desktop_Qt_5_15_2_MinGW_64_bit-Release/fluent_ui_plugin/release/moc_predefs.h -ID:/software/qt5.15.2/5.15.2/mingw81_64/mkspecs/win32-g++ -ID:/projects/QFluentUIForTouch/fluent_ui_plugin -ID:/projects/QFluentUIForTouch/fluent_ui_plugin/include -ID:/software/qt5.15.2/5.15.2/mingw81_64/include -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtDesigner -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtUiPlugin -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtANGLE -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtXml -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore -I. -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/software/qt5.15.2/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\..\fluent_ui_plugin\include\fluent_line_chart.h -o release\moc_fluent_line_chart.cpp
+
+release/moc_fluent_theme_center.cpp: ../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		../../../fluent_ui_plugin/include/define.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobject.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobjectdefs.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qnamespace.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qglobal.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qconfig.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qprocessordetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcompilerdetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qlogging.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qflags.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_msvc.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmutex.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qnumeric.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstring.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qchar.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringliteral.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringalgorithms.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringview.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringbuilder.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qlist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qiterator.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpair.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvector.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpoint.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringlist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregexp.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringmatcher.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qscopedpointer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmetatype.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobject_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qcolor.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qrgb.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qfont.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qshareddata.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qhash.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		release/moc_predefs.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
+	D:\software\qt5.15.2\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include D:/projects/QFluentUIForTouch/build/Desktop_Qt_5_15_2_MinGW_64_bit-Release/fluent_ui_plugin/release/moc_predefs.h -ID:/software/qt5.15.2/5.15.2/mingw81_64/mkspecs/win32-g++ -ID:/projects/QFluentUIForTouch/fluent_ui_plugin -ID:/projects/QFluentUIForTouch/fluent_ui_plugin/include -ID:/software/qt5.15.2/5.15.2/mingw81_64/include -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtDesigner -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtUiPlugin -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtANGLE -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtXml -ID:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore -I. -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -ID:/software/qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -ID:/software/qt5.15.2/Tools/mingw810_64/x86_64-w64-mingw32/include ..\..\..\fluent_ui_plugin\include\fluent_theme_center.h -o release\moc_fluent_theme_center.cpp
 
 release/moc_fluent_time_picker.cpp: ../../../fluent_ui_plugin/include/fluent_time_picker.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
@@ -1766,8 +1868,10 @@ release/moc_fluent_time_picker.cpp: ../../../fluent_ui_plugin/include/fluent_tim
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QScopedPointer \
 		../../../fluent_ui_plugin/include/fluent_clock_picker.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -1885,8 +1989,10 @@ release/moc_fluent_group_box.cpp: ../../../fluent_ui_plugin/include/fluent_group
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QMouseEvent \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2000,8 +2106,10 @@ release/moc_fluent_icon_push_button.cpp: ../../../fluent_ui_plugin/include/fluen
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2114,8 +2222,10 @@ release/moc_fluent_icon_toggle_button.cpp: ../../../fluent_ui_plugin/include/flu
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2229,8 +2339,10 @@ release/moc_fluent_push_button.cpp: ../../../fluent_ui_plugin/include/fluent_pus
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2343,8 +2455,10 @@ release/moc_fluent_scroll_bar.cpp: ../../../fluent_ui_plugin/include/fluent_scro
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractslider.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2457,8 +2571,10 @@ release/moc_fluent_slider.cpp: ../../../fluent_ui_plugin/include/fluent_slider.h
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2573,8 +2689,10 @@ release/moc_fluent_spin_box.cpp: ../../../fluent_ui_plugin/include/fluent_spin_b
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2689,8 +2807,10 @@ release/moc_fluent_double_spin_box.cpp: ../../../fluent_ui_plugin/include/fluent
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2805,8 +2925,10 @@ release/moc_fluent_circle_spin_box.cpp: ../../../fluent_ui_plugin/include/fluent
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -2921,8 +3043,10 @@ release/moc_fluent_line_spin_box.cpp: ../../../fluent_ui_plugin/include/fluent_l
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -3034,8 +3158,10 @@ release/moc_fluent_tab_bar.cpp: ../../../fluent_ui_plugin/include/fluent_tab_bar
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -3160,8 +3286,10 @@ release/moc_fluent_tab_widget.cpp: ../../../fluent_ui_plugin/include/fluent_tab_
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QTabBar \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_scroll_area.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QScrollArea \
@@ -3302,8 +3430,10 @@ release/moc_fluent_table_widget.cpp: ../../../fluent_ui_plugin/include/fluent_ta
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QHeaderView \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qheaderview.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -3431,8 +3561,10 @@ release/moc_fluent_title_bar.cpp: ../../../fluent_ui_plugin/include/fluent_title
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -3670,8 +3802,10 @@ release/moc_fluent_line_edit.cpp: ../../../fluent_ui_plugin/include/fluent_line_
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -3784,8 +3918,10 @@ release/moc_fluent_progress_bar.cpp: ../../../fluent_ui_plugin/include/fluent_pr
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -3898,8 +4034,10 @@ release/moc_fluent_text.cpp: ../../../fluent_ui_plugin/include/fluent_text.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -4018,8 +4156,10 @@ release/moc_fluent_scroll_area.cpp: ../../../fluent_ui_plugin/include/fluent_scr
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qscrollbar.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractslider.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -4132,8 +4272,10 @@ release/moc_fluent_clock_picker.cpp: ../../../fluent_ui_plugin/include/fluent_cl
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QTime \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		release/moc_predefs.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
@@ -4264,8 +4406,10 @@ release/fluent_toggle_button.o: ../../../fluent_ui_plugin/src/fluent_toggle_butt
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -4281,6 +4425,78 @@ release/fluent_toggle_button.o: ../../../fluent_ui_plugin/src/fluent_toggle_butt
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtimer.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\fluent_toggle_button.o ..\..\..\fluent_ui_plugin\src\fluent_toggle_button.cpp
+
+release/fluent_theme_center.o: ../../../fluent_ui_plugin/src/fluent_theme_center.cpp ../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		../../../fluent_ui_plugin/include/define.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobject.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobjectdefs.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qnamespace.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qglobal.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qconfig.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtcore-config.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsystemdetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qprocessordetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcompilerdetection.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qtypeinfo.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsysinfo.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qlogging.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qflags.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbasicatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qgenericatomic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qatomic_msvc.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qglobalstatic.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmutex.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qnumeric.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qversiontagging.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstring.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qchar.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbytearray.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qrefcount.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qarraydata.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringliteral.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringalgorithms.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringview.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringbuilder.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qlist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qalgorithms.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qiterator.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qhashfunctions.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpair.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvector.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpoint.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qbytearraylist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringlist.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregexp.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qstringmatcher.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcoreevent.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qscopedpointer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qmetatype.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qvarlengtharray.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcontainerfwd.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qobject_impl.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qcolor.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtguiglobal.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtgui-config.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qrgb.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qrgba64.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qfont.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qwindowdefs.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qwindowdefs_win.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsharedpointer.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qshareddata.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qhash.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qsharedpointer_impl.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\fluent_theme_center.o ..\..\..\fluent_ui_plugin\src\fluent_theme_center.cpp
 
 release/fluent_color_picker.o: ../../../fluent_ui_plugin/src/fluent_color_picker.cpp ../../../fluent_ui_plugin/include/fluent_color_picker.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
@@ -4397,7 +4613,9 @@ release/fluent_color_picker.o: ../../../fluent_ui_plugin/src/fluent_color_picker
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qicon.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_line_edit.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLineEdit \
@@ -4430,7 +4648,6 @@ release/fluent_color_picker.o: ../../../fluent_ui_plugin/src/fluent_color_picker
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QScreen \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qscreen.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
-		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QRect \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSize \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSizeF \
@@ -4572,8 +4789,10 @@ release/fluent_message_bar.o: ../../../fluent_ui_plugin/src/fluent_message_bar.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMap \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -4588,7 +4807,6 @@ release/fluent_message_bar.o: ../../../fluent_ui_plugin/src/fluent_message_bar.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QScreen \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qscreen.h \
-		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QRect \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSize \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSizeF \
@@ -4710,7 +4928,9 @@ release/fluent_pie_chart.o: ../../../fluent_ui_plugin/src/fluent_pie_chart.cpp .
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -4833,7 +5053,9 @@ release/fluent_bar_chart.o: ../../../fluent_ui_plugin/src/fluent_bar_chart.cpp .
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -4957,7 +5179,9 @@ release/fluent_line_chart.o: ../../../fluent_ui_plugin/src/fluent_line_chart.cpp
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QMouseEvent \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -5077,8 +5301,10 @@ release/fluent_clock_picker.o: ../../../fluent_ui_plugin/src/fluent_clock_picker
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QTime \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -5220,8 +5446,10 @@ release/fluent_date_picker.o: ../../../fluent_ui_plugin/src/fluent_date_picker.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -5254,7 +5482,6 @@ release/fluent_date_picker.o: ../../../fluent_ui_plugin/src/fluent_date_picker.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QScreen \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qscreen.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
-		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QRect \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSize \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSizeF \
@@ -5382,8 +5609,10 @@ release/fluent_datetime_picker.o: ../../../fluent_ui_plugin/src/fluent_datetime_
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_clock_picker.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QTime \
@@ -5403,7 +5632,6 @@ release/fluent_datetime_picker.o: ../../../fluent_ui_plugin/src/fluent_datetime_
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QScreen \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qscreen.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
-		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QRect \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSize \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSizeF \
@@ -5532,8 +5760,10 @@ release/fluent_time_picker.o: ../../../fluent_ui_plugin/src/fluent_time_picker.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QScopedPointer \
 		../../../fluent_ui_plugin/include/fluent_clock_picker.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -5566,7 +5796,6 @@ release/fluent_time_picker.o: ../../../fluent_ui_plugin/src/fluent_time_picker.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QScreen \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qscreen.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QList \
-		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QRect \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSize \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QSizeF \
@@ -5684,8 +5913,10 @@ release/fluent_calendar_picker.o: ../../../fluent_ui_plugin/src/fluent_calendar_
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QPointer \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qpointer.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -5846,8 +6077,10 @@ release/fluent_table_widget.o: ../../../fluent_ui_plugin/src/fluent_table_widget
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QHeaderView \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qheaderview.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_scroll_bar.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QScrollBar \
@@ -5982,8 +6215,10 @@ release/fluent_title_bar.o: ../../../fluent_ui_plugin/src/fluent_title_bar.cpp .
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QDateTime \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qdatetime.h \
@@ -6102,8 +6337,10 @@ release/fluent_check_box.o: ../../../fluent_ui_plugin/src/fluent_check_box.cpp .
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -6227,8 +6464,10 @@ release/fluent_scroll_area.o: ../../../fluent_ui_plugin/src/fluent_scroll_area.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qscrollbar.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractslider.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QFrame \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QStyle \
@@ -6343,8 +6582,10 @@ release/fluent_scroll_bar.o: ../../../fluent_ui_plugin/src/fluent_scroll_bar.cpp
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractslider.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -6461,8 +6702,10 @@ release/fluent_tab_bar.o: ../../../fluent_ui_plugin/src/fluent_tab_bar.cpp ../..
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -6600,8 +6843,10 @@ release/fluent_tab_widget.o: ../../../fluent_ui_plugin/src/fluent_tab_widget.cpp
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QTabBar \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtabbar.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_scroll_area.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QScrollArea \
@@ -6735,8 +6980,10 @@ release/fluent_group_box.o: ../../../fluent_ui_plugin/src/fluent_group_box.cpp .
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpen.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QMouseEvent \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\fluent_group_box.o ..\..\..\fluent_ui_plugin\src\fluent_group_box.cpp
 
@@ -6865,8 +7112,10 @@ release/fluent_combo_box.o: ../../../fluent_ui_plugin/src/fluent_combo_box.cpp .
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeasingcurve.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qabstractanimation.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QStyledItemDelegate \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qstyleditemdelegate.h \
@@ -6995,8 +7244,10 @@ release/fluent_progress_bar.o: ../../../fluent_ui_plugin/src/fluent_progress_bar
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -7120,8 +7371,10 @@ release/fluent_slider.o: ../../../fluent_ui_plugin/src/fluent_slider.cpp ../../.
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -7241,8 +7494,10 @@ release/fluent_spin_box.o: ../../../fluent_ui_plugin/src/fluent_spin_box.cpp ../
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -7372,8 +7627,10 @@ release/fluent_double_spin_box.o: ../../../fluent_ui_plugin/src/fluent_double_sp
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -7503,8 +7760,10 @@ release/fluent_circle_spin_box.o: ../../../fluent_ui_plugin/src/fluent_circle_sp
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -7636,8 +7895,10 @@ release/fluent_line_spin_box.o: ../../../fluent_ui_plugin/src/fluent_line_spin_b
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -7768,8 +8029,10 @@ release/fluent_icon_push_button.o: ../../../fluent_ui_plugin/src/fluent_icon_pus
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
@@ -7883,8 +8146,10 @@ release/fluent_icon_toggle_button.o: ../../../fluent_ui_plugin/src/fluent_icon_t
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
@@ -8007,8 +8272,10 @@ release/fluent_line_edit.o: ../../../fluent_ui_plugin/src/fluent_line_edit.cpp .
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -8130,8 +8397,10 @@ release/fluent_push_button.o: ../../../fluent_ui_plugin/src/fluent_push_button.c
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -8246,8 +8515,10 @@ release/fluent_text.o: ../../../fluent_ui_plugin/src/fluent_text.cpp ../../../fl
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvector2d.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtouchdevice.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QPainter \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpainter.h \
@@ -8371,8 +8642,10 @@ release/fluent_ui_plugin_collection.o: ../../../fluent_ui_plugin/src/fluent_ui_p
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QAbstractButton \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
 		../../../fluent_ui_plugin/include/define.h \
-		../../../fluent_ui_plugin/include/theme.h \
+		../../../fluent_ui_plugin/include/fluent_theme_center.h \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QColor \
+		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtCore/QMetaObject \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtGui/QFont \
 		../../../fluent_ui_plugin/include/fluent_push_button.h \
 		D:/software/qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
@@ -8525,6 +8798,9 @@ release/moc_fluent_bar_chart.o: release/moc_fluent_bar_chart.cpp
 
 release/moc_fluent_line_chart.o: release/moc_fluent_line_chart.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_fluent_line_chart.o release\moc_fluent_line_chart.cpp
+
+release/moc_fluent_theme_center.o: release/moc_fluent_theme_center.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_fluent_theme_center.o release\moc_fluent_theme_center.cpp
 
 release/moc_fluent_time_picker.o: release/moc_fluent_time_picker.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_fluent_time_picker.o release\moc_fluent_time_picker.cpp

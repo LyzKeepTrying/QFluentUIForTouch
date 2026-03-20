@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FluentCircleSpinBox_t {
-    QByteArrayData data[19];
-    char stringdata0[254];
+    QByteArrayData data[29];
+    char stringdata0[439];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,31 +33,46 @@ struct qt_meta_stringdata_FluentCircleSpinBox_t {
 static const qt_meta_stringdata_FluentCircleSpinBox_t qt_meta_stringdata_FluentCircleSpinBox = {
     {
 QT_MOC_LITERAL(0, 0, 19), // "FluentCircleSpinBox"
-QT_MOC_LITERAL(1, 20, 15), // "BackgroundColor"
-QT_MOC_LITERAL(2, 36, 9), // "TextColor"
-QT_MOC_LITERAL(3, 46, 18), // "BorderFocusOnColor"
-QT_MOC_LITERAL(4, 65, 19), // "BorderFocusOffColor"
-QT_MOC_LITERAL(5, 85, 8), // "FontSize"
-QT_MOC_LITERAL(6, 94, 13), // "SliderOnColor"
-QT_MOC_LITERAL(7, 108, 14), // "SliderOffColor"
-QT_MOC_LITERAL(8, 123, 10), // "ThumbColor"
-QT_MOC_LITERAL(9, 134, 16), // "ThumbBorderColor"
-QT_MOC_LITERAL(10, 151, 11), // "ThumbRadius"
-QT_MOC_LITERAL(11, 163, 8), // "ArcWidth"
-QT_MOC_LITERAL(12, 172, 10), // "ShowCursor"
-QT_MOC_LITERAL(13, 183, 9), // "MaxArcLen"
-QT_MOC_LITERAL(14, 193, 9), // "CurArcLen"
-QT_MOC_LITERAL(15, 203, 13), // "ArcRectAdjust"
-QT_MOC_LITERAL(16, 217, 14), // "ThumbIsPressed"
-QT_MOC_LITERAL(17, 232, 11), // "SliderPress"
-QT_MOC_LITERAL(18, 244, 9) // "PaintStep"
+QT_MOC_LITERAL(1, 20, 22), // "BackgroundColorChanged"
+QT_MOC_LITERAL(2, 43, 0), // ""
+QT_MOC_LITERAL(3, 44, 5), // "value"
+QT_MOC_LITERAL(4, 50, 16), // "TextColorChanged"
+QT_MOC_LITERAL(5, 67, 25), // "BorderFocusOnColorChanged"
+QT_MOC_LITERAL(6, 93, 26), // "BorderFocusOffColorChanged"
+QT_MOC_LITERAL(7, 120, 20), // "SliderOnColorChanged"
+QT_MOC_LITERAL(8, 141, 21), // "SliderOffColorChanged"
+QT_MOC_LITERAL(9, 163, 17), // "ThumbColorChanged"
+QT_MOC_LITERAL(10, 181, 23), // "ThumbBorderColorChanged"
+QT_MOC_LITERAL(11, 205, 15), // "BackgroundColor"
+QT_MOC_LITERAL(12, 221, 9), // "TextColor"
+QT_MOC_LITERAL(13, 231, 18), // "BorderFocusOnColor"
+QT_MOC_LITERAL(14, 250, 19), // "BorderFocusOffColor"
+QT_MOC_LITERAL(15, 270, 13), // "SliderOnColor"
+QT_MOC_LITERAL(16, 284, 14), // "SliderOffColor"
+QT_MOC_LITERAL(17, 299, 10), // "ThumbColor"
+QT_MOC_LITERAL(18, 310, 16), // "ThumbBorderColor"
+QT_MOC_LITERAL(19, 327, 8), // "FontSize"
+QT_MOC_LITERAL(20, 336, 11), // "ThumbRadius"
+QT_MOC_LITERAL(21, 348, 8), // "ArcWidth"
+QT_MOC_LITERAL(22, 357, 10), // "ShowCursor"
+QT_MOC_LITERAL(23, 368, 9), // "MaxArcLen"
+QT_MOC_LITERAL(24, 378, 9), // "CurArcLen"
+QT_MOC_LITERAL(25, 388, 13), // "ArcRectAdjust"
+QT_MOC_LITERAL(26, 402, 14), // "ThumbIsPressed"
+QT_MOC_LITERAL(27, 417, 11), // "SliderPress"
+QT_MOC_LITERAL(28, 429, 9) // "PaintStep"
 
     },
-    "FluentCircleSpinBox\0BackgroundColor\0"
-    "TextColor\0BorderFocusOnColor\0"
-    "BorderFocusOffColor\0FontSize\0SliderOnColor\0"
+    "FluentCircleSpinBox\0BackgroundColorChanged\0"
+    "\0value\0TextColorChanged\0"
+    "BorderFocusOnColorChanged\0"
+    "BorderFocusOffColorChanged\0"
+    "SliderOnColorChanged\0SliderOffColorChanged\0"
+    "ThumbColorChanged\0ThumbBorderColorChanged\0"
+    "BackgroundColor\0TextColor\0BorderFocusOnColor\0"
+    "BorderFocusOffColor\0SliderOnColor\0"
     "SliderOffColor\0ThumbColor\0ThumbBorderColor\0"
-    "ThumbRadius\0ArcWidth\0ShowCursor\0"
+    "FontSize\0ThumbRadius\0ArcWidth\0ShowCursor\0"
     "MaxArcLen\0CurArcLen\0ArcRectAdjust\0"
     "ThumbIsPressed\0SliderPress\0PaintStep"
 };
@@ -69,41 +84,153 @@ static const uint qt_meta_data_FluentCircleSpinBox[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
-      18,   14, // properties
+       8,   14, // methods
+      18,   78, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       8,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    1,   54,    2, 0x06 /* Public */,
+       4,    1,   57,    2, 0x06 /* Public */,
+       5,    1,   60,    2, 0x06 /* Public */,
+       6,    1,   63,    2, 0x06 /* Public */,
+       7,    1,   66,    2, 0x06 /* Public */,
+       8,    1,   69,    2, 0x06 /* Public */,
+       9,    1,   72,    2, 0x06 /* Public */,
+      10,    1,   75,    2, 0x06 /* Public */,
+
+ // signals: parameters
+    QMetaType::Void, QMetaType::QColor,    3,
+    QMetaType::Void, QMetaType::QColor,    3,
+    QMetaType::Void, QMetaType::QColor,    3,
+    QMetaType::Void, QMetaType::QColor,    3,
+    QMetaType::Void, QMetaType::QColor,    3,
+    QMetaType::Void, QMetaType::QColor,    3,
+    QMetaType::Void, QMetaType::QColor,    3,
+    QMetaType::Void, QMetaType::QColor,    3,
 
  // properties: name, type, flags
-       1, QMetaType::QColor, 0x00095103,
-       2, QMetaType::QColor, 0x00095103,
-       3, QMetaType::QColor, 0x00095103,
-       4, QMetaType::QColor, 0x00095103,
-       5, QMetaType::Int, 0x00095103,
-       6, QMetaType::QColor, 0x00095103,
-       7, QMetaType::QColor, 0x00095103,
-       8, QMetaType::QColor, 0x00095103,
-       9, QMetaType::QColor, 0x00095103,
-      10, QMetaType::QReal, 0x00095103,
-      11, QMetaType::QReal, 0x00095103,
-      12, QMetaType::Bool, 0x00094103,
-      13, QMetaType::Int, 0x00095103,
-      14, QMetaType::Int, 0x00094103,
-      15, QMetaType::Int, 0x00095103,
-      16, QMetaType::Bool, 0x00094103,
-      17, QMetaType::Bool, 0x00095103,
-      18, QMetaType::Bool, 0x00095103,
+      11, QMetaType::QColor, 0x00495103,
+      12, QMetaType::QColor, 0x00495103,
+      13, QMetaType::QColor, 0x00495103,
+      14, QMetaType::QColor, 0x00495103,
+      15, QMetaType::QColor, 0x00495103,
+      16, QMetaType::QColor, 0x00495103,
+      17, QMetaType::QColor, 0x00495103,
+      18, QMetaType::QColor, 0x00495103,
+      19, QMetaType::Int, 0x00095103,
+      20, QMetaType::QReal, 0x00095103,
+      21, QMetaType::QReal, 0x00095103,
+      22, QMetaType::Bool, 0x00094103,
+      23, QMetaType::Int, 0x00095103,
+      24, QMetaType::Int, 0x00094103,
+      25, QMetaType::Int, 0x00095103,
+      26, QMetaType::Bool, 0x00094103,
+      27, QMetaType::Bool, 0x00095103,
+      28, QMetaType::Bool, 0x00095103,
+
+ // properties: notify_signal_id
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
 
        0        // eod
 };
 
 void FluentCircleSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<FluentCircleSpinBox *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->BackgroundColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 1: _t->TextColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 2: _t->BorderFocusOnColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 3: _t->BorderFocusOffColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 4: _t->SliderOnColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 5: _t->SliderOffColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 6: _t->ThumbColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        case 7: _t->ThumbBorderColorChanged((*reinterpret_cast< QColor(*)>(_a[1]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::BackgroundColorChanged)) {
+                *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::TextColorChanged)) {
+                *result = 1;
+                return;
+            }
+        }
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::BorderFocusOnColorChanged)) {
+                *result = 2;
+                return;
+            }
+        }
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::BorderFocusOffColorChanged)) {
+                *result = 3;
+                return;
+            }
+        }
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::SliderOnColorChanged)) {
+                *result = 4;
+                return;
+            }
+        }
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::SliderOffColorChanged)) {
+                *result = 5;
+                return;
+            }
+        }
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::ThumbColorChanged)) {
+                *result = 6;
+                return;
+            }
+        }
+        {
+            using _t = void (FluentCircleSpinBox::*)(QColor );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&FluentCircleSpinBox::ThumbBorderColorChanged)) {
+                *result = 7;
+                return;
+            }
+        }
+    }
 #ifndef QT_NO_PROPERTIES
-    if (_c == QMetaObject::ReadProperty) {
+    else if (_c == QMetaObject::ReadProperty) {
         auto *_t = static_cast<FluentCircleSpinBox *>(_o);
         Q_UNUSED(_t)
         void *_v = _a[0];
@@ -112,11 +239,11 @@ void FluentCircleSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 1: *reinterpret_cast< QColor*>(_v) = _t->getTextColor(); break;
         case 2: *reinterpret_cast< QColor*>(_v) = _t->getBorderFocusOnColor(); break;
         case 3: *reinterpret_cast< QColor*>(_v) = _t->getBorderFocusOffColor(); break;
-        case 4: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
-        case 5: *reinterpret_cast< QColor*>(_v) = _t->getSliderOnColor(); break;
-        case 6: *reinterpret_cast< QColor*>(_v) = _t->getSliderOffColor(); break;
-        case 7: *reinterpret_cast< QColor*>(_v) = _t->getThumbColor(); break;
-        case 8: *reinterpret_cast< QColor*>(_v) = _t->getThumbBorderColor(); break;
+        case 4: *reinterpret_cast< QColor*>(_v) = _t->getSliderOnColor(); break;
+        case 5: *reinterpret_cast< QColor*>(_v) = _t->getSliderOffColor(); break;
+        case 6: *reinterpret_cast< QColor*>(_v) = _t->getThumbColor(); break;
+        case 7: *reinterpret_cast< QColor*>(_v) = _t->getThumbBorderColor(); break;
+        case 8: *reinterpret_cast< int*>(_v) = _t->getFontSize(); break;
         case 9: *reinterpret_cast< qreal*>(_v) = _t->getThumbRadius(); break;
         case 10: *reinterpret_cast< qreal*>(_v) = _t->getArcWidth(); break;
         case 11: *reinterpret_cast< bool*>(_v) = _t->getShowCursor(); break;
@@ -137,11 +264,11 @@ void FluentCircleSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 1: _t->setTextColor(*reinterpret_cast< QColor*>(_v)); break;
         case 2: _t->setBorderFocusOnColor(*reinterpret_cast< QColor*>(_v)); break;
         case 3: _t->setBorderFocusOffColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 4: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
-        case 5: _t->setSliderOnColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 6: _t->setSliderOffColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 7: _t->setThumbColor(*reinterpret_cast< QColor*>(_v)); break;
-        case 8: _t->setThumbBorderColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 4: _t->setSliderOnColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 5: _t->setSliderOffColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 6: _t->setThumbColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 7: _t->setThumbBorderColor(*reinterpret_cast< QColor*>(_v)); break;
+        case 8: _t->setFontSize(*reinterpret_cast< int*>(_v)); break;
         case 9: _t->setThumbRadius(*reinterpret_cast< qreal*>(_v)); break;
         case 10: _t->setArcWidth(*reinterpret_cast< qreal*>(_v)); break;
         case 11: _t->setShowCursor(*reinterpret_cast< bool*>(_v)); break;
@@ -156,10 +283,6 @@ void FluentCircleSpinBox::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
     } else if (_c == QMetaObject::ResetProperty) {
     }
 #endif // QT_NO_PROPERTIES
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject FluentCircleSpinBox::staticMetaObject = { {
@@ -190,9 +313,17 @@ int FluentCircleSpinBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QSpinBox::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
-    
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 8)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 8;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 8)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 8;
+    }
 #ifndef QT_NO_PROPERTIES
-    if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
+    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
         _id -= 18;
@@ -209,6 +340,62 @@ int FluentCircleSpinBox::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     }
 #endif // QT_NO_PROPERTIES
     return _id;
+}
+
+// SIGNAL 0
+void FluentCircleSpinBox::BackgroundColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void FluentCircleSpinBox::TextColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void FluentCircleSpinBox::BorderFocusOnColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void FluentCircleSpinBox::BorderFocusOffColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void FluentCircleSpinBox::SliderOnColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
+}
+
+// SIGNAL 5
+void FluentCircleSpinBox::SliderOffColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void FluentCircleSpinBox::ThumbColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
+}
+
+// SIGNAL 7
+void FluentCircleSpinBox::ThumbBorderColorChanged(QColor _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 7, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -1,4 +1,5 @@
 debug/fluent_toggle_button.o
+debug/fluent_theme_center.o
 debug/fluent_color_picker.o
 debug/fluent_message_bar.o
 debug/fluent_pie_chart.o
@@ -41,6 +42,7 @@ debug/moc_fluent_message_bar.o
 debug/moc_fluent_pie_chart.o
 debug/moc_fluent_bar_chart.o
 debug/moc_fluent_line_chart.o
+debug/moc_fluent_theme_center.o
 debug/moc_fluent_time_picker.o
 debug/moc_fluent_group_box.o
 debug/moc_fluent_icon_push_button.o

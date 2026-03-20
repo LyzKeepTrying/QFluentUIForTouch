@@ -11,7 +11,7 @@
 
 #include "fluent_calendar_picker.h"
 #include "define.h"
-#include "theme.h"
+#include "fluent_theme_center.h"
 
 #if defined(FLUENTUI_PLUGIN_LIBRARY)
 #define FLUENTUI_PLUGIN_EXPORT Q_DECL_EXPORT
@@ -44,10 +44,12 @@ class FLUENTUI_PLUGIN_EXPORT FluentDatePicker : public QWidget {
 
     DECLARE_PROPERTY(QString, PlaceholderText, "请选择一个日期")
     DECLARE_PROPERTY(QString, DateFormat, "yyyy-MM-dd")
-    DECLARE_PROPERTY(QColor, BackgroundColor, QFluentUI::ThemeColor::Light::area_color)
-    DECLARE_PROPERTY(QColor, BorderColor, QFluentUI::ThemeColor::Light::border_color)
-    DECLARE_PROPERTY(QColor, TextColor, QFluentUI::ThemeColor::Light::text_color)
-    DECLARE_PROPERTY(QColor, PressedColor, QFluentUI::ThemeColor::Light::area_color.darker(110))
+
+    DECLARE_PROPERTY_COLOR(FluentDatePicker, BackgroundColor, g_fluent_theme_center->getBackgroundColor())
+    DECLARE_PROPERTY_COLOR(FluentDatePicker, BorderColor, g_fluent_theme_center->getBorderColor())
+    DECLARE_PROPERTY_COLOR(FluentDatePicker, TextColor, g_fluent_theme_center->getTextColor())
+    DECLARE_PROPERTY_COLOR(FluentDatePicker, PressedColor, g_fluent_theme_center->getBackgroundColor().darker(110))
+
     DECLARE_PROPERTY(int, FontSize, QFluentUI::Font::default_font_size)
 
 public:
