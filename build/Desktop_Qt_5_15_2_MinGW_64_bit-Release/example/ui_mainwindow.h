@@ -370,8 +370,8 @@ public:
         fluentTableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         fluentTableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        if (fluentTableWidget->rowCount() < 23)
-            fluentTableWidget->setRowCount(23);
+        if (fluentTableWidget->rowCount() < 17)
+            fluentTableWidget->setRowCount(17);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         fluentTableWidget->setVerticalHeaderItem(0, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
@@ -407,28 +407,14 @@ public:
         QTableWidgetItem *__qtablewidgetitem19 = new QTableWidgetItem();
         fluentTableWidget->setVerticalHeaderItem(16, __qtablewidgetitem19);
         QTableWidgetItem *__qtablewidgetitem20 = new QTableWidgetItem();
-        fluentTableWidget->setVerticalHeaderItem(17, __qtablewidgetitem20);
-        QTableWidgetItem *__qtablewidgetitem21 = new QTableWidgetItem();
-        fluentTableWidget->setVerticalHeaderItem(18, __qtablewidgetitem21);
-        QTableWidgetItem *__qtablewidgetitem22 = new QTableWidgetItem();
-        fluentTableWidget->setVerticalHeaderItem(19, __qtablewidgetitem22);
-        QTableWidgetItem *__qtablewidgetitem23 = new QTableWidgetItem();
-        fluentTableWidget->setVerticalHeaderItem(20, __qtablewidgetitem23);
-        QTableWidgetItem *__qtablewidgetitem24 = new QTableWidgetItem();
-        fluentTableWidget->setVerticalHeaderItem(21, __qtablewidgetitem24);
-        QTableWidgetItem *__qtablewidgetitem25 = new QTableWidgetItem();
-        fluentTableWidget->setVerticalHeaderItem(22, __qtablewidgetitem25);
-        QTableWidgetItem *__qtablewidgetitem26 = new QTableWidgetItem();
-        fluentTableWidget->setItem(0, 2, __qtablewidgetitem26);
-        QTableWidgetItem *__qtablewidgetitem27 = new QTableWidgetItem();
-        fluentTableWidget->setItem(14, 2, __qtablewidgetitem27);
+        fluentTableWidget->setItem(8, 2, __qtablewidgetitem20);
         fluentTableWidget->setObjectName(QString::fromUtf8("fluentTableWidget"));
-        fluentTableWidget->setGeometry(QRect(20, 10, 371, 741));
+        fluentTableWidget->setGeometry(QRect(20, 10, 371, 631));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        fluentTabWidget->setCurrentIndex(1);
+        fluentTabWidget->setCurrentIndex(0);
         fluentTabWidget_2->setCurrentIndex(0);
 
 
@@ -503,25 +489,11 @@ public:
         ___qtablewidgetitem18->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
         QTableWidgetItem *___qtablewidgetitem19 = fluentTableWidget->verticalHeaderItem(16);
         ___qtablewidgetitem19->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
-        QTableWidgetItem *___qtablewidgetitem20 = fluentTableWidget->verticalHeaderItem(17);
-        ___qtablewidgetitem20->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
-        QTableWidgetItem *___qtablewidgetitem21 = fluentTableWidget->verticalHeaderItem(18);
-        ___qtablewidgetitem21->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
-        QTableWidgetItem *___qtablewidgetitem22 = fluentTableWidget->verticalHeaderItem(19);
-        ___qtablewidgetitem22->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
-        QTableWidgetItem *___qtablewidgetitem23 = fluentTableWidget->verticalHeaderItem(20);
-        ___qtablewidgetitem23->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
-        QTableWidgetItem *___qtablewidgetitem24 = fluentTableWidget->verticalHeaderItem(21);
-        ___qtablewidgetitem24->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
-        QTableWidgetItem *___qtablewidgetitem25 = fluentTableWidget->verticalHeaderItem(22);
-        ___qtablewidgetitem25->setText(QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\350\241\214", nullptr));
 
         const bool __sortingEnabled = fluentTableWidget->isSortingEnabled();
         fluentTableWidget->setSortingEnabled(false);
-        QTableWidgetItem *___qtablewidgetitem26 = fluentTableWidget->item(0, 2);
-        ___qtablewidgetitem26->setText(QCoreApplication::translate("MainWindow", "3", nullptr));
-        QTableWidgetItem *___qtablewidgetitem27 = fluentTableWidget->item(14, 2);
-        ___qtablewidgetitem27->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
+        QTableWidgetItem *___qtablewidgetitem20 = fluentTableWidget->item(8, 2);
+        ___qtablewidgetitem20->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
         fluentTableWidget->setSortingEnabled(__sortingEnabled);
 
     } // retranslateUi

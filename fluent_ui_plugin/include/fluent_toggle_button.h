@@ -18,7 +18,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentToggleButton : public QAbstractButton {
     DECLARE_PROPERTY_PRIVATE(qreal, ThumbXEnd, k_default_size_.width() - 14*2 - 3)
 
     DECLARE_PROPERTY_COLOR(FluentToggleButton, ThumbColor, g_fluent_theme_center->getBackgroundColor())
-    DECLARE_PROPERTY_COLOR(FluentToggleButton, BackgroundOffColor, g_fluent_theme_center->getOffColor())
+    DECLARE_PROPERTY_COLOR(FluentToggleButton, BackgroundOffColor, g_fluent_theme_center->getBorderColor().lighter(120))
     DECLARE_PROPERTY_COLOR(FluentToggleButton, BackgroundOnColor, g_fluent_theme_center->getOnColor())
     DECLARE_PROPERTY_COLOR(FluentToggleButton, BorderColor, g_fluent_theme_center->getBorderColor())
 

@@ -19,7 +19,7 @@ class FLUENTUI_PLUGIN_EXPORT FluentScrollBar : public QScrollBar {
 
     DECLARE_PROPERTY_COLOR(FluentScrollBar, ThumbColor, g_fluent_theme_center->getBackgroundColor())
     DECLARE_PROPERTY_COLOR(FluentScrollBar, ThumbBorderColor, g_fluent_theme_center->getBorderColor())
-    DECLARE_PROPERTY_COLOR(FluentScrollBar, TrackColor, g_fluent_theme_center->getOffColor())
+    DECLARE_PROPERTY_COLOR(FluentScrollBar, TrackColor, g_fluent_theme_center->getBorderColor().lighter(120))
 
     DECLARE_PROPERTY(qreal, ThumbRadius, 12.0)
     DECLARE_PROPERTY(qreal, TrackWidth, 10.0)

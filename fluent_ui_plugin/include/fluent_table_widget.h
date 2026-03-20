@@ -22,7 +22,7 @@ class Q_DECL_EXPORT FluentTableWidget : public QTableWidget {
     DECLARE_PROPERTY_COLOR(FluentTableWidget, BackGroundColor, g_fluent_theme_center->getBackgroundColor())
     DECLARE_PROPERTY_COLOR(FluentTableWidget, HighLightColor, g_fluent_theme_center->getOnColor())
     DECLARE_PROPERTY_COLOR(FluentTableWidget, TextColor, g_fluent_theme_center->getTextColor())
-    DECLARE_PROPERTY_COLOR(FluentTableWidget, AlternativeColor, g_fluent_theme_center->getOffColor().lighter(120))
+    DECLARE_PROPERTY_COLOR(FluentTableWidget, AlternativeColor, g_fluent_theme_center->getBackgroundColor().darker(104))
     DECLARE_PROPERTY_COLOR(FluentTableWidget, BorderColor, g_fluent_theme_center->getBorderColor())
 
 public:

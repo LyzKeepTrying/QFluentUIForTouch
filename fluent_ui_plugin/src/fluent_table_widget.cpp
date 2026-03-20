@@ -3,6 +3,7 @@
 
 #include <QPainter>
 #include <QPainterPath>
+#include <QDebug>
 
 FluentTableWidget::FluentTableWidget(QWidget* parent)
     : QTableWidget(parent)
@@ -20,7 +21,8 @@ FluentTableWidget::FluentTableWidget(QWidget* parent)
         palette.setColor(QPalette::Base, getBackGroundColor());
         palette.setColor(QPalette::AlternateBase, getAlternativeColor());
         setPalette(palette);
-        const QString header_bg = getBackGroundColor().name(QColor::HexArgb);
+        const QString header_bg = getBackGroundColor().name(QColor::HexRgb);
+        const QString border_color = getBorderColor().name(QColor::HexArgb);
         QFont font(QFluentUI::Font::default_text_font);
         font.setPixelSize(getFontSize());
         const QString font_family = font.family();
@@ -29,13 +31,25 @@ FluentTableWidget::FluentTableWidget(QWidget* parent)
             QHeaderView::section {
                 background-color: %1;
                 border: none;
-                border-bottom: 1px solid #DADADA;
-                font-family: "%2";
-                font-size: %3px;
+                border-bottom: 1px solid %2;
+                font-family: "%3";
+                font-size: %4px;
                 font-weight: normal;
                 padding: 4px 8px;
             }
-        )").arg(header_bg).arg(font_family).arg(font_size));
+        )").arg(header_bg).arg(border_color).arg(font_family).arg(font_size));
+        verticalHeader()->setStyleSheet(QString(R"(
+            QHeaderView::section {
+                background-color: %1;
+                border: none;
+                border-right: 1px solid %2;
+                font-family: "%3";
+                font-size: %4px;
+                font-weight: normal;
+                padding: 4px 8px;
+            }
+        )").arg(header_bg).arg(border_color).arg(font_family).arg(font_size));
+
     };
 
     connect(this, &FluentTableWidget::FontSizeChanged, this, [=]{
@@ -55,6 +69,9 @@ FluentTableWidget::FluentTableWidget(QWidget* parent)
         apply_color();
     });
     connect(this, &FluentTableWidget::AlternativeColorChanged, this, [=]{
+        apply_color();
+    });
+    connect(this, &FluentTableWidget::BorderColorChanged, this, [=]{
         apply_color();
     });
     apply_color();

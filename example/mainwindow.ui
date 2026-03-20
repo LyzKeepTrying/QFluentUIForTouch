@@ -33,7 +33,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
@@ -881,7 +881,7 @@
        <x>20</x>
        <y>10</y>
        <width>371</width>
-       <height>741</height>
+       <height>631</height>
       </rect>
      </property>
      <row>
@@ -969,36 +969,6 @@
        <string>新建行</string>
       </property>
      </row>
-     <row>
-      <property name="text">
-       <string>新建行</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>新建行</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>新建行</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>新建行</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>新建行</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>新建行</string>
-      </property>
-     </row>
      <column>
       <property name="text">
        <string>新建列</string>
@@ -1014,12 +984,7 @@
        <string>新建列</string>
       </property>
      </column>
-     <item row="0" column="2">
-      <property name="text">
-       <string>3</string>
-      </property>
-     </item>
-     <item row="14" column="2">
+     <item row="8" column="2">
       <property name="text">
        <string>4</string>
       </property>

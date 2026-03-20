@@ -196,13 +196,9 @@ void FluentMessageBar::updateStyleByType() {
         m_emoji_ = "ℹ";
         break;
     case MessageType::Warning:
-        setBackgroundColor(QColor(255, 243, 205));
-        setBorderColor(QColor(255, 193, 7));
         m_emoji_ = "⚠";
         break;
     case MessageType::Error:
-        setBackgroundColor(QColor(253, 236, 234));
-        setBorderColor(QColor(220, 53, 69));
         m_emoji_ = "⛔";
         break;
     }
@@ -216,12 +212,42 @@ void FluentMessageBar::mousePressEvent(QMouseEvent* event) {
     QWidget::mousePressEvent(event);
 }
 
+static QColor mixColor(const QColor& c1, const QColor& c2, qreal ratio)
+{
+    ratio = qBound(0.0, ratio, 1.0);   // 0~1
+    qreal r = 1.0 - ratio;
+
+    return QColor(
+        qRound(c1.red()   * r + c2.red()   * ratio),
+        qRound(c1.green() * r + c2.green() * ratio),
+        qRound(c1.blue()  * r + c2.blue()  * ratio),
+        qRound(c1.alpha() * r + c2.alpha() * ratio)
+        );
+}
+
 void FluentMessageBar::paintEvent(QPaintEvent*) {
     QPainter p(this);
     p.setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
-    p.setBrush(getBackgroundColor());
-    p.setPen(getBorderColor());
+    QColor bg_color;
+    QColor bd_color;
+    switch (m_type_) {
+    case MessageType::Info:
+        bg_color = getBackgroundColor();
+        bd_color = getBorderColor();
+        break;
+    case MessageType::Warning:
+        bg_color = mixColor(getBackgroundColor(), QColor(255, 243, 205), 0.5);
+        bd_color = mixColor(getBorderColor(), QColor(255, 193, 7), 0.5);
+        break;
+    case MessageType::Error:
+        bg_color = mixColor(getBackgroundColor(), QColor(253, 236, 234), 0.5);
+        bd_color = mixColor(getBorderColor(), QColor(220, 53, 69), 0.5);
+        m_emoji_ = "⛔";
+        break;
+    }
+    p.setBrush(bg_color);
+    p.setPen(bd_color);
     p.drawRoundedRect(rect().adjusted(1, 1, -1, -1),
                       getRadius(), getRadius());
 

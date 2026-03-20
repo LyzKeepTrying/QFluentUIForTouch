@@ -19,6 +19,16 @@ FluentThemeCenter::~FluentThemeCenter(){
 
 void FluentThemeCenter::refreshEntireApp()
 {
+
+    // 获取应用程序当前 palette
+    QPalette palette = QApplication::palette();
+
+    // 设置 Window 背景色
+    palette.setColor(QPalette::Window, getBackgroundColor().darker(104));
+
+    // 应用到整个应用程序
+    QApplication::setPalette(palette);
+
     for (QWidget* w : QApplication::topLevelWidgets()) {
         if (!w || !w->isVisible())
             continue;

@@ -33,7 +33,6 @@ class FLUENTUI_PLUGIN_EXPORT FluentThemeCenter : public QObject
     DECLARE_PROPERTY_THEME(QColor, BackgroundColor, Qt::white)
     DECLARE_PROPERTY_THEME(QColor, TextColor, Qt::black)
     DECLARE_PROPERTY_THEME(QColor, BorderColor, QColor(128, 128, 128, 100))
-    DECLARE_PROPERTY_THEME(QColor, OffColor, QColor(204, 204, 204))
     DECLARE_PROPERTY_THEME(QColor, OnColor, QColor(0, 144, 0))
 public:
     static FluentThemeCenter* instance();
