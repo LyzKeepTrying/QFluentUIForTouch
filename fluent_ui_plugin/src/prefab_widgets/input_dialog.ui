@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InputDialog</class>
+ <widget class="QDialog" name="InputDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Input</string>
+  </property>
+  <widget class="FluentGroupBox" name="fluentGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>480</width>
+     <height>280</height>
+    </rect>
+   </property>
+   <property name="BorderWidth">
+    <number>2</number>
+   </property>
+   <property name="ShowTitle">
+    <bool>false</bool>
+   </property>
+   <property name="TitleIsOutside">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FluentGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>fluent_group_box.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

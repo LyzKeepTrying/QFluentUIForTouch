@@ -31,6 +31,9 @@ debug/fluent_line_edit.o
 debug/fluent_push_button.o
 debug/fluent_text.o
 debug/fluent_ui_plugin_collection.o
+debug/confirm_dialog.o
+debug/input_dialog.o
+debug/progress_widget.o
 debug/moc_fluent_toggle_button.o
 debug/moc_fluent_calendar_picker.o
 debug/moc_fluent_check_box.o
@@ -64,3 +67,6 @@ debug/moc_fluent_progress_bar.o
 debug/moc_fluent_text.o
 debug/moc_fluent_scroll_area.o
 debug/moc_fluent_clock_picker.o
+debug/moc_confirm_dialog.o
+debug/moc_input_dialog.o
+debug/moc_progress_widget.o

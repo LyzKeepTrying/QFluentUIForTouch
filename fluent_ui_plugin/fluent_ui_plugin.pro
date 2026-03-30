@@ -39,7 +39,10 @@ SOURCES     += src/fluent_toggle_button.cpp \
                src/fluent_line_edit.cpp \
                src/fluent_push_button.cpp \
                src/fluent_text.cpp \
-               src/fluent_ui_plugin_collection.cpp
+               src/fluent_ui_plugin_collection.cpp \
+               src/prefab_widgets/confirm_dialog.cpp \
+               src/prefab_widgets/input_dialog.cpp \
+               src/prefab_widgets/progress_widget.cpp
 
 HEADERS     += include/fluent_toggle_button.h \
                include/fluent_calendar_picker.h \
@@ -76,7 +79,14 @@ HEADERS     += include/fluent_toggle_button.h \
                include/fluent_text.h \
                include/fluent_scroll_area.h \
                include/define.h \
-               include/fluent_clock_picker.h
+               include/fluent_clock_picker.h \
+               include/prefab_widgets/confirm_dialog.h \
+               include/prefab_widgets/input_dialog.h \
+               include/prefab_widgets/progress_widget.h
+
+FORMS +=       src/prefab_widgets/confirm_dialog.ui \
+               src/prefab_widgets/input_dialog.ui \
+               src/prefab_widgets/progress_widget.ui
 
 TARGET = fluent_ui_plugin
 

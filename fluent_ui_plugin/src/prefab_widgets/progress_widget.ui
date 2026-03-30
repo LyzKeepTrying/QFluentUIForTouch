@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProgressWidget</class>
+ <widget class="QDialog" name="ProgressWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>419</width>
+    <height>242</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="FluentGroupBox" name="fluentGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>401</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+   <property name="BorderWidth">
+    <number>2</number>
+   </property>
+   <property name="TitleLeftMargin">
+    <number>4</number>
+   </property>
+   <property name="ShowTitle">
+    <bool>false</bool>
+   </property>
+   <property name="TitleIsOutside">
+    <bool>true</bool>
+   </property>
+   <widget class="FluentProgressBar" name="fluentProgressBar">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>361</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="textVisible">
+     <bool>true</bool>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+    <property name="LineWidth">
+     <double>12.000000000000000</double>
+    </property>
+    <property name="IsLoop">
+     <bool>true</bool>
+    </property>
+    <property name="MoveSpeed">
+     <double>2.000000000000000</double>
+    </property>
+    <property name="SliderLen">
+     <double>0.400000000000000</double>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>331</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>任务执行中</string>
+    </property>
+    <property name="FontSize">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="FluentText" name="fluentText_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>321</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>请稍等...</string>
+    </property>
+    <property name="FontSize">
+     <number>16</number>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FluentProgressBar</class>
+   <extends>QProgressBar</extends>
+   <header>fluent_progress_bar.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentText</class>
+   <extends>QLabel</extends>
+   <header>fluent_text.h</header>
+  </customwidget>
+  <customwidget>
+   <class>FluentGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>fluent_group_box.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

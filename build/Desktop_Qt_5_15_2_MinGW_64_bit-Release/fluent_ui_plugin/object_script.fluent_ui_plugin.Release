@@ -31,6 +31,9 @@ release/fluent_line_edit.o
 release/fluent_push_button.o
 release/fluent_text.o
 release/fluent_ui_plugin_collection.o
+release/confirm_dialog.o
+release/input_dialog.o
+release/progress_widget.o
 release/moc_fluent_toggle_button.o
 release/moc_fluent_calendar_picker.o
 release/moc_fluent_check_box.o
@@ -64,3 +67,6 @@ release/moc_fluent_progress_bar.o
 release/moc_fluent_text.o
 release/moc_fluent_scroll_area.o
 release/moc_fluent_clock_picker.o
+release/moc_confirm_dialog.o
+release/moc_input_dialog.o
+release/moc_progress_widget.o
